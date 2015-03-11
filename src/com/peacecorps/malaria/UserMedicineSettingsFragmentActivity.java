@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.peacecorps.malaria;
 
 /**
@@ -14,563 +13,283 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.*;
 
 import java.util.Calendar;
 import java.util.Date;
-=======
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
->>>>>>> origin/malaria-setup-screen
 import com.peacecorps.malaria.R;
 
 public class UserMedicineSettingsFragmentActivity extends FragmentActivity
-        implements AdapterView.OnItemSelectedListener {
+		implements AdapterView.OnItemSelectedListener {
 
-    private static Button mDoneButton;
+	private static Button mDoneButton;
 
-    private static TextView timePickButton;
-    private TextView mSetupLabel;
-    private TextView mDrugTakeLabel;
-    private TextView mTimePickLabel;
-    private TextView mIfForgetLabel;
-    private Spinner mDrugSelectSpinner;
-    private static String mDrugPicked;
-    private static int mHour;
-    private static int mMinute;
-    private final static Calendar mCalendar = Calendar.getInstance();
+	private static TextView timePickButton;
+	private TextView mSetupLabel;
+	private TextView mDrugTakeLabel;
+	private TextView mTimePickLabel;
+	private TextView mIfForgetLabel;
+	private Spinner mDrugSelectSpinner;
+	private static String mDrugPicked;
+	private static int mHour;
+	private static int mMinute;
+	private final static Calendar mCalendar = Calendar.getInstance();
 
-    static SharedPreferenceStore mSharedPreferenceStore;
+	static SharedPreferenceStore mSharedPreferenceStore;
 
-    public static Context mFragmentContext;
+	public static Context mFragmentContext;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.fragment_user_medicine_settings);
-        this.setTitle(R.string.user_medicine_settings_fragment_activity_title);
+		setContentView(R.layout.fragment_user_medicine_settings);
+		this.setTitle(R.string.user_medicine_settings_fragment_activity_title);
 
-        mSharedPreferenceStore = new SharedPreferenceStore();
+		mSharedPreferenceStore = new SharedPreferenceStore();
 
-        mFragmentContext = UserMedicineSettingsFragmentActivity.this
-                .getApplicationContext();
-        mDoneButton = (Button) findViewById(R.id.user_medicine_settings_activity_done_button);
-        mDoneButton.setOnClickListener(mDoneButtonClickListener);
+		mFragmentContext = UserMedicineSettingsFragmentActivity.this
+				.getApplicationContext();
+		mDoneButton = (Button) findViewById(R.id.user_medicine_settings_activity_done_button);
+		mDoneButton.setOnClickListener(mDoneButtonClickListener);
 
-        boolean isDoneButtonChecked = false;
+		boolean isDoneButtonChecked = false;
 
-        timePickButton = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_button);
-        mDrugTakeLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_drug_take_label);
-        mSetupLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_setup_label);
-        mTimePickLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_label);
-        mIfForgetLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_if_forget_label);
-        mDrugSelectSpinner = (Spinner) findViewById(R.id.user_medicine_settings_activity_drug_select_spinner);
+		timePickButton = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_button);
+		mDrugTakeLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_drug_take_label);
+		mSetupLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_setup_label);
+		mTimePickLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_label);
+		mIfForgetLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_if_forget_label);
+		mDrugSelectSpinner = (Spinner) findViewById(R.id.user_medicine_settings_activity_drug_select_spinner);
 
-        mSharedPreferenceStore.getSharedPreferences(this);
+		mSharedPreferenceStore.getSharedPreferences(this);
 
+		checkInitialAppInstall();
 
-        checkInitialAppInstall();
+		createDrugSelectionSpinner();
 
-        createDrugSelectionSpinner();
+		checkIfTimeSet(isDoneButtonChecked);
 
-        checkIfTimeSet(isDoneButtonChecked);
+		addTimePickButtonClickListener();
 
-        addTimePickButtonClickListener();
+	}
 
-    }
+	@Override
+	protected void onDestroy() {
 
-    @Override
-    protected void onDestroy() {
+		super.onDestroy();
+		if (mSharedPreferenceStore.mPrefsStore.getBoolean(
+				"com.peacecorps.malaria.isFirstRun", true)) {
+			mSharedPreferenceStore.mEditor.putBoolean(
+					"com.peacecorps.malaria.hasUserSetPreference", true)
+					.commit();
+		}
 
-        super.onDestroy();
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-        }
+	}
 
-    }
+	@Override
+	protected void onResume() {
+		super.onResume();
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+		if (mSharedPreferenceStore.mPrefsStore.getBoolean(
+				"com.peacecorps.malaria.isFirstRun", true)) {
+			mSharedPreferenceStore.mEditor.putBoolean(
+					"com.peacecorps.malaria.hasUserSetPreference", true)
+					.commit();
+		}
 
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-        }
+	}
 
-    }
+	@Override
+	protected void onPause() {
 
-    @Override
-    protected void onPause() {
+		super.onPause();
+		if (mSharedPreferenceStore.mPrefsStore.getBoolean(
+				"com.peacecorps.malaria.isFirstRun", true)) {
+			mSharedPreferenceStore.mEditor.putBoolean(
+					"com.peacecorps.malaria.hasUserSetPreference", true)
+					.commit();
+		}
 
-        super.onPause();
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-        }
+	}
 
-    }
+	private void checkInitialAppInstall() {
 
-    private void checkInitialAppInstall() {
+		if (mSharedPreferenceStore.mPrefsStore.getBoolean(
+				"com.peacecorps.malaria.hasUserSetPreference", false)) {
 
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean(
-                "com.peacecorps.malaria.hasUserSetPreference", false)) {
+			mSharedPreferenceStore.mEditor.putBoolean(
+					"com.peacecorps.malaria.hasUserSetPreference", true)
+					.commit();
+			mSharedPreferenceStore.mEditor.putBoolean(
+					"com.peacecorps.malaria.isFirstRun", true).commit();
 
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-            mSharedPreferenceStore.mEditor
-                    .putBoolean("com.peacecorps.malaria.isFirstRun", true).commit();
+			startActivity(new Intent(UserMedicineSettingsFragmentActivity.this,
+					MainActivity.class));
+			finish();
+		}
 
-            startActivity(new Intent(UserMedicineSettingsFragmentActivity.this,
-                    MainActivity.class));
-            finish();
-        }
+	}
 
-    }
+	private void createDrugSelectionSpinner() {
 
-    private void createDrugSelectionSpinner() {
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.user_medicine_settings_activity_drug_array,
+				android.R.layout.simple_spinner_item);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.user_medicine_settings_activity_drug_array,
-                android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		mDrugSelectSpinner.setAdapter(adapter);
 
-        mDrugSelectSpinner.setAdapter(adapter);
+		mDrugSelectSpinner.setOnItemSelectedListener(this);
+	}
 
-        mDrugSelectSpinner.setOnItemSelectedListener(this);
-    }
+	public void addTimePickButtonClickListener() {
 
+		timePickButton.setOnClickListener(new View.OnClickListener() {
 
-    public void addTimePickButtonClickListener() {
+			@Override
+			public void onClick(View v) {
 
-        timePickButton.setOnClickListener(new View.OnClickListener() {
+				DialogFragment newFragment = new TimePickerFragment();
+				newFragment.show(getSupportFragmentManager(), "Time Picker");
+			}
 
-            @Override
-            public void onClick(View v) {
+		});
+	}
 
-                DialogFragment newFragment = new TimePickerFragment();
-                newFragment.show(getSupportFragmentManager(), "Time Picker");
-            }
+	public static class TimePickerFragment extends DialogFragment implements
+			TimePickerDialog.OnTimeSetListener {
 
-        });
-    }
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-    public static class TimePickerFragment extends DialogFragment implements
-            TimePickerDialog.OnTimeSetListener {
+			int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
+			int minute = mCalendar.get(Calendar.MINUTE);
 
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
+			return new TimePickerDialog(getActivity(), this, hour, minute,
+					DateFormat.is24HourFormat(getActivity()));
+		}
 
-            int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
-            int minute = mCalendar.get(Calendar.MINUTE);
+		public void onTimeSet(TimePicker view, int hourOfDay, int minutes) {
 
-            return new TimePickerDialog(getActivity(), this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
-        }
+			boolean isDoneButtonChecked = true;
 
-        public void onTimeSet(TimePicker view, int hourOfDay, int minutes) {
+			mHour = hourOfDay;
+			mMinute = minutes;
 
-            boolean isDoneButtonChecked = true;
+			updateTime(hourOfDay, minutes);
+			checkIfTimeSet(isDoneButtonChecked);
 
-            mHour = hourOfDay;
-            mMinute = minutes;
+		}
 
-            updateTime(hourOfDay, minutes);
-            checkIfTimeSet(isDoneButtonChecked);
+	}
 
-        }
+	public static void checkIfTimeSet(boolean isDoneButtonChecked) {
+		mDoneButton.setEnabled(isDoneButtonChecked);
+	}
 
-    }
+	public static void saveUserTimeAndMedicationPrefs() {
 
-    public static void checkIfTimeSet(boolean isDoneButtonChecked) {
-        mDoneButton.setEnabled(isDoneButtonChecked);
-    }
+		int checkDay = mCalendar.get(Calendar.DAY_OF_WEEK);
 
-    public static void saveUserTimeAndMedicationPrefs() {
+		mSharedPreferenceStore.mEditor.putInt(
+				"com.peacecorps.malaria.AlarmHour", mHour).commit();
+		mSharedPreferenceStore.mEditor.putInt(
+				"com.peacecorps.malaria.AlarmMinute", mMinute).commit();
+		mSharedPreferenceStore.mEditor.putInt(
+				"com.peacecorps.malaria.dayTakingDrug", checkDay);
 
-        int checkDay = mCalendar.get(Calendar.DAY_OF_WEEK);
+		mSharedPreferenceStore.mEditor.putString(
+				"com.peacecorps.malaria.drugPicked", mDrugPicked);
+		mSharedPreferenceStore.mEditor.putBoolean(
+				"com.peacecorps.malaria.isDrugTaken", false).commit();
+		mSharedPreferenceStore.mEditor.commit();
+		mFragmentContext.startService(new Intent(mFragmentContext,
+				AlarmService.class));
 
+	}
 
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmHour", mHour)
-                .commit();
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmMinute", mMinute)
-                .commit();
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.dayTakingDrug", checkDay);
+	// converts 24hr format to 12hr format with AM/PM values
+	private static void updateTime(int hours, int mins) {
+		String timeSet;
+		if (hours > 12) {
+			hours -= 12;
+			timeSet = "PM";
+		} else if (hours == 0) {
+			hours += 12;
+			timeSet = "AM";
+		} else if (hours == 12)
+			timeSet = "PM";
+		else
+			timeSet = "AM";
 
-        mSharedPreferenceStore.mEditor.putString("com.peacecorps.malaria.drugPicked",
-                mDrugPicked);
-        mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isDrugTaken", false)
-                .commit();
-        mSharedPreferenceStore.mEditor.commit();
-        mFragmentContext.startService(new Intent(mFragmentContext,
-                AlarmService.class));
+		String minutes;
+		if (mins < 10)
+			minutes = "0" + mins;
+		else
+			minutes = String.valueOf(mins);
 
-    }
+		// Append the time to a stringBuilder
+		String theTime = String.valueOf(hours) + ':' + minutes + " " + timeSet;
 
-    // converts 24hr format to 12hr format with AM/PM values
-    private static void updateTime(int hours, int mins) {
-        String timeSet;
-        if (hours > 12) {
-            hours -= 12;
-            timeSet = "PM";
-        } else if (hours == 0) {
-            hours += 12;
-            timeSet = "AM";
-        } else if (hours == 12)
-            timeSet = "PM";
-        else
-            timeSet = "AM";
+		// Set the timePickButton as the converted time
+		timePickButton.setText(theTime);
 
-        String minutes;
-        if (mins < 10)
-            minutes = "0" + mins;
-        else
-            minutes = String.valueOf(mins);
+	}
 
-        // Append the time to a stringBuilder
-        String theTime = String.valueOf(hours) + ':' + minutes + " " + timeSet;
+	// Listeners
+	private View.OnClickListener mDoneButtonClickListener = new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
 
-        // Set the timePickButton as the converted time
-        timePickButton.setText(theTime);
+			saveUserTimeAndMedicationPrefs();
 
-    }
+			startActivity(new Intent(UserMedicineSettingsFragmentActivity.this,
+					MainActivity.class));
+			finish();
 
-    // Listeners
-    private View.OnClickListener mDoneButtonClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
+		}
+	};
 
-            saveUserTimeAndMedicationPrefs();
+	@Override
+	public void onItemSelected(AdapterView<?> parent, View view, int position,
+			long id) {
 
-            startActivity(new Intent(UserMedicineSettingsFragmentActivity.this,
-                    MainActivity.class));
-            finish();
+		mDrugPicked = parent.getItemAtPosition(position).toString();
 
-        }
-    };
+		parent.setSelection(parent.getSelectedItemPosition());
+		mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.drug",
+				position).commit();
+		if (position == 2) {
+			mSharedPreferenceStore.mEditor.putBoolean(
+					"com.peacecorps.malaria.isWeekly", true);
+			mSharedPreferenceStore.mEditor.putLong(
+					"com.peacecorps.malaria.weeklyDate", new Date().getTime())
+					.commit();
+		} else {
+			mSharedPreferenceStore.mEditor.putBoolean(
+					"com.peacecorps.malaria.isWeekly", false);
+		}
+		if (mSharedPreferenceStore.mPrefsStore.getBoolean(
+				"com.peacecorps.malaria.isFirstRun", true)) {
+			mSharedPreferenceStore.mEditor.putLong(
+					"com.peacecorps.malaria.firstRunTime", Calendar
+							.getInstance().getTimeInMillis());
+		}
+		mSharedPreferenceStore.mEditor.putBoolean(
+				"com.peacecorps.malaria.isFirstRun", false);
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position,
-                               long id) {
+	}
 
-        mDrugPicked = parent.getItemAtPosition(position).toString();
-
-        parent.setSelection(parent.getSelectedItemPosition());
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.drug", position).commit();
-        if (position == 2) {
-            mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isWeekly", true);
-            mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.weeklyDate",
-                    new Date().getTime()).commit();
-        } else {
-            mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isWeekly", false);
-        }
-        if(mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",true)){
-            mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.firstRunTime", Calendar.getInstance().getTimeInMillis());
-        }
-        mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isFirstRun", false);
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-    }
+	@Override
+	public void onNothingSelected(AdapterView<?> parent) {
+	}
 
 }
-=======
-package com.peacecorps.malaria;
-
-/**
- * Created by Chimdi on 6/2/2014.
- */
-
-import android.app.Dialog;
-import android.app.TimePickerDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
-import android.text.format.DateFormat;
-import android.view.View;
-import android.widget.*;
-
-import java.util.Calendar;
-import java.util.Date;
-
-import com.peacecorps.malaria.R;
-
-public class UserMedicineSettingsFragmentActivity extends FragmentActivity
-        implements AdapterView.OnItemSelectedListener {
-
-    private static Button mDoneButton;
-
-    private static TextView timePickButton;
-    private TextView mSetupLabel;
-    private TextView mDrugTakeLabel;
-    private TextView mTimePickLabel;
-    private TextView mIfForgetLabel;
-    private Spinner mDrugSelectSpinner;
-    private static String mDrugPicked;
-    private static int mHour;
-    private static int mMinute;
-    private final static Calendar mCalendar = Calendar.getInstance();
-
-    static SharedPreferenceStore mSharedPreferenceStore;
-
-    public static Context mFragmentContext;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.fragment_user_medicine_settings);
-        this.setTitle(R.string.user_medicine_settings_fragment_activity_title);
-
-        mSharedPreferenceStore = new SharedPreferenceStore();
-
-        mFragmentContext = UserMedicineSettingsFragmentActivity.this
-                .getApplicationContext();
-        mDoneButton = (Button) findViewById(R.id.user_medicine_settings_activity_done_button);
-        mDoneButton.setOnClickListener(mDoneButtonClickListener);
-
-        boolean isDoneButtonChecked = false;
-
-        timePickButton = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_button);
-        mDrugTakeLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_drug_take_label);
-        mSetupLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_setup_label);
-        mTimePickLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_label);
-        mIfForgetLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_if_forget_label);
-        mDrugSelectSpinner = (Spinner) findViewById(R.id.user_medicine_settings_activity_drug_select_spinner);
-
-        mSharedPreferenceStore.getSharedPreferences(this);
-
-        if (getIntent().getBooleanExtra("settings", false)) {
-
-        } else {
-            checkInitialAppInstall();
-        }
-
-        createDrugSelectionSpinner();
-
-        checkIfTimeSet(isDoneButtonChecked);
-
-        addTimePickButtonClickListener();
-
-    }
-
-    @Override
-    protected void onDestroy() {
-
-        super.onDestroy();
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-        }
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-        }
-
-    }
-
-    @Override
-    protected void onPause() {
-
-        super.onPause();
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-        }
-
-    }
-
-    private void checkInitialAppInstall() {
-
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean(
-                "com.peacecorps.malaria.hasUserSetPreference", false)) {
-
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-            mSharedPreferenceStore.mEditor
-                    .putBoolean("com.peacecorps.malaria.isFirstRun", true).commit();
-
-            startActivity(new Intent(UserMedicineSettingsFragmentActivity.this,
-                    MainActivity.class));
-            finish();
-        }
-
-    }
-
-    private void createDrugSelectionSpinner() {
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.user_medicine_settings_activity_drug_array,
-                android.R.layout.simple_spinner_item);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        mDrugSelectSpinner.setAdapter(adapter);
-
-        mDrugSelectSpinner.setOnItemSelectedListener(this);
-    }
-
-
-    public void addTimePickButtonClickListener() {
-
-        timePickButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                DialogFragment newFragment = new TimePickerFragment();
-                newFragment.show(getSupportFragmentManager(), "Time Picker");
-            }
-
-        });
-    }
-
-    public static class TimePickerFragment extends DialogFragment implements
-            TimePickerDialog.OnTimeSetListener {
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-
-            int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
-            int minute = mCalendar.get(Calendar.MINUTE);
-
-            return new TimePickerDialog(getActivity(), this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
-        }
-
-        public void onTimeSet(TimePicker view, int hourOfDay, int minutes) {
-
-            boolean isDoneButtonChecked = true;
-
-            mHour = hourOfDay;
-            mMinute = minutes;
-
-            updateTime(hourOfDay, minutes);
-            checkIfTimeSet(isDoneButtonChecked);
-
-        }
-
-    }
-
-    public static void checkIfTimeSet(boolean isDoneButtonChecked) {
-        mDoneButton.setEnabled(isDoneButtonChecked);
-    }
-
-    public static void saveUserTimeAndMedicationPrefs() {
-
-        int checkDay = mCalendar.get(Calendar.DAY_OF_WEEK);
-
-
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmHour", mHour)
-                .commit();
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmMinute", mMinute)
-                .commit();
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.dayTakingDrug", checkDay);
-
-        mSharedPreferenceStore.mEditor.putString("com.peacecorps.malaria.drugPicked",
-                mDrugPicked).commit();
-        mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isDrugTaken", false)
-                .commit();
-        mSharedPreferenceStore.mEditor.putBoolean(
-                "com.peacecorps.malaria.hasUserSetPreference", false).commit();
-        mFragmentContext.startService(new Intent(mFragmentContext,
-                AlarmService.class));
-
-    }
-
-    // converts 24hr format to 12hr format with AM/PM values
-    private static void updateTime(int hours, int mins) {
-        String timeSet;
-        if (hours > 12) {
-            hours -= 12;
-            timeSet = "PM";
-        } else if (hours == 0) {
-            hours += 12;
-            timeSet = "AM";
-        } else if (hours == 12)
-            timeSet = "PM";
-        else
-            timeSet = "AM";
-
-        String minutes;
-        if (mins < 10)
-            minutes = "0" + mins;
-        else
-            minutes = String.valueOf(mins);
-
-        // Append the time to a stringBuilder
-        String theTime = String.valueOf(hours) + ':' + minutes + " " + timeSet;
-
-        // Set the timePickButton as the converted time
-        timePickButton.setText(theTime);
-
-    }
-
-    // Listeners
-    private View.OnClickListener mDoneButtonClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-            saveUserTimeAndMedicationPrefs();
-
-            startActivity(new Intent(UserMedicineSettingsFragmentActivity.this,
-                    MainActivity.class));
-            finish();
-
-        }
-    };
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position,
-                               long id) {
-
-        mDrugPicked = parent.getItemAtPosition(position).toString();
-
-        parent.setSelection(parent.getSelectedItemPosition());
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.drug", position).commit();
-        if (position == 2) {
-            mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isWeekly", true);
-            mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.weeklyDate",
-                    new Date().getTime()).commit();
-        } else {
-            mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isWeekly", false);
-        }
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRunTime", true)) {
-            mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.firstRunTime", Calendar.getInstance().getTimeInMillis());
-            mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isFirstRunTime", false);
-        }
-
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-    }
-
-}
->>>>>>> FETCH_HEAD
