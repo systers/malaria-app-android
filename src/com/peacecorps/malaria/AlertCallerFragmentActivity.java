@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package com.peacecorps.malaria;
 
 import java.util.Date;
