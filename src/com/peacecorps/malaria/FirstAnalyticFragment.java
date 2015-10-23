@@ -55,7 +55,6 @@ public class FirstAnalyticFragment extends Fragment {
         dinr.setTypeface(cf);
         atm.setTypeface(cf);
 
-
         return rootView;
 
     }
@@ -183,9 +182,14 @@ public class FirstAnalyticFragment extends Fragment {
 
     public void updateMediLastTime() {
         /*Updating the most recent time medication was taken*/
-        if (checkMediLastTakenTime != null) {
+       /* if (checkMediLastTakenTime != null) {
             checkMediLastTakenTime.setText(mSharedPreferenceStore.mPrefsStore.getString("com.peacecorps.malaria.checkMediLastTakenTime", "").toString());
-        }
+        }*/
+        DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
+        String  lastTaken= sqLite.getLastTaken();
+      checkMediLastTakenTime.setText(lastTaken);
+        Log.d("LastTaken-------------------------: ",lastTaken);
+
     }
 
     public void addDialog()
