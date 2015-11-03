@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFF</color>
+    <color name="golden_brown">#664a3a</color>
+    <color name="light_red">#da6767</color>
+    <color name="view_pager_indicator_text_color">#2FB3E3</color>
+    <color name="black">#000000</color>
+    <color name="user_medicine_first_text_color">#592b15</color>
+    <color name="user_medicine_second_text_color">#664a3a</color>
+    <color name="symptom_color_selected">#003366</color>
+    <color name="reaction_color_selected">#003366</color>
+    <color name="static_text_color">#003366</color>
+    <color name="journal_entry_listitem_text_color">#003366</color>
+    <color name="note_text_disabled">#333333</color>
+    <color name="blue">#0000FF</color>
+    <color name="navy">#6699FF</color>
+    <color name="sky">#0099CC</color>
+    <color name="gray">#808080</color>
+    <color name="lightgray">#e7e7e7</color>
+    <color name="lightgray02">#bfbfbf</color>
+    <color name="light_blue">#7700eeec</color>
+    <color name="dark">#000015</color>
+    <color name="green">#ff136612</color>
+    <color name="red">#e33d1b</color>
+    <color name="dark_red">#cc2303</color>
+    <color name="lighter_green">#B2FF59</color>
+    <color name="lightest_red">#EF9A9A</color>
+    <color name="cream">#fffff7bf</color>
+    <color name="light_green">#ff8fc24e</color>
+    <color name="lightest_brown">#ffe0cf79</color>
+    <color name="transparent_cream">#89fffefa</color>
+
+</resources>

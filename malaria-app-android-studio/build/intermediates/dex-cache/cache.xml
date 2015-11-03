@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/pre-dexed/debug/classes-7cc260bbaf850c282bc1eb00afaa422bab89b53f.jar" />
+    </item>
+    <item
+        jar="/home/chhavi/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-c7f5dd124e47361a87c1803b83879bac78bcfaf1.jar" />
+    </item>
+    <item
+        jar="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/libs/GraphView-3.1.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7ffc41c72432299f41689c8f707d0d89254d59d5">
+        <dex dex="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/pre-dexed/debug/GraphView-3.1.2-11636e6cedce7b41bd693d69ce648d9861cd4cec.jar" />
+    </item>
+    <item
+        jar="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-9c9b4d3e438880ef132ba4f7679ab9ed8403654f.jar" />
+    </item>
+    <item
+        jar="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/libs/volleylib.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d8f5b9114ebe0f76de7fbf55e950540959ce4ff8">
+        <dex dex="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/pre-dexed/debug/volleylib-8c5da7c5c533bbe627f25fe54d94c0806e3a18af.jar" />
+    </item>
+    <item
+        jar="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/pre-dexed/debug/classes-61ab70ec63143c7e067a2f67e2fff133b2535385.jar" />
+    </item>
+    <item
+        jar="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="88e8e18d365173ad04a543d76c157e0b644f0b3f">
+        <dex dex="/home/chhavi/Documents/malaria-app-android/malaria-app-android-studio/app/build/intermediates/pre-dexed/debug/classes-ce291b9f02e02363caee1dff5742a23030ddb6a1.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="2dp" >
+
+    <Button
+        android:id="@+id/fragment_second_screen_settings_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:layout_margin="5dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/settings_normal"
+        android:scaleType="fitCenter" />
+
+
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="January"
+            android:layout_weight="2"
+            android:id="@+id/firstMonthProgressLabel"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+
+
+            />
+
+        <ProgressBar android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progress="100"
+            android:progressDrawable="@drawable/saf_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_weight="1"
+            android:id="@+id/firstMonthProgressBar"
+            android:background="@drawable/progress_bg"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="sendMonth"
+
+            />
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:layout_weight="2"
+            android:id="@+id/firstMonthProgressPercent"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="February"
+            android:layout_weight="2"
+            android:id="@+id/secondMonthProgressLabel"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+
+            />
+
+        <ProgressBar android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progress="60"
+            android:layout_weight="1"
+            android:progressDrawable="@drawable/saf_progress_bar"
+            android:id="@+id/secondMonthProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:background="@drawable/progress_bg"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="sendMonth"
+
+            />
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="60%"
+            android:layout_weight="2"
+            android:id="@+id/secondMonthProgressPercent"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="March"
+            android:layout_weight="2"
+            android:id="@+id/thirdMonthProgressLabel"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+
+            />
+
+        <ProgressBar android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@drawable/saf_progress_bar"
+            android:progress="80"
+            android:layout_weight="1"
+            android:id="@+id/thirdMonthProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:background="@drawable/progress_bg"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="sendMonth"
+            />
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="80%"
+            android:layout_weight="2"
+            android:id="@+id/thirdMonthProgressPercent"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="April"
+            android:layout_weight="2"
+            android:id="@+id/fourthMonthProgressLabel"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+
+            />
+
+        <ProgressBar android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progress="80"
+            android:progressDrawable="@drawable/saf_progress_bar"
+            android:layout_weight="1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/fourthMonthProgressBar"
+            android:background="@drawable/progress_bg"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:onClick="sendMonth"
+
+            />
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="80%"
+            android:layout_weight="2"
+            android:id="@+id/fourthMonthProgressPercent"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/graph_bg"
+        android:id="@+id/graphView"
+        >
+
+    </LinearLayout>
+
+
+</LinearLayout>

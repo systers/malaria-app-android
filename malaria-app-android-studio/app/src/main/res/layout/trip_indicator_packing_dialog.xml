@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    tools:context=".TripIndicatorFragmentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightest_brown">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Packing Items"
+            android:textColor="@color/golden_brown"
+            android:textSize="22dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/drug_normal"
+                android:scaleType="fitCenter"
+                android:padding="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Pill"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/golden_brown"
+                android:clickable="true"
+                android:id="@+id/drugName"
+                android:layout_alignBottom="@+id/quantity"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/info_hub_button"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="50dp"/>
+
+
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/cash"
+            android:scaleType="fitCenter"
+            android:padding="5dp"
+            android:id="@+id/imageView" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Cash"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/golden_brown"
+            android:id="@+id/cash_amnt"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:hint="$"
+            android:textColorHint="@color/lightgray"
+            android:id="@+id/cash_et"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/info_hub_button" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/packing_bag"
+                android:scaleType="fitCenter"
+                android:padding="5dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Add Items"
+                android:id="@+id/packing_et"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/golden_brown"
+
+              />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plus"
+                android:id="@+id/btnAdd"
+                android:background="@color/cream"
+                android:layout_weight="1"/>
+
+           <ImageButton
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/enter"
+               android:id="@+id/btnSubmit"
+               android:background="@color/cream"
+               android:layout_weight="1"/>
+
+            <ImageButton
+                 android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/delete"
+                 android:background="@color/cream"
+                 android:id="@+id/btnDelete"
+                 />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/listV"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="#ff988455"
+            android:dividerHeight="2dp"
+            android:headerDividersEnabled="true"
+            android:background="@color/light_green"
+            />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

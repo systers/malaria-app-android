@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- view background color -->
+    <solid
+        android:color="@color/transparent_cream" >
+    </solid>
+
+    <!-- view border color and width -->
+    <stroke
+        android:width="3dp"
+        android:color="@color/lightgray" >
+    </stroke>
+
+    <!-- If you want to add some padding -->
+
+    <!-- Here is the corner radius -->
+    <corners
+        android:radius="10dp">
+    </corners>
+
+</shape>
