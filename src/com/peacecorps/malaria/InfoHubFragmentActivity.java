@@ -156,14 +156,14 @@ public class InfoHubFragmentActivity extends FragmentActivity {
         dialog.setContentView(R.layout.resetdata_dialog);
         dialog.setTitle("Reset Data");
 
-        final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
+       // final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
         Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // get selected radio button from radioGroup
+           /*     // get selected radio button from radioGroup
                 int selectedId = btnRadGroup.getCheckedRadioButtonId();
 
                 // find the radiobutton by returned id
@@ -180,8 +180,12 @@ public class InfoHubFragmentActivity extends FragmentActivity {
 
                 } else {
                     dialog.dismiss();
-                }
-
+                }*/
+                DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getApplicationContext());
+                sqLite.resetDatabase();
+                mSharedPreferenceStore.mEditor.clear().commit();
+                startActivity(new Intent(getApplication().getApplicationContext(),
+                        UserMedicineSettingsFragmentActivity.class));
             }
         });
 

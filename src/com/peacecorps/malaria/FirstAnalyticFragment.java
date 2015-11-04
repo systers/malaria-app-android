@@ -55,7 +55,6 @@ public class FirstAnalyticFragment extends Fragment {
         dinr.setTypeface(cf);
         atm.setTypeface(cf);
 
-
         return rootView;
 
     }
@@ -183,9 +182,19 @@ public class FirstAnalyticFragment extends Fragment {
 
     public void updateMediLastTime() {
         /*Updating the most recent time medication was taken*/
-        if (checkMediLastTakenTime != null) {
+       /* if (checkMediLastTakenTime != null) {
             checkMediLastTakenTime.setText(mSharedPreferenceStore.mPrefsStore.getString("com.peacecorps.malaria.checkMediLastTakenTime", "").toString());
+        }*/
+        //Log.d("LastTaken-------------------------: ",lastTaken);
+        if(checkMediLastTakenTime!=null)
+        {
+            DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
+            String  lastTaken= sqLite.getLastTaken();
+            checkMediLastTakenTime.setText(lastTaken);
+            Log.d("LastTaken-------------------------: ",lastTaken);
         }
+
+
     }
 
     public void addDialog()
@@ -194,14 +203,14 @@ public class FirstAnalyticFragment extends Fragment {
         dialog.setContentView(R.layout.resetdata_dialog);
         dialog.setTitle("Reset Data");
 
-        final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
+        //final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
         Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // get selected radio button from radioGroup
+              /*  // get selected radio button from radioGroup
                 int selectedId = btnRadGroup.getCheckedRadioButtonId();
 
                 // find the radiobutton by returned id
@@ -221,9 +230,17 @@ public class FirstAnalyticFragment extends Fragment {
                 else
                 {
                     dialog.dismiss();
-                }
+                }*/
+
+                DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
+                sqLite.resetDatabase();
+                mSharedPreferenceStore.mEditor.clear().commit();
+                startActivity(new Intent(getActivity(),
+                        UserMedicineSettingsFragmentActivity.class));
+                getActivity().finish();
 
             }
+
         });
 
         Button btnCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelReset);

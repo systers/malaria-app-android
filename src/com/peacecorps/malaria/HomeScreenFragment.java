@@ -439,14 +439,14 @@ public class HomeScreenFragment extends Fragment {
         dialog.setContentView(R.layout.resetdata_dialog);
         dialog.setTitle("Reset Data");
 
-        final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
+        //final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
         Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // get selected radio button from radioGroup
+          /*      // get selected radio button from radioGroup
                 int selectedId = btnRadGroup.getCheckedRadioButtonId();
 
                 // find the radiobutton by returned id
@@ -467,7 +467,14 @@ public class HomeScreenFragment extends Fragment {
                 else
                 {
                     dialog.dismiss();
-                }
+                }*/
+                DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
+                sqLite.resetDatabase();
+                mSharedPreferenceStore.mEditor.clear().commit();
+                SharedPreferenceStore.mEditor.clear().commit();
+                startActivity(new Intent(getActivity(),
+                        UserMedicineSettingsFragmentActivity.class));
+                getActivity().finish();
 
             }
         });

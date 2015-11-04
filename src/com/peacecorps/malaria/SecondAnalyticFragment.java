@@ -59,7 +59,7 @@ public class SecondAnalyticFragment extends Fragment {
         //Declaring the Views
         rootView = inflater.inflate(R.layout.fragment_second_analytic_screen,
                 null);
-
+        Log.e("MyTag", "Error message with my own tag");
         mSettingsButton = (Button) rootView.findViewById(R.id.fragment_second_screen_settings_button);
 
         firstMonthProgressLabel = (TextView) rootView.findViewById(R.id.firstMonthProgressLabel);
@@ -204,6 +204,9 @@ public class SecondAnalyticFragment extends Fragment {
     public void updateProgressBar(String choice, int date) {
         DatabaseSQLiteHelper sqLH = new DatabaseSQLiteHelper(getActivity());
         Typeface cf = Typeface.createFromAsset(getActivity().getAssets(),"fonts/garreg.ttf");
+        int SetupMonth= mSharedPreferenceStore.mPrefsStore.getInt("com.peacecorps.malaria.SetupMonth",-1);
+        int SetupYear= mSharedPreferenceStore.mPrefsStore.getInt("com.peacecorps.malaria.SetupYear",-1);
+        Log.d("setupYear/myear ",Integer.toString(SetupYear) +" " +Integer.toString(myear));
         firstMonthProgressLabel.setText(getMonth(date - 3));
         firstMonthProgressLabel.setTypeface(cf);
         int progress = sqLH.getData(mdate, myear, choice);
@@ -220,7 +223,11 @@ public class SecondAnalyticFragment extends Fragment {
 
         }
         firstMonthProgressBar.setProgress((int) progressp);
-        firstMonthProgressPercent.setText("" + (int) progressp + "%");
+        if((date-3)>=SetupMonth || myear!=SetupYear || (int)progressp!=0)
+            firstMonthProgressPercent.setText("" + (int) progressp + "%");
+        else
+            firstMonthProgressPercent.setText("N.A");
+
         firstMonthProgressPercent.setTypeface(cf);
 
         secondMonthProgressLabel.setText(getMonth(date - 2));
@@ -238,7 +245,11 @@ public class SecondAnalyticFragment extends Fragment {
 
         }
         secondMonthProgressBar.setProgress((int) progressp);
-        secondMonthProgressPercent.setText("" + (int) progressp + "%");
+        if((date-2)>=SetupMonth || myear!=SetupYear || (int)progressp!=0)
+            secondMonthProgressPercent.setText("" + (int) progressp + "%");
+        else
+            secondMonthProgressPercent.setText("N.A");
+
         secondMonthProgressPercent.setTypeface(cf);
 
         thirdMonthProgressLabel.setText(getMonth(date - 1));
@@ -254,7 +265,10 @@ public class SecondAnalyticFragment extends Fragment {
             thirdMonthProgressBar.setProgressDrawable(getResources().getDrawable(R.drawable.saf_progress_bar_green));
         }
             thirdMonthProgressBar.setProgress((int) progressp);
+        if((date-1)>=SetupMonth || myear!=SetupYear || (int)progressp!=0)
             thirdMonthProgressPercent.setText("" + (int) progressp + "%");
+        else
+            thirdMonthProgressPercent.setText("N.A");
         thirdMonthProgressPercent.setTypeface(cf);
 
         fourthMonthProgressLabel.setText(getMonth(date));
@@ -314,7 +328,7 @@ public class SecondAnalyticFragment extends Fragment {
         lineGraphView.getGraphViewStyle().setTextSize(8.0F);
         lineGraphView.setVerticalLabels(verLabels);
 
-        lineGraphView.setTitle("Adherence Rate vs Day");
+        lineGraphView.setTitle("Adherence Rate vs DayWise");
 
 
         lineGraphView.setScrollable(true);
@@ -350,14 +364,14 @@ public class SecondAnalyticFragment extends Fragment {
         dialog.setContentView(R.layout.resetdata_dialog);
         dialog.setTitle("Reset Data");
 
-        final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
+       // final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
         Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // get selected radio button from radioGroup
+            /*    // get selected radio button from radioGroup
                 int selectedId = btnRadGroup.getCheckedRadioButtonId();
 
                 // find the radiobutton by returned id
@@ -374,7 +388,15 @@ public class SecondAnalyticFragment extends Fragment {
                     getActivity().finish();
                 } else {
                     dialog.dismiss();
-                }
+                }*/
+
+                DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
+                sqLite.resetDatabase();
+                mSharedPreferenceStore.mEditor.clear().commit();
+                startActivity(new Intent(getActivity(),
+                        UserMedicineSettingsFragmentActivity.class));
+                getActivity().finish();
+
 
             }
         });
