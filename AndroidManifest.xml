@@ -73,6 +73,7 @@
         <activity android:name="com.peacecorps.malaria.DayFragmentActivity"/>
         <activity android:name="com.peacecorps.malaria.TripIndicatorFragmentActivity"
                   android:launchMode="singleTask"
+                  android:windowSoftInputMode="adjustPan"
                   />
 
         <activity android:name="com.peacecorps.malaria.TripIndicatorDialogActivity"
