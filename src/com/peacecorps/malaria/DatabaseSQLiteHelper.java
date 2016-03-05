@@ -688,6 +688,17 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
+    /**Delete Packing Item**/
+
+    public void deletePackingItem(String pItem)
+    {
+
+        SQLiteDatabase sqDB = getWritableDatabase();
+        sqDB.delete(packingTable,"PackingItem= ?", new String[]{ pItem });
+        sqDB.close();
+        
+    }
+
 
     /**Refreshing the status of each packing item to its original state**/
     public void refreshPackingItemStatus()

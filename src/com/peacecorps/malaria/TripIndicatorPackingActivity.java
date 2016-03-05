@@ -128,6 +128,7 @@ public class TripIndicatorPackingActivity extends Activity {
 
                 for(int i=itemCount-1; i >= 0; i--){
                     if(checkedItemPositions.get(i)){
+                        sqLite.deletePackingItem(list.get(i));
                         adapter.remove(list.get(i));
                     }
                 }
