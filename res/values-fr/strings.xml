@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Prévention du Paludisme</string>
+    <string name="app_homescreen_name">PC Paludisme Accueil</string> 
+    <string name="user_medicine_settings_activity_pc_logo">Logo de Peace Corps</string> 
+    <string name="user_medicine_settings_activity_setup_label">Paramètres</string>
+    <string name="user_medicine_settings_activity_drug_take_label">Je prends</string>  
+    <string name="user_medicine_settings_activity_time_pick_label">Rappelle moi à</string>
+    <string name="user_medicine_settings_activity_time_pick_button">Choisir Heure</string>
+    <string name="user_medicine_settings_activity_if_forget_label">En cas d\’oubli</string>
+    <string name="user_medicine_settings_activity_done_button">Fait</string>
+    <string name="second_analytic_screen_title">Second écran analytique</string>
+    <string name="first_analytic_screen_doses_missing_text">les doses d\'affilée</string>  
+    <string name="first_analytic_screen_medicine_last_taken_text">Dernier médicament pris</string>  
+    <string name="first_analytic_screen_medicine_adherence_to_medicine_text">Adhérence au médicament</string>  
+    <string name="alarm_auto_start_boot_completed_intent_check">android.intent.action.BOOT_COMPLETED</string>
+    <string name="alert_dialog_title">Rappel de traitement du paludisme</string>  
+    <string name="alert_dialog_message">Avez vous pris vos medicaments aujourd\'hui?</string>  
+    <string name="user_medicine_settings_fragment_activity_title">PC Prevention du Paludisme</string>  
+    <string name="info_hub_title_label">hub d\'infos</string> 
+    <string name="plan_my_trip_label">Planifier mon voyage</string>  
+    <string name="peace_corps_policy">Politique de Peace Corps</string>  
+    <string name="percentage_of_side_effects">pourcentage des effets sécondaires</string>
+    <string name="side_effects_reported_by_PCVs">Effets sécondaires réportés par PCVs</string>
+    <string name="effectiveness_against_malaria">Efficacité contre le Paludisme</string>  
+    <string name="volunteer_adherence_rates">Adhérence volontaire</string>
+    <string name="non_PCV_reported_side_effects">Non-PCV effet sécondaires réportés</string> 
+    <string name="location_label">Location</string>  
+    <string name="cash_label">Argent à apporter </string>
+    <string name="pack_label">Liste de colisage</string>  
+    <string name="medication_label">Médicament</string>
+    <string name="remind_label">Rappelle moi le:</string>  
+    <string name="trip_button_label">Produire</string>
+    <string name="location_spinner_label">Choisir location</string>
+    <string name="medication_spinner_label">Choisir medicament</string>
+    <string name="items_spinner_label">Sélectionner des éléments</string>  
+    <string name="trip_select_string">Ajouter des éléments d\'emballage </string>  
+    <string name="dump_test">En recherche....</string>
+    <string name="mal_description">
+        -Interfère la croissance des parasites dans les gbobules rouges\n  
+        -Prenez le médicament quotidienment à la même heure accompagné de la nourriture\n  
+        -Commencez à utiliser un à deux jours avant d\'entrer dans le secteur\n  
+        -Continuez à utiliser pendant votre séjour, jusqu\’au moins 7 jours après votre départ\n  
+        -Prenez les doses oubliées aussi tôt que possible, mais ignorez les si c\'est presque l\'heure de la prochaine dose\n 
+        -Consultez un docteur si vous avez la maladie du foie ou rénale.\n  
+        -effets secondaires du médicament: mal de ventre, mal de tête, diarrhée, fièvre, fatigue.\n  
+        -visitez __ pour plus d\'information\n 
+    </string>
+    <string name="doxy_description">
+        -Antibiotique tétracycline qui aide à combattre les bactéries dans le corps\n
+        -Prenez le médicament quotidienment à la même heure accompagné de la nourriture\n  
+        -Ommencez à utiliser 1 à 2 jours avant d\’entrer dans le secteur\n
+        -Continuez à utiliser pendant votre séjour, et jussqu\'au moins 28 jours après votre départ\n 
+        -Prenez les doses oubliées aussi tôt que possible, mais ignorez les si c\’est presque l\'heure de la prochaine dose\n 
+        -Consultez votre docteur si vous avez des allergies, maladies mentales, epilepsies ou vous prenez des medicaments similaires.\n 
+        -Quelques effets secondaires du medicament: douleur abdominale, mal de tête, mal musculaire, fatigue, vomissement.\n
+        -Visitez pour plus d\'information http://www.drugs.com/doxycycline.html \n
+    </string>
+    <string name="mef_description">
+        -Agent anti-paludéen qui tue les parasites sensibles du paludisme\n  
+        -Prenez le médicament une fois par semaine après votre repas principal\n 
+        -Commencez à utiliser une semaine avant d\'entrer dans le secteur\n
+        -Continuez à utiliser pendant votre séjour, et jussqu\'au moins 4 semaines après votre départ\n 
+        -Prenez les doses oubliées aussi tôt que possible, mais ignorez les si c\'est presque l\'heure de la prochaine dose\n  
+        - Consultez votre docteur si vous avez des allergies, maladies mentales, epilepsies ou vous prenez des medicaments similaires.\n 
+        -Quelques effets secondaires du medicament: douleur abdominale, mal de tête, mal musculaire, fatigue, vomissement.\n
+        -Visitez pour plus d\'information http://www.drugs.com/cdi/mefloquine.html \n 
+    </string>
+
+    <string-array name="user_medicine_settings_activity_drug_array">
+        <item>Malarone (par jour)</item>  
+        <item>Doxycycline (par jour)</item>  
+        <item>Mefloquine (par semaine)</item>  
+    </string-array>
+
+    <string-array name="month">
+        <item>Janvier</item>
+        <item>Février</item>
+        <item>Mars</item>
+        <item>Avril</item>
+        <item>Mai</item>
+        <item>Juin</item>
+        <item>Juillet</item>
+        <item>Aout</item>
+        <item>Septembre</item>
+        <item>Octobre</item>
+        <item>Novembre</item>
+        <item>Décembre</item>
+    </string-array>
+
+
+    <string-array name="drug_array">
+        <item>Malarone</item>
+        <item>Doxycycline</item>
+        <item>Mefloquine</item>
+    </string-array>
+
+    <string-array name="location_array">
+        <item>Bénin</item>
+        <item>Botswana</item>
+        <item>Burkina Faso</item>
+        <item>Cameroun</item> 
+        <item>Ethiopie</item> 
+        <item>Ghana</item>
+        <item>Guinée</item>
+        <item>Kenya</item>
+        <item>Libéria</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Mozambique</item>
+        <item>Namibie</item>
+        <item>Rwanda</item>
+        <item>Sierra Leone</item>
+        <item>Sénégal</item>
+        <item>L\'Afrique du Sud</item>
+        <item>Swaziland</item>
+        <item>Tanzanie</item>
+        <item>Gambie</item>
+        <item>Togo</item>
+        <item>Ouganda</item>
+        <item>Zambie</item>
+    </string-array>
+
+
+    <string-array name="item_array">
+        <item>Medication</item>
+        <item>Ointment</item>
+        <item>Mosquito Net</item>
+    </string-array>
+
+</resources>
