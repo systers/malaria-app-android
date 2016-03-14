@@ -67,9 +67,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
                 android:layout_gravity="center_vertical"
-                android:layout_marginEnd="20dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="50dp"/>
 
@@ -109,7 +107,6 @@
             android:hint="$"
             android:textColorHint="@color/lightgray"
             android:id="@+id/cash_et"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
             android:padding="5dp"
             android:layout_marginRight="5dp"

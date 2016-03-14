@@ -101,7 +101,7 @@
                 android:orientation="horizontal"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+
                 android:layout_marginBottom="5dp">
 
                 <Button
@@ -117,7 +117,6 @@
                     android:layout_marginLeft="20dp"
                     android:layout_alignTop="@+id/dialogButtonCancel"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
                     android:layout_marginRight="20dp"/>
 
                 <Button
@@ -133,7 +132,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    />
 
             </LinearLayout>
         </LinearLayout>
