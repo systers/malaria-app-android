@@ -43,7 +43,8 @@
 
         <activity
             android:name="com.peacecorps.malaria.UserMedicineSettingsFragmentActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,38 +53,45 @@
         </activity>
         <activity
             android:name="com.peacecorps.malaria.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.peacecorps.malaria.AlertCallerFragmentActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.example.viewpagertest.demoActivity" >
                 </action>
             </intent-filter>
         </activity>
-        <activity android:name="com.peacecorps.malaria.InfoHubFragmentActivity"/>
-        <activity android:name="com.peacecorps.malaria.PeaceCorpsPolicyFragmentActivity"/>
-        <activity android:name="com.peacecorps.malaria.PercentSideEffectsFragmentActivity"/>
-        <activity android:name="com.peacecorps.malaria.SideEffectsPCVFragmentActivity"/>
-        <activity android:name="com.peacecorps.malaria.SideEffectsNPCVFragmentActivity"/>
-        <activity android:name="com.peacecorps.malaria.VolunteerAdherenceFragmentActivity"/>
-        <activity android:name="com.peacecorps.malaria.EffectivenessFragmentActivity"/>
-        <activity android:name="com.peacecorps.malaria.ThirdAnalyticFragment"/>
-        <activity android:name="com.peacecorps.malaria.DayFragmentActivity"/>
+        <activity android:name="com.peacecorps.malaria.InfoHubFragmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.peacecorps.malaria.PeaceCorpsPolicyFragmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.peacecorps.malaria.PercentSideEffectsFragmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.peacecorps.malaria.SideEffectsPCVFragmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.peacecorps.malaria.SideEffectsNPCVFragmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.peacecorps.malaria.VolunteerAdherenceFragmentActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.peacecorps.malaria.EffectivenessFragmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.peacecorps.malaria.ThirdAnalyticFragment" android:screenOrientation="portrait"/>
+        <activity android:name="com.peacecorps.malaria.DayFragmentActivity" android:screenOrientation="portrait"/>
         <activity android:name="com.peacecorps.malaria.TripIndicatorFragmentActivity"
                   android:launchMode="singleTask"
+                  android:screenOrientation="portrait"
                   />
 
         <activity android:name="com.peacecorps.malaria.TripIndicatorDialogActivity"
-            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.peacecorps.malaria.RemainderToneActivity"
-            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.peacecorps.malaria.TripIndicatorPackingActivity"
-            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+            android:screenOrientation="portrait"/>
 
         <activity android:name="com.peacecorps.malaria.TripAlarmActivity" android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
 
         <service
             android:name="com.peacecorps.malaria.TripAlarmService"
