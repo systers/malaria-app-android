@@ -310,6 +310,8 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent3, PendingIntent.FLAG_UPDATE_CURRENT );
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                            Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
+                           finish();
                        } else if (interval < 7 && interval > 1) {
 
                            Log.d(TAGTIFA,"Category 2 Alarm Set");
@@ -322,6 +324,8 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent2, PendingIntent.FLAG_UPDATE_CURRENT);
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                            Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
+                           finish();
 
                        } else {
                            Log.d(TAGTIFA,"Category 3 Alarm Set");
@@ -330,6 +334,8 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                            Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
+                           finish();
                        }
                    }
                    else
