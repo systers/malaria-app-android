@@ -310,6 +310,8 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent3, PendingIntent.FLAG_UPDATE_CURRENT );
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                            Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
+                           finish();
                        } else if (interval < 7 && interval > 1) {
 
                            Log.d(TAGTIFA,"Category 2 Alarm Set");
@@ -322,6 +324,8 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent2, PendingIntent.FLAG_UPDATE_CURRENT);
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                            Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
+                           finish();
 
                        } else {
                            Log.d(TAGTIFA,"Category 3 Alarm Set");
@@ -330,6 +334,8 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                            Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
+                           finish();
                        }
                    }
                    else
@@ -379,17 +385,26 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 }
                else
                 {
-                    Intent intent = new Intent(getApplication(), TripIndicatorPackingActivity.class);
+                    Date departure=getDateObj(departure_formattedate);
+                    Date arrival=getDateObj(arrival_formattedate);
+                    long departurel = departure.getTime();
+                    long arrivall = arrival.getTime();
+                    if(arrivall>=departurel){
+                        Intent intent = new Intent(getApplication(), TripIndicatorPackingActivity.class);
 
-                    Log.d(TAGTIFA,departure_formattedate+"  "+arrival_formattedate);
+                        Log.d(TAGTIFA,departure_formattedate+"  "+arrival_formattedate);
 
-                    setNumDrugs(departure_formattedate, arrival_formattedate);
+                        setNumDrugs(departure_formattedate, arrival_formattedate);
 
-                    intent.putExtra(DRUG_TAG, num_drugs);
+                        intent.putExtra(DRUG_TAG, num_drugs);
 
-                    startActivity(intent);
+                        startActivity(intent);
 
-                    packingSelect.setText(TripIndicatorPackingActivity.tripDrugName);
+                        packingSelect.setText(TripIndicatorPackingActivity.tripDrugName);
+
+                    }else{
+                        Toast.makeText(getApplicationContext(),"Arrival date cannot be before the Departure date.",Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
