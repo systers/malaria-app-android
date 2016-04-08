@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -36,7 +35,7 @@ public class TripAlarmActivity extends Activity {
         TextView textView = (TextView)findViewById(R.id.tripRemindingItems);
         Button btnOK = (Button)findViewById(R.id.reminderOK);
         Button btnCancel = (Button)findViewById(R.id.reminderCancel);
-
+        new TripAlarmReceiver().ringtone.stop();        // stop the ringtone
         //intent to get the Alarm ID
         Intent intent=this.getIntent();
         final int id=intent.getIntExtra("AlarmID",0);

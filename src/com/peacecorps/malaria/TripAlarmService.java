@@ -3,7 +3,9 @@ package com.peacecorps.malaria;
 /**
  * Created by Ankita on 8/8/2015.
  */
+
 import android.app.IntentService;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -40,11 +42,14 @@ public class TripAlarmService extends IntentService {
                 this).setContentTitle("Upcoming Trip Reminder").setSmallIcon(R.drawable.appicon_themed)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
                 .setContentText(msg)
-                .addAction(R.drawable.checked, "Trip Checklist", contentIntent);
-
-
+                .setContentIntent(contentIntent)
+                .addAction(R.drawable.checked, "Trip Checklist", contentIntent)
+                .setAutoCancel(true);
+          //added a comment
+        Notification notification = alamNotificationBuilder.build();
+        notification.flags = Notification.DEFAULT_LIGHTS | Notification.FLAG_AUTO_CANCEL;
         //alamNotificationBuilder.setContentIntent(contentIntent);
-        alarmNotificationManager.notify(1, alamNotificationBuilder.build());
+        alarmNotificationManager.notify(1, notification);
         Log.d("TripAlarmService", "Notification sent.");
     }
 }
