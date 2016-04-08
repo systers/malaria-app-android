@@ -109,18 +109,19 @@ public class SecondAnalyticFragment extends Fragment {
     //finding month from its integer
     public String getMonth(int date) {
         String month[] = getResources().getStringArray(R.array.month);
-        if (date == 0) {
-            date = 12;
-            myear = Calendar.getInstance().get(Calendar.YEAR) - 1;
-        } else if (date == -1) {
+        if (date == -1) {
             date = 11;
             myear = Calendar.getInstance().get(Calendar.YEAR) - 1;
         } else if (date == -2) {
             date = 10;
             myear = Calendar.getInstance().get(Calendar.YEAR) - 1;
+        } else if (date == -3) {
+            date = 9;
+            myear = Calendar.getInstance().get(Calendar.YEAR) - 1;
+        } else {
+            myear = Calendar.getInstance().get(Calendar.YEAR);
+            mdate = date;
         }
-        myear = Calendar.getInstance().get(Calendar.YEAR);
-        mdate = date;
         return month[date];
     }
     /*Opening Dialog on Clicking Gear Icon*/
