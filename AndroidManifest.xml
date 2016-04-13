@@ -81,7 +81,7 @@
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>
         <activity android:name="com.peacecorps.malaria.TripIndicatorPackingActivity"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>
-
+        <activity android:name="com.peacecorps.malaria.CalendarViewActivity"/>
         <activity android:name="com.peacecorps.malaria.TripAlarmActivity" android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
             android:launchMode="singleTop"/>
 

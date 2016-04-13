@@ -69,6 +69,7 @@ public class DayFragmentActivity extends FragmentActivity {
         /*displaying clicked date on the Day Fragment*/
         Intent intent = getIntent();
         String selected_date = intent.getStringExtra(ThirdAnalyticFragment.DATE_TAG);
+        Log.d(TAGD,""+"The date from Calendar activity : " + selected_date);
         TextView dayDB = (TextView)findViewById(R.id.dayDB);
         SimpleDateFormat dateFormatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzzz yyyy");
         Date comp_date=Calendar.getInstance().getTime();
