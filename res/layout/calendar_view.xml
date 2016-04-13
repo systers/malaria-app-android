@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/calendar_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/calendar_left_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="16dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/calendar_left_arrow_selector" />
+
+        <TextView
+            android:id="@+id/calendar_month_year_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@+id/calendar_right_arrow"
+            android:layout_toRightOf="@+id/calendar_left_arrow"
+            android:gravity="center_horizontal"
+            android:textIsSelectable="true"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/calendar_right_arrow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="16dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/calendar_right_arrow_selector" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/weekday_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
+        android:numColumns="7"
+        android:stretchMode="columnWidth" >
+    </GridView>
+
+    <com.antonyt.infiniteviewpager.InfiniteViewPager
+        android:id="@+id/months_infinite_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp" />
+
+</LinearLayout>
