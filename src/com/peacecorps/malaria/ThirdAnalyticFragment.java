@@ -138,7 +138,7 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
             setGridCellAdapterToDate(month, year);
         }
         if (v == nextMonth) {
-            if (month > 11) {
+            if (month >= 12) {
                 month = 1;
                 year++;
             } else {
