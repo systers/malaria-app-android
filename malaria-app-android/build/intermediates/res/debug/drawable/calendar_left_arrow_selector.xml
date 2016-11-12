@@ -1,0 +1,11 @@
+<selector
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:state_pressed="true"
+		android:drawable="@drawable/cal_left_arrow_off" /> <!-- pressed -->
+	<item
+		android:state_focused="true"
+		android:drawable="@drawable/cal_left_arrow_brown" /> <!-- focused -->
+	<item
+		android:drawable="@drawable/cal_left_arrow_brown" /> <!-- default -->
+</selector><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/drawable/calendar_left_arrow_selector.xml -->

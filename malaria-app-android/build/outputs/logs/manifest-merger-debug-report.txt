@@ -1,0 +1,254 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	package
+		ADDED from AndroidManifest.xml:3:5
+	android:versionName
+		ADDED from AndroidManifest.xml:6:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionCode
+		ADDED from AndroidManifest.xml:5:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+	android:installLocation
+		ADDED from AndroidManifest.xml:4:5
+uses-sdk
+ADDED from AndroidManifest.xml:8:5
+MERGED from ma:ViewPagerIndicator:unspecified:7:5
+MERGED from com.android.support:support-v4:22.2.0:20:5
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:10:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:9:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.VIBRATE
+ADDED from AndroidManifest.xml:12:5
+	android:name
+		ADDED from AndroidManifest.xml:12:22
+uses-permission#android.permission.WAKE_LOCK
+ADDED from AndroidManifest.xml:13:5
+	android:name
+		ADDED from AndroidManifest.xml:13:22
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from AndroidManifest.xml:14:5
+	android:name
+		ADDED from AndroidManifest.xml:14:22
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from AndroidManifest.xml:15:5
+	android:name
+		ADDED from AndroidManifest.xml:15:22
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:16:5
+	android:name
+		ADDED from AndroidManifest.xml:16:22
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from AndroidManifest.xml:17:5
+	android:name
+		ADDED from AndroidManifest.xml:17:22
+uses-permission#android.permission.SEND_SMS
+ADDED from AndroidManifest.xml:18:5
+	android:name
+		ADDED from AndroidManifest.xml:18:22
+application
+ADDED from AndroidManifest.xml:20:5
+MERGED from com.android.support:support-v4:22.2.0:22:5
+	android:label
+		ADDED from AndroidManifest.xml:24:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:22:9
+	android:icon
+		ADDED from AndroidManifest.xml:23:9
+	android:theme
+		ADDED from AndroidManifest.xml:25:9
+	android:name
+		ADDED from AndroidManifest.xml:26:9
+service#com.peacecorps.malaria.services.AlarmService
+ADDED from AndroidManifest.xml:27:9
+	android:name
+		ADDED from AndroidManifest.xml:27:18
+receiver#com.peacecorps.malaria.reciever.AlarmAutoStart
+ADDED from AndroidManifest.xml:30:9
+	android:name
+		ADDED from AndroidManifest.xml:30:19
+intent-filter#android.intent.action.BOOT_COMPLETED
+ADDED from AndroidManifest.xml:31:13
+action#android.intent.action.BOOT_COMPLETED
+ADDED from AndroidManifest.xml:32:17
+	android:name
+		ADDED from AndroidManifest.xml:32:25
+receiver#com.peacecorps.malaria.reciever.AlarmHandlerClass
+ADDED from AndroidManifest.xml:36:9
+	android:exported
+		ADDED from AndroidManifest.xml:38:13
+	android:name
+		ADDED from AndroidManifest.xml:37:13
+intent-filter#com.peacecorps.malaria.START_ALARM
+ADDED from AndroidManifest.xml:39:13
+action#com.peacecorps.malaria.START_ALARM
+ADDED from AndroidManifest.xml:40:17
+	android:name
+		ADDED from AndroidManifest.xml:40:25
+activity#com.peacecorps.malaria.activities.UserMedicineSettingsFragmentActivity
+ADDED from AndroidManifest.xml:45:9
+	android:label
+		ADDED from AndroidManifest.xml:47:13
+	android:name
+		ADDED from AndroidManifest.xml:46:13
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:48:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:49:17
+	android:name
+		ADDED from AndroidManifest.xml:49:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:51:17
+	android:name
+		ADDED from AndroidManifest.xml:51:27
+activity#com.peacecorps.malaria.activities.MainActivity
+ADDED from AndroidManifest.xml:54:9
+	android:label
+		ADDED from AndroidManifest.xml:56:13
+	android:name
+		ADDED from AndroidManifest.xml:55:13
+activity#com.peacecorps.malaria.activities.AlertCallerFragmentActivity
+ADDED from AndroidManifest.xml:58:9
+	android:label
+		ADDED from AndroidManifest.xml:60:13
+	android:name
+		ADDED from AndroidManifest.xml:59:13
+intent-filter#com.example.viewpagertest.demoActivity
+ADDED from AndroidManifest.xml:61:13
+action#com.example.viewpagertest.demoActivity
+ADDED from AndroidManifest.xml:62:17
+	android:name
+		ADDED from AndroidManifest.xml:62:25
+activity#com.peacecorps.malaria.activities.InfoHubFragmentActivity
+ADDED from AndroidManifest.xml:66:9
+	android:name
+		ADDED from AndroidManifest.xml:66:19
+activity#com.peacecorps.malaria.activities.PeaceCorpsPolicyFragmentActivity
+ADDED from AndroidManifest.xml:67:9
+	android:name
+		ADDED from AndroidManifest.xml:67:19
+activity#com.peacecorps.malaria.activities.PercentSideEffectsFragmentActivity
+ADDED from AndroidManifest.xml:68:9
+	android:name
+		ADDED from AndroidManifest.xml:68:19
+activity#com.peacecorps.malaria.activities.SideEffectsPCVFragmentActivity
+ADDED from AndroidManifest.xml:69:9
+	android:name
+		ADDED from AndroidManifest.xml:69:19
+activity#com.peacecorps.malaria.activities.SideEffectsNPCVFragmentActivity
+ADDED from AndroidManifest.xml:70:9
+	android:name
+		ADDED from AndroidManifest.xml:70:19
+activity#com.peacecorps.malaria.activities.VolunteerAdherenceFragmentActivity
+ADDED from AndroidManifest.xml:71:9
+	android:name
+		ADDED from AndroidManifest.xml:71:19
+activity#com.peacecorps.malaria.activities.EffectivenessFragmentActivity
+ADDED from AndroidManifest.xml:72:9
+	android:name
+		ADDED from AndroidManifest.xml:72:19
+activity#com.peacecorps.malaria.fragment.ThirdAnalyticFragment
+ADDED from AndroidManifest.xml:73:9
+	android:name
+		ADDED from AndroidManifest.xml:73:19
+activity#com.peacecorps.malaria.activities.DayFragmentActivity
+ADDED from AndroidManifest.xml:74:9
+	android:name
+		ADDED from AndroidManifest.xml:74:19
+activity#com.peacecorps.malaria.activities.BadgeRoom
+ADDED from AndroidManifest.xml:75:9
+	android:name
+		ADDED from AndroidManifest.xml:75:19
+activity#com.peacecorps.malaria.activities.MythFactGame
+ADDED from AndroidManifest.xml:76:9
+	android:name
+		ADDED from AndroidManifest.xml:76:19
+activity#com.peacecorps.malaria.activities.RapidFireGame
+ADDED from AndroidManifest.xml:77:9
+	android:name
+		ADDED from AndroidManifest.xml:77:19
+activity#com.peacecorps.malaria.activities.MedicineStore
+ADDED from AndroidManifest.xml:78:9
+	android:name
+		ADDED from AndroidManifest.xml:78:19
+activity#com.peacecorps.malaria.activities.NewHomeActivity
+ADDED from AndroidManifest.xml:79:9
+	android:name
+		ADDED from AndroidManifest.xml:79:19
+activity#com.peacecorps.malaria.activities.UserProfile
+ADDED from AndroidManifest.xml:80:9
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:81:13
+	android:name
+		ADDED from AndroidManifest.xml:80:19
+activity#com.peacecorps.malaria.activities.TripIndicatorFragmentActivity
+ADDED from AndroidManifest.xml:82:9
+	android:launchMode
+		ADDED from AndroidManifest.xml:83:19
+	android:name
+		ADDED from AndroidManifest.xml:82:19
+activity#com.peacecorps.malaria.activities.TripIndicatorDialogActivity
+ADDED from AndroidManifest.xml:86:9
+	android:theme
+		ADDED from AndroidManifest.xml:87:13
+	android:name
+		ADDED from AndroidManifest.xml:86:19
+activity#com.peacecorps.malaria.activities.RemainderToneActivity
+ADDED from AndroidManifest.xml:88:9
+	android:theme
+		ADDED from AndroidManifest.xml:89:13
+	android:name
+		ADDED from AndroidManifest.xml:88:19
+activity#com.peacecorps.malaria.activities.TripIndicatorPackingActivity
+ADDED from AndroidManifest.xml:90:9
+	android:theme
+		ADDED from AndroidManifest.xml:91:13
+	android:name
+		ADDED from AndroidManifest.xml:90:19
+activity#com.peacecorps.malaria.activities.TripAlarmActivity
+ADDED from AndroidManifest.xml:93:9
+	android:launchMode
+		ADDED from AndroidManifest.xml:94:13
+	android:theme
+		ADDED from AndroidManifest.xml:93:64
+	android:name
+		ADDED from AndroidManifest.xml:93:19
+service#com.peacecorps.malaria.services.TripAlarmService
+ADDED from AndroidManifest.xml:96:9
+	android:enabled
+		ADDED from AndroidManifest.xml:98:13
+	android:name
+		ADDED from AndroidManifest.xml:97:13
+receiver#com.peacecorps.malaria.reciever.TripAlarmReceiver
+ADDED from AndroidManifest.xml:99:9
+	android:name
+		ADDED from AndroidManifest.xml:99:19
+receiver#com.peacecorps.malaria.widget.TripAppWidgetProvider
+ADDED from AndroidManifest.xml:101:9
+	android:name
+		ADDED from AndroidManifest.xml:101:19
+intent-filter#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from AndroidManifest.xml:102:13
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from AndroidManifest.xml:103:17
+	android:name
+		ADDED from AndroidManifest.xml:103:25
+meta-data#android.appwidget.provider
+ADDED from AndroidManifest.xml:105:13
+	android:resource
+		ADDED from AndroidManifest.xml:106:17
+	android:name
+		ADDED from AndroidManifest.xml:105:24
+receiver#com.peacecorps.malaria.widget.MedicineStatusWidgetProvider
+ADDED from AndroidManifest.xml:108:9
+	android:name
+		ADDED from AndroidManifest.xml:108:19

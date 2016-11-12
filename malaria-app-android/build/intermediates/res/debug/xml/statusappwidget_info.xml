@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="50dp"
+    android:minHeight="50dp"
+    android:updatePeriodMillis="1000"
+    android:previewImage="@drawable/drug_normal"
+    android:initialLayout="@layout/statusappwidget"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen">
+</appwidget-provider><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/xml/statusappwidget_info.xml -->

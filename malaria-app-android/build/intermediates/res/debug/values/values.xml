@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string-array name="drug_array">
+        <item>Malarone</item>
+        <item>Doxycycline</item>
+        <item>Mefloquine</item>
+    </string-array>
+    <string-array name="item_array">
+        <item>Medication</item>
+        <item>Ointment</item>
+        <item>Mosquito Net</item>
+    </string-array>
+    <string-array name="location_array">
+        <item>Benin</item>
+        <item>Botswana</item>
+        <item>Burkina Faso</item>
+        <item>Cameroon</item>
+        <item>Ethiopia</item>
+        <item>Ghana</item>
+        <item>Guinea</item>
+        <item>Kenya</item>
+        <item>Liberia</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Mozambique</item>
+        <item>Namibia</item>
+        <item>Rwanda</item>
+        <item>Sierra Leone</item>
+        <item>Senegal</item>
+        <item>South Africa</item>
+        <item>Swaziland</item>
+        <item>Tanzania</item>
+        <item>The Gambia</item>
+        <item>Togo</item>
+        <item>Uganda</item>
+        <item>Zambia</item>
+    </string-array>
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="user_medicine_settings_activity_drug_array">
+        <item>Malarone (Daily)</item>
+        <item>Doxycycline (Daily)</item>
+        <item>Mefloquine (Weekly)</item>
+    </string-array>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <attr format="boolean" name="centered"/>
+    <attr format="color" name="selectedColor"/>
+    <attr format="dimension" name="strokeWidth"/>
+    <attr format="color" name="unselectedColor"/>
+    <bool name="default_circle_indicator_centered">true</bool>
+    <bool name="default_circle_indicator_snap">false</bool>
+    <bool name="default_line_indicator_centered">true</bool>
+    <bool name="default_title_indicator_selected_bold">true</bool>
+    <bool name="default_underline_indicator_fades">true</bool>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="black">#000000</color>
+    <color name="blue">#0000FF</color>
+    <color name="cream">#fffff7bf</color>
+    <color name="dark">#000015</color>
+    <color name="dark_red">#cc2303</color>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>
+    <color name="default_circle_indicator_page_color">#00000000</color>
+    <color name="default_circle_indicator_stroke_color">#FFDDDDDD</color>
+    <color name="default_line_indicator_selected_color">#FF33B5E5</color>
+    <color name="default_line_indicator_unselected_color">#FFBBBBBB</color>
+    <color name="default_title_indicator_footer_color">#FF33B5E5</color>
+    <color name="default_title_indicator_selected_color">#FFFFFFFF</color>
+    <color name="default_title_indicator_text_color">#BBFFFFFF</color>
+    <color name="default_underline_indicator_selected_color">#FF33B5E5</color>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="golden_brown">#664a3a</color>
+    <color name="gray">#808080</color>
+    <color name="green">#ff136612</color>
+    <color name="journal_entry_listitem_text_color">#003366</color>
+    <color name="light_blue">#7700eeec</color>
+    <color name="light_green">#ff8fc24e</color>
+    <color name="light_red">#da6767</color>
+    <color name="lighter_green">#B2FF59</color>
+    <color name="lightest_brown">#ffe0cf79</color>
+    <color name="lightest_red">#EF9A9A</color>
+    <color name="lightgray">#e7e7e7</color>
+    <color name="lightgray02">#bfbfbf</color>
+    <color name="navy">#6699FF</color>
+    <color name="note_text_disabled">#333333</color>
+    <color name="reaction_color_selected">#003366</color>
+    <color name="red">#e33d1b</color>
+    <color name="sky">#0099CC</color>
+    <color name="static_text_color">#003366</color>
+    <color name="symptom_color_selected">#003366</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent_cream">#89fffefa</color>
+    <color name="user_medicine_first_text_color">#592b15</color>
+    <color name="user_medicine_second_text_color">#664a3a</color>
+    <color name="view_pager_indicator_text_color">#2FB3E3</color>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <color name="vpi__background_holo_dark">#ff000000</color>
+    <color name="vpi__background_holo_light">#fff3f3f3</color>
+    <color name="vpi__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+    <color name="vpi__bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+    <color name="vpi__bright_foreground_holo_dark">@color/vpi__background_holo_light</color>
+    <color name="vpi__bright_foreground_holo_light">@color/vpi__background_holo_dark</color>
+    <color name="vpi__bright_foreground_inverse_holo_dark">@color/vpi__bright_foreground_holo_light</color>
+    <color name="vpi__bright_foreground_inverse_holo_light">@color/vpi__bright_foreground_holo_dark</color>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <color name="white">#FFF</color>
+    <declare-styleable name="CirclePageIndicator"><attr name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="android:orientation"/><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr name="strokeWidth"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="LinePageIndicator"><attr name="centered"/><attr name="unselectedColor"/><attr name="selectedColor"/><attr format="dimension" name="lineWidth"/><attr name="strokeWidth"/><attr format="dimension" name="gapWidth"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="TitlePageIndicator"><attr format="dimension" name="clipPadding"/><attr format="color" name="footerColor"/><attr format="dimension" name="footerLineHeight"/><attr name="footerIndicatorStyle"><enum name="none" value="0"/><enum name="triangle" value="1"/><enum name="underline" value="2"/></attr><attr format="dimension" name="footerIndicatorHeight"/><attr format="dimension" name="footerIndicatorUnderlinePadding"/><attr format="dimension" name="footerPadding"/><attr name="linePosition"><enum name="bottom" value="0"/><enum name="top" value="1"/></attr><attr name="selectedColor"/><attr format="boolean" name="selectedBold"/><attr name="android:textColor"/><attr name="android:textSize"/><attr format="dimension" name="titlePadding"/><attr format="dimension" name="topPadding"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="UnderlinePageIndicator"><attr format="boolean" name="fades"/><attr format="integer" name="fadeDelay"/><attr format="integer" name="fadeLength"/><attr name="selectedColor"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="ViewPagerIndicator"><attr format="reference" name="vpiCirclePageIndicatorStyle"/><attr format="reference" name="vpiIconPageIndicatorStyle"/><attr format="reference" name="vpiLinePageIndicatorStyle"/><attr format="reference" name="vpiTitlePageIndicatorStyle"/><attr format="reference" name="vpiTabPageIndicatorStyle"/><attr format="reference" name="vpiUnderlinePageIndicatorStyle"/></declare-styleable>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="default_circle_indicator_radius">3dp</dimen>
+    <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
+    <dimen name="default_line_indicator_gap_width">4dp</dimen>
+    <dimen name="default_line_indicator_line_width">12dp</dimen>
+    <dimen name="default_line_indicator_stroke_width">1dp</dimen>
+    <dimen name="default_title_indicator_clip_padding">4dp</dimen>
+    <dimen name="default_title_indicator_footer_indicator_height">4dp</dimen>
+    <dimen name="default_title_indicator_footer_indicator_underline_padding">20dp</dimen>
+    <dimen name="default_title_indicator_footer_line_height">2dp</dimen>
+    <dimen name="default_title_indicator_footer_padding">7dp</dimen>
+    <dimen name="default_title_indicator_text_size">15dp</dimen>
+    <dimen name="default_title_indicator_title_padding">5dp</dimen>
+    <dimen name="default_title_indicator_top_padding">7dp</dimen>
+    <integer name="default_circle_indicator_orientation">0</integer>
+    <integer name="default_title_indicator_footer_indicator_style">2</integer>
+    <integer name="default_title_indicator_line_position">0</integer>
+    <integer name="default_underline_indicator_fade_delay">300</integer>
+    <integer name="default_underline_indicator_fade_length">400</integer>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="alarm_auto_start_boot_completed_intent_check">android.intent.action.BOOT_COMPLETED</string>
+    <string name="alert_dialog_message">Have you taken your drug today ?</string>
+    <string name="alert_dialog_title">Malaria Medication Reminder</string>
+    <string name="app_homescreen_name">PC Malaria Home</string>
+    <string name="app_name">Malaria Prevention</string>
+    <string name="cash_label">Cash to Bring:</string>
+    <string name="doxy_description">
+        -Tetracycline antibiotic that helps to fight bacteria in the body\n
+        -Take the medicine everyday at the same time with food\n
+        -Start using 1-2 days before entering the area\n
+        -Continue using through out the stay,and at least 28 days after leave\n
+        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
+        -Consult your doctor if you have liver or kidney disease, or are taking supplements and other medicines\n
+        -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
+        -Visit http://www.drugs.com/doxycycline.html for more information\n
+    </string>
+    <string name="dump_test">Fetching...</string>
+    <string name="effectiveness_against_malaria">Effectiveness Against Malaria</string>
+    <string name="first_analytic_screen_doses_missing_text">Doses in a Row</string>
+    <string name="first_analytic_screen_medicine_adherence_to_medicine_text">Adherence to Medicine</string>
+    <string name="first_analytic_screen_medicine_last_taken_text">Medicine Last Taken</string>
+    <string name="info_hub_title_label">Info Hub</string>
+    <string name="items_spinner_label">Pick Items</string>
+    <string name="location_label">Location:</string>
+    <string name="location_spinner_label">Choose Location</string>
+    <string name="mal_description">
+        -Interferes with growth of parasites in red blood cells\n
+        -Take the medicine everyday at the same time with food\n
+        -Start using 1-2 days before entering the area\n
+        -Continue using through out the stay,and at least 7 days after leave\n
+        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
+        -Consult your doctor if you have liver or kidney disease, or malaria complications\n
+        -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
+        -Visit http://www.drugs.com/malarone.html for more information\n
+    </string>
+    <string name="medication_label">Medication:</string>
+    <string name="medication_spinner_label">Choose Drug</string>
+    <string name="mef_description">
+        -Antimalarial agent that kills sensitive malaria parasites\n
+        -Take the medicine once a week after your main meal (NOT ON AN EMPTY STOMACH)\n
+        -Start using 1 week before entering the area\n
+        -Continue using through out the stay,and at least 4 weeks after leave\n
+        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
+        -Consult your doctor if you have allergies, mental illnesses, seizures, or are taking similar medicines\n
+        -Some side effects of drug: stomach pain, headache, muscle ache, tiredness, vomiting\n
+        -Visit http://www.drugs.com/cdi/mefloquine.html for more information\n
+    </string>
+    <string name="non_PCV_reported_side_effects">Non-PCV Reported Side Effects</string>
+    <string name="pack_label">Packing List:</string>
+    <string name="peace_corps_policy">Peace Corps Policy</string>
+    <string name="percentage_of_side_effects">Percentage of Side Effects</string>
+    <string name="plan_my_trip_label">Plan My Trip</string>
+    <string name="remind_label">Remind Me On:</string>
+    <string name="second_analytic_screen_title">SECOND ANALYTIC SCREEN</string>
+    <string name="side_effects_reported_by_PCVs">Side Effects Reported by PCVs</string>
+    <string name="trip_button_label">Generate</string>
+    <string name="trip_select_string">Add Packing Items</string>
+    <string name="user_medicine_settings_activity_done_button">DONE</string>
+    <string name="user_medicine_settings_activity_drug_take_label">I Take</string>
+    <string name="user_medicine_settings_activity_if_forget_label">If I forget</string>
+    <string name="user_medicine_settings_activity_pc_logo">Peace Corps Logo</string>
+    <string name="user_medicine_settings_activity_setup_label">Set Up</string>
+    <string name="user_medicine_settings_activity_time_pick_button">Pick Time</string>
+    <string name="user_medicine_settings_activity_time_pick_label">Remind me at:</string>
+    <string name="user_medicine_settings_fragment_activity_title">PC Malaria Prevention</string>
+    <string name="volunteer_adherence_rates">Volunteer Adherence Rates</string>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+
+
+        -->
+    </style>
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:datePickerStyle">@style/MyDatePicker</item>
+        <item name="android:textColorPrimary">@color/golden_brown</item>
+
+
+    </style>
+    <style name="AppTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.StatusBar.Title">
+        <item name="android:textColor">@color/cream</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="AppTheme.ButtonBar.AlertDialog" parent="@android:style/Holo.ButtonBar.AlertDialog">
+
+        <item name="android:background">@color/light_red</item>
+
+    </style>
+    <style name="AppTheme.ButtonBar.DatePicker" parent="@android:style/Holo.ButtonBar.AlertDialog">
+        <item name="android:background">@color/light_red</item>
+    </style>
+    <style name="AppTheme.DatePicker.BackgroundStyle" parent="android:style/Widget.DatePicker">
+        <item name="android:background">@color/cream</item>
+    </style>
+    <style name="AppTheme.DatePicker.Button.Borderless" parent="@android:style/Widget.Holo.Button.Borderless">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.DatePicker.EditTextStyle" parent="android:style/Widget.EditText">
+        <item name="android:textColor">@color/golden_brown</item>
+    </style>
+    <style name="AppTheme.TimePicker.ADialogStyle" parent="android:style/Theme.Holo.Dialog">
+        <item name="android:background">@color/cream</item>
+        <item name="android:windowBackground">@color/cream</item>
+        <item name="android:windowFrame">@color/cream</item>
+
+    </style>
+    <style name="AppTheme.TimePicker.DialogPrefStyle" parent="android:style/Theme.Holo.Dialog">
+        <item name="android:background">@color/cream</item>
+
+    </style>
+    <style name="AppTheme.TimePicker.EditTextStyle" parent="android:style/Widget.EditText">
+        <item name="android:textColor">@color/golden_brown</item>
+
+    </style>
+    <style name="AppTheme.TimePicker.PopUpStyle" parent="android:style/Widget.PopupWindow">
+        <item name="android:background">@color/cream</item>
+
+    </style>
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/golden_brown</item>
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleTextStyle</item>
+    </style>
+    <style name="MyAlertDialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+        <item name="android:borderlessButtonStyle">@style/Widget.AppTheme.Button.Borderless</item>
+        <item name="android:buttonBarStyle">@style/AppTheme.ButtonBar.AlertDialog</item>
+
+    </style>
+    <style name="MyDatePicker" parent="android:style/Theme.Holo.Light.Dialog.NoActionBar.MinWidth">
+        <item name="android:divider">@color/golden_brown</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:editTextStyle">@style/AppTheme.DatePicker.EditTextStyle</item>
+        <item name="android:datePickerStyle">@style/AppTheme.DatePicker.BackgroundStyle</item>
+        <item name="android:borderlessButtonStyle">@style/AppTheme.DatePicker.Button.Borderless</item>
+        <item name="android:buttonBarStyle">@style/AppTheme.ButtonBar.DatePicker</item>
+    </style>
+    <style name="MyTimePicker" parent="android:style/Theme.Holo.Light.Dialog">
+        <item name="android:divider">@color/golden_brown</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:editTextStyle">@style/AppTheme.TimePicker.EditTextStyle</item>
+        <item name="android:borderlessButtonStyle">@style/AppTheme.DatePicker.Button.Borderless</item>
+        <item name="android:buttonBarStyle">@style/AppTheme.ButtonBar.DatePicker</item>
+    </style>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <style name="TextAppearance.TabPageIndicator" parent="Widget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/vpi__dark_theme</item>
+    </style>
+    <style name="Theme.PageIndicatorDefaults" parent="android:Theme">
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+    </style>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="UserMedicineSettingsCommonTextAppearance">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="UserProfileCommonTextAppearance">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <style name="Widget">
+    </style>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="Widget.AppTheme.Button.Borderless" parent="@android:style/Widget.Holo.Button.Borderless">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <style name="Widget.IconPageIndicator" parent="Widget">
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+    </style>
+    <style name="Widget.TabPageIndicator" parent="Widget">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingLeft">22dip</item>
+        <item name="android:paddingRight">22dip</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles_calendar_events.xml -->
+    <eat-comment/>
+    <style name="calendar_event_style" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">#FF6600</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+</resources>

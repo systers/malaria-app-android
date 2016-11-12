@@ -1,0 +1,114 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:layout_gravity="center"
+
+    >
+
+
+    <android.support.v4.view.ViewPager
+
+        android:id="@+id/vPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+    <com.viewpagerindicator.CirclePageIndicator
+
+        android:id="@+id/vIndicator"
+        android:padding="10dip"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="#2FB3E3"
+
+        app:footerLineHeight="1dp"
+        app:footerIndicatorHeight="3dp"
+        app:footerIndicatorStyle="underline"
+        app:selectedColor="#FFFFFF"
+        app:selectedBold="true"
+        />
+
+
+
+    <View
+        android:layout_height="0.5dp"
+        android:layout_width="200dp"
+        android:background="#000000"
+        android:layout_gravity="center_horizontal"
+
+        />
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="5dp"
+
+
+
+        >
+
+        <Button
+            android:id="@+id/homeButton"
+
+            android:background="@drawable/home_icon_normal"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:layout_marginRight="15dp"
+            android:scaleType="fitCenter"
+
+            />
+
+        <Button
+            android:background="@drawable/bus_icon_inactive_normal"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/tripButton"
+
+            />
+
+        <Button
+            android:background="@drawable/info_hub_inactive_normal"
+            android:id="@+id/infoButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="15dp"
+            android:scaleType="fitCenter"
+            />
+        <Button
+            android:background="@drawable/cal_right_arrow_brown"
+            android:id="@+id/tempButton"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="15dp"
+            android:scaleType="fitCenter"
+            />
+        <Button
+            android:background="@drawable/user"
+            android:id="@+id/userProfile"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitCenter"
+            />
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/activity_main.xml -->

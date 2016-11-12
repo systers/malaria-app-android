@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/classes-ae7b36fd6ad7dca869c51e612dd7536000d035a6.jar" />
+    </item>
+    <item
+        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/libs/GraphView-3.1.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7ffc41c72432299f41689c8f707d0d89254d59d5">
+        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/GraphView-3.1.2-2ced82c0bb10f2af4aa68fd83c64cf2931d64c1d.jar" />
+    </item>
+    <item
+        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="911b4f829092b2a531c1a22df6ff848106c95912">
+        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/classes-46fa9ea9c03f72e5e3d307554a9915cac38cf835.jar" />
+    </item>
+    <item
+        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/libs/volleylib.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d8f5b9114ebe0f76de7fbf55e950540959ce4ff8">
+        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/volleylib-05b38815b9597b66b8c7142f428f856343684edf.jar" />
+    </item>
+    <item
+        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-a6fa41f129885fbf5c6971f6088cdfa13250e068.jar" />
+    </item>
+    <item
+        jar="/home/yatna/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-75976459b3302ce27549e932c5a85b9b7328c76f.jar" />
+    </item>
+
+</items>

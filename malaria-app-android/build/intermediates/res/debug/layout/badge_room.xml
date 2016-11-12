@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="7sp"
+    android:weightSum="3.0">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+        <Button
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:id="@+id/shareButton"
+            android:background="@drawable/share_icon"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Achievement Room"
+            android:textColor="@color/golden_brown"
+            android:textSize="22dp"
+            android:paddingRight="32dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/cat1_layout"
+        android:layout_weight="0.7"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:background="@drawable/achievement_button"
+        android:clickable="true">>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cat1_tv"
+            android:text="              Rookie \nTaken your first medicine"
+            android:textStyle="bold"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/cat2_layout"
+        android:layout_weight="0.7"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:background="@drawable/achievement_button"
+        android:clickable="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cat2_tv"
+            android:text="               Mr Know-It-All \nAnswered first question correctly"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/cat3_layout"
+        android:layout_weight="0.7"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:background="@drawable/achievement_button">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cat3_tv"
+            android:text="            Explorer \nPlanned your first trip"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+
+</LinearLayout><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/badge_room.xml -->

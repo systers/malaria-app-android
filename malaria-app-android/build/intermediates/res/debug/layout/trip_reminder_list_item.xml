@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:id="@+id/reminderListItem"
+    android:background="@color/cream"
+    android:textColor="@color/golden_brown"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textSize="15dp"
+    android:padding="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" /><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/trip_reminder_list_item.xml -->

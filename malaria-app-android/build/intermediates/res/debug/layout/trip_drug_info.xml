@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TableRow>
+        <Button
+            android:id="@+id/infoDrug"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/info_hub_normal"
+            android:focusable="false"/>
+
+        <TextView
+            android:id="@+id/nameDrug"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/golden_brown"
+            android:textSize="15dp"
+            android:padding="10dp"/>
+
+    </TableRow>
+</TableLayout>
+<!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/trip_drug_info.xml -->

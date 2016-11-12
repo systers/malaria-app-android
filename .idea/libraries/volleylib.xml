@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="volleylib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/malaria-app-android/libs/volleylib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

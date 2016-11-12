@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:id="@+id/dialogRemainderTone">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:id="@+id/heading_day_dialog_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/lightest_brown">
+
+            <TextView
+                android:id="@+id/dayDialogTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/golden_brown"
+                android:text="SET REMINDER TONE"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                >
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.96">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:id="@+id/tone_path"
+                android:hint="Specify file path"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/golden_brown"
+                android:textSize="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="10"
+                />
+
+            <Button
+                android:id="@+id/browse"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@drawable/graph_bg"
+                android:text="..."
+                android:layout_weight="1"
+                android:layout_margin="20dp" />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/dialogButtonOKReminder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="YES"
+                android:background="@drawable/info_hub_button"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:layout_columnSpan="8"
+                android:layout_marginLeft="20dp"
+                android:layout_alignTop="@+id/dialogButtonCancel"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/dialogButtonCancelReminder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="NO"
+                android:background="@drawable/info_hub_button"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/remainder_tone_dialog.xml -->
