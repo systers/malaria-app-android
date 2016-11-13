@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/dialog_background"
+    android:id="@+id/dialogReset">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/lightest_brown">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/golden_brown"
+                android:text="Add Medicine to Store"
+                android:textSize="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                >
+            </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:layout_weight="0.96">
+
+            <EditText
+                android:id="@+id/add_medicine_quantity"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:hint="Eg 7"
+                android:textColor="@color/golden_brown"
+                android:textColorHint="@color/lightgray02"
+                android:layout_margin="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+
+            <TextView
+                android:id="@+id/textReset"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/golden_brown"
+                android:text="Enter the doses of medicines you want to add in store."
+                android:layout_toRightOf="@+id/image"
+                android:layout_margin="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/add_medicine_dialog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:background="@drawable/info_hub_button"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:layout_columnSpan="8"
+                android:layout_marginLeft="20dp"
+                android:layout_alignTop="@+id/dialogButtonCancel"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/cancel_medicine_dialog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:background="@drawable/info_hub_button"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

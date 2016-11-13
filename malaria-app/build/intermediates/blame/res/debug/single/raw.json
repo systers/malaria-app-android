@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/raw/accept_button_sound.mp3",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/raw/accept_button_sound.mp3"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/raw/soundsmedication.mp3",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/raw/soundsmedication.mp3"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/raw/reject_button_sound.mp3",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/raw/reject_button_sound.mp3"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/color/vpi__dark_theme.xml",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/color/vpi__dark_theme.xml"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/color/vpi__light_theme.xml",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/color/vpi__light_theme.xml"
+    }
+]

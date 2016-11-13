@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/xml/statusappwidget_info.xml",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/xml/statusappwidget_info.xml"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/xml/appwidget_info.xml",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/xml/appwidget_info.xml"
+    }
+]

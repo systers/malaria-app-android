@@ -23,4 +23,4 @@
         android:background="@drawable/ic_edit_action"
         android:id="@+id/button_edit"
         android:layout_gravity="center_vertical" />
-</LinearLayout><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/appwidget.xml -->
+</LinearLayout><!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/layout/appwidget.xml -->

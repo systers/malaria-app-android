@@ -137,4 +137,4 @@
             android:textSize="14.0sp"
             android:onClick="exitGame"/>
     </LinearLayout>
-</LinearLayout><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/rapid_fire.xml -->
+</LinearLayout><!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/layout/rapid_fire.xml -->

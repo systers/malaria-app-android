@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/pc_logo.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-hdpi/pc_logo.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/trip_spinner_arr.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-hdpi/trip_spinner_arr.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/bg.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-hdpi/bg.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/vpi__tab_selected_focused_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-hdpi/vpi__tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/vpi__tab_unselected_pressed_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-hdpi/vpi__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/vpi__tab_selected_pressed_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-hdpi/vpi__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_volume_on.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-hdpi/ic_action_volume_on.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/vpi__tab_unselected_focused_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-hdpi/vpi__tab_unselected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/vpi__tab_unselected_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-hdpi/vpi__tab_unselected_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-hdpi-v4/vpi__tab_selected_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-hdpi/vpi__tab_selected_holo.9.png"
+    }
+]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string-array name="drug_array">
         <item>Malarone</item>
@@ -56,7 +56,7 @@
         <item>Doxycycline (Daily)</item>
         <item>Mefloquine (Weekly)</item>
     </string-array>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/values/values.xml -->
     <eat-comment/>
     <attr format="boolean" name="centered"/>
     <attr format="color" name="selectedColor"/>
@@ -67,14 +67,14 @@
     <bool name="default_line_indicator_centered">true</bool>
     <bool name="default_title_indicator_selected_bold">true</bool>
     <bool name="default_underline_indicator_fades">true</bool>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/color.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="black">#000000</color>
     <color name="blue">#0000FF</color>
     <color name="cream">#fffff7bf</color>
     <color name="dark">#000015</color>
     <color name="dark_red">#cc2303</color>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/values/values.xml -->
     <eat-comment/>
     <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>
     <color name="default_circle_indicator_page_color">#00000000</color>
@@ -85,7 +85,7 @@
     <color name="default_title_indicator_selected_color">#FFFFFFFF</color>
     <color name="default_title_indicator_text_color">#BBFFFFFF</color>
     <color name="default_underline_indicator_selected_color">#FF33B5E5</color>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/color.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="golden_brown">#664a3a</color>
     <color name="gray">#808080</color>
@@ -111,7 +111,7 @@
     <color name="user_medicine_first_text_color">#592b15</color>
     <color name="user_medicine_second_text_color">#664a3a</color>
     <color name="view_pager_indicator_text_color">#2FB3E3</color>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/values/values.xml -->
     <eat-comment/>
     <color name="vpi__background_holo_dark">#ff000000</color>
     <color name="vpi__background_holo_light">#fff3f3f3</color>
@@ -121,7 +121,7 @@
     <color name="vpi__bright_foreground_holo_light">@color/vpi__background_holo_dark</color>
     <color name="vpi__bright_foreground_inverse_holo_dark">@color/vpi__bright_foreground_holo_light</color>
     <color name="vpi__bright_foreground_inverse_holo_light">@color/vpi__bright_foreground_holo_dark</color>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/color.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="white">#FFF</color>
     <declare-styleable name="CirclePageIndicator"><attr name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="android:orientation"/><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr name="strokeWidth"/><attr name="android:background"/></declare-styleable>
@@ -129,11 +129,11 @@
     <declare-styleable name="TitlePageIndicator"><attr format="dimension" name="clipPadding"/><attr format="color" name="footerColor"/><attr format="dimension" name="footerLineHeight"/><attr name="footerIndicatorStyle"><enum name="none" value="0"/><enum name="triangle" value="1"/><enum name="underline" value="2"/></attr><attr format="dimension" name="footerIndicatorHeight"/><attr format="dimension" name="footerIndicatorUnderlinePadding"/><attr format="dimension" name="footerPadding"/><attr name="linePosition"><enum name="bottom" value="0"/><enum name="top" value="1"/></attr><attr name="selectedColor"/><attr format="boolean" name="selectedBold"/><attr name="android:textColor"/><attr name="android:textSize"/><attr format="dimension" name="titlePadding"/><attr format="dimension" name="topPadding"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="UnderlinePageIndicator"><attr format="boolean" name="fades"/><attr format="integer" name="fadeDelay"/><attr format="integer" name="fadeLength"/><attr name="selectedColor"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="ViewPagerIndicator"><attr format="reference" name="vpiCirclePageIndicatorStyle"/><attr format="reference" name="vpiIconPageIndicatorStyle"/><attr format="reference" name="vpiLinePageIndicatorStyle"/><attr format="reference" name="vpiTitlePageIndicatorStyle"/><attr format="reference" name="vpiTabPageIndicatorStyle"/><attr format="reference" name="vpiUnderlinePageIndicatorStyle"/></declare-styleable>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="default_circle_indicator_radius">3dp</dimen>
     <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
@@ -153,7 +153,7 @@
     <integer name="default_title_indicator_line_position">0</integer>
     <integer name="default_underline_indicator_fade_delay">300</integer>
     <integer name="default_underline_indicator_fade_length">400</integer>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="alarm_auto_start_boot_completed_intent_check">android.intent.action.BOOT_COMPLETED</string>
     <string name="alert_dialog_message">Have you taken your drug today ?</string>
@@ -221,7 +221,7 @@
     <string name="user_medicine_settings_activity_time_pick_label">Remind me at:</string>
     <string name="user_medicine_settings_fragment_activity_title">PC Malaria Prevention</string>
     <string name="volunteer_adherence_rates">Volunteer Adherence Rates</string>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
@@ -309,7 +309,7 @@
         <item name="android:borderlessButtonStyle">@style/AppTheme.DatePicker.Button.Borderless</item>
         <item name="android:buttonBarStyle">@style/AppTheme.ButtonBar.DatePicker</item>
     </style>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/values/values.xml -->
     <eat-comment/>
     <style name="TextAppearance.TabPageIndicator" parent="Widget">
         <item name="android:textStyle">bold</item>
@@ -319,7 +319,7 @@
         <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
         <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
     </style>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="UserMedicineSettingsCommonTextAppearance">
         <item name="android:layout_width">wrap_content</item>
@@ -333,16 +333,16 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">15sp</item>
     </style>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Widget">
     </style>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="Widget.AppTheme.Button.Borderless" parent="@android:style/Widget.Holo.Button.Borderless">
         <item name="android:textColor">@color/white</item>
     </style>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/values/values.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Widget.IconPageIndicator" parent="Widget">
         <item name="android:layout_marginLeft">6dp</item>
@@ -359,7 +359,7 @@
         <item name="android:textSize">12sp</item>
         <item name="android:maxLines">1</item>
     </style>
-    <!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/values/styles_calendar_events.xml -->
+    <!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values/styles_calendar_events.xml -->
     <eat-comment/>
     <style name="calendar_event_style" parent="@android:style/TextAppearance.Small">
         <item name="android:textColor">#FF6600</item>

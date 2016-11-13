@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/calendar_button_selector"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/calendar_day_gridcell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:background="@drawable/calendar_button_selector"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF"
+        android:drawablePadding="5dp">
+    </Button>
+
+    <TextView
+        android:id="@+id/num_events_per_day"
+        style="@style/calendar_event_style"
+        android:layout_width="10dip"
+        android:layout_height="10dip"
+        android:layout_gravity="right" >
+    </TextView>
+
+</RelativeLayout>

@@ -1,6 +1,8 @@
 -- Merging decision tree log ---
 manifest
 ADDED from AndroidManifest.xml:2:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
 	package
 		ADDED from AndroidManifest.xml:3:5
 	android:versionName
@@ -11,14 +13,14 @@ ADDED from AndroidManifest.xml:2:1
 		ADDED from AndroidManifest.xml:5:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-	xmlns:android
-		ADDED from AndroidManifest.xml:2:11
 	android:installLocation
 		ADDED from AndroidManifest.xml:4:5
 uses-sdk
 ADDED from AndroidManifest.xml:8:5
-MERGED from ma:ViewPagerIndicator:unspecified:7:5
-MERGED from com.android.support:support-v4:22.2.0:20:5
+MERGED from com.android.support:support-v4:23.1.1:20:5
+MERGED from com.github.JakeWharton:ViewPagerIndicator:2.4.1:7:5
+MERGED from com.android.support:support-v4:23.1.1:20:5
+MERGED from com.jjoe64:graphview:3.1.4:7:5
 	android:targetSdkVersion
 		ADDED from AndroidManifest.xml:10:9
 		INJECTED from AndroidManifest.xml:0:0
@@ -57,7 +59,9 @@ ADDED from AndroidManifest.xml:18:5
 		ADDED from AndroidManifest.xml:18:22
 application
 ADDED from AndroidManifest.xml:20:5
-MERGED from com.android.support:support-v4:22.2.0:22:5
+MERGED from com.android.support:support-v4:23.1.1:22:5
+MERGED from com.android.support:support-v4:23.1.1:22:5
+MERGED from com.jjoe64:graphview:3.1.4:11:5
 	android:label
 		ADDED from AndroidManifest.xml:24:9
 	android:allowBackup
@@ -192,10 +196,10 @@ ADDED from AndroidManifest.xml:80:9
 		ADDED from AndroidManifest.xml:80:19
 activity#com.peacecorps.malaria.activities.TripIndicatorFragmentActivity
 ADDED from AndroidManifest.xml:82:9
-	android:launchMode
-		ADDED from AndroidManifest.xml:83:19
 	android:name
 		ADDED from AndroidManifest.xml:82:19
+	android:launchMode
+		ADDED from AndroidManifest.xml:83:19
 activity#com.peacecorps.malaria.activities.TripIndicatorDialogActivity
 ADDED from AndroidManifest.xml:86:9
 	android:theme
@@ -216,12 +220,12 @@ ADDED from AndroidManifest.xml:90:9
 		ADDED from AndroidManifest.xml:90:19
 activity#com.peacecorps.malaria.activities.TripAlarmActivity
 ADDED from AndroidManifest.xml:93:9
-	android:launchMode
-		ADDED from AndroidManifest.xml:94:13
 	android:theme
 		ADDED from AndroidManifest.xml:93:64
 	android:name
 		ADDED from AndroidManifest.xml:93:19
+	android:launchMode
+		ADDED from AndroidManifest.xml:94:13
 service#com.peacecorps.malaria.services.TripAlarmService
 ADDED from AndroidManifest.xml:96:9
 	android:enabled

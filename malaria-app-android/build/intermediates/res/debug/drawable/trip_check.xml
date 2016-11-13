@@ -4,4 +4,4 @@
     <item android:state_checked="true" android:drawable="@drawable/checked" />
     <item android:state_checked="false" android:drawable="@drawable/unchecked" />
 
-</selector><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/drawable/trip_check.xml -->
+</selector><!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable/trip_check.xml -->

@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jar="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/classes-ae7b36fd6ad7dca869c51e612dd7536000d035a6.jar" />
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/pre-dexed/debug/classes-06f2d2b96ab97bb091c3f9e4b307c950dd037b8d.jar" />
     </item>
     <item
-        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/libs/GraphView-3.1.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="7ffc41c72432299f41689c8f707d0d89254d59d5">
-        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/GraphView-3.1.2-2ced82c0bb10f2af4aa68fd83c64cf2931d64c1d.jar" />
-    </item>
-    <item
-        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="911b4f829092b2a531c1a22df6ff848106c95912">
-        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/classes-46fa9ea9c03f72e5e3d307554a9915cac38cf835.jar" />
-    </item>
-    <item
-        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/libs/volleylib.jar"
+        jar="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/libs/volleylib.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="d8f5b9114ebe0f76de7fbf55e950540959ce4ff8">
-        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/volleylib-05b38815b9597b66b8c7142f428f856343684edf.jar" />
+        <dex dex="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/pre-dexed/debug/volleylib-ad2250b454fd33b6b1836f872da621c1e0b41f60.jar" />
     </item>
     <item
-        jar="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/Users/nkiboi/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-a6fa41f129885fbf5c6971f6088cdfa13250e068.jar" />
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-be7baa48cdeb0a66ed571c84860e7052770420c9.jar" />
     </item>
     <item
-        jar="/home/yatna/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-75976459b3302ce27549e932c5a85b9b7328c76f.jar" />
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-9e7fb8bd62de6d2f8cccd8497ba795b94947cc0b.jar" />
+    </item>
+    <item
+        jar="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.jjoe64/graphview/3.1.4/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5ae526f646cab07cb2f513854798bf98989e9c47">
+        <dex dex="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/pre-dexed/debug/classes-811c3818a6a02dc1fbf94e1cd217acc5b958d917.jar" />
+    </item>
+    <item
+        jar="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="14889e022db94047ceadff1cf5e7984139a4eb8e">
+        <dex dex="/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/pre-dexed/debug/classes-056891b19fa5937bf26c8ad7d345063de4b3e3bb.jar" />
     </item>
 
 </items>

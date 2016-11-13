@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_background"
+    tools:context=".activities.TripIndicatorFragmentActivity"
+    android:id="@+id/relativeLayout1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trip Checklist Reminder"
+            android:textColor="@color/golden_brown"
+            android:textSize="22dp"
+            android:gravity="center"
+            android:background="@color/lightest_brown"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tripRemindingItems"
+            android:textColor="@color/golden_brown"
+            android:textSize="20sp"
+            android:text="hi"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/relativeLayout"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/info_hub_button"
+            android:text="Clear"
+            android:id="@+id/reminderOK"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/info_hub_button"
+            android:text="Snooze"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/reminderCancel"
+            android:textColor="@color/white"
+            android:padding="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="241dp"
+        android:headerDividersEnabled="true"
+        android:divider="#ff988455"
+        android:dividerHeight="1dp"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_below="@+id/linearLayout2" />
+
+</RelativeLayout>

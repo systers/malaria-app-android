@@ -32,4 +32,4 @@
     <item android:state_focused="true" android:state_selected="false" android:state_pressed="true" android:drawable="@drawable/vpi__tab_unselected_pressed_holo" />
     <item android:state_focused="true" android:state_selected="true"  android:state_pressed="true" android:drawable="@drawable/vpi__tab_selected_pressed_holo" />
 </selector>
-<!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/ViewPagerIndicator/src/main/res/drawable/vpi__tab_indicator.xml --><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/drawable/vpi__tab_indicator.xml -->
+<!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/drawable/vpi__tab_indicator.xml -->

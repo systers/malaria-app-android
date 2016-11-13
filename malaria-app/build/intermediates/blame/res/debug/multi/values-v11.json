@@ -1,0 +1,28 @@
+[
+    {
+        "outputFile": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/values-v11/values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 4,
+                    "endColumn": 12,
+                    "endOffset": 153
+                },
+                "from": {
+                    "file": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/values-v11/styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 177,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 276
+                    }
+                }
+            }
+        ]
+    }
+]

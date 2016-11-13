@@ -7,4 +7,4 @@
     android:initialLayout="@layout/statusappwidget"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen">
-</appwidget-provider><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/xml/statusappwidget_info.xml -->
+</appwidget-provider><!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/xml/statusappwidget_info.xml -->

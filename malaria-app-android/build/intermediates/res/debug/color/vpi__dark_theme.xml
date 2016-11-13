@@ -22,4 +22,4 @@
     <!--item android:state_activated="true" android:color="@color/vpi__bright_foreground_holo_dark"/-->
     <item android:color="@color/vpi__bright_foreground_holo_dark"/> <!-- not selected -->
 </selector>
-<!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/ViewPagerIndicator/src/main/res/color/vpi__dark_theme.xml --><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/build/intermediates/exploded-aar/ma/ViewPagerIndicator/unspecified/res/color/vpi__dark_theme.xml -->
+<!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.github.JakeWharton/ViewPagerIndicator/2.4.1/res/color/vpi__dark_theme.xml -->

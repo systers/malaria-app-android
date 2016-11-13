@@ -82,4 +82,4 @@
         android:layout_above="@+id/relativeLayout"
         android:layout_below="@+id/linearLayout2" />
 
-</RelativeLayout><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/trip_alarm_layout.xml -->
+</RelativeLayout><!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/layout/trip_alarm_layout.xml -->

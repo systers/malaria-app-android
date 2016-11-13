@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/background"
+              android:orientation="vertical"
+              android:padding="2dp" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:padding="2dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/warningView"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:visibility="invisible">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/warning"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:textColor="@color/red"
+                        android:paddingBottom="3dp"
+                        android:gravity="bottom"
+                        android:textSize="10sp"
+                        android:text="You may be running out of medicines soon! "/>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/fragment_home_screen_set_tone_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="5dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/ic_action_volume_on"
+                    android:scaleType="fitCenter" />
+
+                <Button
+                    android:id="@+id/fragment_home_screen_settings_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="5dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/settings_normal"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fragment_home_screen_current_day_of_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fragment_home_screen_current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginRight="30dp"
+                android:scaleType="fitCenter"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="143dp"
+                android:layout_height="143dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/drug_normal"
+                android:scaleType="fitCenter" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:id="@+id/fragment_home_screen__reject_medication_button"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginRight="20dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/reject_medi_normal" />
+
+                <Button
+                    android:id="@+id/fragment_home_screen_accept_medication_button"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="20dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/accept_medi_normal"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

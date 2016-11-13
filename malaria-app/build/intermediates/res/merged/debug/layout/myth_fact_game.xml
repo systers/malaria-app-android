@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3"
+    android:background="@drawable/background"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:gravity="center_vertical">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:id="@+id/exitBtn"
+                android:layout_gravity="right"
+                android:layout_weight="0.4"
+                android:background="@drawable/info_hub_button"
+                android:textColor="@color/white"
+                android:text="Exit"
+                android:onClick="exitGame"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/userCoins"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_weight="1.2"
+                android:text="6"
+                android:gravity="center_horizontal"
+                android:textColor="@color/golden_brown"/>
+
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/nextBtn"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/info_hub_button"
+                    android:textColor="@color/white"
+                    android:text="Next"
+                    android:onClick="nextClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/question"
+                android:textSize="20sp"
+                android:text="Question Here"
+                android:background="@drawable/achievement_button"
+                android:textColor="@color/golden_brown"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:gravity="bottom">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"></LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/chest"
+            android:gravity="center"
+            android:layout_weight="0.8"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:background="@drawable/chest" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/trash"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:layout_weight="1"
+            android:background="@drawable/trash"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -9,4 +9,4 @@
         android:layout_height="60dp"
         android:id="@+id/medicationstatusdisplay"
         android:clickable="true"/>
-</LinearLayout><!-- From: file:/home/yatna/AndroidStudioProjects/send_ankita/ma/malaria-app-android/src/main/res/layout/statusappwidget.xml -->
+</LinearLayout><!-- From: file:/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/layout/statusappwidget.xml -->
