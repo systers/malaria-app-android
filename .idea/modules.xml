@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/malaria-app-android/malaria-app-android.iml" filepath="$PROJECT_DIR$/malaria-app-android/malaria-app-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/malaria-app-android/malaria-app-android-malaria-app-android.iml" filepath="$PROJECT_DIR$/malaria-app-android/malaria-app-android-malaria-app-android.iml" />
     </modules>
