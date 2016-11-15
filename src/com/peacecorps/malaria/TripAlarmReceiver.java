@@ -20,7 +20,7 @@ import android.util.Log;
  */
 
 public class TripAlarmReceiver extends WakefulBroadcastReceiver {
-
+     public static Ringtone ringtone;
     @Override
     public void onReceive(final Context context, Intent intent) {
         //this will update the UI with message
@@ -37,9 +37,9 @@ public class TripAlarmReceiver extends WakefulBroadcastReceiver {
         //raise alarm in loop continuously then use MediaPlayer and setLooping(true)
         Uri alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         if (alarmUri == null) {
-            alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
         }
-        Ringtone ringtone = RingtoneManager.getRingtone(context, alarmUri);
+         ringtone = RingtoneManager.getRingtone(context, alarmUri);
         ringtone.play();
 
         //this will send a notification message
