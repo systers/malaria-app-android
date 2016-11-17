@@ -330,6 +330,11 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
 
+            	if(departure_formattedate == null || arrival_formattedate == null){
+            		Toast.makeText(getApplicationContext(), "Set Departure Date and Arrival Date first!", Toast.LENGTH_LONG).show();
+            	}
+            	
+            	else{
                 Intent intent = new Intent(getApplication(), TripIndicatorPackingActivity.class);
 
                 Log.d(TAGTIFA,departure_formattedate+"  "+arrival_formattedate);
@@ -341,6 +346,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 startActivity(intent);
 
                 packingSelect.setText(TripIndicatorPackingActivity.tripDrugName);
+                }
             }
         });
 
