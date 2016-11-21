@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:background="@drawable/background"
+              android:orientation="vertical"
+              android:padding="2dp" >
+
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+         <Button
+             android:id="@+id/fragment_first_screen_settings_button"
+             android:layout_width="24dp"
+             android:layout_height="24dp"
+             android:layout_gravity="end"
+             android:layout_margin="5dp"
+             android:adjustViewBounds="true"
+             android:background="@drawable/settings_normal"
+             android:scaleType="fitCenter" />
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="left"
+             android:orientation="horizontal"
+             android:padding="5dp" >
+
+             <ImageView
+                 android:layout_width="70dp"
+                 android:layout_height="60dp"
+                 android:adjustViewBounds="true"
+                 android:background="@drawable/medication_last_normal"
+                 android:scaleType="fitCenter" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:paddingLeft="3dp"
+                 android:paddingRight="3dp"
+                 android:text="@string/first_analytic_screen_medicine_last_taken_text"
+                 android:textSize="18sp"
+                 android:textColor="@color/golden_brown"
+                 android:id="@+id/mlt"
+                 />
+
+             <TextView android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/checkMediLastTakenTime"
+                 android:text="15/07"
+                 android:background="@drawable/info_hub_button"
+                 android:textColor="@color/white"
+                 android:textSize="17sp"
+                 android:layout_gravity="center_vertical"
+
+                 />
+
+             />
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="left"
+             android:orientation="horizontal"
+             android:padding="5dp" >
+
+             <ImageView
+                 android:layout_width="70dp"
+                 android:layout_height="60dp"
+                 android:adjustViewBounds="true"
+                 android:background="@drawable/doses_missing_image_normal"
+                 android:scaleType="fitCenter" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:paddingLeft="3dp"
+                 android:paddingRight="3dp"
+                 android:text="@string/first_analytic_screen_doses_missing_text"
+                 android:textSize="18sp"
+                 android:textColor="@color/golden_brown"
+                 android:id="@+id/dinr"
+                 />
+
+             <TextView
+                 android:id="@+id/doses"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/info_hub_button"
+                 android:textColor="@color/white"
+                 android:textSize="17sp"
+                 android:layout_gravity="center_vertical"
+                 />
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="left"
+             android:orientation="horizontal"
+             android:padding="5dp" >
+
+             <ImageView
+                 android:layout_width="70dp"
+                 android:layout_height="60dp"
+                 android:adjustViewBounds="true"
+                 android:background="@drawable/medicine_adhere_normal"
+                 android:scaleType="fitCenter" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:paddingLeft="3dp"
+                 android:paddingRight="3dp"
+                 android:text="@string/first_analytic_screen_medicine_adherence_to_medicine_text"
+                 android:textSize="18sp"
+                 android:textColor="@color/golden_brown"
+                 android:id="@+id/atm"
+                 />
+
+             <TextView
+                 android:id="@+id/adherence"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/info_hub_button"
+                 android:textColor="@color/white"
+                 android:textSize="17sp"
+                 android:layout_gravity="center_vertical" />
+
+         </LinearLayout>
+     </LinearLayout>
+ </ScrollView>
+</LinearLayout>

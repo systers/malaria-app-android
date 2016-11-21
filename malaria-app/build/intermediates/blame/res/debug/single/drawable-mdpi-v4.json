@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/vpi__tab_unselected_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-mdpi/vpi__tab_unselected_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/vpi__tab_selected_focused_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-mdpi/vpi__tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/vpi__tab_selected_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-mdpi/vpi__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/custom_line_border.xml",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-mdpi/custom_line_border.xml"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/vpi__tab_selected_pressed_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-mdpi/vpi__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/vpi__tab_unselected_pressed_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-mdpi/vpi__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/bg.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-mdpi/bg.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/vpi__tab_unselected_focused_holo.9.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/res/drawable-mdpi/vpi__tab_unselected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/pc_logo.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-mdpi/pc_logo.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_action_volume_on.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-mdpi/ic_action_volume_on.png"
+    },
+    {
+        "merged": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/build/intermediates/res/merged/debug/drawable-mdpi-v4/trip_spinner.png",
+        "source": "/Users/nkiboi/Downloads/systers/malaria/malaria-app-android/malaria-app-android/src/main/res/drawable-mdpi/trip_spinner.png"
+    }
+]

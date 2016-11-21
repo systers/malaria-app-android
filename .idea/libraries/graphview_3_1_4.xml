@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="graphview-3.1.4">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/malaria-app-android/build/intermediates/exploded-aar/com.jjoe64/graphview/3.1.4/res" />
+      <root url="jar://$PROJECT_DIR$/malaria-app-android/build/intermediates/exploded-aar/com.jjoe64/graphview/3.1.4/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jjoe64/graphview/3.1.4/e83f5c247a6b10a903ecde3778b336b8a7474cca/graphview-3.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
