@@ -4,21 +4,18 @@
     android:layout_height="wrap_content"
     android:background="@drawable/dialog_background"
     android:id="@+id/dialogGameInfo">
-
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@color/lightest_brown">
-
             <TextView
+                android:id="@+id/gameTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -27,11 +24,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/gameTitle"
-                >
-            </TextView>
-
+                android:layout_marginBottom="10dp" />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -39,14 +32,13 @@
             android:layout_height="fill_parent"
             android:orientation="vertical"
             android:layout_margin="30dp">
-
             <TextView
+                android:id="@+id/gameInfoDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="20sp"
-                android:textColor="@color/golden_brown"
-                android:id="@+id/gameInfoDescription"/>
+                android:textColor="@color/golden_brown" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,27 +55,23 @@
                 android:id="@+id/noGameDialogButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Back"
+                android:text="@string/back_from_game"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/info_hub_button"
-                android:textColor="@color/white"
-                />
+                android:textColor="@color/white"  />
             <Button
                 android:id="@+id/continueGameDialogButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start Game"
+                android:text="@string/start_game"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/info_hub_button"
-                android:textColor="@color/white"
-                />
-
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>
-
 </RelativeLayout>

@@ -99,20 +99,20 @@ public class NewHomeActivity extends Activity{
                 alertDialog.setCancelable(false);
 
                 // Setting Dialog Title
-                TextView title = (TextView) alertDialog.findViewById(R.id.gameTitle);
-                TextView description = (TextView) alertDialog.findViewById(R.id.gameInfoDescription);
-                title.setText(R.string.myth_fact_game);
-                description.setText(R.string.myth_fact_description);
-                Button cancel = (Button) alertDialog.findViewById(R.id.noGameDialogButton);
-                Button ok = (Button) alertDialog.findViewById(R.id.continueGameDialogButton);
-                ok.setOnClickListener(new View.OnClickListener() {
+                TextView dialogTitle = (TextView) alertDialog.findViewById(R.id.gameTitle);
+                TextView dialogDescription = (TextView) alertDialog.findViewById(R.id.gameInfoDescription);
+                dialogTitle.setText(R.string.myth_fact_game);
+                dialogDescription.setText(R.string.myth_fact_description);
+                Button cancelButton = (Button) alertDialog.findViewById(R.id.noGameDialogButton);
+                Button okButton = (Button) alertDialog.findViewById(R.id.continueGameDialogButton);
+                okButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         startActivity(new Intent(NewHomeActivity.this, MythFactGame.class));
                         alertDialog.dismiss();
                     }
                 });
-                cancel.setOnClickListener(new View.OnClickListener() {
+                cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         alertDialog.dismiss();
@@ -121,8 +121,6 @@ public class NewHomeActivity extends Activity{
 
                 // Showing Alert Message
                 alertDialog.show();
-
-
             }
         };
     }
@@ -136,20 +134,20 @@ public class NewHomeActivity extends Activity{
                 alertDialog.setCancelable(false);
 
                 // Setting Dialog Title
-                TextView title = (TextView) alertDialog.findViewById(R.id.gameTitle);
-                TextView description = (TextView) alertDialog.findViewById(R.id.gameInfoDescription);
-                title.setText(R.string.rapid_fire_game);
-                description.setText(R.string.rapid_fire_description);
-                Button cancel = (Button) alertDialog.findViewById(R.id.noGameDialogButton);
-                Button ok = (Button) alertDialog.findViewById(R.id.continueGameDialogButton);
-                ok.setOnClickListener(new View.OnClickListener() {
+                TextView dialogTitle = (TextView) alertDialog.findViewById(R.id.gameTitle);
+                TextView dialogDescription = (TextView) alertDialog.findViewById(R.id.gameInfoDescription);
+                dialogTitle.setText(R.string.rapid_fire_game);
+                dialogDescription.setText(R.string.rapid_fire_description);
+                Button cancelButton = (Button) alertDialog.findViewById(R.id.noGameDialogButton);
+                Button okButton = (Button) alertDialog.findViewById(R.id.continueGameDialogButton);
+                okButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         startActivity(new Intent(NewHomeActivity.this, RapidFireGame.class));
                         alertDialog.dismiss();
                     }
                 });
-                cancel.setOnClickListener(new View.OnClickListener() {
+                cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         alertDialog.dismiss();

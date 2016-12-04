@@ -37,6 +37,8 @@
     <string name="items_spinner_label">Pick Items</string>
     <string name="trip_select_string">Add Packing Items</string>
     <string name="dump_test">Fetching...</string>
+    <string name="back_from_game">Back</string>
+    <string name="start_game">Start Game</string>
     <string name="myth_fact_game">Myth Fact Game</string>
     <string name="rapid_fire_game">Rapid Fire Game</string>
     <string name="myth_fact_description">
