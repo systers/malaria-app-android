@@ -37,6 +37,23 @@
     <string name="items_spinner_label">Pick Items</string>
     <string name="trip_select_string">Add Packing Items</string>
     <string name="dump_test">Fetching...</string>
+    <string name="myth_fact_game">Myth Fact Game</string>
+    <string name="rapid_fire_game">Rapid Fire Game</string>
+    <string name="myth_fact_description">
+        - Decide whether the statement is correct or false by dragging to its corresponding container.
+        \n
+        \n
+        - Score achievement points for every correct answer you give.
+        \n
+        \n
+        - The container will reveal whether the answer is right or wrong.
+    </string>
+    <string name="rapid_fire_description">
+        - Answer questions quickly, under time pressure.
+        \n
+        \n
+        - Score achievement points for every correct answer you give.
+    </string>
     <string name="mal_description">
         -Interferes with growth of parasites in red blood cells\n
         -Take the medicine everyday at the same time with food\n
