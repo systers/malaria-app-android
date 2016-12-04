@@ -1,6 +1,8 @@
 package com.peacecorps.malaria.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -92,7 +94,25 @@ public class NewHomeActivity extends Activity{
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NewHomeActivity.this, MythFactGame.class));
+                AlertDialog alertDialog = new AlertDialog.Builder(NewHomeActivity.this).create();
+                alertDialog.setTitle("Myth Fact Game");
+                alertDialog.setMessage("Test your knowledge of Malaria! Drag the facts into the trash if they are a myth, or into the treasure chest if they are a fact. You get one point for each correct answer.");
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Play!",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                startActivity(new Intent(NewHomeActivity.this, MythFactGame.class));
+                            }
+                        });
+                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                        }
+                        });
+                alertDialog.show();
+
+
             }
         };
     }
@@ -101,7 +121,23 @@ public class NewHomeActivity extends Activity{
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NewHomeActivity.this, RapidFireGame.class));
+                AlertDialog alertDialog = new AlertDialog.Builder(NewHomeActivity.this).create();
+                alertDialog.setTitle("Rapid Fire Game");
+                alertDialog.setMessage("Test your knowledge of Malaria! You have 5 seconds to choose the correct answer to fill in the blank or complete the sentence about malaria. You get one point for each correct answer.");
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Play!",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                startActivity(new Intent(NewHomeActivity.this, RapidFireGame.class));
+                            }
+                        });
+                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
             }
         };
     }
