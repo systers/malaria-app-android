@@ -98,7 +98,6 @@ public class NewHomeActivity extends Activity{
                 alertDialog.setContentView(R.layout.game_info_dialog);
                 alertDialog.setCancelable(false);
 
-                // Setting Dialog Title
                 TextView dialogTitle = (TextView) alertDialog.findViewById(R.id.gameTitle);
                 TextView dialogDescription = (TextView) alertDialog.findViewById(R.id.gameInfoDescription);
                 dialogTitle.setText(R.string.myth_fact_game);
@@ -119,7 +118,6 @@ public class NewHomeActivity extends Activity{
                     }
                 });
 
-                // Showing Alert Message
                 alertDialog.show();
             }
         };
@@ -133,7 +131,6 @@ public class NewHomeActivity extends Activity{
                 alertDialog.setContentView(R.layout.game_info_dialog);
                 alertDialog.setCancelable(false);
 
-                // Setting Dialog Title
                 TextView dialogTitle = (TextView) alertDialog.findViewById(R.id.gameTitle);
                 TextView dialogDescription = (TextView) alertDialog.findViewById(R.id.gameInfoDescription);
                 dialogTitle.setText(R.string.rapid_fire_game);
@@ -154,7 +151,6 @@ public class NewHomeActivity extends Activity{
                     }
                 });
 
-                // Showing Alert Message
                 alertDialog.show();
             }
         };
