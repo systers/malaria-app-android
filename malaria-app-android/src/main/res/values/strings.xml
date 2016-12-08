@@ -129,4 +129,24 @@
         <item>Mosquito Net</item>
     </string-array>
 
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Africa!</string>
+    <string name="slide_1_desc">The best Volunteer sustaining and life-saving malaria prevention tactic!</string>
+
+    <string name="slide_2_title">Medication Tracker</string>
+    <string name="slide_2_desc">Powered by the ability to indicate that medication was taken on time or missed!</string>
+
+    <string name="slide_3_title">Play Games</string>
+    <string name="slide_3_desc">Access accurate information about Malaria and the medications they are taking in Interactive games!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Trip indicator to help remind volunteers to pack certain supplies to prevent malaria</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 </resources>

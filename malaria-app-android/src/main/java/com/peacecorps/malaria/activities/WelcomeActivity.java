@@ -1,5 +1,7 @@
 package com.peacecorps.malaria.activities;
 
+
+import com.peacecorps.malaria.R;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -56,9 +58,9 @@ public class WelcomeActivity extends AppCompatActivity {
         // add few more layouts if you want
         layouts = new int[]{
                 R.layout.welcome_slide1,
-                R.layout.welcome_slide2,
-                R.layout.welcome_slide3,
-                R.layout.welcome_slide4};
+                R.layout.welcome_slider2,
+                R.layout.welcome_slider3,
+                R.layout.welcome_slider4};
 
         // adding bottom dots
         addBottomDots(0);
@@ -118,7 +120,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, com.peacecorps.malaria.activities.MainActivity));
+        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
         finish();
     }
 
