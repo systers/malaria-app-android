@@ -1,10 +1,6 @@
 package com.peacecorps.malaria.activities;
 
-/**
- * Created by Senzy on 07-Dec-16.
- *
- * Ensure intro screen launches only at first launch of the app
- */
+
 
 import android.content.Context;
 import android.content.SharedPreferences;
