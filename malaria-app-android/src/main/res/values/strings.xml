@@ -147,6 +147,6 @@
     <string name="slide_4_title">World Travel</string>
     <string name="slide_4_desc">Trip indicator to help remind volunteers to pack certain supplies to prevent malaria</string>
 
-    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> clear data</string>
     <string name="play_again">Play Again</string>
 </resources>
