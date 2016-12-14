@@ -41,6 +41,8 @@
     <string name="help_game_dialog_buttonStart">Start the Game</string>
     <string name="help_game_dialog_heading">How to Play -</string>
     <string name="help_game_dialog_showNextTime">Show this help next time</string>
+    <string name="shared_prefs_myth_fact_game">showHelpMythFactGame</string>
+    <string name="shared_prefs_rapid_fire_game">showHelpRapidFireGame</string>
     <string name="help_rapid_fire_info">
         In this game, a question is given with 3 options. The questions have to be answered under 5 seconds.
     </string>

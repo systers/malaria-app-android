@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialogMedGroup"
+    android:id="@+id/dialogHelp"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/dialog_background">
-
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/lightest_brown"
             android:orientation="horizontal">
-
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -29,16 +24,12 @@
                 android:text="@string/help_game_dialog_title"
                 android:textColor="@color/golden_brown"
                 android:textSize="22sp" />
-
         </LinearLayout>
-
-
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="20dp"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/helpGameDialogInfo"
                 android:layout_width="match_parent"
@@ -46,7 +37,6 @@
                 android:text="This text will get replaced automatically in the NewHomeActivity."
                 android:textColor="@color/golden_brown"
                 android:textSize="17sp" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,7 +46,6 @@
                 android:textColor="@color/golden_brown"
                 android:textSize="17sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/helpGameDialogHowToPlay"
                 android:layout_width="match_parent"
@@ -64,7 +53,6 @@
                 android:text="This text will get replaced automatically in the NewHomeActivity."
                 android:textColor="@color/golden_brown"
                 android:textSize="17sp" />
-
             <CheckBox
                 android:id="@+id/helpGameDialogShowNextTime"
                 android:layout_width="match_parent"
@@ -74,7 +62,6 @@
                 android:text="@string/help_game_dialog_showNextTime"
                 android:textColor="@color/golden_brown" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -82,7 +69,6 @@
             android:layout_weight="0.29"
             android:gravity="center|bottom"
             android:orientation="horizontal">
-
             <Button
                 android:id="@+id/helpGameDialogButtonStart"
                 android:layout_width="match_parent"
@@ -95,9 +81,6 @@
                 android:background="@drawable/info_hub_button"
                 android:text="@string/help_game_dialog_buttonStart"
                 android:textColor="@color/white" />
-
         </LinearLayout>
-
     </LinearLayout>
-
 </RelativeLayout>
