@@ -37,6 +37,27 @@
     <string name="items_spinner_label">Pick Items</string>
     <string name="trip_select_string">Add Packing Items</string>
     <string name="dump_test">Fetching...</string>
+    <string name="help_game_dialog_title">Game Info</string>
+    <string name="help_game_dialog_buttonStart">Start the Game</string>
+    <string name="help_game_dialog_heading">How to Play -</string>
+    <string name="help_game_dialog_showNextTime">Show this help next time</string>
+    <string name="help_rapid_fire_info">
+        In this game, a question is given with 3 options. The questions have to be answered under 5 seconds.
+    </string>
+    <string name="help_rapid_fire_how_to_play">
+        -> Read the question carefully, and quickly select one of the 3 options.\n
+        -> For every correct option, a point is awarded.\n
+        -> Exit the game by clicking on the \"Exit Game\" button.\n
+    </string>
+    <string name="help_myth_fact_info">
+        In this game, a text is given. The text has to be classified as a myth or a fact.
+    </string>
+    <string name="help_myth_fact_how_to_play">
+        -> Read the statement carefully and decide whether it is a myth or a fact.\n
+        -> If it is a fact, drag it to the chest. If it is a myth, drag it to the trash bin.\n
+        -> For every correct answer, a point is awarded.\n
+        -> Click \"Next\" to go to next question, and \"Exit\" to exit the game.\n
+    </string>
     <string name="mal_description">
         -Interferes with growth of parasites in red blood cells\n
         -Take the medicine everyday at the same time with food\n
