@@ -79,6 +79,13 @@ public class RapidFireGame extends Activity{
         opt1.setText(questionList.get(i).getOption1());
         opt2.setText(questionList.get(i).getOption2());
         opt3.setText(questionList.get(i).getOption3());
+        opt1.setEnabled(true);
+        opt1.setClickable(true);
+        opt2.setEnabled(true);
+        opt2.setClickable(true);
+        opt3.setEnabled(true);
+        opt3.setClickable(true);
+
         //display time as 5 secs
         timer.setText("5");
         counter= new RapidFireTimeCounter(6000,1000);
@@ -98,6 +105,15 @@ public class RapidFireGame extends Activity{
                     resultString="Wrong ";
                     opt1.setBackground(getResources().getDrawable(R.drawable.info_hub_button_grayed));
                 }
+
+
+                opt1.setEnabled(false);
+                opt1.setClickable(false);
+                opt2.setEnabled(false);
+                opt2.setClickable(false);
+                opt3.setEnabled(false);
+                opt3.setClickable(false);
+
 
                 //Toast.makeText(RapidFireGame.this,resultString,Toast.LENGTH_SHORT).show();
                 prepNextQues();
@@ -119,6 +135,15 @@ public class RapidFireGame extends Activity{
                    resultString="Wrong ";
                    opt2.setBackground(getResources().getDrawable(R.drawable.info_hub_button_grayed));
                }
+
+
+               opt1.setEnabled(false);
+               opt1.setClickable(false);
+               opt2.setEnabled(false);
+               opt2.setClickable(false);
+               opt3.setEnabled(false);
+               opt3.setClickable(false);
+
                //Toast.makeText(RapidFireGame.this,resultString,Toast.LENGTH_SHORT).show();
                prepNextQues();
            }
@@ -138,6 +163,15 @@ public class RapidFireGame extends Activity{
                     resultString="Wrong ";
                     opt3.setBackground(getResources().getDrawable(R.drawable.info_hub_button_grayed));
                 }
+
+
+                opt1.setEnabled(false);
+                opt1.setClickable(false);
+                opt2.setEnabled(false);
+                opt2.setClickable(false);
+                opt3.setEnabled(false);
+                opt3.setClickable(false);
+
                 //Toast.makeText(RapidFireGame.this,resultString,Toast.LENGTH_SHORT).show();
                 prepNextQues();
 
