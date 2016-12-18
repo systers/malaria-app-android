@@ -43,7 +43,7 @@
                     <ImageView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/peace_corps_logo_normal"
-                        />
+                        android:contentDescription="@string/description_peace_corps_logo"/>
 
                     <TextView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                          android:layout_marginRight="10dp"
                          android:id="@+id/locationHistory"
                          android:clickable="true"
-
+                         android:contentDescription="@string/description_previous_locations"
                          />
 
 

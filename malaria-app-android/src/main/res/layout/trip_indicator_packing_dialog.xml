@@ -47,7 +47,8 @@
                     android:adjustViewBounds="true"
                     android:background="@drawable/drug_normal"
                     android:scaleType="fitCenter"
-                    android:padding="5dp" />
+                    android:padding="5dp"
+                    android:contentDescription="@string/description_drug_name"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -93,7 +94,8 @@
                     android:background="@drawable/cash"
                     android:scaleType="fitCenter"
                     android:padding="5dp"
-                    android:id="@+id/imageView" />
+                    android:id="@+id/imageView"
+                    android:contentDescription="@string/description_cash"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -135,7 +137,8 @@
                     android:adjustViewBounds="true"
                     android:background="@drawable/packing_bag"
                     android:scaleType="fitCenter"
-                    android:padding="5dp" />
+                    android:padding="5dp"
+                    android:contentDescription="@string/description_add_other_items"/>
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -154,7 +157,8 @@
                     android:src="@drawable/plus"
                     android:id="@+id/btnAdd"
                     android:background="@color/cream"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:contentDescription="@string/description_add_item"/>
 
                 <ImageButton
                     android:layout_width="0dp"
@@ -162,7 +166,8 @@
                     android:src="@drawable/enter"
                     android:id="@+id/btnSubmit"
                     android:background="@color/cream"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:contentDescription="@string/description_submit"/>
 
                 <ImageButton
                     android:layout_width="0dp"
@@ -171,7 +176,7 @@
                     android:src="@drawable/delete"
                     android:background="@color/cream"
                     android:id="@+id/btnDelete"
-                    />
+                    android:contentDescription="@string/description_delete_item"/>
 
             </LinearLayout>
 

@@ -27,7 +27,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:background="@drawable/warning"/>
+                        android:background="@drawable/warning"
+                        android:contentDescription="@string/description_warning"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="24dp"
@@ -80,7 +81,8 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:background="@drawable/drug_normal"
-                android:scaleType="fitCenter" />
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/description_med_status"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"

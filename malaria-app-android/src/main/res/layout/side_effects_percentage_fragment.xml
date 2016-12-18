@@ -46,7 +46,8 @@
                 android:layout_height="220dp"
                 android:id="@+id/percent_side_effect_image"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/background"/>
+                android:background="@drawable/background"
+                android:contentDescription="@string/description_side_effects_graph"/>
 
         </LinearLayout>
     </ScrollView>
