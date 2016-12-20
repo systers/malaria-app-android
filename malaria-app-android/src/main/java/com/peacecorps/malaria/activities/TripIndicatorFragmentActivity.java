@@ -743,4 +743,9 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         newFragment.show(getFragmentManager(),"Departure Time");
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+    }
 }

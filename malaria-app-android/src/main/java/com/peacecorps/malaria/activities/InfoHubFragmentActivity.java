@@ -1,5 +1,6 @@
 package com.peacecorps.malaria.activities;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -211,7 +212,12 @@ public class InfoHubFragmentActivity extends FragmentActivity {
             }
         });
         dialog.show();
+    }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }
 
