@@ -742,10 +742,4 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         DialogFragment newFragment = new TimePickerDialogDeparture();
         newFragment.show(getFragmentManager(),"Departure Time");
     }
-
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
-    }
 }

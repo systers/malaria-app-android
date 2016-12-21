@@ -105,10 +105,4 @@ public class NewHomeActivity extends Activity{
             }
         };
     }
-
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
-    }
 }

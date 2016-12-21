@@ -48,7 +48,6 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(), InfoHubFragmentActivity.class));
-                finish();
 
             }
         });
@@ -62,7 +61,6 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(),TripIndicatorFragmentActivity.class));
-                finish();
             }
         });
 
@@ -72,7 +70,6 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), NewHomeActivity.class));
-                finish();
             }
         });
 
@@ -82,7 +79,6 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),UserProfile.class));
-                finish();
             }
         });
 
