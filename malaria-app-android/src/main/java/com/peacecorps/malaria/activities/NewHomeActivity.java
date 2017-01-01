@@ -1,10 +1,12 @@
 package com.peacecorps.malaria.activities;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
 
@@ -65,8 +67,6 @@ public class NewHomeActivity extends Activity{
         //footer ends
 
         badgeScreenButton.setOnClickListener(badgeScreenOnClickListener());
-        mythFactButton.setOnClickListener(mythFactGameOnClickListener());
-        rapidFireButton.setOnClickListener(rapidFireButtonOnClickListener());
         medicineStoreButton.setOnClickListener(medicineStoreOnClickListener());
     }
 
@@ -88,21 +88,69 @@ public class NewHomeActivity extends Activity{
         };
     }
 
-    private View.OnClickListener mythFactGameOnClickListener() {
-        return new View.OnClickListener() {
+    public void mythDescription(View view){
+        final Dialog alertDialog = new Dialog(NewHomeActivity.this,android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
+        alertDialog.setContentView(R.layout.exit_game_dialog);
+        alertDialog.setCancelable(false);
+
+        // Setting Dialog Title
+        alertDialog.setTitle("Game Over!!");
+        TextView head=(TextView)alertDialog.findViewById(R.id.dialogHead);
+        TextView description=(TextView)alertDialog.findViewById(R.id.dialogDescription);
+        Button ok=(Button)alertDialog.findViewById(R.id.exitGameDialogButtonOK);
+        Button cancel=(Button)alertDialog.findViewById(R.id.exitGameDialogButtonCancel);
+
+        head.setText("Myth vs Fact description");
+        description.setText("This game makes you decipher whether or not a given statement is true, or if it is a myth. You will be rewarded with points for each correct answer.");
+
+        ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(NewHomeActivity.this, MythFactGame.class));
+                alertDialog.dismiss();
             }
-        };
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
     }
 
-    private View.OnClickListener rapidFireButtonOnClickListener() {
-        return new View.OnClickListener() {
+    public void RFDescription(View view){
+        final Dialog alertDialog = new Dialog(NewHomeActivity.this,android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
+        alertDialog.setContentView(R.layout.exit_game_dialog);
+        alertDialog.setCancelable(false);
+
+        // Setting Dialog Title
+        alertDialog.setTitle("Game Over!!");
+        TextView head=(TextView)alertDialog.findViewById(R.id.dialogHead);
+        TextView description=(TextView)alertDialog.findViewById(R.id.dialogDescription);
+        Button ok=(Button)alertDialog.findViewById(R.id.exitGameDialogButtonOK);
+        Button cancel=(Button)alertDialog.findViewById(R.id.exitGameDialogButtonCancel);
+
+        head.setText("Rapid Fire description");
+        description.setText("This is a multiple choice game that tests your vast knowledge of malaria.");
+
+        ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(NewHomeActivity.this, RapidFireGame.class));
+                alertDialog.dismiss();
             }
-        };
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
+
+        // Showing Alert Message
+        alertDialog.show();
     }
 }
