@@ -31,7 +31,8 @@
         android:background="@drawable/info_hub_button"
         android:textColor="@color/white"
         android:text="Rapid Fire"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:onClick="RFDescription"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -40,7 +41,8 @@
         android:background="@drawable/info_hub_button"
         android:textColor="@color/white"
         android:layout_margin="5dp"
-        android:text="Myth Vs Fact"/>
+        android:text="Myth Vs Fact"
+        android:onClick="mythDescription"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
