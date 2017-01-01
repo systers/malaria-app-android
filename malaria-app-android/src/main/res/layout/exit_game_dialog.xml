@@ -29,7 +29,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                >
+                android:id="@+id/dialogHead">
             </TextView>
 
         </LinearLayout>
@@ -49,7 +49,8 @@
                 android:gravity="center"
                 android:text="Are you sure you want to exit the Game? Your current game points will be converted and added to your main score."
                 android:textSize="20sp"
-                android:textColor="@color/golden_brown"/>
+                android:textColor="@color/golden_brown"
+                android:id="@+id/dialogDescription" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,7 +87,5 @@
                 />
 
         </LinearLayout>
-
     </LinearLayout>
-
 </RelativeLayout>
