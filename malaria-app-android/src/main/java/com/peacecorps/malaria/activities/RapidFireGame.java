@@ -1,8 +1,10 @@
 package com.peacecorps.malaria.activities;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
@@ -34,6 +36,7 @@ public class RapidFireGame extends Activity{
     private String resultString;
     private int quesNo;
     private  int gameScore;
+    private long millisLeft;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private long timercount;
@@ -72,6 +75,7 @@ public class RapidFireGame extends Activity{
         scoreTv.setText("Score : " + gameScore);
         askQuestion(quesNo);
     }
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     void askQuestion(int i){
         opt1.setBackground(getResources().getDrawable(R.drawable.info_hub_button));
         opt2.setBackground(getResources().getDrawable(R.drawable.info_hub_button));
@@ -94,6 +98,7 @@ public class RapidFireGame extends Activity{
     }
     public View.OnClickListener  optionOneClick() {
         return new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View view) {
                 counter.cancel();
@@ -238,9 +243,9 @@ public class RapidFireGame extends Activity{
 
         @Override
         public void onTick(long l) {
-            timercount=l;
-            timer.setText(""+ l/1000);
 
+            timer.setText(""+l/1000);
+            millisLeft=l;
         }
 
         @Override
@@ -248,10 +253,23 @@ public class RapidFireGame extends Activity{
             counter.cancel();
             prepNextQues();
         }
-
-
     }
 
+    @Override
+    protected void onPause() {
+        counter.cancel();
+        counter= null;
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        if(counter==null){
+            counter= new RapidFireTimeCounter(millisLeft,1000);
+            counter.start();
+        }
+        super.onResume();
+    }
     public void showDialog(){
         final Dialog alertDialog = new Dialog(RapidFireGame.this,android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
         alertDialog.setContentView(R.layout.game_over_dialog);
