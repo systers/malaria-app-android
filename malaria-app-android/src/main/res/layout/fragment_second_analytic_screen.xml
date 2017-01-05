@@ -27,7 +27,7 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="January"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/firstMonthProgressLabel"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
@@ -53,11 +53,12 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="100%"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/firstMonthProgressPercent"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
             android:textSize="18sp"
+            android:gravity="end"
             />
 
     </LinearLayout>
@@ -70,7 +71,7 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="February"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/secondMonthProgressLabel"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
@@ -95,11 +96,12 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="60%"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/secondMonthProgressPercent"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
             android:textSize="18sp"
+            android:gravity="end"
             />
 
     </LinearLayout>
@@ -113,7 +115,7 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="March"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/thirdMonthProgressLabel"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
@@ -137,11 +139,12 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="80%"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/thirdMonthProgressPercent"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
             android:textSize="18sp"
+            android:gravity="end"
             />
 
     </LinearLayout>
@@ -154,7 +157,7 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="April"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/fourthMonthProgressLabel"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
@@ -179,11 +182,12 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="80%"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:id="@+id/fourthMonthProgressPercent"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"
             android:textSize="18sp"
+            android:gravity="end"
             />
 
     </LinearLayout>
