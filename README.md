@@ -33,6 +33,27 @@ This project uses Jack Wharton's Android-ViewPagerIndicator for the Viewpager Sw
 
 <h4> <a href="https://drive.google.com/open?id=0B6cRm7QFaag1dUMxVU5qQ0dnXzA"> Download Current Malaria APK File here </a> </h4>
 
+
+## Guidelines for contributors
+To contribute to malaria-app-android pick an open issue from the [issue list](https://github.com/systers/malaria-app-android/issues) tagged as "free", claim it in the comments, fix the issue and send us a pull request. 
+If you find an issue yourself you can report it, a community member will get back to you and approve the issue. Then you can fix it and submit a PR. Please go through our issue list first and make sure the issues you are reporting do not replicate the issues already reported. If you have multiple issues, report them separately. Do not combine them into a single issue.
+
+### Best Practise
+1. Try to do a root cause analysis for the issue, if applicable. 
+2. Reference the issue being fixed in the corresponding PR. 
+3. Use meaningful commit messages in a PR.
+4. Use one commit per task. Do not over commit (add unnecessary commits for a single task) or under commit (merge 2 or more tasks in one commit).
+5. Add screenshot/short video in case the changes made in the PR, are being reflected in the UI of the application.
+6. Close the issue as soon as the corresponding PR is accepted/closed.
+
+### Some Don'ts
+1. Send a PR without an existing issue.
+2. Fix an issue assigned to somebody else and submit a PR before the assignee does. 
+3. Report issues which are previously reported by others. (Please check both the open and closed issues). 
+4. Suggest unnecessary or completely new features in the issue list.
+5. Add unnecessary spacing or indentation to the code.
+
+
 <h3>Contact Information:</h3>
 
 
