@@ -47,7 +47,8 @@
                 android:layout_height="220dp"
                 android:id="@+id/effectiveness_image"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/background"/>
+                android:background="@drawable/background"
+                android:contentDescription="@string/description_effectiveness_graph"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

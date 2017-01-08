@@ -20,6 +20,7 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:layout_marginLeft="10sp"
+            android:contentDescription="@string/description_prev_month"
             android:src="@drawable/calendar_left_arrow_selector" >
         </ImageView>
 
@@ -41,6 +42,7 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:layout_marginRight="10sp"
+            android:contentDescription="@string/description_next_month"
             android:src="@drawable/calendar_right_arrow_selector" >
         </ImageView>
 
@@ -56,8 +58,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/calender_header_vertorizedy" >
-        </ImageView>
+            android:contentDescription="@string/description_calendar_days"
+            android:src="@drawable/calender_header_vertorizedy" />
 
         <!--TableLayout
             android:layout_height="wrap_content"

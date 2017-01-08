@@ -37,6 +37,39 @@
     <string name="items_spinner_label">Pick Items</string>
     <string name="trip_select_string">Add Packing Items</string>
     <string name="dump_test">Fetching...</string>
+
+    <!-- ContentDescription strings -->
+    <string name="description_drugs">Drugs</string>
+    <string name="description_med_status">Medication Status</string>
+    <string name="description_prev_month">Previous Month</string>
+    <string name="description_next_month">Next Month</string>
+    <string name="description_calendar_days">Sunday Monday Tuesday Wednesday Thursday Friday Saturday</string>
+    <string name="description_warning">Warning</string>
+    <string name="description_med_last_taken">Medicine last taken</string>
+    <string name="description_med_doses">Doses in a row</string>
+    <string name="description_med_adherence">Adherence to medicine</string>
+    <string name="description_drug_name">Drug name</string>
+    <string name="description_drug_taken">Was drug taken today?</string>
+    <string name="description_accept">Accept</string>
+    <string name="description_change_data">Change data</string>
+    <string name="description_peace_corps_logo">Peace Corps Logo</string>
+    <string name="description_previous_locations">Previously entered locations</string>
+    <string name="description_side_effects_graph">Graph for side effects</string>
+    <string name="description_cash">Cash</string>
+    <string name="description_add_other_items">Add other items</string>
+    <string name="description_add_item">Add item</string>
+    <string name="description_submit">Submit</string>
+    <string name="description_delete_item">Delete item</string>
+    <string name="description_effectiveness_graph">Graph for effectiveness</string>
+    <string name="description_reset_data">Reset the data</string>
+    <string name="description_badge_awarded">Your badges</string>
+    <string name="description_badge_b1">Badge 1</string>
+    <string name="description_badge_b3">Badge 2</string>
+    <string name="description_badge_b5">Badge 3</string>
+    <string name="description_badge_newbie">Newbie badge</string>
+    <string name="description_badge_hat">Hat badge</string>
+    <string name="description_"></string>
+
     <string name="mal_description">
         -Interferes with growth of parasites in red blood cells\n
         -Take the medicine everyday at the same time with food\n
