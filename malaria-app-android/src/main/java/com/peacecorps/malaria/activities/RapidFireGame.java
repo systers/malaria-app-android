@@ -35,6 +35,7 @@ public class RapidFireGame extends Activity{
     private  int gameScore;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    private long timercount;
 
 
     @Override
@@ -211,6 +212,8 @@ public class RapidFireGame extends Activity{
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
+                counter = new RapidFireTimeCounter(timercount,1000);
+                counter.start();
             }
         });
 
@@ -235,8 +238,10 @@ public class RapidFireGame extends Activity{
 
         @Override
         public void onTick(long l) {
+
+            timercount=l;
             timer.setText(""+l/1000);
-        }
+            }
 
         @Override
         public void onFinish() {
