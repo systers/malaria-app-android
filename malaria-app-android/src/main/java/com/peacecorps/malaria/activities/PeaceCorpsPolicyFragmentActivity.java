@@ -1,8 +1,11 @@
 package com.peacecorps.malaria.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Typeface;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -54,7 +57,7 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
     // temporary string to show the parsed response
     private String jsonResponse;
 
-
+    private AudioManager am;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,8 +84,28 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
         makeJsonObjectRequest();
     }
 
+    /**Setting up a listener to listen for any change in audio focus**/
+    private AudioManager.OnAudioFocusChangeListener mAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(int focuschange) {
+
+            /**If any other media file is played while the text to speech is running then text to speech is stopped
+            and focus is shifted to the other media file**/
+            if(focuschange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focuschange == AudioManager.AUDIOFOCUS_LOSS || focuschange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK){
+                tts.stop();
+            }
+
+            else if(focuschange == AudioManager.AUDIOFOCUS_GAIN_TRANSIENT){
+               String toSpeak = mPeaceCorpsPolicyLabel.getText().toString();
+               tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        }
+    };
+
     @Override
     protected void onResume() {
+
+        am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         //setup the tts language
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -98,8 +121,11 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
         ttsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String toSpeak = mPeaceCorpsPolicyLabel.getText().toString();
-                tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                final int result = am.requestAudioFocus(mAudioFocusChangeListener,AudioManager.STREAM_MUSIC,AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                if(result==AudioManager.AUDIOFOCUS_REQUEST_GRANTED){
+                    String toSpeak = mPeaceCorpsPolicyLabel.getText().toString();
+                    tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                }
             }
         });
 
@@ -111,7 +137,8 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
        if(tts !=null){
             tts.stop();
             tts.shutdown();
-        }
+            am.abandonAudioFocus(mAudioFocusChangeListener);
+       }
        finish();
     }
 
@@ -120,6 +147,7 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
         if(tts !=null){
             tts.stop();
             tts.shutdown();
+            am.abandonAudioFocus(mAudioFocusChangeListener);
         }
         super.onPause();
     }
