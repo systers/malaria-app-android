@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Malaria Prevention</string>
+    <string name="app_homescreen_name">PC Malaria Home</string>
+    <string name="user_medicine_settings_activity_pc_logo">Peace Corps Logo</string>
+    <string name="user_medicine_settings_activity_setup_label">Set Up</string>
+    <string name="user_medicine_settings_activity_drug_take_label">I Take</string>
+    <string name="user_medicine_settings_activity_time_pick_label">Remind me at:</string>
+    <string name="user_medicine_settings_activity_time_pick_button">Pick Time</string>
+    <string name="user_medicine_settings_activity_if_forget_label">If I forget</string>
+    <string name="user_medicine_settings_activity_done_button">DONE</string>
+    <string name="second_analytic_screen_title">SECOND ANALYTIC SCREEN</string>
+    <string name="first_analytic_screen_doses_missing_text">Doses in a Row</string>
+    <string name="first_analytic_screen_medicine_last_taken_text">Medicine Last Taken</string>
+    <string name="first_analytic_screen_medicine_adherence_to_medicine_text">Adherence to Medicine</string>
+    <string name="alarm_auto_start_boot_completed_intent_check">android.intent.action.BOOT_COMPLETED</string>
+    <string name="alert_dialog_title">Malaria Medication Reminder</string>
+    <string name="alert_dialog_message">Have you taken your drug today ?</string>
+    <string name="user_medicine_settings_fragment_activity_title">PC Malaria Prevention</string>
+    <string name="info_hub_title_label">Info Hub</string>
+    <string name="plan_my_trip_label">Plan My Trip</string>
+    <string name="peace_corps_policy">Peace Corps Policy</string>
+    <string name="percentage_of_side_effects">Percentage of Side Effects</string>
+    <string name="side_effects_reported_by_PCVs">Side Effects Reported by PCVs</string>
+    <string name="effectiveness_against_malaria">Effectiveness Against Malaria</string>
+    <string name="volunteer_adherence_rates">Volunteer Adherence Rates</string>
+    <string name="non_PCV_reported_side_effects">Non-PCV Reported Side Effects</string>
+    <string name="location_label">Location:</string>
+    <string name="cash_label">Cash to Bring:</string>
+    <string name="pack_label">Packing List:</string>
+    <string name="medication_label">Medication:</string>
+    <string name="remind_label">Remind Me On:</string>
+    <string name="trip_button_label">Generate</string>
+    <string name="location_spinner_label">Choose Location</string>
+    <string name="medication_spinner_label">Choose Drug</string>
+    <string name="items_spinner_label">Pick Items</string>
+    <string name="trip_select_string">Add Packing Items</string>
+    <string name="dump_test">Fetching...</string>
+
+
+    <string-array name="user_medicine_settings_activity_drug_array">
+        <item>Malarone (Daily)</item>
+        <item>Doxycycline (Daily)</item>
+        <item>Mefloquine (Weekly)</item>
+    </string-array>
+
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+
+    <string-array name="drug_array">
+        <item>Malarone</item>
+        <item>Doxycycline</item>
+        <item>Mefloquine</item>
+    </string-array>
+
+    <string-array name="location_array">
+        <item>Benin</item>
+        <item>Botswana</item>
+        <item>Burkina Faso</item>
+        <item>Cameroon</item>
+        <item>Ethiopia</item>
+        <item>Ghana</item>
+        <item>Guinea</item>
+        <item>Kenya</item>
+        <item>Liberia</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Mozambique</item>
+        <item>Namibia</item>
+        <item>Rwanda</item>
+        <item>Sierra Leone</item>
+        <item>Senegal</item>
+        <item>South Africa</item>
+        <item>Swaziland</item>
+        <item>Tanzania</item>
+        <item>The Gambia</item>
+        <item>Togo</item>
+        <item>Uganda</item>
+        <item>Zambia</item>
+    </string-array>
+
+
+    <string-array name="item_array">
+        <item>Medication</item>
+        <item>Ointment</item>
+        <item>Mosquito Net</item>
+    </string-array>
+
+</resources>
