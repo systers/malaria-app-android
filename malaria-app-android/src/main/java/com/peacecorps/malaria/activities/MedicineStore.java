@@ -105,7 +105,7 @@ public class MedicineStore extends Activity {
                                     "Quantity:          " ;
                             Intent emailIntent = new Intent(Intent.ACTION_SEND);
                             emailIntent.setData(Uri.parse("mailto:"));
-                            emailIntent.setType("text/plain");
+                            emailIntent.setType("message/rfc822");
                             emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"yatnavermaa@gmail.com", "yatna.verma.ece13@itbhu.ac.in"});
                             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "URGENT: Reqiured Malaria Medicines");
                             emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(msgBody+"<b>"+Integer.parseInt(medicineQuantityEt.getText().toString())+"</b>"));
