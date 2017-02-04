@@ -19,20 +19,20 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-
-import java.util.Calendar;
-import java.util.Date;
-
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.adapter.DrugArrayAdapter;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.services.AlarmService;
+
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class UserMedicineSettingsFragmentActivity extends FragmentActivity
@@ -46,11 +46,12 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     private TextView mTimePickLabel;
     private TextView mIfForgetLabel;
     private Spinner mDrugSelectSpinner;
+    private static boolean isTimeSet = false;
     private static String mDrugPicked;
     private static int mHour;
     private static int mMinute;
     private final static Calendar mCalendar = Calendar.getInstance();
-    private String TAGUMSFA="UserMedicineSettingsFragmentActivity";
+    private String TAGUMSFA = "UserMedicineSettingsFragmentActivity";
     static SharedPreferenceStore mSharedPreferenceStore;
     private static View v;
     private static TimePicker tp;
@@ -84,10 +85,10 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
 
         mSharedPreferenceStore.getSharedPreferences(this);
 
-        Typeface cb = Typeface.createFromAsset(getAssets(),"fonts/garbold.ttf");
+        Typeface cb = Typeface.createFromAsset(getAssets(), "fonts/garbold.ttf");
         mSetupLabel.setTypeface(cb);
 
-        Typeface cf = Typeface.createFromAsset(getAssets(),"fonts/garreg.ttf");
+        Typeface cf = Typeface.createFromAsset(getAssets(), "fonts/garreg.ttf");
         timePickButton.setTypeface(cf);
         mIfForgetLabel.setTypeface(cb);
         mTimePickLabel.setTypeface(cb);
@@ -104,49 +105,27 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     }
 
     @Override
-    protected void onDestroy() {
-
-        super.onDestroy();
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        if (tp != null) {
+            savedInstanceState.putInt("hour", tp.getCurrentHour());
+            savedInstanceState.putInt("minute", tp.getCurrentMinute());
         }
-
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-
-
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (isTimeSet) {
+            updateTime(savedInstanceState.getInt("hour"), savedInstanceState.getInt("minute"));
         }
-
     }
-
-    @Override
-    protected void onPause() {
-
-        super.onPause();
-        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",
-                true)) {
-            mSharedPreferenceStore.mEditor.putBoolean(
-                    "com.peacecorps.malaria.hasUserSetPreference", true).commit();
-        }
-
-    }
-
 
     /*Method for checking the Initial Application Install.
-     *It checks two parameters:-
-     * hasUserSetPreference----> BOOLEAN ----> whether user had done the settings in Initial Setup Screen or not.
-     * isFirstRun--------------> BOOLEAN ----> whether this is the first Time App is run or not.
-     */
+             *It checks two parameters:-
+             * hasUserSetPreference----> BOOLEAN ----> whether user had done the settings in Initial Setup Screen or not.
+             * isFirstRun--------------> BOOLEAN ----> whether this is the first Time App is run or not.
+             */
     private void checkInitialAppInstall() {
 
 
@@ -176,8 +155,8 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
        /* ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.user_medicine_settings_activity_drug_array,
                 android.R.layout.simple_spinner_item);*/
-        String[] listContent = {"Malarone","Doxycycline","Mefloquine"};
-        Integer[] imageID = {R.drawable.mal,R.drawable.doxy,R.drawable.mef};
+        String[] listContent = {"Malarone", "Doxycycline", "Mefloquine"};
+        Integer[] imageID = {R.drawable.mal, R.drawable.doxy, R.drawable.mef};
         String[] descriptions = {
                 getString(R.string.mal_description),
                 getString(R.string.doxy_description),
@@ -187,7 +166,6 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mDrugSelectSpinner.setAdapter(adapter);
-
         mDrugSelectSpinner.setOnItemSelectedListener(this);
     }
 
@@ -218,17 +196,17 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
 
             int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
             int minute = mCalendar.get(Calendar.MINUTE);
-            int month= mCalendar.get(Calendar.MONTH);
-            Log.d("Month",Integer.toString(month));
+            int month = mCalendar.get(Calendar.MONTH);
+            Log.d("Month", Integer.toString(month));
 
-            TimePickerDialog view = new TimePickerDialog(getActivity(), R.style.MyTimePicker ,this, hour, minute,
+            TimePickerDialog view = new TimePickerDialog(getActivity(), R.style.MyTimePicker, this, hour, minute,
                     DateFormat.is24HourFormat(getActivity()));
 
             LayoutInflater inflater = getActivity().getLayoutInflater();
-            v=inflater.inflate(R.layout.time_picker_style_setting, null);
+            v = inflater.inflate(R.layout.time_picker_style_setting, null);
 
             view.setView(v);
-            tp=(TimePicker)v.findViewById(R.id.tpUser);
+            tp = (TimePicker) v.findViewById(R.id.tpUser);
 
             return view;
         }
@@ -276,7 +254,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     public static void saveUserTimeAndMedicationPrefs() {
 
         int checkDay = mCalendar.get(Calendar.DAY_OF_WEEK);
-        int month= mCalendar.get(Calendar.MONTH);
+        int month = mCalendar.get(Calendar.MONTH);
         int year = mCalendar.get(Calendar.YEAR);
 
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmHour", mHour)
@@ -288,18 +266,21 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.SetupYear", year)
                 .commit();
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.dayTakingDrug", checkDay);
-
         mSharedPreferenceStore.mEditor.putString("com.peacecorps.malaria.drugPicked",
                 mDrugPicked);
         mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isDrugTaken", false)
                 .commit();
         mSharedPreferenceStore.mEditor.commit();
+
+        mSharedPreferenceStore.mEditor.putBoolean(
+                "com.peacecorps.malaria.hasUserSetPreference", true).commit();
+
         mFragmentContext.startService(new Intent(mFragmentContext,
                 AlarmService.class));
 
-        int check=mSharedPreferenceStore.mPrefsStore.getInt("com.peacecorps.malaria.SetupYear",-1);
-        //int ah=mSharedPreferenceStore.mPrefsStore.getInt("com.peacecorps.malaria.AlarmHour",-1);
-        Log.d("check year",Integer.toString(check));
+        int check = mSharedPreferenceStore.mPrefsStore.getInt("com.peacecorps.malaria.SetupYear", -1);
+
+        Log.d("check year", Integer.toString(check));
 
     }
 
@@ -330,6 +311,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
 
         // Set the timePickButton as the converted time
         timePickButton.setText(theTime);
+        isTimeSet = true;
 
     }
 
@@ -376,33 +358,34 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         } else {
             mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isWeekly", false);
         }
-        if(mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun",true)){
-            long firstRunTime= new Date().getTime();
+        if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun", true)) {
+            long firstRunTime = new Date().getTime();
             mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.firstRunTime", firstRunTime);
-            Log.d(TAGUMSFA,"First Run Time:"+mSharedPreferenceStore.mPrefsStore.getLong(
+            Log.d(TAGUMSFA, "First Run Time:" + mSharedPreferenceStore.mPrefsStore.getLong(
                     "com.peacecorps.malaria.firstRunTime", 0));
         }
         mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isFirstRun", false);
 
     }
+
     //yatna
-    public void createVariables(){
-        SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(UserMedicineSettingsFragmentActivity.this);
-        SharedPreferences.Editor editor =sharedPreferences.edit();
+    public void createVariables() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(UserMedicineSettingsFragmentActivity.this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         //stores the score scored by taking medicines on time
-        editor.putInt("userScore",0);
+        editor.putInt("userScore", 0);
         //stores the score earned by playing the games
-        editor.putInt("gameScore",0);
+        editor.putInt("gameScore", 0);
         //stores number of medicines left in store
-        editor.putInt("medicineStore",0);
+        editor.putInt("medicineStore", 0);
         //store the limit set by user for medicine purchase reminder
-        editor.putInt("alertTime",-1);
+        editor.putInt("alertTime", -1);
         //for user profile details
         editor.putString("user_name", "");
         editor.putString("user_email", "");
-        editor.putInt("user_age",0);
+        editor.putInt("user_age", 0);
         editor.commit();
-        Log.d("check","user score and medicineStore initialized");
+        Log.d("check", "user score and medicineStore initialized");
     }
 
     @Override

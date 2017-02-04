@@ -95,6 +95,9 @@ public class MedicineStore extends Activity {
                         if(medicineQuantityEt.getText().toString().trim().equals("")){
                             medicineQuantityEt.setError("Quantity Required");
                         }
+                        else if(medicineQuantityEt.getText().toString().matches("[0]+")){
+                            medicineQuantityEt.setError("Quantity Required");
+                        }
                         else{
                             //send and email
                             String msgBody="My malaria pills will last for the coming  "+"<b>"+medicineStore+"</b>"+" days only.<br> Send the following immediately: <br>" +
@@ -102,7 +105,7 @@ public class MedicineStore extends Activity {
                                     "Quantity:          " ;
                             Intent emailIntent = new Intent(Intent.ACTION_SEND);
                             emailIntent.setData(Uri.parse("mailto:"));
-                            emailIntent.setType("text/plain");
+                            emailIntent.setType("message/rfc822");
                             emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"yatnavermaa@gmail.com", "yatna.verma.ece13@itbhu.ac.in"});
                             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "URGENT: Reqiured Malaria Medicines");
                             emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(msgBody+"<b>"+Integer.parseInt(medicineQuantityEt.getText().toString())+"</b>"));
@@ -116,6 +119,9 @@ public class MedicineStore extends Activity {
                     @Override
                     public void onClick(View view) {
                         if(medicineQuantityEt.getText().toString().trim().equals("")){
+                            medicineQuantityEt.setError("Quantity Required");
+                        }
+                        else if(medicineQuantityEt.getText().toString().matches("[0]+")){
                             medicineQuantityEt.setError("Quantity Required");
                         }
                         else{

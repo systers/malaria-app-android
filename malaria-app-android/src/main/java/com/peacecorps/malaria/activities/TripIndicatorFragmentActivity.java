@@ -252,7 +252,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 packingSelect.setError(null);
                 tripTime.setError(null);
 
-               if(locationSpinner.getText().toString().equals(""))
+               if("".equals(locationSpinner.getText().toString().trim()))
                {
                    Toast.makeText(getApplicationContext()," Location Missing ",Toast.LENGTH_SHORT).show();
                }
@@ -299,7 +299,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                        chklist+=q+" "+item+" ";
 
                    }
-                   mLocationPicked=locationSpinner.getText().toString();
+                   mLocationPicked=locationSpinner.getText().toString().trim();
                    mDatesPicked = "Trip to " + mLocationPicked + " is scheduled for " + departure_formattedate + ".\n" +"Stay safe, don't forget to take your pills.";
 
                    //save mItemPicked to view reminder
@@ -420,24 +420,30 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 }
                else
                 {
+                    String date = new SimpleDateFormat("dd/MM/yy").format(new Date());
+                    Date curr_date = getDateObj(date);
                     Date departure=getDateObj(departure_formattedate);
                     Date arrival=getDateObj(arrival_formattedate);
+                    long curr_datel = curr_date.getTime();
                     long departurel = departure.getTime();
                     long arrivall = arrival.getTime();
 
-                    if(arrivall>=departurel) {
+                    if(departurel < curr_datel) {
+                        Toast.makeText(getApplicationContext(),R.string.departuredate_currentdate,Toast.LENGTH_SHORT).show();
+
+                    } else if(arrivall < departurel) {
+                        Toast.makeText(getApplicationContext(),R.string.arrivaldate_departuredate,Toast.LENGTH_SHORT).show();
+
+                    } else if(arrivall>=departurel) {
                         Intent intent = new Intent(getApplication(), TripIndicatorPackingActivity.class);
                         setNumDrugs(departure_formattedate, arrival_formattedate);
                         intent.putExtra(DRUG_TAG, num_drugs);
                         startActivity(intent);
                         packingSelect.setText(TripIndicatorPackingActivity.tripDrugName);
-                    }else{
-                        Toast.makeText(getApplicationContext(),"Arrival date cannot be before the Departure date.",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
-
     }
 
     private void createSelectionSpinners() {

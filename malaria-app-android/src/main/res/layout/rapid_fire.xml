@@ -98,7 +98,9 @@
                     android:gravity="center"
                     android:text="30"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp" />
+                    android:textSize="16.0sp"
+                    android:enabled="true"
+                    android:clickable="true"/>
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="200dp"
@@ -109,7 +111,9 @@
                     android:gravity="center"
                     android:text="29"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp" />
+                    android:textSize="16.0sp"
+                    android:enabled="true"
+                    android:clickable="true"/>
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="200dp"
@@ -120,7 +124,9 @@
                     android:gravity="center"
                     android:text="32"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp" />
+                    android:textSize="16.0sp"
+                    android:enabled="true"
+                    android:clickable="true"/>
             </LinearLayout>
         </LinearLayout>
 

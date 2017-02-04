@@ -108,16 +108,15 @@ public class TripIndicatorPackingActivity extends Activity {
         View.OnClickListener listenerAdd = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s=edit.getText().toString();
-                if(s.equals(""))
+                String s = edit.getText().toString().trim();
+                if("".equals(s))
                 {
                     Toast.makeText(getApplicationContext(), "Enter item name ", Toast.LENGTH_SHORT).show();
-
                 }
                 else
                 {
-                    list.add(edit.getText().toString());
-                    sqLite.insertPackingItem(edit.getText().toString(),1,"no");
+                    list.add(edit.getText().toString().trim());
+                    sqLite.insertPackingItem(edit.getText().toString().trim(),1,"no");
                     edit.setText("");
                     adapter.notifyDataSetChanged();
 
@@ -159,6 +158,12 @@ public class TripIndicatorPackingActivity extends Activity {
         View.OnClickListener listenerSubmit = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if ("".equals(numDrugs.getText().toString().trim())){
+                    Toast.makeText(getApplicationContext(), "Please select a pill", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 SparseBooleanArray checked = listView.getCheckedItemPositions();
                 ArrayList<String> selectedItems = new ArrayList<String>();
                 for (int i = 0; i < checked.size(); i++) {
@@ -323,11 +328,10 @@ public class TripIndicatorPackingActivity extends Activity {
         {
             numDrugs.setText("" +(( mNumDrugs/7)+1));
         }
-
-
         }
         else
         {
+            Toast.makeText(getApplicationContext(), "Please select a pill", Toast.LENGTH_SHORT).show();
             numDrugs.setText("");
         }
 
