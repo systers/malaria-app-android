@@ -236,7 +236,7 @@ public class DayFragmentActivity extends FragmentActivity {
                                 dialog.dismiss();
                         } else {
                             //Future Date is not allowed to Edit
-                            Toast.makeText(getApplicationContext(), "You are not allowed to edit!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),R.string.no_edit, Toast.LENGTH_LONG).show();
                         }
                         dialog.dismiss();
 
@@ -258,12 +258,12 @@ public class DayFragmentActivity extends FragmentActivity {
 
         if(data.compareTo("yes")==0)
         {
-            Toast.makeText(getApplicationContext(),"I took medicine!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),R.string.took_medicine,Toast.LENGTH_LONG).show();
             indicator.setBackgroundResource(R.drawable.accept_medi_checked_);
         }
         else if(data.compareTo("no")==0) {
             indicator.setBackgroundResource(R.drawable.reject_medi_checked);
-            Toast.makeText(getApplicationContext(), "I didn't take medicine!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.no_medicine, Toast.LENGTH_LONG).show();
         }
         else
         {   Log.d(TAGD,"Inside Missed Drug Entry");
@@ -294,12 +294,12 @@ public class DayFragmentActivity extends FragmentActivity {
             {
                 if(queried_date<=current_date)
                 {
-                    Toast.makeText(getApplicationContext(), "I missed entering medicine!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),R.string.missed_entering_medicine, Toast.LENGTH_LONG).show();
                     sqLite.insertOrUpdateMissedMedicationEntry(day, month, year, 0);
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "This is a future date, you cannot edit it!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),R.string.future_cannot_edit, Toast.LENGTH_LONG).show();
                     btnChangeData.setBackgroundResource(R.drawable.roundedbutton_grey);
                     btnChangeData.setClickable(false);
                     flag=1;
@@ -307,7 +307,7 @@ public class DayFragmentActivity extends FragmentActivity {
             }
             else {
                 //Toast.makeText(getApplicationContext(), "This is a date before medication even started, you can't edit it!", Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), "I missed entering medicine!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),R.string.missed_entering, Toast.LENGTH_LONG).show();
                 sqLite.insertOrUpdateMissedMedicationEntry(day, month, year, 0);
 
             }

@@ -111,7 +111,7 @@ public class TripIndicatorPackingActivity extends Activity {
                 String s = edit.getText().toString().trim();
                 if("".equals(s))
                 {
-                    Toast.makeText(getApplicationContext(), "Enter item name ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.enter_item_name, Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -160,7 +160,7 @@ public class TripIndicatorPackingActivity extends Activity {
             public void onClick(View v) {
 
                 if ("".equals(numDrugs.getText().toString().trim())){
-                    Toast.makeText(getApplicationContext(), "Please select a pill", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.select_pill, Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -202,7 +202,7 @@ public class TripIndicatorPackingActivity extends Activity {
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(getApplicationContext(),"Enter Integral Value of Cash!",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),R.string.enter_integral_value,Toast.LENGTH_SHORT);
                 }
 
 
@@ -331,7 +331,7 @@ public class TripIndicatorPackingActivity extends Activity {
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "Please select a pill", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.select_pill, Toast.LENGTH_SHORT).show();
             numDrugs.setText("");
         }
 

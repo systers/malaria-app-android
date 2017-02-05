@@ -172,7 +172,7 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
             @Override
             public void onErrorResponse(VolleyError verror) {
                 Log.d(TAGPCP, "Error Retreiving Data!" + verror.getMessage());
-                Toast.makeText(getApplicationContext(), "Error Retreiving Data! Loading from cache... ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.error_loading_cache, Toast.LENGTH_LONG).show();
 
                 BufferedReader input = null;
                 File file = null;

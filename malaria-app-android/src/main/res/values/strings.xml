@@ -152,4 +152,38 @@
         <item>Mosquito Net</item>
     </string-array>
 
+    <!-- Toast messages -->
+    <!-- TripIndicatorFragmentActivity -->
+    <string name="location_missing"> Location Missing </string>
+    <string name="reminder_time_missing"> Reminder Time Missing </string>
+    <string name="packing_list_missing"> Packing List Missing   </string>
+    <string name="dept_date_missing"> Departure Date Missing </string>
+    <string name="arr_date_missing"> Arrival Date Missing </string>
+    <string name="field_left_blank">Field cannot be left blank.</string>
+    <string name="reminders_set">Reminders are Set!</string>
+    <string name="enter_dept_time">Enter future departure time.</string>
+    <string name="enter_dept_arr_date">Enter Departure Date and Arrival Date First </string>
+    <!-- DayFragmentActivity -->
+    <string name="no_edit">You are not allowed to edit!</string>
+    <string name="took_medicine">I took medicine!</string>
+    <string name="no_medicine">I didn't take medicine!</string>
+    <string name="missed_entering_medicine">I missed entering medicine!</string>
+    <string name="future_cannot_edit">This is a future date, you cannot edit it!</string>
+    <string name="missed_entering">I missed entering medicine!</string>
+    <!-- EffectivenessFragmentActivity -->
+    <string name="error_loading_cache">Error Retreiving Data! Loading from cache... </string>
+    <!-- Medicine store -->
+    <string name="sms_sent">SMS sent.</string>
+    <!-- ReminderToneActivity -->
+    <string name="reminder_tone_set">Reminder Tone Set</string>
+    <!-- TripAlarmActivity -->
+    <string name="alarm_snoozed">Alarm Snoozed</string>
+    <!-- TripIndicatorPackingActivity -->
+    <string name="enter_item_name">Enter item name </string>
+    <string name="select_pill">Please select a pill</string>
+    <string name="enter_integral_value">Enter Integral Value of Cash!</string>
+    <!-- UserProfile -->
+    <string name="details_submitted">User Details submitted</string>
+    <string name="failed_submit">Failed! Please try again after some time.</string>
+
 </resources>

@@ -250,31 +250,31 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
 
                if("".equals(locationSpinner.getText().toString().trim()))
                {
-                   Toast.makeText(getApplicationContext()," Location Missing ",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(),R.string.location_missing,Toast.LENGTH_SHORT).show();
                }
                else if(tripTime.getText().toString().equals(""))
                {
-                   Toast.makeText(getApplicationContext()," Remainder Time Missing ",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(),R.string.reminder_time_missing,Toast.LENGTH_SHORT).show();
                }
                else if(packingSelect.getText().toString().equals(""))
                {
-                   Toast.makeText(getApplicationContext()," Packing List Missing ",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(),R.string.packing_list_missing,Toast.LENGTH_SHORT).show();
                }
                else if(departureMonth.getText().toString().equals(""))
                {
-                   Toast.makeText(getApplicationContext()," Departure Date Missing ",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(),R.string.dept_date_missing,Toast.LENGTH_SHORT).show();
                }
                else if(arrivalMonth.getText().toString().equals(""))
                {
-                   Toast.makeText(getApplicationContext()," Arrival Date Missing ",Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(),R.string.arr_date_missing,Toast.LENGTH_SHORT).show();
                }
                 else if(packingSelect.getText().toString().equals(""))
                {
-                   packingSelect.setError("Field cannot be left blank.");
+                   packingSelect.setError(getResources().getString(R.string.field_left_blank));
                }
                else if(tripTime.getText().toString().equals(""))
                {
-                   tripTime.setError("Field cannot be left blank.");
+                   tripTime.setError(getResources().getString(R.string.field_left_blank));
                }
 
                 else
@@ -336,7 +336,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            myIntent3.putExtra("AlarmID",103);
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent3, PendingIntent.FLAG_UPDATE_CURRENT );
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-                           Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           Toast.makeText(getApplicationContext(), R.string.reminders_set, Toast.LENGTH_LONG).show();
                            startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
                            finish();
                        } else if (interval < 7 && interval > 1) {
@@ -350,7 +350,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            myIntent2.putExtra("AlarmID",103);
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent2, PendingIntent.FLAG_UPDATE_CURRENT);
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-                           Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           Toast.makeText(getApplicationContext(), R.string.reminders_set, Toast.LENGTH_LONG).show();
                            startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
                            finish();
 
@@ -360,14 +360,14 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            myIntent.putExtra("AlarmID",103);
                            pendingIntent = PendingIntent.getBroadcast(TripIndicatorFragmentActivity.this, 103, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-                           Toast.makeText(getApplicationContext(), "Reminders are Set!", Toast.LENGTH_LONG).show();
+                           Toast.makeText(getApplicationContext(), R.string.reminders_set, Toast.LENGTH_LONG).show();
                            startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
                            finish();
                        }
                    }
                    else
                    {
-                       Toast.makeText(getApplicationContext(),"Enter future departure time.", Toast.LENGTH_LONG).show();
+                       Toast.makeText(getApplicationContext(),R.string.enter_dept_time, Toast.LENGTH_LONG).show();
                    }
 
 
@@ -407,7 +407,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
 
                   if(departureMonth.getText().toString().equals("") || arrivalMonth.getText().toString().equals("") )
                 {
-                    Toast.makeText(getApplicationContext(),"Enter Departure Date and Arrival Date First ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.enter_dept_arr_date,Toast.LENGTH_SHORT).show();
                 }
                else
                 {
