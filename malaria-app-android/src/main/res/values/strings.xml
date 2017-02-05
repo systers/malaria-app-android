@@ -45,7 +45,7 @@
         -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
         -Consult your doctor if you have liver or kidney disease, or malaria complications\n
         -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
-        -Visit http://www.drugs.com/malarone.html for more information\n
+        -Visit <a href="http://www.drugs.com/malarone.html">http://www.drugs.com/malarone.html</a> for more information
     </string>
     <string name="doxy_description">
         -Tetracycline antibiotic that helps to fight bacteria in the body\n
@@ -55,7 +55,7 @@
         -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
         -Consult your doctor if you have liver or kidney disease, or are taking supplements and other medicines\n
         -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
-        -Visit http://www.drugs.com/doxycycline.html for more information\n
+        -Visit <a href="http://www.drugs.com/doxycycline.html">http://www.drugs.com/doxycycline.html</a> for more information
     </string>
     <string name="mef_description">
         -Antimalarial agent that kills sensitive malaria parasites\n
@@ -65,7 +65,7 @@
         -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
         -Consult your doctor if you have allergies, mental illnesses, seizures, or are taking similar medicines\n
         -Some side effects of drug: stomach pain, headache, muscle ache, tiredness, vomiting\n
-        -Visit http://www.drugs.com/cdi/mefloquine.html for more information\n
+        -Visit <a href="http://www.drugs.com/cdi/mefloquine.html">http://www.drugs.com/cdi/mefloquine.html</a> for more information
     </string>
 
     <string-array name="user_medicine_settings_activity_drug_array">
