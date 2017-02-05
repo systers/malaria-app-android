@@ -114,7 +114,7 @@ public class SideEffectsPCVFragmentActivity extends FragmentActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d(TAGSEP, "Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(), "Error Retreiving Data! Loading from cache... ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.error_loading_cache, Toast.LENGTH_LONG).show();
                 //offline cache
                 BufferedReader input = null;
                 File file = null;

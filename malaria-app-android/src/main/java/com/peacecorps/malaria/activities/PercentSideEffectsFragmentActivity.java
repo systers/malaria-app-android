@@ -135,7 +135,7 @@ public class PercentSideEffectsFragmentActivity extends FragmentActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.e("Error: ",error.getMessage());
-                Toast.makeText(getApplicationContext(), "Error Retreiving Data! Loading from cache... ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.error_loading_cache, Toast.LENGTH_LONG).show();
                 //offline caching
                 BufferedReader input = null;
                 File file = null;

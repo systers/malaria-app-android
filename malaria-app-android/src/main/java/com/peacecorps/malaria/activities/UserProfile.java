@@ -143,11 +143,11 @@ public class UserProfile extends Activity{
             public void done(String status) {
                 if(status.equals("200")){
                     setNewDetails();
-                    Toast.makeText(UserProfile.this, "User Details submitted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserProfile.this, R.string.details_submitted, Toast.LENGTH_SHORT).show();
                     UserProfile.this.finish();
                 }
                 else{
-                    Toast.makeText(UserProfile.this, "Failed! Please try again after some time.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserProfile.this, R.string.failed_submit, Toast.LENGTH_SHORT).show();
                 }
 
 
