@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:background="@color/back_ground"
               android:orientation="vertical"
-              android:padding="2dp" >
+              android:padding="@dimen/fragment_home_screen_linearlayout_padding" >
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,41 +16,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:padding="2dp">
+                android:padding="@dimen/fragment_home_screen_linearlayout_padding">
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="@dimen/fragment_home_screen_linearlayout_height"
                     android:id="@+id/warningView"
                     android:layout_weight="1"
-                    android:layout_margin="5dp"
+                    android:layout_margin="@dimen/fragment_home_screen_linearlayout_margin"
                     android:visibility="invisible">
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="@dimen/fragment_home_screen_imgview_width"
+                        android:layout_height="@dimen/fragment_home_screen_imgview_height"
                         android:background="@drawable/warning"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="24dp"
+                        android:layout_height="@dimen/fragment_home_screen_textview_height"
                         android:textColor="@color/red"
-                        android:paddingBottom="3dp"
+                        android:paddingBottom="@dimen/fragment_home_screen_textview_padding_bottom"
                         android:gravity="bottom"
-                        android:textSize="10sp"
+                        android:textSize="@dimen/fragment_home_screen_textview_textsize"
                         android:text="You may be running out of medicines soon! "/>
                 </LinearLayout>
                 <Button
                     android:id="@+id/fragment_home_screen_set_tone_button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_margin="5dp"
+                    android:layout_width="@dimen/fragment_home_screen_button_width"
+                    android:layout_height="@dimen/fragment_home_screen_button_height"
+                    android:layout_margin="@dimen/fragment_home_screen_button_margin"
                     android:adjustViewBounds="true"
                     android:background="@drawable/ic_action_volume_on"
                     android:scaleType="fitCenter" />
 
                 <Button
                     android:id="@+id/fragment_home_screen_settings_button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_margin="5dp"
+                    android:layout_width="@dimen/fragment_home_screen_button_width"
+                    android:layout_height="@dimen/fragment_home_screen_button_height"
+                    android:layout_margin="@dimen/fragment_home_screen_button_margin"
                     android:adjustViewBounds="true"
                     android:background="@drawable/settings_normal"
                     android:scaleType="fitCenter" />
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textSize="40sp"
+                android:textSize="@dimen/fragment_home_screen_textview_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -69,14 +69,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="@dimen/fragment_home_screen_textview_margin_right"
                 android:scaleType="fitCenter"
-                android:textSize="20sp"
+                android:textSize="@dimen/fragment_home_screen_textview_txtsize"
                 android:textStyle="bold" />
 
             <ImageView
-                android:layout_width="143dp"
-                android:layout_height="143dp"
+                android:layout_width="@dimen/fragment_home_screen_imageview_width"
+                android:layout_height="@dimen/fragment_home_screen_imageview_height"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:background="@drawable/drug_normal"
@@ -87,21 +87,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="@dimen/fragment_home_screen_linearlayout_margin_top">
 
                 <Button
                     android:id="@+id/fragment_home_screen__reject_medication_button"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="@dimen/fragment_home_screen_crossbutton_width"
+                    android:layout_height="@dimen/fragment_home_screen_crossbutton_height"
+                    android:layout_marginRight="@dimen/fragment_home_screen_crossbutton_margin_right"
                     android:adjustViewBounds="true"
                     android:background="@drawable/reject_medi_normal" />
 
                 <Button
                     android:id="@+id/fragment_home_screen_accept_medication_button"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_width="@dimen/fragment_home_screen_checkbutton_width"
+                    android:layout_height="@dimen/fragment_home_screen_checkbutton_height"
+                    android:layout_marginLeft="@dimen/fragment_home_screen_checkbutton_margin_left"
                     android:adjustViewBounds="true"
                     android:background="@drawable/accept_medi_normal"
                     android:scaleType="fitCenter" />

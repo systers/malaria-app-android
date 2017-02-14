@@ -5,16 +5,16 @@
         <TableRow>
                 <ImageView
                     android:id="@+id/imgDrug"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"/>
+                    android:layout_width="@dimen/trip_drug_item_imgview_width"
+                    android:layout_height="@dimen/trip_drug_item_imgview_height"/>
 
                 <TextView
                     android:id="@+id/drugItem"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/trip_drug_item_tv_height"
                     android:textColor="@color/golden_brown"
-                    android:textSize="15dp"
-                    android:padding="10dp"/>
+                    android:textSize="@dimen/trip_drug_item_tv_textsize"
+                    android:padding="@dimen/trip_drug_item_tv_padding"/>
 
         </TableRow>
 </TableLayout>

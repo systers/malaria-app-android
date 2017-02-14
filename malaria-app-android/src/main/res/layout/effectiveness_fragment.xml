@@ -6,7 +6,7 @@
     android:background="@color/back_ground"
     android:layout_gravity="center_horizontal"
     android:layout_width="match_parent"
-    android:padding="10dp"
+    android:padding="@dimen/effectiveness_fragment_linearlayout_padding"
     android:layout_height="match_parent">
 
 
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Effectiveness Against Malaria"
         android:textColor="@color/golden_brown"
-        android:textSize="25sp"
+        android:textSize="@dimen/effectiveness_fragment_tv_textsize"
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/eam"
@@ -36,15 +36,15 @@
 
 
             <TextView android:layout_width="match_parent"
-                android:padding="5dp"
+                android:padding="@dimen/effectiveness_fragment_tv_padding"
                 android:text="@string/dump_test"
                 android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:id="@+id/effectivenessLabel"
-                android:textSize="20sp"/>
+                android:textSize="@dimen/effectiveness_fragment_tv_text_size"/>
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="@dimen/effectiveness_fragment_imageview_height"
                 android:id="@+id/effectiveness_image"
                 android:layout_gravity="center_horizontal"
                 android:background="@color/back_ground"/>

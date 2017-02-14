@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:weightSum="3"
     android:background="@color/back_ground"
-    android:padding="10dp">
+    android:padding="@dimen/mythfactgame_linearlayout_padding">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,7 +16,7 @@
             android:gravity="center_vertical">
             <Button
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/exit_button_height"
                 android:id="@+id/exitBtn"
                 android:layout_gravity="right"
                 android:layout_weight="0.4"
@@ -29,7 +29,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/userCoins"
-                android:textSize="24sp"
+                android:textSize="@dimen/mythfactgame_textview_size"
                 android:textStyle="bold"
                 android:layout_weight="1.2"
                 android:text="6"
@@ -39,7 +39,7 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/next_button_height"
                 android:id="@+id/nextBtn"
                 android:layout_weight="0.4"
                 android:background="@drawable/info_hub_button"
@@ -54,13 +54,13 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
             <TextView
-                android:layout_width="200dp"
+                android:layout_width="@dimen/mythfactgame_textview_width"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:padding="@dimen/mythfactgame_textview_padding"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="@dimen/mythfactgame_textview_margin_bottom"
                 android:id="@+id/question"
-                android:textSize="20sp"
+                android:textSize="@dimen/mythfactgame_textview_textsize"
                 android:text="Question Here"
                 android:background="@drawable/achievement_button"
                 android:textColor="@color/golden_brown"
@@ -84,9 +84,9 @@
             android:id="@+id/chest"
             android:gravity="center"
             android:layout_weight="0.45"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/mythfactgame_chest_tv_margin_top"
             android:textStyle="bold"
-            android:textSize="19sp"
+            android:textSize="@dimen/mythfactgame_chest_tv_size"
             android:background="@drawable/chest" />
         <TextView
             android:layout_width="0dp"
@@ -94,7 +94,7 @@
             android:gravity="center"
             android:id="@+id/trash"
             android:textStyle="bold"
-            android:textSize="19sp"
+            android:textSize="@dimen/mythfactgame_trash_tv_size"
             android:layout_weight="0.65"
             android:background="@drawable/trash"/>
     </LinearLayout>

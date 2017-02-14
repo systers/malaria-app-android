@@ -11,8 +11,8 @@
  android:textColor="@color/golden_brown"
  android:layout_width="fill_parent"
  android:layout_height="wrap_content"
- android:textSize="15dp"
- android:padding="5dp"
+ android:textSize="@dimen/trip_location_list_item_tv_textsize"
+ android:padding="@dimen/trip_location_list_item_tv_padding"
  xmlns:android="http://schemas.android.com/apk/res/android" />
 
 <TextView
@@ -21,8 +21,8 @@ android:background="@color/cream"
 android:textColor="@color/golden_brown"
 android:layout_width="fill_parent"
 android:layout_height="wrap_content"
-android:textSize="15dp"
-android:padding="5dp"
+android:textSize="@dimen/trip_location_list_item_tv_textsize"
+android:padding="@dimen/trip_location_list_item_tv_padding"
 xmlns:android="http://schemas.android.com/apk/res/android" />
 
     </RelativeLayout>

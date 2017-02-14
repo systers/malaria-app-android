@@ -6,7 +6,7 @@
               android:background="@color/back_ground"
               android:layout_gravity="center_horizontal"
               android:layout_width="match_parent"
-              android:padding="10dp"
+              android:padding="@dimen/peace_corps_policy_fragment_linearlayout_padding"
               android:layout_height="match_parent">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Peace Corps Policy"
             android:textColor="@color/golden_brown"
-            android:textSize="25sp"
+            android:textSize="@dimen/peace_corps_policy_fragment_tv_textsize"
             android:gravity="center"
             android:layout_weight="0.94"
             android:textStyle="bold"
@@ -27,14 +27,14 @@
             />
         <Button
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/peace_corps_policy_fragment_button_height"
             android:id="@+id/ttsButton"
             android:layout_weight="0.06"
             android:background="@drawable/ic_action_volume_on" />
     </LinearLayout>
 
     <View android:layout_width="match_parent"
-          android:layout_height="0.2dp"
+          android:layout_height="@dimen/peace_corps_policy_fragment_view_height"
             android:background="@color/black"/>
 
     <ScrollView
@@ -47,10 +47,10 @@
 
 
         <TextView android:layout_width="match_parent"
-              android:padding="5dp"
+              android:padding="@dimen/peace_corps_policy_fragment_tv_padding"
               android:text="@string/dump_test"
               android:textColor="@color/black"
-              android:textSize="20sp"
+              android:textSize="@dimen/peace_corps_policy_fragment_tv_text_size"
               android:layout_height="wrap_content"
               android:id="@+id/peaceCorpsPolicyLabel"
             />

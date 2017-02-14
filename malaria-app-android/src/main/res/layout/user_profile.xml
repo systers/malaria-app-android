@@ -17,7 +17,7 @@
         android:id="@+id/user_medicine_settings_activity_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/user_profile_linearlayout_margintop"
         android:gravity="center"
         android:orientation="vertical" >
 
@@ -26,10 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/user_profile_textview_marginbottom"
+            android:layout_marginTop="@dimen/user_profile_textview_margintop"
             android:text="User Profile"
-            android:textSize="24sp"
+            android:textSize="@dimen/user_profile_textview_textsize"
             android:textStyle="bold"
             android:textColor="@color/user_medicine_first_text_color"
             />
@@ -42,18 +42,18 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:layout_gravity="center_horizontal"
-                  android:layout_marginLeft="20dp"
-                  android:layout_marginRight="20dp"
+                  android:layout_marginLeft="@dimen/user_profile_linearlayout_marginleft"
+                  android:layout_marginRight="@dimen/user_profile_linearlayout_marginright"
                   android:background="@drawable/custom_line_border"
                   android:orientation="vertical"
-                  android:paddingLeft="30dp"
-                  android:paddingTop="10dp"
-                  android:paddingBottom="10dp">
+                  android:paddingLeft="@dimen/user_profile_linearlayout_paddingleft"
+                  android:paddingTop="@dimen/user_profile_linearlayout_paddingtop"
+                  android:paddingBottom="@dimen/user_profile_linearlayout_paddingbottom">
 
                   <LinearLayout
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:paddingTop="5dp"
+                      android:paddingTop="@dimen/user_profile_linearlayout_padding_top"
                       android:orientation="vertical" >
 
                       <TextView
@@ -75,7 +75,7 @@
                   <LinearLayout
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:paddingTop="5dp"
+                      android:paddingTop="@dimen/user_profile_linearlayout_padding_top"
                       android:orientation="vertical" >
 
                       <TextView
@@ -98,7 +98,7 @@
                   <LinearLayout
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:paddingTop="5dp"
+                      android:paddingTop="@dimen/user_profile_linearlayout_padding_top"
                       android:orientation="vertical" >
 
                       <TextView
@@ -120,8 +120,8 @@
                   <LinearLayout
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:paddingTop="5dp"
-                      android:layout_marginBottom="10dp"
+                      android:paddingTop="@dimen/user_profile_linearlayout_padding_top"
+                      android:layout_marginBottom="@dimen/user_profile_linearlayout_marginbottom"
                       android:orientation="vertical" >
 
                       <TextView
@@ -145,12 +145,12 @@
                   android:id="@+id/user_profile_save"
                   style="@style/UserProfileCommonTextAppearance"
                   android:layout_gravity="center"
-                  android:layout_marginTop="15dp"
-                  android:layout_marginBottom="10dp"
+                  android:layout_marginTop="@dimen/save_button_margintop"
+                  android:layout_marginBottom="@dimen/savebutton_marginbottom"
                   android:text="SAVE"
                   android:textColor="@color/white"
-                  android:paddingLeft="40dp"
-                  android:paddingRight="40dp"
+                  android:paddingLeft="@dimen/savebutton_paddingleft"
+                  android:paddingRight="@dimen/savebutton_paddingright"
                   android:background="@color/golden_brown"
                   />
           </LinearLayout>
@@ -164,10 +164,10 @@
         >
         <View
             android:layout_height="0.5dp"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/user_profile_view_width"
             android:background="#000000"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/user_profile_view_margintop"
             />
 
         <LinearLayout
@@ -176,8 +176,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="5dp"
+            android:layout_marginTop="@dimen/user_profile_linear_layout_margintop"
+            android:paddingBottom="@dimen/user_profile_linear_layout_paddingbottom"
 
 
 
@@ -187,21 +187,21 @@
                 android:id="@+id/homeButton"
 
                 android:background="@drawable/home_icon_normal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/home_button_width"
+                android:layout_height="@dimen/home_button_height"
                 android:adjustViewBounds="true"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="@dimen/home_button_margin_right"
                 android:scaleType="fitCenter"
 
                 />
 
             <Button
                 android:background="@drawable/bus_icon_inactive_normal"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/bus_icon_width"
+                android:layout_height="@dimen/bus_icon_height"
                 android:adjustViewBounds="true"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="@dimen/bus_icon_margin_left"
+                android:layout_marginRight="@dimen/bus_icon_margin_right"
                 android:scaleType="fitCenter"
                 android:id="@+id/tripButton"
 
@@ -210,28 +210,28 @@
             <Button
                 android:background="@drawable/info_hub_inactive_normal"
                 android:id="@+id/infoButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/info_hub_width"
+                android:layout_height="@dimen/info_hub_height"
                 android:adjustViewBounds="true"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/info_hub_margin_left"
                 android:scaleType="fitCenter"
                 />
             <Button
                 android:background="@drawable/cal_right_arrow_brown"
                 android:id="@+id/tempButton"
-                android:layout_width="26dp"
-                android:layout_height="26dp"
+                android:layout_width="@dimen/arrow_icon_width"
+                android:layout_height="@dimen/arrow_icon_height"
                 android:adjustViewBounds="true"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/arrow_icon_margin_left"
                 android:scaleType="fitCenter"
                 />
             <Button
                 android:background="@drawable/user"
                 android:id="@+id/userProfile"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="@dimen/user_icon_width"
+                android:layout_height="@dimen/user_icon_height"
                 android:adjustViewBounds="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/user_icon_margin_left"
                 android:scaleType="fitCenter"
                 />
         </LinearLayout>
