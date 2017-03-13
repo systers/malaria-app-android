@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.activities.UserMedicineSettingsFragmentActivity;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -93,6 +95,13 @@ public class FirstAnalyticFragment extends Fragment {
 
                 addDialog();
 
+            }
+        });
+        mSettingsButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
     }
@@ -202,7 +211,13 @@ public class FirstAnalyticFragment extends Fragment {
 
         //final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
         Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
-
+        btnOK.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -241,6 +256,13 @@ public class FirstAnalyticFragment extends Fragment {
         });
 
         Button btnCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelReset);
+        btnCancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

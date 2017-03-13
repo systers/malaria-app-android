@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,6 +19,7 @@ import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.adapter.FragmentAdapter;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.fragment.FirstAnalyticFragment;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 
@@ -31,6 +33,7 @@ public class MainActivity extends FragmentActivity {
     Button mTripButton;
     Button tempButton;
     Button userProfile;
+    Button homeButton;
     String TAGMA="MainActivity";
 
 
@@ -43,6 +46,14 @@ public class MainActivity extends FragmentActivity {
         /*Method opens the Info Hub
         *Tiny 'i' symbol in the Setup Screen is Info Hub Button
         */
+        homeButton = (Button) findViewById(R.id.homeButton);
+        homeButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         mInfoButton = (Button) findViewById(R.id.infoButton);
         mInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +61,13 @@ public class MainActivity extends FragmentActivity {
                 startActivity(new Intent(getApplication().getApplicationContext(), InfoHubFragmentActivity.class));
                 finish();
 
+            }
+        });
+        mInfoButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
         Log.d(TAGMA, "Info Hub Button initialized");
@@ -65,6 +83,13 @@ public class MainActivity extends FragmentActivity {
                 finish();
             }
         });
+        mTripButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         //play symbol on the screen to open games and achievements
         tempButton =(Button)findViewById(R.id.tempButton);
@@ -75,6 +100,13 @@ public class MainActivity extends FragmentActivity {
                 finish();
             }
         });
+        tempButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         //user symbol on the screen to enter and push user's details
         userProfile =(Button)findViewById(R.id.userProfile);
@@ -83,6 +115,13 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),UserProfile.class));
                 finish();
+            }
+        });
+        userProfile.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 

@@ -16,6 +16,7 @@ import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 
 
 import com.peacecorps.malaria.R;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.reciever.TripAlarmReceiver;
@@ -48,7 +50,7 @@ import java.util.Date;
 public class TripIndicatorFragmentActivity extends FragmentActivity {
     //declaring views
     public boolean sent;
-    private Button btnInfoHub, btnHome,btnGenerate,btnGear,newHome, userProfile;
+    private Button btnInfoHub, btnHome,btnGenerate,btnGear,newHome, userProfile, tripButton;
     private String mDrugPicked,mLocationPicked;
     public static String mDatesPicked;
     private TextView dateData,monthData,yearData,DepartureDateData,DepartureMonthData,DepartureYearData;
@@ -93,6 +95,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         //Setting Up Views
         setContentView(R.layout.tripindicator_layout);
+        tripButton = (Button) findViewById(R.id.tripButton);
         btnInfoHub=(Button)findViewById(R.id.infoButton);
         btnHome=(Button)findViewById(R.id.homeButton);
         locationSpinner=(AutoCompleteTextView)findViewById(R.id.trip_location_select_editText);
@@ -114,6 +117,13 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 finish();
             }
         });
+        newHome.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         //implementing the user's profile button
         userProfile =(Button)findViewById(R.id.userProfile);
@@ -122,6 +132,21 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), UserProfile.class));
                 finish();
+            }
+        });
+        userProfile.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
+
+        tripButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -219,6 +244,13 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 addDialog();
             }
         });
+        btnGear.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -227,12 +259,26 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 finish();
             }
         });
+        btnHome.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         btnInfoHub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(), InfoHubFragmentActivity.class));
                 finish();
+            }
+        });
+        btnInfoHub.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -379,6 +425,13 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
 
             }
         });
+        btnGenerate.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         //Opening the location history dialog
         loc_history.setOnClickListener(new View.OnClickListener() {
@@ -398,6 +451,13 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
             }
 
 
+        });
+        loc_history.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
         });
 
         //opening the select packing dialog
@@ -506,12 +566,26 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
 
             }
         });
+        btnOK.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         Button btnCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelReset);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+            }
+        });
+        btnCancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
         dialog.show();

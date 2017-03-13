@@ -6,12 +6,14 @@ import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 /**
  * Created by DELL on 1/16/2016.
@@ -29,10 +31,31 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.remainder_tone_dialog);
-        btnBrowse=(Button)findViewById(R.id.browse);
-        path=(EditText)findViewById(R.id.tone_path);
-        btnOK=(Button)findViewById(R.id.dialogButtonOKReminder);
-        btnCancel= (Button)findViewById(R.id.dialogButtonCancelReminder);
+        btnBrowse = (Button)findViewById(R.id.browse);
+        btnBrowse.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
+        path = (EditText)findViewById(R.id.tone_path);
+        btnOK = (Button)findViewById(R.id.dialogButtonOKReminder);
+        btnOK.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
+        btnCancel = (Button)findViewById(R.id.dialogButtonCancelReminder);
+        btnCancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         btnBrowse.setOnClickListener(this);
         btnOK.setOnClickListener(this);
         btnCancel.setOnClickListener(this);

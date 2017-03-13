@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 /**
  * Created by Chimdi on 7/18/14.
@@ -19,7 +21,7 @@ import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 public class InfoHubFragmentActivity extends FragmentActivity {
 
     Button homeIconButton, btnPeaceCorpsPolicy, btnPercentSideEffects, btnSideEffectsPCV,
-            btnSideEffectsNPCV, btnVolunteerAdherence, btnEffectiveness,btnTripIndicator,btnSettings ,tempButton, userProfile;
+            btnSideEffectsNPCV, btnVolunteerAdherence, btnEffectiveness,btnTripIndicator,btnSettings ,tempButton, userProfile, infoButton;
     TextView ihLabel;
 
         private Dialog dialog = null;
@@ -44,7 +46,7 @@ public class InfoHubFragmentActivity extends FragmentActivity {
         }*/
 
         /**Declaring Views**/
-        ihLabel= (TextView)findViewById(R.id.ih);
+        ihLabel = (TextView)findViewById(R.id.ih);
         homeIconButton = (Button) findViewById(R.id.homeButton);
         btnTripIndicator = (Button) findViewById(R.id.tripButton);
         btnPeaceCorpsPolicy = (Button) findViewById(R.id.btnPeaceCorpsPolicy);
@@ -54,8 +56,9 @@ public class InfoHubFragmentActivity extends FragmentActivity {
         btnVolunteerAdherence = (Button) findViewById(R.id.btnVolunteerAdherence);
         btnEffectiveness = (Button) findViewById(R.id.btnEffectiveness);
         btnSettings = (Button)findViewById(R.id.info_hub_settings_button);
-        tempButton =(Button)findViewById(R.id.tempButton);
-        userProfile =(Button)findViewById(R.id.userProfile);
+        tempButton = (Button)findViewById(R.id.tempButton);
+        userProfile = (Button)findViewById(R.id.userProfile);
+        infoButton = (Button)findViewById(R.id.infoButton);
 
         //yatna
         tempButton.setOnClickListener(new View.OnClickListener() {
@@ -65,11 +68,32 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 finish();
             }
         });
+        tempButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication().getApplicationContext(),UserProfile.class));
                 finish();
+            }
+        });
+        userProfile.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
+        infoButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -92,12 +116,26 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 finish();
             }
         });
+        homeIconButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         btnTripIndicator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(), TripIndicatorFragmentActivity.class));
                 finish();
+            }
+        });
+        btnTripIndicator.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -107,11 +145,25 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 startActivity(new Intent(getApplication().getApplicationContext(), PeaceCorpsPolicyFragmentActivity.class));
             }
         });
+        btnPeaceCorpsPolicy.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         btnPercentSideEffects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(), PercentSideEffectsFragmentActivity.class));
+            }
+        });
+        btnPercentSideEffects.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -121,11 +173,25 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 startActivity(new Intent(getApplication().getApplicationContext(), SideEffectsPCVFragmentActivity.class));
             }
         });
+        btnSideEffectsPCV.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         btnSideEffectsNPCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(), SideEffectsNPCVFragmentActivity.class));
+            }
+        });
+        btnSideEffectsNPCV.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -135,11 +201,25 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 startActivity(new Intent(getApplication().getApplicationContext(), VolunteerAdherenceFragmentActivity.class));
             }
         });
+        btnVolunteerAdherence.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         btnEffectiveness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(), EffectivenessFragmentActivity.class));
+            }
+        });
+        btnEffectiveness.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -148,6 +228,13 @@ public class InfoHubFragmentActivity extends FragmentActivity {
             public void onClick(View v) {
 
                 addDialog();
+            }
+        });
+        btnSettings.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 

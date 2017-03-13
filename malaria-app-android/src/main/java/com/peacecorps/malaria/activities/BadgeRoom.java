@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 /**
  * Created by yatna on 30/5/16.
@@ -42,6 +44,13 @@ public class BadgeRoom extends Activity {
         getScores();
         setUpDialog();
         shareButton.setOnClickListener(shareButtonOnClickListener());
+        shareButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         
         achievementCategory1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +61,13 @@ public class BadgeRoom extends Activity {
                 achievementDialog.show();
             }
         });
+        achievementCategory1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         achievementCategory2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +75,13 @@ public class BadgeRoom extends Activity {
                 badge.setImageDrawable(displayGameBadge());
                 badgeText.setText("Mr-Know-It-All");
                 achievementDialog.show();
+            }
+        });
+        achievementCategory2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 

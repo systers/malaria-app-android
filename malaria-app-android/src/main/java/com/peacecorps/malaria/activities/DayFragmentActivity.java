@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.fragment.ThirdAnalyticFragment;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
@@ -251,6 +253,13 @@ public class DayFragmentActivity extends FragmentActivity {
                 });
                 dialog.show();
 
+            }
+        });
+        btnChangeData.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 

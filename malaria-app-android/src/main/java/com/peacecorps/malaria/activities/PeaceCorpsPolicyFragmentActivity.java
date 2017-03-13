@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.peacecorps.malaria.utils.AuthJSONObjectRequest;
 import com.peacecorps.malaria.R;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 import com.peacecorps.malaria.utils.VolleyApplication;
 
 import org.json.JSONException;
@@ -97,6 +99,13 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
             public void onClick(View v) {
                 String toSpeak = mPeaceCorpsPolicyLabel.getText().toString();
                 tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+        ttsButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 

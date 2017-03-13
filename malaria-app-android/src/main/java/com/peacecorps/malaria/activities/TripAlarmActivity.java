@@ -12,6 +12,7 @@ import android.media.Ringtone;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.reciever.TripAlarmReceiver;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -121,6 +123,13 @@ public class TripAlarmActivity extends Activity {
 
             }
         });
+        btnOK.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         /**Cancel Listener**/
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +146,13 @@ public class TripAlarmActivity extends Activity {
 
                 }
                 finish();
+            }
+        });
+        btnCancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 

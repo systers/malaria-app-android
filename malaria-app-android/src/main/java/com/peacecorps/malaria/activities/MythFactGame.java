@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +30,7 @@ public class MythFactGame extends Activity {
     private List<String> answers=null;
     private String emptyString="";
     private Button nxtButton;
+    private Button exitButton;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
@@ -40,12 +42,29 @@ public class MythFactGame extends Activity {
         trash=(TextView)findViewById(R.id.trash);
         chest=(TextView)findViewById(R.id.chest);
         nxtButton=(Button)findViewById(R.id.nextBtn);
+        exitButton = (Button)findViewById(R.id.exitBtn);
         //set touch listeners
         tvQuestion.setOnTouchListener(new ChoiceTouchListener());
         //set drag listeners
         trash.setOnDragListener(new ChoiceDragListener());
         chest.setOnDragListener(new ChoiceDragListener());
         initializeGame();
+        nxtButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(nxtButton.isClickable()){
+                    TouchFeedBack.touchFeedBack(v, event);
+                }
+                return false;
+            }
+        });
+        exitButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
     }
 
     //disable the back button
@@ -96,6 +115,13 @@ public class MythFactGame extends Activity {
                     MythFactGame.this.finish();
                 }
             });
+            ok.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    TouchFeedBack.touchFeedBack(v, event);
+                    return false;
+                }
+            });
 
             addGameScoreToMainScore();
             // Showing Alert Message
@@ -119,10 +145,24 @@ public class MythFactGame extends Activity {
                 MythFactGame.this.finish();
             }
         });
+        ok.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
+            }
+        });
+        cancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
