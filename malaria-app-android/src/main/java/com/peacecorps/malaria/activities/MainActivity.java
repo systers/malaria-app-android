@@ -9,36 +9,40 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.adapter.FragmentAdapter;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.fragment.FirstAnalyticFragment;
-import com.viewpagerindicator.CirclePageIndicator;
-import com.viewpagerindicator.PageIndicator;
+
+
 
 public class MainActivity extends FragmentActivity {
 
 
     FragmentAdapter mAdapter;
     ViewPager mPager;
-    PageIndicator mIndicator;
     Button mInfoButton;
     Button mTripButton;
     Button tempButton;
     Button userProfile;
     String TAGMA="MainActivity";
+    private LinearLayout indicatingDotsContainer;
+    private TextView[] dots;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        addDots(0);
         final DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(this);
         /*Method opens the Info Hub
         *Tiny 'i' symbol in the Setup Screen is Info Hub Button
@@ -49,6 +53,7 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplication().getApplicationContext(), InfoHubFragmentActivity.class));
                 finish();
+
 
             }
         });
@@ -92,11 +97,11 @@ public class MainActivity extends FragmentActivity {
         mPager = (ViewPager) findViewById(R.id.vPager);
         mPager.setAdapter(mAdapter);
         Log.d(TAGMA, "Adapter Set");
-        mIndicator = (CirclePageIndicator) findViewById(R.id.vIndicator);
-        mIndicator.setViewPager(mPager);
-        mIndicator.setOnPageChangeListener(new OnPageChangeListener() {
+        mPager.setOnPageChangeListener(new OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-
+            }
 
             @Override
             public void onPageSelected(int position) {
@@ -105,6 +110,8 @@ public class MainActivity extends FragmentActivity {
                  * Doses in A Row
                  * Adherence
                  * **/
+                addDots(position);
+
                 if (position == 1) {
 
                     Log.d(TAGMA,"Keeping Date");
@@ -151,19 +158,38 @@ public class MainActivity extends FragmentActivity {
             }
 
             @Override
-            public void onPageScrollStateChanged(int i) {
+            public void onPageScrollStateChanged(int state) {
 
             }
-
-            @Override
-            public void onPageScrolled(int i, float v, int i2) {
-
-            }
-
 
         });
 
+
     }
+
+    public void addDots(int position){
+        indicatingDotsContainer = (LinearLayout) findViewById(R.id.layoutDots);
+        dots = new TextView[3];
+        int dot_colorActive = getResources().getColor(R.color.selected_dot);
+        int dot_colorInActive = getResources().getColor(R.color.dot_dark_screen1);
+        indicatingDotsContainer.removeAllViews();
+
+        //number of dots added to container equals number of slides
+        for (int i = 0; i < dots.length; i++) {
+            dots[i] = new TextView(MainActivity.this);
+            dots[i].setText(Html.fromHtml("&#8226;"));
+            dots[i].setTextSize(35);
+            dots[i].setTextColor(dot_colorInActive);
+            indicatingDotsContainer.addView(dots[i]);
+        }
+
+        //dot corresponding to current slide is given active color i.e white color
+        if (dots.length > 0) {
+            dots[position].setTextColor(dot_colorActive);
+        }
+
+    }
+
     /*Calculating Interval between two time*/
     public long checkDrugTakenTimeInterval(String time) {
 

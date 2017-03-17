@@ -20,20 +20,14 @@
         />
 
 
-    <com.viewpagerindicator.CirclePageIndicator
-
-        android:id="@+id/vIndicator"
-        android:padding="10dip"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/layoutDots"
         android:layout_width="match_parent"
-        android:textColor="#2FB3E3"
-
-        app:footerLineHeight="1dp"
-        app:footerIndicatorHeight="3dp"
-        app:footerIndicatorStyle="underline"
-        app:selectedColor="#FFFFFF"
-        app:selectedBold="true"
-        />
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"></LinearLayout>
 
 
 

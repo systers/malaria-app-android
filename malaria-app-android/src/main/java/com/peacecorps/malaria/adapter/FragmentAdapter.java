@@ -3,7 +3,6 @@ package com.peacecorps.malaria.adapter;
 import com.peacecorps.malaria.fragment.HomeScreenFragment;
 import com.peacecorps.malaria.fragment.SecondAnalyticFragment;
 import com.peacecorps.malaria.fragment.FirstAnalyticFragment;
-import com.viewpagerindicator.IconPagerAdapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,18 +10,11 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 /**Usd for creating sliding Fragment Screen after the the Home Screen**/
 
-public class FragmentAdapter extends FragmentStatePagerAdapter implements
-        IconPagerAdapter {
+public class FragmentAdapter extends FragmentStatePagerAdapter {
 
     public FragmentAdapter(FragmentManager fm) {
         super(fm);
 
-    }
-
-    @Override
-    public int getIconResId(int index) {
-
-        return 0;
     }
 
     @Override
