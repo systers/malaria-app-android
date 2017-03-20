@@ -81,7 +81,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".activities.TripIndicatorFragmentActivity"
                   android:launchMode="singleTask"
-                  />
+                  android:windowSoftInputMode="adjustPan" />
 
         <activity android:name=".activities.TripIndicatorDialogActivity"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>
