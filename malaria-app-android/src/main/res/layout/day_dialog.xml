@@ -26,11 +26,8 @@
                 android:gravity="center"
                 android:textColor="@color/golden_brown"
                 android:text="Medicine Consumption"
-                android:textSize="22dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/day_dialog_tv_textsize"
+                android:layout_margin="@dimen/day_dialog_tv_margin"
                 >
             </TextView>
 
@@ -43,11 +40,10 @@
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/day_dialog_image_view_width"
+                android:layout_height="@dimen/day_dialog_image_view_height"
                 android:background="@drawable/drug_normal"
-                android:layout_margin="10dp" />
+                android:layout_margin="@dimen/day_dialog_image_view_margin" />
 
             <TextView
                 android:id="@+id/text"
@@ -56,7 +52,7 @@
                 android:textColor="@color/golden_brown"
                 android:text="Change Entry!"
                 android:layout_toRightOf="@+id/image"
-                android:layout_margin="10dp" />
+                android:layout_margin="@dimen/day_dialog_tv_margin" />
 
         </LinearLayout>
 
@@ -102,15 +98,15 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="@dimen/day_dialog_linearlayout_margin_bottom">
             <Button
                 android:id="@+id/dialogButtonOK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OK"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/day_dialog_button_ok_margin_top"
+                android:layout_marginRight="@dimen/day_dialog_button_ok_margin_right"
+                android:layout_marginLeft="@dimen/day_dialog_button_ok_margin_left"
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
                 />
@@ -120,9 +116,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cancel"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="@dimen/day_dialog_button_cancel_margin_top"
+                android:layout_marginRight="@dimen/day_dialog_button_cancel_margin_right"
+                android:layout_marginLeft="@dimen/day_dialog_button_cancel_margin_left"
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
 

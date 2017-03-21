@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back_ground"
-    android:padding="7sp"
+    android:padding="@dimen/badgeroom_root_linearlayout_padding"
     android:weightSum="3.0">
     <ScrollView
         android:layout_width="match_parent"
@@ -15,11 +15,11 @@
         android:layout_height="0dp"
         android:layout_weight="0.6"
         android:clickable="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp">
+        android:layout_marginTop="@dimen/badgeroom_linearlayout_margin_top"
+        android:layout_marginLeft="@dimen/badgeroom_linearlayout_margin_left">
         <Button
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/badgeroom_button_width"
+            android:layout_height="@dimen/badgeroom_button_height"
             android:id="@+id/shareButton"
             android:background="@drawable/share_icon"/>
         <TextView
@@ -28,8 +28,8 @@
             android:gravity="center"
             android:text="Achievement Room"
             android:textColor="@color/golden_brown"
-            android:textSize="22dp"
-            android:paddingRight="32dp"/>
+            android:textSize="@dimen/badge_room_tv_textsize"
+            android:paddingRight="@dimen/badgeroom_tv_padding_right"/>
 
     </LinearLayout>
     <LinearLayout
@@ -37,7 +37,7 @@
         android:layout_height="0dp"
         android:id="@+id/cat1_layout"
         android:layout_weight="0.7"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/badgeroom_linearlayout_margin"
         android:gravity="center"
         android:background="@drawable/achievement_button"
         android:clickable="true">>
@@ -47,14 +47,14 @@
             android:id="@+id/cat1_tv"
             android:text="              Rookie \nTaken your first medicine"
             android:textStyle="bold"
-            android:textSize="15sp" />
+            android:textSize="@dimen/badge_room_tv_category_textsize" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/cat2_layout"
         android:layout_weight="0.7"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/badgeroom_linearlayout_margin"
         android:gravity="center"
         android:background="@drawable/achievement_button"
         android:clickable="true">
@@ -64,14 +64,14 @@
             android:id="@+id/cat2_tv"
             android:text="               Mr Know-It-All \nAnswered first question correctly"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/badge_room_tv_category_textsize"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/cat3_layout"
         android:layout_weight="0.7"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/badgeroom_linearlayout_margin"
         android:gravity="center"
         android:background="@drawable/achievement_button">
         <TextView
@@ -80,7 +80,7 @@
             android:id="@+id/cat3_tv"
             android:text="            Explorer \nPlanned your first trip"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/badge_room_tv_category_textsize"/>
     </LinearLayout>
 
 

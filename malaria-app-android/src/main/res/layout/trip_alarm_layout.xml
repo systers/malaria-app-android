@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:text="Trip Checklist Reminder"
             android:textColor="@color/golden_brown"
-            android:textSize="22dp"
+            android:textSize="@dimen/trip_alarm_layout_tv_textsize"
             android:gravity="center"
             android:background="@color/lightest_brown"
-            android:padding="10dp"
+            android:padding="@dimen/trip_alarm_layout_tv_padding"
             />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tripRemindingItems"
             android:textColor="@color/golden_brown"
-            android:textSize="20sp"
+            android:textSize="@dimen/trip_alarm_layout_tv_text_size"
             android:text="hi"
             />
 
@@ -53,9 +53,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginLeft="@dimen/clearbutton_marginleft"
+            android:layout_marginTop="@dimen/clearbutton_margintop"
+            android:layout_marginBottom="@dimen/clearbutton_marginbottom" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,17 +65,17 @@
             android:layout_alignParentRight="true"
             android:id="@+id/reminderCancel"
             android:textColor="@color/white"
-            android:padding="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp" />
+            android:padding="@dimen/snoozebutton_padding"
+            android:layout_marginRight="@dimen/snoozebutton_marginright"
+            android:layout_marginTop="@dimen/snoozebutton_margintop"
+            android:layout_marginBottom="@dimen/snoozebutton_marginbottom" />
 
     </RelativeLayout>
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
-        android:layout_height="241dp"
+        android:layout_height="@dimen/trip_alarm_layout_listview_height"
         android:headerDividersEnabled="true"
         android:divider="#ff988455"
         android:dividerHeight="1dp"

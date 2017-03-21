@@ -13,14 +13,14 @@
         android:background="@drawable/calendar_button_selector"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#FFFFFF"
-        android:drawablePadding="5dp">
+        android:drawablePadding="@dimen/screen_grid_cell_button_drawablepadding">
     </Button>
 
     <TextView
         android:id="@+id/num_events_per_day"
         style="@style/calendar_event_style"
-        android:layout_width="10dip"
-        android:layout_height="10dip"
+        android:layout_width="@dimen/screen_grid_cell_tv_width"
+        android:layout_height="@dimen/screen_grid_cell_tv_height"
         android:layout_gravity="right" >
     </TextView>
 

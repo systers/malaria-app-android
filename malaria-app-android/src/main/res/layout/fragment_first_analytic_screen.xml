@@ -5,7 +5,7 @@
               android:layout_gravity="center"
               android:background="@color/back_ground"
               android:orientation="vertical"
-              android:padding="2dp" >
+              android:padding="@dimen/fragment_first_analytic_screen_linear_layout_padding" >
 
  <ScrollView
      android:layout_width="match_parent"
@@ -16,10 +16,10 @@
          android:orientation="vertical">
          <Button
              android:id="@+id/fragment_first_screen_settings_button"
-             android:layout_width="24dp"
-             android:layout_height="24dp"
+             android:layout_width="@dimen/fragment_first_analytic_screen_button_width"
+             android:layout_height="@dimen/fragment_first_analytic_screen_button_height"
              android:layout_gravity="end"
-             android:layout_margin="5dp"
+             android:layout_margin="@dimen/fragment_first_analytic_screen_button_margin"
              android:adjustViewBounds="true"
              android:background="@drawable/settings_normal"
              android:scaleType="fitCenter" />
@@ -29,11 +29,11 @@
              android:layout_height="wrap_content"
              android:layout_gravity="left"
              android:orientation="horizontal"
-             android:padding="5dp" >
+             android:padding="@dimen/fragment_first_analytic_screen_linearlayout_padding" >
 
              <ImageView
-                 android:layout_width="70dp"
-                 android:layout_height="60dp"
+                 android:layout_width="@dimen/fragment_first_analytic_screen_image_view_width"
+                 android:layout_height="@dimen/fragment_first_analytic_screen_image_view_height"
                  android:adjustViewBounds="true"
                  android:background="@drawable/medication_last_normal"
                  android:scaleType="fitCenter" />
@@ -42,10 +42,10 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:layout_gravity="center_vertical"
-                 android:paddingLeft="3dp"
-                 android:paddingRight="3dp"
+                 android:paddingLeft="@dimen/fragment_first_analytic_screen_padding_left"
+                 android:paddingRight="@dimen/fragment_first_analytic_screen_padding_right"
                  android:text="@string/first_analytic_screen_medicine_last_taken_text"
-                 android:textSize="18sp"
+                 android:textSize="@dimen/fragment_first_analytic_screen_textview_text_size"
                  android:textColor="@color/golden_brown"
                  android:id="@+id/mlt"
                  />
@@ -56,7 +56,7 @@
                  android:text="15/07"
                  android:background="@drawable/info_hub_button"
                  android:textColor="@color/white"
-                 android:textSize="17sp"
+                 android:textSize="@dimen/fragment_first_analytic_screen_textview_textsize"
                  android:layout_gravity="center_vertical"
 
                  />
@@ -70,11 +70,11 @@
              android:layout_height="wrap_content"
              android:layout_gravity="left"
              android:orientation="horizontal"
-             android:padding="5dp" >
+             android:padding="@dimen/fragment_first_analytic_screen_linearlayout_padding" >
 
              <ImageView
-                 android:layout_width="70dp"
-                 android:layout_height="60dp"
+                 android:layout_width="@dimen/fragment_first_analytic_screen_imgview_width"
+                 android:layout_height="@dimen/fragment_first_analytic_screen_imgview_height"
                  android:adjustViewBounds="true"
                  android:background="@drawable/doses_missing_image_normal"
                  android:scaleType="fitCenter" />
@@ -83,10 +83,10 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:layout_gravity="center_vertical"
-                 android:paddingLeft="3dp"
-                 android:paddingRight="3dp"
+                 android:paddingLeft="@dimen/fragment_first_analytic_screen_textview_paddingleft"
+                 android:paddingRight="@dimen/fragment_first_analytic_screen_textview_paddingright"
                  android:text="@string/first_analytic_screen_doses_missing_text"
-                 android:textSize="18sp"
+                 android:textSize="@dimen/fragment_first_analytic_screen_text_size"
                  android:textColor="@color/golden_brown"
                  android:id="@+id/dinr"
                  />
@@ -97,7 +97,7 @@
                  android:layout_height="wrap_content"
                  android:background="@drawable/info_hub_button"
                  android:textColor="@color/white"
-                 android:textSize="17sp"
+                 android:textSize="@dimen/fragment_first_analytic_screen_text_size"
                  android:layout_gravity="center_vertical"
                  />
 
@@ -108,11 +108,11 @@
              android:layout_height="wrap_content"
              android:layout_gravity="left"
              android:orientation="horizontal"
-             android:padding="5dp" >
+             android:padding="@dimen/fragment_first_analytic_screen_linearlayout_padding" >
 
              <ImageView
-                 android:layout_width="70dp"
-                 android:layout_height="60dp"
+                 android:layout_width="@dimen/fragment_first_analytic_screen_image_view_width"
+                 android:layout_height="@dimen/fragment_first_analytic_screen_image_view_height"
                  android:adjustViewBounds="true"
                  android:background="@drawable/medicine_adhere_normal"
                  android:scaleType="fitCenter" />
@@ -121,10 +121,10 @@
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:layout_gravity="center_vertical"
-                 android:paddingLeft="3dp"
-                 android:paddingRight="3dp"
+                 android:paddingLeft="@dimen/fragment_first_analytic_screen_textview_paddingleft"
+                 android:paddingRight="@dimen/fragment_first_analytic_screen_textview_paddingleft"
                  android:text="@string/first_analytic_screen_medicine_adherence_to_medicine_text"
-                 android:textSize="18sp"
+                 android:textSize="@dimen/fragment_first_analytic_screen_text_size"
                  android:textColor="@color/golden_brown"
                  android:id="@+id/atm"
                  />
@@ -135,7 +135,7 @@
                  android:layout_height="wrap_content"
                  android:background="@drawable/info_hub_button"
                  android:textColor="@color/white"
-                 android:textSize="17sp"
+                 android:textSize="@dimen/fragment_first_analytic_screen_text_size"
                  android:layout_gravity="center_vertical" />
 
          </LinearLayout>

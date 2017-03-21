@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/back_ground"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="@dimen/medicine_store_linear_layout_padding"
     android:weightSum="1" >
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -24,11 +24,11 @@
             android:weightSum="1">
             <Button
                 android:id="@+id/add_medicine"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="@dimen/medicine_store_addbutton_width"
+                android:layout_height="@dimen/medicine_store_addbutton_height"
                 android:background="@drawable/plus"
                 android:gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/medicine_store_addbutton_margin"
                 android:textColor="@color/white" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,11 +36,11 @@
                 android:gravity="right">
                 <Button
                     android:id="@+id/dialog_setting"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/settings_button_width"
+                    android:layout_height="@dimen/settings_button_height"
                     android:background="@drawable/settings_normal"
                     android:gravity="center"
-                    android:layout_margin="5dp"
+                    android:layout_margin="@dimen/settings_button_margin"
                     android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
@@ -64,7 +64,7 @@
                     android:gravity="center"
                     android:text="Malarone"
                     android:textColor="@color/golden_brown"
-                    android:textSize="25.0sp"
+                    android:textSize="@dimen/medicine_store_textview_size"
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
@@ -80,7 +80,7 @@
                    android:id="@+id/days_left"
                    android:textColor="@color/golden_brown"
                    android:text="7 Days"
-                   android:textSize="50sp"
+                   android:textSize="@dimen/medicine_store_textview_days_textsize"
                    android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
@@ -90,9 +90,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/info_hub_button"
             android:gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/ordermedicine_buton_margin"
             android:text="Order Medicines"
             android:textColor="@color/white"
-            android:textSize="20.0sp" />
+            android:textSize="@dimen/ordermedicine_text_size" />
     </LinearLayout>
 </LinearLayout>

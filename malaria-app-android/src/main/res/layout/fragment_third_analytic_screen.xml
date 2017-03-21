@@ -8,39 +8,38 @@
     <LinearLayout
         android:id="@+id/buttonlayout"
         android:layout_width="fill_parent"
-        android:layout_height="60sp"
+        android:layout_height="@dimen/fragment_third_analytic_screen_linearlayout_height"
         android:gravity="left|top"
-        android:height="60sp"
         android:orientation="horizontal" >
 
 
         <ImageView
             android:id="@+id/prevMonth"
-            android:layout_width="20sp"
+            android:layout_width="@dimen/fragment_third_analytic_screen_imgview_width"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:layout_marginLeft="10sp"
+            android:layout_marginLeft="@dimen/fragment_third_analytic_screen_imgview_margin_left"
             android:src="@drawable/calendar_left_arrow_selector" >
         </ImageView>
 
         <TextView
             android:id="@+id/currentMonth"
             android:layout_width="fill_parent"
-            android:layout_height="60sp"
+            android:layout_height="@dimen/fragment_third_analytic_screen_textview_height"
             android:layout_weight="0.6"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/golden_brown"
-            android:textSize="25dp"
+            android:textSize="@dimen/fragment_third_analytic_screen_textview_size"
             android:textStyle="bold">
         </TextView>
 
         <ImageView
             android:id="@+id/nextMonth"
-            android:layout_width="20sp"
+            android:layout_width="@dimen/fragment_third_analytic_screen_imgview_width"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:layout_marginRight="10sp"
+            android:layout_marginRight="@dimen/fragment_third_analytic_screen_imgview_margin_right"
             android:src="@drawable/calendar_right_arrow_selector" >
         </ImageView>
 

@@ -26,11 +26,8 @@
                 android:gravity="center"
                 android:textColor="@color/golden_brown"
                 android:text="Category"
-                android:textSize="22dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/badgeroom_dialog_tv_textsize"
+                android:layout_margin="@dimen/badgeroom_dialog_tv_margin"
                 >
             </TextView>
 
@@ -40,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/badgeroom_dialog_linearlayout_margin"
             android:layout_weight="0.96">
             <ScrollView
                 android:layout_width="match_parent"
@@ -58,10 +55,10 @@
                         android:text="Achievement Text"
                         android:gravity="center"
                         android:layout_toRightOf="@+id/image"
-                        android:layout_margin="20dp" />
+                        android:layout_margin="@dimen/badgeroom_dialog_tv_layout_margin" />
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="@dimen/badgeroom_dialog_imageview_width"
+                        android:layout_height="@dimen/badgeroom_dialog_imageview_height"
                         android:id="@+id/userBadge" />
                 </LinearLayout>
             </ScrollView>
@@ -70,16 +67,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="@dimen/badgeroom_dialog_linearlayout_height"
             android:gravity="center|bottom"
             android:orientation="horizontal"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginBottom="@dimen/badgeroom_dialog_linearlayout_margin_bottom"
+            android:layout_marginTop="@dimen/badgeroom_dialog_linearlayout_margin_top"
+            android:layout_marginLeft="@dimen/badgeroom_dialog_linearlayout_margin_left"
+            android:layout_marginRight="@dimen/badgeroom_dialog_linearlayout_margin_right"
             android:weightSum="5">
 
                 <ImageView

@@ -16,10 +16,10 @@
             android:layout_height="wrap_content"
             android:text="Previous Locations"
             android:textColor="@color/golden_brown"
-            android:textSize="22dp"
+            android:textSize="@dimen/location_dialog_tv_textsize"
             android:gravity="center"
             android:background="@color/lightest_brown"
-            android:padding="10dp"
+            android:padding="@dimen/location_dialog_tv_padding"
             />
         <ListView
             android:id="@android:id/list"

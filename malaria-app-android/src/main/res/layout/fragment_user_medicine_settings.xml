@@ -6,7 +6,7 @@
               android:layout_gravity="center"
               android:background="@color/back_ground"
               android:orientation="vertical"
-              android:paddingTop="15dp"
+              android:paddingTop="@dimen/fragment_user_medicine_settings_linearlayout_padding_top"
               tools:context=".activities.UserMedicineSettingsFragmentActivity">
 
     <ScrollView
@@ -23,10 +23,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/fragment_user_medicine_settings_textview_margin_bottom"
+                android:layout_marginTop="@dimen/fragment_user_medicine_settings_textview_margin_top"
                 android:text="@string/user_medicine_settings_activity_setup_label"
-                android:textSize="38sp"
+                android:textSize="@dimen/fragment_user_medicine_settings_textview_size"
                 android:textStyle="bold"
                 android:textColor="@color/user_medicine_first_text_color"
                 />
@@ -35,11 +35,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/fragment_user_medicine_settings_linearlayout_marginleft"
+                android:layout_marginRight="@dimen/fragment_user_medicine_settings_linearlayout_marginright"
                 android:background="@drawable/custom_line_border"
                 android:orientation="vertical"
-                android:paddingLeft="30dp" >
+                android:paddingLeft="@dimen/fragment_user_medicine_settings_linearlayout_paddingleft" >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -50,14 +50,14 @@
                         android:id="@+id/user_medicine_settings_activity_drug_take_label"
                         style="@style/UserMedicineSettingsCommonTextAppearance"
                         android:text="@string/user_medicine_settings_activity_drug_take_label"
-                        android:paddingTop="15dp"
+                        android:paddingTop="@dimen/fragment_user_medicine_settings_text_size"
                         android:textColor="@color/golden_brown"
                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="114dp" />
+                        android:paddingLeft="@dimen/fragment_user_medicine_settings_textview_paddingleft" />
                 </LinearLayout>
 
                 <Spinner
@@ -69,8 +69,8 @@
                 <TextView
                     android:id="@+id/user_medicine_settings_activity_time_pick_label"
                     style="@style/UserMedicineSettingsCommonTextAppearance"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="@dimen/fragment_user_medicine_settings_textview_margin_right"
+                    android:layout_marginTop="@dimen/fragment_user_medicine_settings_textview_margintop"
                     android:text="@string/user_medicine_settings_activity_time_pick_label"
                     android:textColor="@color/golden_brown"
                     />
@@ -79,8 +79,8 @@
                     android:id="@+id/user_medicine_settings_activity_time_pick_button"
                     style="@style/UserMedicineSettingsCommonTextAppearance"
                     android:layout_gravity="center"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="5dp"
+                    android:paddingBottom="@dimen/fragment_user_medicine_settings_textview_paddingbottom"
+                    android:paddingTop="@dimen/fragment_user_medicine_settings_textview_padding_top"
                     android:text="@string/user_medicine_settings_activity_time_pick_button"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -92,14 +92,14 @@
                         android:id="@+id/user_medicine_settings_activity_if_forget_label"
                         style="@style/UserMedicineSettingsCommonTextAppearance"
                         android:text="@string/user_medicine_settings_activity_if_forget_label"
-                        android:paddingBottom="10dp"
+                        android:paddingBottom="@dimen/fragment_user_medicine_settings_textview_paddingbottom"
                         android:textColor="@color/golden_brown"
                         />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="72dp" />
+                        android:paddingLeft="@dimen/fragment_user_medicine_settings_textview_padding_left" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -107,10 +107,10 @@
                 android:id="@+id/user_medicine_settings_activity_done_button"
                 style="@style/UserMedicineSettingsCommonTextAppearance"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/fragment_user_medicine_settings_button_margin_top"
                 android:textColor="@color/white"
-                android:paddingLeft="40dp"
-                android:paddingRight="40dp"
+                android:paddingLeft="@dimen/fragment_user_medicine_settings_button_margin_left"
+                android:paddingRight="@dimen/fragment_user_medicine_settings_button_margin_right"
                 android:background="@color/gray"
                 android:hint="@string/user_medicine_settings_activity_done_button"
                 android:textColorHint="@color/white"

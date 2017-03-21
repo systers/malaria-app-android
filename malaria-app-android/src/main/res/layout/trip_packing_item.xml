@@ -2,14 +2,14 @@
 <CheckedTextView
     android:id="@+id/packingListItem"
     android:layout_width="fill_parent"
-    android:textSize="20sp"
-    android:padding="2dp"
+    android:textSize="@dimen/trip_packing_item_textsize"
+    android:padding="@dimen/trip_packing_item_padding"
     android:layout_height="?android:attr/listPreferredItemHeightSmall"
     android:textAppearance="?android:attr/textAppearanceListItemSmall"
     android:checkMark="@drawable/trip_check"
     android:gravity="center_vertical"
     android:layout_alignParentEnd="true"
     android:layout_alignParentRight="true"
-    android:layout_marginLeft="20dp"
+    android:layout_marginLeft="@dimen/trip_packing_item_margin_left"
     android:background="@color/light_green"
     xmlns:android="http://schemas.android.com/apk/res/android" />

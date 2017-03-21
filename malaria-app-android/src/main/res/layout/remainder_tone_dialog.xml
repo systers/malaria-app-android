@@ -27,11 +27,8 @@
                 android:gravity="center"
                 android:textColor="@color/golden_brown"
                 android:text="SET REMINDER TONE"
-                android:textSize="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/remainder_tone_dialog_tv_textsize"
+                android:layout_margin="@dimen/remainder_tone_dialog_tv_margin"
                 >
             </TextView>
 
@@ -46,27 +43,27 @@
 
             <EditText
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/remainder_tone_dialog_edittext_height"
                 android:id="@+id/tone_path"
                 android:hint="Specify file path"
                 android:textColorHint="@color/gray"
                 android:textColor="@color/golden_brown"
-                android:textSize="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/remainder_tone_dialog_et_size"
+                android:layout_marginTop="@dimen/remainder_tone_dialog_edittext_margin_top"
+                android:layout_marginBottom="@dimen/remainder_tone_dialog_edittext_margin_bottom"
+                android:layout_marginLeft="@dimen/remainder_tone_dialog_edittext_margin_left"
                 android:layout_weight="10"
                 />
 
             <Button
                 android:id="@+id/browse"
-                android:layout_width="20dp"
+                android:layout_width="@dimen/remainder_tone_dialog_button_width"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:background="@drawable/graph_bg"
                 android:text="..."
                 android:layout_weight="1"
-                android:layout_margin="20dp" />
+                android:layout_margin="@dimen/remainder_tone_dialog_button_margin" />
 
         </LinearLayout>
 
@@ -81,8 +78,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginBottom="@dimen/remainder_tone_dialog_marginbottom"
+            android:layout_marginTop="@dimen/remainder_tone_dialog_margintop">
 
             <Button
                 android:id="@+id/dialogButtonOKReminder"
@@ -94,11 +91,11 @@
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:layout_columnSpan="8"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/remainder_tone_dialog_yes_button_marginleft"
                 android:layout_alignTop="@+id/dialogButtonCancel"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="@dimen/remainder_tone_dialog_yes_button_margin_right"/>
 
             <Button
                 android:id="@+id/dialogButtonCancelReminder"
@@ -108,8 +105,8 @@
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
                 android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/remainder_tone_dialog_no_button_marginleft"
+                android:layout_marginRight="@dimen/remainder_tone_dialog_no_button_marginright"
                 android:layout_gravity="center_horizontal"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
