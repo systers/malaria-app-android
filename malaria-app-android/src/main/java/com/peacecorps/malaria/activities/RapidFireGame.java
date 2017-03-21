@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.model.RapidFireQuestionModel;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ public class RapidFireGame extends Activity{
     private Button opt1;
     private Button opt2;
     private Button opt3;
+    private Button exit;
     private TextView questionTv;
     private  TextView scoreTv;
     private TextView timer;
@@ -44,13 +47,42 @@ public class RapidFireGame extends Activity{
         opt1 = (Button) findViewById(R.id.button1);
         opt2 = (Button) findViewById(R.id.button2);
         opt3 = (Button) findViewById(R.id.button3);
+        exit = (Button) findViewById(R.id.exit);
         questionTv= (TextView)findViewById(R.id.txtQuestion);
         scoreTv=(TextView)findViewById(R.id.score);
         timer=(TextView)findViewById(R.id.timers);
         questionList=new ArrayList<RapidFireQuestionModel>();
         opt1.setOnClickListener(optionOneClick());
+        opt1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         opt2.setOnClickListener(optionTwoClick());
+        opt2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         opt3.setOnClickListener(optionThreeClick());
+        opt3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
+        exit.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         //adding questions
         questionList.add(new RapidFireQuestionModel("Melfoquine should be taken ", "Daily", "Weekly", "Monthly", 2));
         questionList.add(new RapidFireQuestionModel("Malaria is caused by ", "Virus", "Bacteria", "Protozoa",3));
@@ -179,10 +211,24 @@ public class RapidFireGame extends Activity{
                 RapidFireGame.this.finish();
             }
         });
+        ok.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 alertDialog.dismiss();
+            }
+        });
+        cancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 
@@ -232,6 +278,13 @@ public class RapidFireGame extends Activity{
             public void onClick(View view) {
                 addGameScoreToMainScore();
                 RapidFireGame.this.finish();
+            }
+        });
+        ok.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
 

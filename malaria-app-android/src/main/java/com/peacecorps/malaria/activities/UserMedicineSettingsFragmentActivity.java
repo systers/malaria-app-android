@@ -18,6 +18,7 @@ import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.Calendar;
@@ -28,11 +29,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.adapter.DrugArrayAdapter;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.services.AlarmService;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 
 public class UserMedicineSettingsFragmentActivity extends FragmentActivity
@@ -66,13 +69,20 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         this.setTitle(R.string.user_medicine_settings_fragment_activity_title);
 
         mSharedPreferenceStore = new SharedPreferenceStore();
+        final boolean isDoneButtonChecked = false;
 
         mFragmentContext = UserMedicineSettingsFragmentActivity.this
                 .getApplicationContext();
         mDoneButton = (Button) findViewById(R.id.user_medicine_settings_activity_done_button);
+        mDoneButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         mDoneButton.setOnClickListener(mDoneButtonClickListener);
 
-        boolean isDoneButtonChecked = false;
 
         timePickButton = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_button);
         mDrugTakeLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_drug_take_label);
@@ -80,6 +90,14 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         mTimePickLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_time_pick_label);
         mIfForgetLabel = (TextView) findViewById(R.id.user_medicine_settings_activity_if_forget_label);
         mDrugSelectSpinner = (Spinner) findViewById(R.id.user_medicine_settings_activity_drug_select_spinner);
+
+        mDrugSelectSpinner.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
 
         mSharedPreferenceStore.getSharedPreferences(this);

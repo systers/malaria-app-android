@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.text.Html;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 /**
  * Created by yatna on 15/6/16.
@@ -51,6 +53,28 @@ public class MedicineStore extends Activity {
         drugName=SharedPreferenceStore.mPrefsStore.getString("com.peacecorps.malaria.drugPicked", null);
         medicineName.setText(drugName);
         displayMedicineStore();
+
+        addMedicine.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
+        settings.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
+        orderMedicine.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
     }
     private void displayMedicineStore(){
         medicineStore=preferences.getInt("medicineStore",0);
@@ -111,6 +135,13 @@ public class MedicineStore extends Activity {
                         }
                     }
                 });
+                email.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        TouchFeedBack.touchFeedBack(v, event);
+                        return false;
+                    }
+                });
                 //implement the message button
                 message.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -127,6 +158,13 @@ public class MedicineStore extends Activity {
                             Toast.makeText(MedicineStore.this, "SMS sent.", Toast.LENGTH_SHORT).show();
                             orderMedicineDialog.dismiss();
                         }
+                    }
+                });
+                message.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        TouchFeedBack.touchFeedBack(v, event);
+                        return false;
                     }
                 });
 
@@ -167,10 +205,24 @@ public class MedicineStore extends Activity {
                         }
                     }
                 });
+                add.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        TouchFeedBack.touchFeedBack(v, event);
+                        return false;
+                    }
+                });
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         addMedicineDialog.dismiss();
+                    }
+                });
+                cancel.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        TouchFeedBack.touchFeedBack(v, event);
+                        return false;
                     }
                 });
 
@@ -226,10 +278,24 @@ public class MedicineStore extends Activity {
                         }
                     }
                 });
+                set.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        TouchFeedBack.touchFeedBack(v, event);
+                        return false;
+                    }
+                });
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         settingsDialog.dismiss();
+                    }
+                });
+                cancel.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        TouchFeedBack.touchFeedBack(v, event);
+                        return false;
                     }
                 });
 

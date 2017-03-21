@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -24,6 +25,7 @@ import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.activities.UserMedicineSettingsFragmentActivity;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.services.AlarmService;
+import com.peacecorps.malaria.utils.TouchFeedBack;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -103,6 +105,13 @@ public class HomeScreenFragment extends Fragment {
 
             }
         });
+        mSettingsButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
 
         mRemainderToneButton.setOnClickListener(new View.OnClickListener(){
 
@@ -112,6 +121,13 @@ public class HomeScreenFragment extends Fragment {
                 Intent myIntent = new Intent(getActivity(), RemainderToneActivity.class);
                 startActivity(myIntent);
 
+            }
+        });
+        mRemainderToneButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
             }
         });
         mAcceptMedicationButton.setOnClickListener(new View.OnClickListener() {
@@ -481,7 +497,13 @@ public class HomeScreenFragment extends Fragment {
 
         //final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
         Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
-
+        btnOK.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -520,6 +542,13 @@ public class HomeScreenFragment extends Fragment {
         });
 
         Button btnCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelReset);
+        btnCancel.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                TouchFeedBack.touchFeedBack(v, event);
+                return false;
+            }
+        });
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
