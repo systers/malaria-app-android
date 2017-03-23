@@ -211,7 +211,6 @@ public class InfoHubFragmentActivity extends FragmentActivity {
             }
         });
         dialog.show();
-
     }
 }
 

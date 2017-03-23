@@ -748,5 +748,4 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         DialogFragment newFragment = new TimePickerDialogDeparture();
         newFragment.show(getFragmentManager(),"Departure Time");
     }
-
 }
