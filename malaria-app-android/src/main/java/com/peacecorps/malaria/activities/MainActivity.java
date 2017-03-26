@@ -1,25 +1,25 @@
 package com.peacecorps.malaria.activities;
 
 
-import java.util.Calendar;
-import java.util.Date;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.adapter.FragmentAdapter;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.fragment.FirstAnalyticFragment;
+import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends FragmentActivity {
 
@@ -47,9 +47,7 @@ public class MainActivity extends FragmentActivity {
         mInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplication().getApplicationContext(), InfoHubFragmentActivity.class));
-                finish();
-
+                startActivity(new Intent(MainActivity.this, InfoHubFragmentActivity.class));
             }
         });
         Log.d(TAGMA, "Info Hub Button initialized");
@@ -61,8 +59,7 @@ public class MainActivity extends FragmentActivity {
         mTripButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplication().getApplicationContext(),TripIndicatorFragmentActivity.class));
-                finish();
+                startActivity(new Intent(MainActivity.this,TripIndicatorFragmentActivity.class));
             }
         });
 
@@ -71,8 +68,7 @@ public class MainActivity extends FragmentActivity {
         tempButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), NewHomeActivity.class));
-                finish();
+                startActivity(new Intent(MainActivity.this, NewHomeActivity.class));
             }
         });
 
@@ -81,8 +77,7 @@ public class MainActivity extends FragmentActivity {
         userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),UserProfile.class));
-                finish();
+                startActivity(new Intent(MainActivity.this,UserProfile.class));
             }
         });
 
