@@ -73,7 +73,6 @@
             android:layout_marginTop="10dp"
             android:paddingBottom="0dp"
             >
-
             <Button
                 android:id="@+id/homeButton"
 
@@ -85,7 +84,6 @@
                 android:scaleType="fitCenter"
 
                 />
-
             <Button
                 android:background="@drawable/bus_icon_inactive_normal"
                 android:layout_width="40dp"
@@ -97,7 +95,6 @@
                 android:id="@+id/tripButton"
 
                 />
-
             <Button
                 android:background="@drawable/info_hub_inactive_normal"
                 android:id="@+id/infoButton"
