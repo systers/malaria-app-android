@@ -53,9 +53,8 @@ public class EffectivenessFragmentActivity extends FragmentActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.effectiveness_fragment);
-
+        getWindow().setBackgroundDrawable(null);
         mEffectivenessLabel = (TextView) findViewById(R.id.effectivenessLabel);
         effectivenessImage= (ImageView)findViewById(R.id.effectiveness_image);
         mETitle = (TextView)findViewById(R.id.eam);

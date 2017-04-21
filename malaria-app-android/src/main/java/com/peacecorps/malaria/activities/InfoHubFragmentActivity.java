@@ -31,6 +31,7 @@ public class InfoHubFragmentActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_hub_screen);
+        getWindow().setBackgroundDrawable(null);
 
         /*internetIsConnected = (TextView)findViewById(R.id.internetIsConnected);
 

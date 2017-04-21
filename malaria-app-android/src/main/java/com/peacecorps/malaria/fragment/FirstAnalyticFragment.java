@@ -40,7 +40,7 @@ public class FirstAnalyticFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater
                 .inflate(R.layout.fragment_first_analytic_screen, null);
-
+        getActivity().getWindow().setBackgroundDrawable(null);
         //declaring views
         mSettingsButton = (Button) rootView.findViewById(R.id.fragment_first_screen_settings_button);
         checkMediLastTakenTime = (TextView) rootView.findViewById(R.id.checkMediLastTakenTime);

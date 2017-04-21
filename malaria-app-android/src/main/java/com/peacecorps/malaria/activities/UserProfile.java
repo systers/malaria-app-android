@@ -37,6 +37,7 @@ public class UserProfile extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
+        getWindow().setBackgroundDrawable(null);
         userNameEt = (EditText)findViewById(R.id.user_name);
         userEmailEt = (EditText)findViewById(R.id.user_email);
         userAgeEt = (EditText)findViewById(R.id.user_age);

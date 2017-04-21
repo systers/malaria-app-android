@@ -38,6 +38,7 @@ public class MainActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setBackgroundDrawable(null);
 
         final DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(this);
         /*Method opens the Info Hub

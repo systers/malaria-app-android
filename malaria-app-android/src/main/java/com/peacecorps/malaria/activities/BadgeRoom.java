@@ -35,6 +35,7 @@ public class BadgeRoom extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.badge_room);
+        getWindow().setBackgroundDrawable(null);
         shareButton=(Button)findViewById(R.id.shareButton);
         achievementCategory1=(LinearLayout)findViewById(R.id.cat1_layout);
         achievementCategory2=(LinearLayout)findViewById(R.id.cat2_layout);

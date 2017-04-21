@@ -49,7 +49,7 @@ public class VolunteerAdherenceFragmentActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
      //views
         setContentView(R.layout.volunteer_adherence_fragment);
-
+        getWindow().setBackgroundDrawable(null);
         mVolunteerAdherenceLabel = (TextView) findViewById(R.id.volunteerAdherenceLabel);
         vaf=  (TextView) findViewById(R.id.var);
         progressDialog = new ProgressDialog(this);

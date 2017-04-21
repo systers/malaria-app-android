@@ -98,6 +98,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         //Setting Up Views
         setContentView(R.layout.tripindicator_layout);
+        getWindow().setBackgroundDrawable(null);
         btnInfoHub=(Button)findViewById(R.id.infoButton);
         btnHome=(Button)findViewById(R.id.homeButton);
         locationSpinner=(AutoCompleteTextView)findViewById(R.id.trip_location_select_editText);

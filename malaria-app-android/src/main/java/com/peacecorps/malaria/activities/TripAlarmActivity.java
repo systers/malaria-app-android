@@ -37,8 +37,8 @@ public class TripAlarmActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //views
         setContentView(R.layout.trip_alarm_layout);
+        getWindow().setBackgroundDrawable(null);
         TextView textView = (TextView)findViewById(R.id.tripRemindingItems);
         Button btnOK = (Button)findViewById(R.id.reminderOK);
         Button btnCancel = (Button)findViewById(R.id.reminderCancel);

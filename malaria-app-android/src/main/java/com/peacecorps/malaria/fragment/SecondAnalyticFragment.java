@@ -61,6 +61,7 @@ public class SecondAnalyticFragment extends Fragment {
         //Declaring the Views
         rootView = inflater.inflate(R.layout.fragment_second_analytic_screen,
                 null);
+        getActivity().getWindow().setBackgroundDrawable(null);
         Log.e("MyTag", "Error message with my own tag");
         mSettingsButton = (Button) rootView.findViewById(R.id.fragment_second_screen_settings_button);
 

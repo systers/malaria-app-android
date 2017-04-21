@@ -62,8 +62,8 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.fragment_user_medicine_settings);
+        getWindow().setBackgroundDrawable(null);
         this.setTitle(R.string.user_medicine_settings_fragment_activity_title);
 
         mSharedPreferenceStore = new SharedPreferenceStore();

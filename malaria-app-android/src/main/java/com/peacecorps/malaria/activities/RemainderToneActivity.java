@@ -28,6 +28,7 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.remainder_tone_dialog);
+        getWindow().setBackgroundDrawable(null);
         btnBrowse=(Button)findViewById(R.id.browse);
         path=(EditText)findViewById(R.id.tone_path);
         btnOK=(Button)findViewById(R.id.dialogButtonOKReminder);

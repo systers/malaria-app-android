@@ -40,6 +40,7 @@ public class MedicineStore extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.medicine_store);
+        getWindow().setBackgroundDrawable(null);
         medicineName=(TextView)findViewById(R.id.medicine_name);
         daysLeft=(TextView)findViewById(R.id.days_left);
         addMedicine=(Button)findViewById(R.id.add_medicine);

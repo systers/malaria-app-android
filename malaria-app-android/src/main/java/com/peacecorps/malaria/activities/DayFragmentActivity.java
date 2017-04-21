@@ -60,6 +60,7 @@ public class DayFragmentActivity extends FragmentActivity {
         /* setting view for Day Fragment Activity*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_day);
+        getWindow().setBackgroundDrawable(null);
 
         /*declaring variables for accessing Shared Preferences*/
         mSharedPreferenceStore = new SharedPreferenceStore();

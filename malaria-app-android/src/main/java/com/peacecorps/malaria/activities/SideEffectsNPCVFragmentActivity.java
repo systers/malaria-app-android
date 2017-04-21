@@ -48,9 +48,8 @@ public class SideEffectsNPCVFragmentActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //views
         setContentView(R.layout.side_effects_npcv_fragment);
-
+        getWindow().setBackgroundDrawable(null);
         mSideEffectsNPCVLabel = (TextView) findViewById(R.id.sideEffectsNPCVLabel);
         sen = (TextView) findViewById(R.id.sen);
         progressDialog = new ProgressDialog(this);

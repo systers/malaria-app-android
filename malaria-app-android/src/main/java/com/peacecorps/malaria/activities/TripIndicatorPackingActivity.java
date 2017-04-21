@@ -66,6 +66,7 @@ public class TripIndicatorPackingActivity extends Activity {
 
         /** Setting a custom layout for the list activity */
         setContentView(R.layout.trip_indicator_packing_dialog);
+        getWindow().setBackgroundDrawable(null);
 
         /** Reference to the button of the layout main.xml */
         ImageButton btnAdd = (ImageButton) findViewById(R.id.btnAdd);
