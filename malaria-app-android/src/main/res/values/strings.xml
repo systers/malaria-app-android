@@ -9,6 +9,9 @@
     <string name="user_medicine_settings_activity_time_pick_label">Remind me at:</string>
     <string name="user_medicine_settings_activity_time_pick_button">Pick Time</string>
     <string name="user_medicine_settings_activity_if_forget_label">If I forget</string>
+    <string name="age_limit_exceeded">Age limit exceeded.</string>
+    <string name="value_lessthan_366">Enter a value less than 366</string>
+    <string name="quantity_required">Quantity Required</string>
     <string name="user_medicine_settings_activity_done_button">DONE</string>
     <string name="second_analytic_screen_title">SECOND ANALYTIC SCREEN</string>
     <string name="first_analytic_screen_doses_missing_text">Doses in a Row</string>

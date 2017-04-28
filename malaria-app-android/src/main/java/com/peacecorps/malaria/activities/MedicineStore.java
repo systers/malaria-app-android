@@ -190,7 +190,10 @@ public class MedicineStore extends Activity {
                     @Override
                     public void onClick(View view) {
                         if(medicineQuantityEt.getText().toString().trim().equals("")){
-                            medicineQuantityEt.setError("Quantity Required");
+                            medicineQuantityEt.setError(getString(R.string.quantity_required));
+                        }
+                        else if (medicineQuantityEt.getText().toString().length() > 3 || Integer.valueOf(medicineQuantityEt.getText().toString()) > 365) {
+                            medicineQuantityEt.setError(getString(R.string.value_lessthan_366));
                         }
                         else{
                             medicineStore=preferences.getInt("medicineStore",0);
