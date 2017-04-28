@@ -393,11 +393,14 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
                 } catch (Exception e) {
                     return 0;
                 }
-                if (cursor.getString(0).compareTo("yes") == 0) {
-                    prevDate = cursor.getInt(2);
-                    prevDateMonth = cursor.getInt(3);
-                    if (Math.abs(currDate - prevDate) <= 1)
-                        dosesInaRow++;
+
+                if(cursor.getString(0)!=null){
+                    if (cursor.getString(0).compareTo("yes") == 0){
+                        prevDate = cursor.getInt(2);
+                        prevDateMonth = cursor.getInt(3);
+                        if (Math.abs(currDate - prevDate) <= 1)
+                            dosesInaRow++;
+                    }
                 }
 
                 /**Since Previous and Current Date our Updated,

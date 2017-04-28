@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@color/back_ground"
     android:layout_gravity="center_horizontal"
 
     >
@@ -44,6 +44,7 @@
                     <ImageView android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/peace_corps_logo_normal"
+                        android:contentDescription="@string/description_peace_corps_logo"
                         />
 
                     <TextView android:layout_width="wrap_content"

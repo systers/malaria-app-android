@@ -6,7 +6,8 @@
                 <ImageView
                     android:id="@+id/imgDrug"
                     android:layout_width="40dp"
-                    android:layout_height="50dp"/>
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/description_drugs" />
 
                 <TextView
                     android:id="@+id/drugItem"

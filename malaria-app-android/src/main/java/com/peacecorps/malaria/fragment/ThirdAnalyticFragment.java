@@ -76,8 +76,8 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
         }
         _calendar = Calendar.getInstance();
         year = _calendar.get(Calendar.YEAR);
-        _calendar.set(Calendar.MONTH,intmon+1);
-        month = _calendar.get(Calendar.MONTH);
+        _calendar.set(Calendar.MONTH,intmon);
+        month = _calendar.get(Calendar.MONTH)+1;
 
         Calendar cal_head= Calendar.getInstance();
         cal_head.set(Calendar.MONTH,intmon);

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/back_ground"
     android:id="@+id/layout_day">
 
 
@@ -27,7 +27,7 @@
             android:textSize="25dp">
         </TextView>
 
-        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -41,7 +41,8 @@
             android:background="@drawable/drug_normal"
             android:scaleType="fitCenter"
             android:padding="5dp"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            android:contentDescription="@string/description_drug_name"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -89,7 +90,7 @@
             android:scaleType="fitCenter"
             android:padding="5dp"
             android:layout_margin="10dp"
-            />
+            android:contentDescription="@string/description_drug_taken"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,7 +107,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"/>
+            android:layout_margin="15dp"/> <!-- TODO: THIS IMAGEVIEW SEEMS USELESS -->
 
 
         <ImageView
@@ -114,7 +115,8 @@
             android:layout_height="57dp"
             android:background="@drawable/accept_medi_grayscale"
             android:layout_marginTop="15dp"
-            android:id="@+id/medi_indicator" />
+            android:id="@+id/medi_indicator"
+            android:contentDescription="@string/description_accept"/>
 
 
     </LinearLayout>
@@ -136,9 +138,10 @@
             android:layout_gravity="right"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="20dp"
-            android:id="@+id/btnChangeData" />
+            android:id="@+id/btnChangeData"
+            android:contentDescription="@string/description_change_data"/>
 
-            </LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

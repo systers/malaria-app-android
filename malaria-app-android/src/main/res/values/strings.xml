@@ -37,6 +37,9 @@
     <string name="items_spinner_label">Pick Items</string>
     <string name="trip_select_string">Add Packing Items</string>
     <string name="dump_test">Fetching...</string>
+    <string name="departuredate_currentdate">"Departure date cannot be less than current date"</string>
+    <string name="arrivaldate_departuredate">"Arrival date cannot be before the Departure date"</string>
+    <string name="limit_exceeded">Limit Exceeded</string>
     <string name="mal_description">
         -Interferes with growth of parasites in red blood cells\n
         -Take the medicine everyday at the same time with food\n
@@ -45,7 +48,7 @@
         -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
         -Consult your doctor if you have liver or kidney disease, or malaria complications\n
         -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
-        -Visit http://www.drugs.com/malarone.html for more information\n
+        -Visit <a href="http://www.drugs.com/malarone.html">http://www.drugs.com/malarone.html</a> for more information
     </string>
     <string name="doxy_description">
         -Tetracycline antibiotic that helps to fight bacteria in the body\n
@@ -55,7 +58,7 @@
         -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
         -Consult your doctor if you have liver or kidney disease, or are taking supplements and other medicines\n
         -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
-        -Visit http://www.drugs.com/doxycycline.html for more information\n
+        -Visit <a href="http://www.drugs.com/doxycycline.html">http://www.drugs.com/doxycycline.html</a> for more information
     </string>
     <string name="mef_description">
         -Antimalarial agent that kills sensitive malaria parasites\n
@@ -65,9 +68,71 @@
         -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
         -Consult your doctor if you have allergies, mental illnesses, seizures, or are taking similar medicines\n
         -Some side effects of drug: stomach pain, headache, muscle ache, tiredness, vomiting\n
-        -Visit http://www.drugs.com/cdi/mefloquine.html for more information\n
+        -Visit <a href="http://www.drugs.com/cdi/mefloquine.html">http://www.drugs.com/cdi/mefloquine.html</a> for more information
     </string>
+    <string name="trip_pref_destination">destination</string>
+    <string name="trip_pref_dep_month">departure_month</string>
+    <string name="trip_pref_dep_date">departure_date</string>
+    <string name="trip_pref_dep_year">departure_year</string>
+    <string name="trip_pref_arr_month">arrival_month</string>
+    <string name="trip_pref_arr_date">arrival_date</string>
+    <string name="trip_pref_arr_year">arrival_year</string>
+    <string name="trip_pref_packed_items">packed_items</string>
+    <string name="trip_pref_reminder_time">reminderTime</string>
+    <string name="trip_pref">trip-details</string>
 
+    <!--Notification string-->
+    <string name="drug_reminder_notification_title">Malaria Prevention</string>
+    <string name="drug_reminder_notification_message">Take your Medicine!</string>
+    <string name="drug_reminder_notification_action_snooze">Snooze</string>
+    <string name="drug_reminder_notification_action_taken">Taken</string>
+    <string name="drug_reminder_notification_action_not_taken">Not Taken</string>
+    <string name="notification_action_code_not_taken">0</string>
+    <string name="notification_action_code_taken">2</string>
+    <string name="notification_action_code_snooze">1</string>
+
+    <!--shared preferences-->
+    <string name="shared_preferences_alarm_hour">com.peacecorps.malaria.AlarmHour</string>
+    <string name="shared_preferences_alarm_minute">com.peacecorps.malaria.AlarmMinute</string>
+    <string name="shared_preferences_weekly_date">com.peacecorps.malaria.weeklyDate</string>
+    <string name="shared_preferences_is_weekly_drug_taken">com.peacecorps.malaria.isWeeklyDrugTaken</string>
+    <string name="shared_preferences_date_drug_taken">com.peacecorps.malaria.dateDrugTaken</string>
+    <string name="shared_preferences_is_drug_taken">com.peacecorps.malaria.isDrugTaken</string>
+    <string name="shared_preferences_drug_rejected_count">com.peacecorps.malaria.drugRejectedCount</string>
+    <string name="shared_preferences_drug_accepted_count">com.peacecorps.malaria.drugAcceptedCount</string>
+    <string name="shared_preferences_store_time_picked">com.peacecorps.malaria.storeTimePicked</string>
+
+    <!-- ContentDescription strings -->
+    <string name="description_drugs">Drugs</string>
+    <string name="description_med_status">Medication Status</string>
+    <string name="description_prev_month">Previous Month</string>
+    <string name="description_next_month">Next Month</string>
+    <string name="description_calendar_days">Sunday Monday Tuesday Wednesday Thursday Friday Saturday</string>
+    <string name="description_warning">Warning</string>
+    <string name="description_med_last_taken">Medicine last taken</string>
+    <string name="description_med_doses">Doses in a row</string>
+    <string name="description_med_adherence">Adherence to medicine</string>
+    <string name="description_drug_name">Drug name</string>
+    <string name="description_drug_taken">Was drug taken today?</string>
+    <string name="description_accept">Accept</string>
+    <string name="description_change_data">Change data</string>
+    <string name="description_peace_corps_logo">Peace Corps Logo</string>
+    <string name="description_previous_locations">Previously entered locations</string>
+    <string name="description_side_effects_graph">Graph for side effects</string>
+    <string name="description_cash">Cash</string>
+    <string name="description_add_other_items">Add other items</string>
+    <string name="description_add_item">Add item</string>
+    <string name="description_submit">Submit</string>
+    <string name="description_delete_item">Delete item</string>
+    <string name="description_effectiveness_graph">Graph for effectiveness</string>
+    <string name="description_reset_data">Reset the data</string>
+    <string name="description_badge_awarded">Your badges</string>
+    <string name="description_badge_b1">Badge 1</string>
+    <string name="description_badge_b3">Badge 2</string>
+    <string name="description_badge_b5">Badge 3</string>
+    <string name="description_badge_newbie">Newbie badge</string>
+    <string name="description_badge_hat">Hat badge</string>
+    <string name="description_"></string>
     <string-array name="user_medicine_settings_activity_drug_array">
         <item>Malarone (Daily)</item>
         <item>Doxycycline (Daily)</item>

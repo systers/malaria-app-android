@@ -79,6 +79,10 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
 
         //get the data
         makeJsonObjectRequest();
+    }
+
+    @Override
+    protected void onResume() {
 
         //setup the tts language
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -90,7 +94,6 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
             }
         });
 
-
         //Implement the speak button
         ttsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,14 +103,25 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
             }
         });
 
+    super.onResume();
     }
+
     //shutdown text to speech when the back button is pressed
     public void onBackPressed() {
        if(tts !=null){
             tts.stop();
             tts.shutdown();
         }
-        finish();
+       finish();
+    }
+
+    @Override
+    protected void onPause() {
+        if(tts !=null){
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onPause();
     }
 
     private void makeJsonObjectRequest(){

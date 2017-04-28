@@ -42,6 +42,18 @@
             </intent-filter>
         </receiver>
 
+        <receiver
+            android:name=".reciever.DrugReminderReceiver"
+            android:exported="false"
+            android:enabled="true">
+        </receiver>
+
+        <receiver
+            android:name=".reciever.DrugReminderCallerReceiver"
+            android:exported="false"
+            android:enabled="true">
+        </receiver>
+
         <activity
             android:name=".activities.UserMedicineSettingsFragmentActivity"
             android:label="@string/app_name" >
@@ -64,16 +76,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.InfoHubFragmentActivity"/>
-        <activity android:name=".activities.PeaceCorpsPolicyFragmentActivity"/>
-        <activity android:name=".activities.PercentSideEffectsFragmentActivity"/>
-        <activity android:name=".activities.SideEffectsPCVFragmentActivity"/>
-        <activity android:name=".activities.SideEffectsNPCVFragmentActivity"/>
-        <activity android:name=".activities.VolunteerAdherenceFragmentActivity"/>
-        <activity android:name=".activities.EffectivenessFragmentActivity"/>
+        <activity android:name=".activities.PeaceCorpsPolicyFragmentActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activities.PercentSideEffectsFragmentActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activities.SideEffectsPCVFragmentActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activities.SideEffectsNPCVFragmentActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activities.VolunteerAdherenceFragmentActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".activities.EffectivenessFragmentActivity"
+            android:configChanges="orientation|screenSize"/>
         <activity android:name=".fragment.ThirdAnalyticFragment"/>
         <activity android:name=".activities.DayFragmentActivity"/>
         <activity android:name=".activities.BadgeRoom"/>
-        <activity android:name=".activities.MythFactGame"/>
+        <activity android:name=".activities.MythFactGame"
+            android:configChanges="orientation|screenSize"/>
         <activity android:name=".activities.RapidFireGame"/>
         <activity android:name=".activities.MedicineStore"/>
         <activity android:name=".activities.NewHomeActivity"/>
@@ -81,7 +100,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".activities.TripIndicatorFragmentActivity"
                   android:launchMode="singleTask"
-                  />
+                  android:windowSoftInputMode="adjustPan" />
 
         <activity android:name=".activities.TripIndicatorDialogActivity"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"/>
