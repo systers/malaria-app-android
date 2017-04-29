@@ -10,8 +10,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.PowerManager;
 
-import com.peacecorps.malaria.activities.AlertCallerFragmentActivity;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
+import com.peacecorps.malaria.notification.DrugReminderNotification;
 
 public class AlarmHandlerClass extends BroadcastReceiver {
 
@@ -33,11 +33,8 @@ public class AlarmHandlerClass extends BroadcastReceiver {
                 PowerManager.PARTIAL_WAKE_LOCK, "");
         wakeLock.acquire();
 
-        /** Opening the Alert Dialog Window On Clicking Notification*/
-
-        intent = new Intent(context, AlertCallerFragmentActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
+        /**Shows the notification with Taken, Snooze and Not Taken Button**/
+        new DrugReminderNotification(context);
         wakeLock.release();
     }
 
@@ -50,7 +47,6 @@ public class AlarmHandlerClass extends BroadcastReceiver {
     }
 
     public void setAlarm(Context context) {
-
         getSharedPreferences(context);
         /**Getting the Time**/
         int hour = mSharedPreferenceStore.mPrefsStore.getInt(
@@ -79,7 +75,6 @@ public class AlarmHandlerClass extends BroadcastReceiver {
                         AlarmManager.INTERVAL_DAY, pendingAlarm);
             }
         }
-
     }
 
     public void AlarmTime(Context context, int hour, int minute) {

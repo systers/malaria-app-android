@@ -26,7 +26,7 @@ public class FirstAnalyticFragment extends Fragment {
 
 
     static SharedPreferenceStore mSharedPreferenceStore;
-    static View rootView;
+    View rootView;
     public static TextView checkMediLastTakenTime = null;
     public static TextView doses = null;
     public static TextView adherence = null;

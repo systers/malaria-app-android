@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:layout_gravity="center"
-              android:background="@drawable/background"
+              android:background="@color/back_ground"
               android:orientation="vertical"
               android:paddingTop="15dp"
               tools:context=".activities.UserMedicineSettingsFragmentActivity">
@@ -114,8 +114,8 @@
                 android:background="@color/gray"
                 android:hint="@string/user_medicine_settings_activity_done_button"
                 android:textColorHint="@color/white"
-            />
-
+                android:layout_marginBottom="@dimen/user_medicine_settings_marginBottom"
+                />
         </LinearLayout>
 
     </ScrollView>

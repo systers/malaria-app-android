@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -14,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ public class TripIndicatorPackingActivity extends Activity {
     EditText cash,edit;
     TextView whichDrug;
     public static String tripDrugName;
+    ScrollView parentScroll;
 
     /** Items entered by the user is stored in this ArrayList variable */
     ArrayList<String> list = new ArrayList<String>();
@@ -78,6 +81,7 @@ public class TripIndicatorPackingActivity extends Activity {
         /**Description of the new item added**/
         edit = (EditText) findViewById(R.id.packing_et);
 
+        parentScroll= (ScrollView) findViewById(R.id.ParentScrollView);
         /**Populating the List **/
         Cursor cursor = sqLite.getPackingItem();
         String item="";
@@ -108,16 +112,14 @@ public class TripIndicatorPackingActivity extends Activity {
         View.OnClickListener listenerAdd = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s=edit.getText().toString();
-                if(s.equals(""))
-                {
+                String s = edit.getText().toString().trim();
+                if("".equals(s)){
                     Toast.makeText(getApplicationContext(), R.string.enter_item_name, Toast.LENGTH_SHORT).show();
-
                 }
                 else
                 {
-                    list.add(edit.getText().toString());
-                    sqLite.insertPackingItem(edit.getText().toString(),1,"no");
+                    list.add(edit.getText().toString().trim());
+                    sqLite.insertPackingItem(edit.getText().toString().trim(),1,"no");
                     edit.setText("");
                     adapter.notifyDataSetChanged();
 
@@ -159,6 +161,12 @@ public class TripIndicatorPackingActivity extends Activity {
         View.OnClickListener listenerSubmit = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if ("".equals(numDrugs.getText().toString().trim())){
+                    Toast.makeText(getApplicationContext(), "Please select a pill", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 SparseBooleanArray checked = listView.getCheckedItemPositions();
                 ArrayList<String> selectedItems = new ArrayList<String>();
                 for (int i = 0; i < checked.size(); i++) {
@@ -233,6 +241,19 @@ public class TripIndicatorPackingActivity extends Activity {
 
         tripDrugName=whichDrug.getText().toString();
 
+        parentScroll.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                findViewById(R.id.listV).getParent().requestDisallowInterceptTouchEvent(false);
+                return false;
+            }
+        });
+        listView.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                // Disallow the touch request for parent scroll on touch of child view
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
 
     }
 
@@ -323,11 +344,10 @@ public class TripIndicatorPackingActivity extends Activity {
         {
             numDrugs.setText("" +(( mNumDrugs/7)+1));
         }
-
-
         }
         else
         {
+            Toast.makeText(getApplicationContext(), "Please select a pill", Toast.LENGTH_SHORT).show();
             numDrugs.setText("");
         }
 

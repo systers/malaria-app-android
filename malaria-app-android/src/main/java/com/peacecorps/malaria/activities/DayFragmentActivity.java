@@ -1,6 +1,8 @@
 package com.peacecorps.malaria.activities;
 
 import android.app.Dialog;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,6 +23,7 @@ import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.fragment.ThirdAnalyticFragment;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
+import com.peacecorps.malaria.widget.MedicineStatusWidgetProvider;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -40,7 +43,7 @@ public class DayFragmentActivity extends FragmentActivity {
     private int day,month, year;
     private String drugPicked="";
     static SharedPreferenceStore mSharedPreferenceStore;
-    public static Context mFragmentContext;
+    public Context mFragmentContext;
     final Context con = this;
     private RadioGroup btnRadGroup;
     private RadioButton btnRadButton;
@@ -234,6 +237,11 @@ public class DayFragmentActivity extends FragmentActivity {
                                 }
                             } else
                                 dialog.dismiss();
+
+                            //update the widgets
+                            int widgetIds[] = AppWidgetManager.getInstance(getApplication()).getAppWidgetIds(new ComponentName(getApplication(), MedicineStatusWidgetProvider.class));
+                            MedicineStatusWidgetProvider medicineWidgets = new MedicineStatusWidgetProvider();
+                            medicineWidgets.onUpdate(getApplicationContext(), AppWidgetManager.getInstance(getApplicationContext()),widgetIds);
                         } else {
                             //Future Date is not allowed to Edit
                             Toast.makeText(getApplicationContext(), R.string.no_edit, Toast.LENGTH_LONG).show();

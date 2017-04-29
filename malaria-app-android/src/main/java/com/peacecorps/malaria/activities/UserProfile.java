@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,17 +39,17 @@ public class UserProfile extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
-        userNameEt=(EditText)findViewById(R.id.user_name);
-        userEmailEt=(EditText)findViewById(R.id.user_email);
-        userAgeEt=(EditText)findViewById(R.id.user_age);
-        userMedicineTypeEt=(EditText)findViewById(R.id.user_medicine_type);
-        saveData=(Button)findViewById(R.id.user_profile_save);
+        userNameEt = (EditText)findViewById(R.id.user_name);
+        userEmailEt = (EditText)findViewById(R.id.user_email);
+        userAgeEt = (EditText)findViewById(R.id.user_age);
+        userMedicineTypeEt = (EditText)findViewById(R.id.user_medicine_type);
+        saveData = (Button)findViewById(R.id.user_profile_save);
 
         //footer buttons
         homeIconButton = (Button) findViewById(R.id.homeButton);
         btnTripIndicator = (Button) findViewById(R.id.tripButton);
         infoHub = (Button) findViewById(R.id.infoButton);
-        newHomeButton =(Button)findViewById(R.id.tempButton);
+        newHomeButton = (Button)findViewById(R.id.tempButton);
         homeIconButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,24 +83,55 @@ public class UserProfile extends Activity{
 
         getPreviousDetails();
         saveData.setOnClickListener(saveDataSetOnClickListener());
+        //check when age is entered
+        userAgeEt.addTextChangedListener(new TextWatcher() {
+            int age;
+            String lastAge;
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                lastAge = s.toString();
+                age = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().length() > 2){
+                    userAgeEt.setError(getString(R.string.age_limit_exceeded));
+                    userAgeEt.setText(lastAge);
+                }
+                if (s.length() != 0 && Integer.parseInt(s.toString()) == 0){
+                    userAgeEt.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
     //fetch previously entered details if any
     private void getPreviousDetails(){
-        userMedicineType= SharedPreferenceStore.mPrefsStore.getString("com.peacecorps.malaria.drugPicked", null);
+        userMedicineType = SharedPreferenceStore.mPrefsStore.getString("com.peacecorps.malaria.drugPicked", null);
         userMedicineTypeEt.setText(userMedicineType);
 
-        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
-        String userName=sharedPreferences.getString("user_name","");
-        String userEmail=sharedPreferences.getString("user_email","");
-        int userAge=sharedPreferences.getInt("user_age",0);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String userName = sharedPreferences.getString("user_name","");
+        String userEmail = sharedPreferences.getString("user_email","");
+        int userAge = sharedPreferences.getInt("user_age",0);
         userNameEt.setText(userName);
         userEmailEt.setText(userEmail);
-        userAgeEt.setText(userAge + "");
+        if (userAge == 0) {
+            userAgeEt.setText("");
+        }
+        else {
+            userAgeEt.setText("" + userAge);
+        }
     }
     //save new values to shared preferences
     private void setNewDetails(){
-        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
-        editor=sharedPreferences.edit();
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = sharedPreferences.edit();
         editor.putString("user_name",userNameEt.getText().toString());
         editor.putString("user_email", userEmailEt.getText().toString());
         editor.putInt("user_age", Integer.parseInt(userAgeEt.getText().toString()));
@@ -110,9 +143,9 @@ public class UserProfile extends Activity{
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name=userNameEt.getText().toString();
-                String email=userEmailEt.getText().toString();
-                String age=userAgeEt.getText().toString();
+                String name = userNameEt.getText().toString();
+                String email = userEmailEt.getText().toString();
+                String age = userAgeEt.getText().toString();
 
 
                 if(name.trim().equals("")){
@@ -121,14 +154,14 @@ public class UserProfile extends Activity{
                 else if(email.trim().equals("") || !UtilityMethods.validEmail(email)){
                     userEmailEt.setError("Valid Email required");
                 }
-                else if(age.trim().equals("")|| age.equals("0")){
+                else if(age.trim().equals("") || age.matches("[0]+")){
                     userAgeEt.setError("Age required");
                 }
                 else{
                     //create object to send
-                    AppUserModel user= new AppUserModel();
+                    AppUserModel user = new AppUserModel();
                     //get medicine type from shared preferences
-                    user=user.getAppUser(name,email, Integer.parseInt(age),userMedicineType);
+                    user = user.getAppUser(name,email, Integer.parseInt(age),userMedicineType);
                     postUserDetails(user);
                 }
 

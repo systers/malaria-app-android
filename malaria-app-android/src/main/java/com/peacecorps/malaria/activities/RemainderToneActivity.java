@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
-
 /**
  * Created by DELL on 1/16/2016.
  */
@@ -40,8 +39,7 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch(v.getId())
-        {
+        switch(v.getId()) {
             case R.id.browse:
                 Intent intent;
                 intent = new Intent();
@@ -51,6 +49,11 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
                 break;
 
             case R.id.dialogButtonOKReminder:
+
+                if(path.toString().isEmpty() || !isAudioFile()){
+                    path.setError("Specify valid path");
+                    break;
+                }
                 SharedPreferences.Editor editor = getSharedPreferences("ringtone", MODE_PRIVATE).edit();
                 editor.putString("toneUri", audioFileUri.toString());
                 editor.commit();
@@ -71,9 +74,15 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
                 audioFileUri = data.getData();
                 MP3Path = audioFileUri.getPath();
                 path.setText(MP3Path);
-
-
             }
         }
+    }
+    public boolean isAudioFile() {
+        if(audioFileUri!=null) {
+            String type= getContentResolver().getType(audioFileUri);
+            boolean isAudio= "audio/mpeg".equals(type);
+            return isAudio;
+        }
+        return false;
     }
 }
