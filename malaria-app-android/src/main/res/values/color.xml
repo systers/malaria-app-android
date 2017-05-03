@@ -32,5 +32,20 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="back_ground">#efdcab</color>
     <color name="calendar_bg_orange">#F19A2D</color>
+    <color name="selected_dot">#ffffff</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#B58B61</color>
+    <color name="dot_dark_screen2">#007A85</color>
+    <color name="dot_dark_screen3">#4658A0</color>
+    <color name="dot_dark_screen4">#32863A</color>
+    <!-- array inactive -->
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+>>>>>>> Fixes#140:Removing Viewpager External Dependency
 
 </resources>

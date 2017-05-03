@@ -31,7 +31,6 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:22+' // v4
-    compile 'com.viewpagerindicator:library:2.4.1@aar'
     compile files('libs/volleylib.jar')
     compile files('libs/GraphView-3.1.2.jar')
     testCompile 'junit:junit:4.12'
