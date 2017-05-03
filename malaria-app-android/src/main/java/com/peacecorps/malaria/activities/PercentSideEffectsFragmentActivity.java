@@ -52,9 +52,8 @@ public class PercentSideEffectsFragmentActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //views
         setContentView(R.layout.side_effects_percentage_fragment);
-
+        getWindow().setBackgroundDrawable(null);
         mPercentSideEffectsLabel = (TextView) findViewById(R.id.percentSideEffectsLabel);
         sideEffectImage =(ImageView)findViewById(R.id.percent_side_effect_image);
         pse=(TextView)findViewById(R.id.pse);

@@ -35,6 +35,7 @@ public class MythFactGame extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myth_fact_game);
+        getWindow().setBackgroundDrawable(null);
         tvUserCoins=(TextView)findViewById(R.id.userCoins);
         tvQuestion=(TextView)findViewById(R.id.question);
         trash=(TextView)findViewById(R.id.trash);

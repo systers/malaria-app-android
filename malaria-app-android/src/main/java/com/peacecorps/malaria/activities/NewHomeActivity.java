@@ -25,6 +25,7 @@ public class NewHomeActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_home_activity);
+        getWindow().setBackgroundDrawable(null);
         badgeScreenButton=(Button)findViewById(R.id.badgeScreen);
         rapidFireButton=(Button)findViewById(R.id.rapidFire);
         mythFactButton=(Button)findViewById(R.id.mythFact);

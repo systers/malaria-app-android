@@ -59,9 +59,8 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.peace_corps_policy_fragment);
-
+        getWindow().setBackgroundDrawable(null);
         mPeaceCorpsPolicyLabel = (TextView) findViewById(R.id.peaceCorpsPolicyLabel);
         pcp = (TextView) findViewById(R.id.pcp);
         ttsButton = (Button) findViewById(R.id.ttsButton);

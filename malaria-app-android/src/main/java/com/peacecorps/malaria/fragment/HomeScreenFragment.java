@@ -78,7 +78,7 @@ public class HomeScreenFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_home_screen, null);
-
+        getActivity().getWindow().setBackgroundDrawable(null);
         updateUI();
         return rootView;
 

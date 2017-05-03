@@ -47,6 +47,7 @@ public class RapidFireGame extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rapid_fire);
+        getWindow().setBackgroundDrawable(null);
         opt1 = (Button) findViewById(R.id.button1);
         opt2 = (Button) findViewById(R.id.button2);
         opt3 = (Button) findViewById(R.id.button3);

@@ -42,7 +42,7 @@ public class TripIndicatorDialogActivity extends ListActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trip_location_dialog);
-
+        getWindow().setBackgroundDrawable(null);
         mSharedPreferenceStore = new SharedPreferenceStore();
         mSharedPreferenceStore.getSharedPreferences(this);
 

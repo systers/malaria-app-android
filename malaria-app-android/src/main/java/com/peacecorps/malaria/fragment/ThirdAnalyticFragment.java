@@ -59,7 +59,7 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_third_analytic_screen);
-
+        getWindow().setBackgroundDrawable(null);
         /** Added by Ankita for getting specific month **/
         Intent intent = getIntent();
         String mon= intent.getStringExtra(SecondAnalyticFragment.MONTH_REQ);

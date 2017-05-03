@@ -47,9 +47,8 @@ public class SideEffectsPCVFragmentActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.side_effects_pcv_fragment);
-
+        getWindow().setBackgroundDrawable(null);
         mSideEffectsPCVLabel = (TextView) findViewById(R.id.sideEffectsPCVLabel);
         sep = (TextView) findViewById(R.id.sep);
         //please wait progress dialogs
