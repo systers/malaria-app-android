@@ -76,11 +76,16 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
         }
         _calendar = Calendar.getInstance();
         year = _calendar.get(Calendar.YEAR);
+        int curMon = _calendar.get(Calendar.MONTH);
         _calendar.set(Calendar.MONTH,intmon);
         month = _calendar.get(Calendar.MONTH)+1;
 
         Calendar cal_head= Calendar.getInstance();
         cal_head.set(Calendar.MONTH,intmon);
+        if((curMon == 0 || curMon == 1 || curMon == 2 ) && (intmon != curMon) && (intmon!=0) && (intmon!=1)){
+            cal_head.set(Calendar.YEAR,year-1);
+            year = year -1;
+        }
 
 
        /** In above snippet, Calendar is set for Specific Month, not just the current month **/
@@ -293,7 +298,7 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
             Log.d(tag, "No. Trailing space to Add: " + trailingSpaces);
             Log.d(tag, "No. of Days in Previous Month: " + daysInPrevMonth);
 
-            if (cal.isLeapYear(cal.get(Calendar.YEAR)))
+            if (cal.isLeapYear(year))
                 if (mm == 2)
                     ++daysInMonth;
                 else if (mm == 3)
