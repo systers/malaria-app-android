@@ -1,40 +1,57 @@
 package com.peacecorps.malaria.activities;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.LoaderManager;
+import android.app.ProgressDialog;
+import android.content.AsyncTaskLoader;
 import android.content.Intent;
+import android.content.Loader;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.interfaces.GetUserCallback;
-import com.peacecorps.malaria.model.AppUserModel;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
-import com.peacecorps.malaria.utils.ServerRequests;
 import com.peacecorps.malaria.utils.UtilityMethods;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+
+import java.util.ArrayList;
 
 /**
  * Created by yatna on 2/7/16.
  */
-public class UserProfile extends Activity{
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+public class UserProfile extends Activity implements LoaderManager.LoaderCallbacks <String> {
     private EditText userNameEt;
     private EditText userEmailEt;
     private EditText userAgeEt;
     private EditText userMedicineTypeEt;
-    private Button saveData;
-    private Button homeIconButton;
-    private Button btnTripIndicator;
-    private Button infoHub;
-    private Button newHomeButton;
+    private ProgressDialog progressDialog;
     private String userMedicineType;
     private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
+    private static final int UPDATE_USER_LOADER = 888;
+    public static final int CONNECTION_TIMEOUT = 1000 * 15;
+    public static final String SERVER_ADDRESS = "http://pc-web-dev.systers.org/api/malaria_users/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +60,13 @@ public class UserProfile extends Activity{
         userEmailEt = (EditText)findViewById(R.id.user_email);
         userAgeEt = (EditText)findViewById(R.id.user_age);
         userMedicineTypeEt = (EditText)findViewById(R.id.user_medicine_type);
-        saveData = (Button)findViewById(R.id.user_profile_save);
+        Button saveData = (Button) findViewById(R.id.user_profile_save);
 
         //footer buttons
-        homeIconButton = (Button) findViewById(R.id.homeButton);
-        btnTripIndicator = (Button) findViewById(R.id.tripButton);
-        infoHub = (Button) findViewById(R.id.infoButton);
-        newHomeButton = (Button)findViewById(R.id.tempButton);
+        Button homeIconButton = (Button) findViewById(R.id.homeButton);
+        Button btnTripIndicator = (Button) findViewById(R.id.tripButton);
+        Button infoHub = (Button) findViewById(R.id.infoButton);
+        Button newHomeButton = (Button) findViewById(R.id.tempButton);
         homeIconButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,17 +142,17 @@ public class UserProfile extends Activity{
             userAgeEt.setText("");
         }
         else {
-            userAgeEt.setText("" + userAge);
+            userAgeEt.setText(userAge);
         }
     }
     //save new values to shared preferences
     private void setNewDetails(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("user_name",userNameEt.getText().toString());
         editor.putString("user_email", userEmailEt.getText().toString());
         editor.putInt("user_age", Integer.parseInt(userAgeEt.getText().toString()));
-        editor.commit();
+        editor.apply();
     }
 
     //Implement the save button
@@ -147,44 +164,108 @@ public class UserProfile extends Activity{
                 String email = userEmailEt.getText().toString();
                 String age = userAgeEt.getText().toString();
 
-
-                if(name.trim().equals("")){
+                if (name.trim().equals("")) {
                     userNameEt.setError("Name required");
+                    return;
                 }
-                else if(email.trim().equals("") || !UtilityMethods.validEmail(email)){
+                if (email.trim().equals("") || !UtilityMethods.validEmail(email)) {
                     userEmailEt.setError("Valid Email required");
+                    return;
                 }
-                else if(age.trim().equals("") || age.matches("[0]+")){
+                if (age.trim().equals("") || age.matches("[0]+")) {
                     userAgeEt.setError("Age required");
-                }
-                else{
-                    //create object to send
-                    AppUserModel user = new AppUserModel();
-                    //get medicine type from shared preferences
-                    user = user.getAppUser(name,email, Integer.parseInt(age),userMedicineType);
-                    postUserDetails(user);
+                    return;
                 }
 
+                postUserDetails(name, email, age, userMedicineType);
             }
         };
     }
-    //create the server request
-    private void postUserDetails(AppUserModel user){
-        ServerRequests serverRequest = new ServerRequests(this);
-        serverRequest.storeUserDataInBackground(user, new GetUserCallback() {
+    //create the server request TODO change this
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void postUserDetails(String name, String email, String age, String userMedicineType){
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Please wait...");
+        Bundle userDetails = new Bundle();
+        userDetails.putString("name", name);
+        userDetails.putString("email", email);
+        userDetails.putString("age", age);
+        userDetails.putString("medicine", userMedicineType);
+        LoaderManager loaderManager = getLoaderManager();
+        // COMPLETED (22) Get our Loader by calling getLoader and passing the ID we specified
+        Loader<String> updateUserLoader = getLoaderManager().getLoader(UPDATE_USER_LOADER);
+        // COMPLETED (23) If the Loader was null, initialize it. Else, restart it.
+        if (updateUserLoader == null) {
+            loaderManager.initLoader(UPDATE_USER_LOADER, userDetails, this);
+        } else {
+            loaderManager.restartLoader(UPDATE_USER_LOADER, userDetails, this);
+        }
+
+
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public Loader<String> onCreateLoader(int id, final Bundle args) {
+        return new AsyncTaskLoader<String>(this) {
+
             @Override
-            public void done(String status) {
-                if(status.equals("200")){
-                    setNewDetails();
-                    Toast.makeText(UserProfile.this, "User Details submitted", Toast.LENGTH_SHORT).show();
-                    UserProfile.this.finish();
-                }
-                else{
-                    Toast.makeText(UserProfile.this, "Failed! Please try again after some time.", Toast.LENGTH_SHORT).show();
-                }
-
-
+            protected void onStartLoading() {
+                progressDialog.show();
+                forceLoad();
             }
-        });
+
+            @Override
+            public String loadInBackground() {
+                //add details to send
+                ArrayList<NameValuePair> dataToSend = new ArrayList<>();
+                dataToSend.add(new BasicNameValuePair("name", args.getString("name")));
+                dataToSend.add(new BasicNameValuePair("email", args.getString("email")));
+                dataToSend.add(new BasicNameValuePair("age", args.getString("age")));
+                dataToSend.add(new BasicNameValuePair("medicine", args.getString("medicine")));
+
+                HttpParams httpRequestParams = getHttpRequestParams();
+                HttpClient client = new DefaultHttpClient(httpRequestParams);
+                HttpPost post = new HttpPost(SERVER_ADDRESS);
+                String status="";
+                try {
+                    post.setEntity(new UrlEncodedFormEntity(dataToSend));
+                    HttpResponse response=client.execute(post);
+                    status=response.getStatusLine().getStatusCode()+"";
+                    Log.d("MyResponseCode ", "-> "+status);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return status;
+            }
+        };
+    }
+
+    @Override
+    public void onLoadFinished(Loader<String> loader, String data) {
+        progressDialog.dismiss();
+        if (data.equals("200")){
+            setNewDetails();
+            Toast.makeText(UserProfile.this, "User Details submitted", Toast.LENGTH_SHORT).show();
+            UserProfile.this.finish();
+        }
+        else {
+            Toast.makeText(UserProfile.this, "Failed! Please try again after some time.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader<String> loader) {
+
+    }
+
+    private HttpParams getHttpRequestParams() {
+        HttpParams httpRequestParams = new BasicHttpParams();
+        HttpConnectionParams.setConnectionTimeout(httpRequestParams,
+                CONNECTION_TIMEOUT);
+        HttpConnectionParams.setSoTimeout(httpRequestParams,
+                CONNECTION_TIMEOUT);
+        return httpRequestParams;
     }
 }
