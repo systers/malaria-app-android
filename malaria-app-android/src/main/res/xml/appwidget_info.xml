@@ -2,7 +2,7 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="200dp"
     android:minHeight="40dp"
-    android:updatePeriodMillis="100"
+    android:updatePeriodMillis="@integer/day_milli_seconds"
     android:previewImage="@drawable/bus_icon_normal"
     android:initialLayout="@layout/appwidget"
     android:resizeMode="horizontal|vertical"

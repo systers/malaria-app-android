@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -81,6 +83,32 @@ public class UserProfile extends Activity{
 
         getPreviousDetails();
         saveData.setOnClickListener(saveDataSetOnClickListener());
+        //check when age is entered
+        userAgeEt.addTextChangedListener(new TextWatcher() {
+            int age;
+            String lastAge;
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                lastAge = s.toString();
+                age = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().length() > 2){
+                    userAgeEt.setError(getString(R.string.age_limit_exceeded));
+                    userAgeEt.setText(lastAge);
+                }
+                if (s.length() != 0 && Integer.parseInt(s.toString()) == 0){
+                    userAgeEt.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
     //fetch previously entered details if any
     private void getPreviousDetails(){
