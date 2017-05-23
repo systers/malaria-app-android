@@ -130,7 +130,7 @@ public class MedicineStore extends Activity {
                                     "Quantity:          " ;
                             SmsManager smsManager = SmsManager.getDefault();
                             smsManager.sendTextMessage("123", null,msgBody + Integer.parseInt(medicineQuantityEt.getText().toString()), null, null);
-                            Toast.makeText(MedicineStore.this, "SMS sent.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MedicineStore.this,R.string.sms_sent, Toast.LENGTH_SHORT).show();
                             orderMedicineDialog.dismiss();
                         }
                     }

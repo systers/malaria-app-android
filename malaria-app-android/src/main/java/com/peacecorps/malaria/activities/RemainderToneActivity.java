@@ -57,7 +57,7 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
                 SharedPreferences.Editor editor = getSharedPreferences("ringtone", MODE_PRIVATE).edit();
                 editor.putString("toneUri", audioFileUri.toString());
                 editor.commit();
-                Toast.makeText(getApplicationContext(), "Reminder Tone Set", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.reminder_tone_set, Toast.LENGTH_SHORT).show();
                 this.finish();
                 break;
 

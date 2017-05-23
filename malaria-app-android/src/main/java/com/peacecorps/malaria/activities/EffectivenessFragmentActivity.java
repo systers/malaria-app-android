@@ -132,7 +132,7 @@ public class EffectivenessFragmentActivity extends FragmentActivity{
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d(TAGE, "Error: " + error.getMessage());
-                Toast.makeText(getApplicationContext(), "Error Retreiving Data! Loading from cache... ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),R.string.error_loading_cache, Toast.LENGTH_LONG).show();
                 //cache implementation
                 BufferedReader input = null;
                 File file = null;
