@@ -7,7 +7,8 @@
             android:id="@+id/infoDrug"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
             android:background="@drawable/info_hub_normal"
             android:focusable="false"/>
 
