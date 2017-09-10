@@ -33,6 +33,10 @@ This project uses Jack Wharton's Android-ViewPagerIndicator for the Viewpager Sw
 
 <h4> <a href="https://drive.google.com/open?id=0B6cRm7QFaag1dUMxVU5qQ0dnXzA"> Download Current Malaria APK File here </a> </h4>
 
+## Current Status
+<h4> <a href="https://www.youtube.com/watch?v=078kGriqwvk"> GSOC 2016 Malaria App Demo </a> </h4>
+<h4> <a href="https://www.youtube.com/watch?v=uNik1KMpt-4"> GSOC 2015 Malaria App Demo </a> </h4>
+
 
 ## Guidelines for contributors
 To contribute to malaria-app-android pick an open issue from the [issue list](https://github.com/systers/malaria-app-android/issues) tagged as "free", claim it in the comments, fix the issue and send us a pull request. 
