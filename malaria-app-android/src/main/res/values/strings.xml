@@ -145,6 +145,7 @@
     <string name="description_badge_newbie">Newbie badge</string>
     <string name="description_badge_hat">Hat badge</string>
     <string name="description_"></string>
+    <string name="add_medicine_to_store">Add Medicine to Store</string>
 
     <string-array name="user_medicine_settings_activity_drug_array">
         <item>Malarone (Daily)</item>
