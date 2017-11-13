@@ -15,6 +15,7 @@ import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.services.AlarmService;
+import com.peacecorps.malaria.services.RingService;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -30,6 +31,12 @@ public class DrugReminderReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         alarmNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        //Stopping the ringtone service to prevent
+
+        Intent stopIntent = new Intent(context, RingService.class);
+        context.stopService(stopIntent);
+
         switch (intent.getAction()) {
             case "0":
                 //not taken

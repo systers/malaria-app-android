@@ -4,6 +4,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -12,6 +13,7 @@ import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.activities.MainActivity;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.reciever.DrugReminderReceiver;
+import com.peacecorps.malaria.services.RingService;
 
 import java.util.Calendar;
 
@@ -48,7 +50,6 @@ public class DrugReminderNotification {
         actionTaken = new NotificationCompat.Action(R.drawable.ic_done_black_18dp, context.getString(R.string.drug_reminder_notification_action_taken)
                 , pendingIntentTaken);
 
-        Uri sound = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.soundsmedication);
         /**Building Notifications**/
         NotificationCompat.Builder builder = new NotificationCompat.Builder(
                 context).setContentTitle(context.getString(R.string.drug_reminder_notification_title))
@@ -71,10 +72,21 @@ public class DrugReminderNotification {
 
             builder.addAction(actionSnooze);
         }
-        builder.setSound(sound);
         builder.setContentIntent(contentIntent);
         notificationManager.notify(12345, builder.build());
-        Log.d("DrugReminderNotif", "Notification sent.");
+
+        //Getting the selected alarm tone
+
+        SharedPreferences preferences=context.getApplicationContext().getSharedPreferences("ringtone",Context.MODE_PRIVATE);
+        String defaultTonePath="android.resource://" + context.getPackageName() + "/" + R.raw.soundsmedication;
+
+        // Starting service to play a selected alarm tone
+
+        Intent startIntent = new Intent(context, RingService.class);
+        startIntent.putExtra("ringtone", preferences.getString("toneUri",defaultTonePath));
+        Log.e("Start Song", preferences.getString("toneUri",defaultTonePath));
+        context.startService(startIntent);
+        Log.d("DrugReminder Notif", "Notification sent.");
     }
 
     private boolean addSnoozeButton() {
