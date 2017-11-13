@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,7 +44,12 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
             case R.id.browse:
                 Intent intent;
                 intent = new Intent();
-                intent.setAction(Intent.ACTION_GET_CONTENT);
+                if (Build.VERSION.SDK_INT< Build.VERSION_CODES.KITKAT) {
+                    intent.setAction(Intent.ACTION_GET_CONTENT);
+                }else{
+                    intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+                    intent.addCategory(Intent.CATEGORY_OPENABLE);
+                }
                 intent.setType("audio/mpeg");
                 startActivityForResult(Intent.createChooser(intent, "Select Via..."), 1);
                 break;
@@ -54,7 +60,7 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
                     path.setError("Specify valid path");
                     break;
                 }
-                SharedPreferences.Editor editor = getSharedPreferences("ringtone", MODE_PRIVATE).edit();
+                SharedPreferences.Editor editor = getApplicationContext().getSharedPreferences("ringtone", MODE_PRIVATE).edit();
                 editor.putString("toneUri", audioFileUri.toString());
                 editor.commit();
                 Toast.makeText(getApplicationContext(), "Reminder Tone Set", Toast.LENGTH_SHORT).show();

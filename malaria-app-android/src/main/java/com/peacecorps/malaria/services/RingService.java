@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.services;
+    package com.peacecorps.malaria.services;
 
 import android.app.Service;
 import android.content.Intent;
