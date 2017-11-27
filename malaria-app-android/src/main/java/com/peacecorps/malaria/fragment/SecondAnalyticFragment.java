@@ -435,4 +435,13 @@ public class SecondAnalyticFragment extends Fragment {
 
     }
 
+    @Override
+    public void onStop() {
+        if (dialog != null) {
+            dialog.dismiss();
+            dialog = null;
+        }
+        super.onStop();
+    }
+
 }
