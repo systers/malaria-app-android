@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/background"
+    android:background="@color/back_ground"
     android:orientation="vertical"
     tools:context=".activities.UserMedicineSettingsFragmentActivity">
 
@@ -68,6 +68,7 @@
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content"
                           android:id="@+id/user_name"
+                          android:singleLine="true"
                           android:gravity="center_vertical"
                           android:hint="Enter Your Name"/>
                   </LinearLayout>
