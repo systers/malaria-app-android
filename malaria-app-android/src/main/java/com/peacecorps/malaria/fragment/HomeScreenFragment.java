@@ -530,6 +530,15 @@ public class HomeScreenFragment extends Fragment {
 
     }
 
+    @Override
+    public void onStop() {
+        if (dialog != null) {
+            dialog.dismiss();
+            dialog = null;
+        }
+        super.onStop();
+    }
+
     /*public void updateMediLastTime() {
         if (FirstAnalyticFragment.checkMediLastTakenTime != null) {
             FirstAnalyticFragment.checkMediLastTakenTime.setText(mSharedPreferenceStore.mPrefsStore.getString("com.peacecorps.malaria.checkMediLastTakenTime", "").toString());
