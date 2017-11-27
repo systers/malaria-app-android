@@ -38,9 +38,9 @@ import java.util.Date;
 public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         implements AdapterView.OnItemSelectedListener {
 
-    private Button mDoneButton;
+    private static Button mDoneButton;
 
-    private TextView timePickButton;
+    private static TextView timePickButton;
     private TextView mSetupLabel;
     private TextView mDrugTakeLabel;
     private TextView mTimePickLabel;
@@ -53,10 +53,10 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     private final static Calendar mCalendar = Calendar.getInstance();
     private String TAGUMSFA = "UserMedicineSettingsFragmentActivity";
     static SharedPreferenceStore mSharedPreferenceStore;
-    private View v;
-    private TimePicker tp;
+    private static View v;
+    private static TimePicker tp;
 
-    public  Context mFragmentContext;
+    public static Context mFragmentContext;
 
     /*User Medicine Settings Fragment Activity is for the Setup Screen of the Malaria App*/
     @Override
@@ -190,7 +190,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
      *Done button is enabled if the user have setup a time
      */
 
-    public void checkIfTimeSet(boolean isDoneButtonChecked) {
+    public static void checkIfTimeSet(boolean isDoneButtonChecked) {
         mDoneButton.setEnabled(isDoneButtonChecked);
         if (isDoneButtonChecked){
             mDoneButton.setText(mFragmentContext.getString(R.string.user_medicine_settings_activity_done_button));
@@ -244,7 +244,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     // converts 24hr format to 12hr format with AM/PM values
     /*Method is used for setting the selected time in the text field of Spinner.
      */
-    private void updateTime(int hours, int mins) {
+    private static void updateTime(int hours, int mins) {
         String timeSet;
         if (hours > 12) {
             hours -= 12;
@@ -318,8 +318,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         if (mSharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isFirstRun", true)) {
             long firstRunTime = new Date().getTime();
             mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.firstRunTime", firstRunTime);
-            Log.d(TAGUMSFA, "First Run Time:" + mSharedPreferenceStore.mPrefsStore.getLong(
-                    "com.peacecorps.malaria.firstRunTime", 0));
+            Log.d(TAGUMSFA, "First Run Time:" + mSharedPreferenceStore.mPrefsStore.getLong("com.peacecorps.malaria.firstRunTime", 0));
         }
         mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isFirstRun", false);
 
@@ -352,7 +351,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     /*Class to manage the Time Picker Widget*/
     UserMedicineSettingsFragmentActivity UMSFA;
 
-    public class TimePickerFragment extends DialogFragment implements
+    public static class TimePickerFragment extends DialogFragment implements
             TimePickerDialog.OnTimeSetListener {
 
         @Override
