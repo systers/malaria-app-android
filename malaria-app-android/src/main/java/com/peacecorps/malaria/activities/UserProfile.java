@@ -25,11 +25,6 @@ public class UserProfile extends Activity{
     private EditText userEmailEt;
     private EditText userAgeEt;
     private EditText userMedicineTypeEt;
-    private Button saveData;
-    private Button homeIconButton;
-    private Button btnTripIndicator;
-    private Button infoHub;
-    private Button newHomeButton;
     private String userMedicineType;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -41,13 +36,13 @@ public class UserProfile extends Activity{
         userEmailEt = (EditText)findViewById(R.id.user_email);
         userAgeEt = (EditText)findViewById(R.id.user_age);
         userMedicineTypeEt = (EditText)findViewById(R.id.user_medicine_type);
-        saveData = (Button)findViewById(R.id.user_profile_save);
+        Button saveData = (Button) findViewById(R.id.user_profile_save);
 
         //footer buttons
-        homeIconButton = (Button) findViewById(R.id.homeButton);
-        btnTripIndicator = (Button) findViewById(R.id.tripButton);
-        infoHub = (Button) findViewById(R.id.infoButton);
-        newHomeButton = (Button)findViewById(R.id.tempButton);
+        Button homeIconButton = (Button) findViewById(R.id.homeButton);
+        Button btnTripIndicator = (Button) findViewById(R.id.tripButton);
+        Button infoHub = (Button) findViewById(R.id.infoButton);
+        Button newHomeButton = (Button) findViewById(R.id.tempButton);
         homeIconButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,8 +113,6 @@ public class UserProfile extends Activity{
                 String name = userNameEt.getText().toString();
                 String email = userEmailEt.getText().toString();
                 String age = userAgeEt.getText().toString();
-
-
                 if(name.trim().equals("")){
                     userNameEt.setError("Name required");
                 }
@@ -147,12 +140,12 @@ public class UserProfile extends Activity{
             @Override
             public void done(String status) {
                 if(status.equals("200")){
-                    setNewDetails();
                     Toast.makeText(UserProfile.this, "User Details submitted", Toast.LENGTH_SHORT).show();
                     UserProfile.this.finish();
                 }
                 else{
                     Toast.makeText(UserProfile.this, "Failed! Please try again after some time.", Toast.LENGTH_SHORT).show();
+                    setNewDetails();
                 }
 
 
