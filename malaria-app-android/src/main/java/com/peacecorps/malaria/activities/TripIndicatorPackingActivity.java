@@ -113,9 +113,8 @@ public class TripIndicatorPackingActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String s = edit.getText().toString().trim();
-                if("".equals(s))
-                {
-                    Toast.makeText(getApplicationContext(), "Enter item name ", Toast.LENGTH_SHORT).show();
+                if("".equals(s)){
+                    Toast.makeText(getApplicationContext(), R.string.enter_item_name, Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -206,7 +205,7 @@ public class TripIndicatorPackingActivity extends Activity {
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(getApplicationContext(),"Enter Integral Value of Cash!",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),R.string.enter_integral_value,Toast.LENGTH_SHORT);
                 }
 
 
