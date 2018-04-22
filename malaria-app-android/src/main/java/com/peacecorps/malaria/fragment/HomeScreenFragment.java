@@ -473,6 +473,16 @@ public class HomeScreenFragment extends Fragment {
 
     }
 
+    @Override
+    public void onPause() {
+        // Remove dialog box
+        if (dialog != null) {
+            dialog.dismiss();
+            dialog = null;
+        }
+        super.onPause();
+    }
+
     public void addDialog()
     {
         dialog = new Dialog(this.getActivity(),android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
