@@ -118,9 +118,10 @@ public class MedicineStore extends Activity {
                 message.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        //to check if text is not empty
                         if(medicineQuantityEt.getText().toString().trim().equals("")){
                             medicineQuantityEt.setError("Quantity Required");
-                        }
+                        }//to check if text is not zero
                         else if(medicineQuantityEt.getText().toString().matches("[0]+")){
                             medicineQuantityEt.setError("Quantity Required");
                         }
@@ -157,7 +158,11 @@ public class MedicineStore extends Activity {
                 add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        //to check if text is not empty
                         if(medicineQuantityEt.getText().toString().trim().equals("")){
+                            medicineQuantityEt.setError("Quantity Required");
+                        }//to check if text is not zero
+                        else if(medicineQuantityEt.getText().toString().matches("[0]+")){
                             medicineQuantityEt.setError("Quantity Required");
                         }
                         else{
@@ -218,9 +223,13 @@ public class MedicineStore extends Activity {
                 set.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        //to check if text is not empty
                         if(time.getText().toString().trim().equals("")){
-                            //If nothing is entered display error
-                            time.setError("Entry Required");
+                            time.setError("Quantity Required");
+                        }
+                        //to check if text is not zero
+                        else if(time.getText().toString().matches("[0]+")){
+                            time.setError("Quantity Required");
                         }
                         else{
                             editor=preferences.edit();
