@@ -14,7 +14,7 @@
 
     <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Effectiveness Against Malaria"
+        android:text="@string/effectiveness_against_malaria"
         android:textColor="@color/golden_brown"
         android:textSize="25sp"
         android:gravity="center"

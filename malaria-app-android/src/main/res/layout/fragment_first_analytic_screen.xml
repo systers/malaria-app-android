@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -46,7 +47,7 @@
                     android:paddingLeft="3dp"
                     android:paddingRight="3dp"
                     android:text="@string/first_analytic_screen_medicine_last_taken_text"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size_19sp"
                     android:textColor="@color/golden_brown"
                     android:id="@+id/mlt"
                     />
@@ -57,10 +58,10 @@
                     android:text="15/07"
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
-                    android:textSize="17sp"
+                    android:textSize="@dimen/text_size_17sp"
                     android:layout_gravity="center_vertical"
 
-                    />
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 

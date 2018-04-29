@@ -1,5 +1,6 @@
 package com.peacecorps.malaria.activities;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -116,6 +117,7 @@ public class MedicineStore extends Activity {
                 });
                 //implement the message button
                 message.setOnClickListener(new View.OnClickListener() {
+                    @SuppressLint("UnlocalizedSms")
                     @Override
                     public void onClick(View view) {
                         if(medicineQuantityEt.getText().toString().trim().equals("")){
@@ -167,7 +169,7 @@ public class MedicineStore extends Activity {
                             int quantity = Integer.parseInt(medicineQuantityEt.getText().toString());
                             //add the new medicines to previous ones
                             editor.putInt("medicineStore", medicineStore + quantity);
-                            editor.commit();
+                            editor.apply();
                             displayMedicineStore();
                             addMedicineDialog.dismiss();
                         }
@@ -227,7 +229,7 @@ public class MedicineStore extends Activity {
                             int intTime = Integer.parseInt(time.getText().toString());
                             //Update shared preference with new value
                             editor.putInt("alertTime",intTime);
-                            editor.commit();
+                            editor.apply();
                             settingsDialog.dismiss();
                         }
                     }

@@ -1,5 +1,6 @@
 package com.peacecorps.malaria.reciever;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -89,6 +90,7 @@ public class DrugReminderReceiver extends BroadcastReceiver {
         }
     }
 
+    @SuppressLint("CommitPrefEdits")
     public void getSharedPreferences(Context context) {
         mSharedPreferenceStore.mPrefsStore = context
                 .getSharedPreferences(context.getString(R.string.shared_preferences_store_time_picked),

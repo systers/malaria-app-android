@@ -136,7 +136,7 @@ public class MythFactGame extends Activity {
         int score=sharedPreferences.getInt("gameScore",0);
         score=score+userCoins;
         editor.putInt("gameScore",score);
-        editor.commit();
+        editor.apply();
 
     }
 

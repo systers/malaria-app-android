@@ -190,7 +190,7 @@ public class DayFragmentActivity extends FragmentActivity {
                                     score=score+1;
                                     editor.putInt("userScore",score);
                                     editor.putInt("medicineStore",medicineStore-1);
-                                    editor.commit();
+                                    editor.apply();
                                 }
 
                             } else if (ch.equalsIgnoreCase("no")) {
@@ -230,7 +230,7 @@ public class DayFragmentActivity extends FragmentActivity {
                                     score=score-1;
                                     editor.putInt("userScore",score);
                                     editor.putInt("medicineStore",medicineStore+1);
-                                    editor.commit();
+                                    editor.apply();
                                 }
                             } else
                                 dialog.dismiss();

@@ -202,7 +202,7 @@ public class TripIndicatorPackingActivity extends Activity {
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(getApplicationContext(),"Enter Integral Value of Cash!",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),"Enter Integral Value of Cash!",Toast.LENGTH_SHORT).show();
                 }
 
 

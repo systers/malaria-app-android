@@ -133,7 +133,7 @@ public class TripAlarmActivity extends Activity {
                             calender.getTimeInMillis(), pendingSnooze);
                     Ringtone ringtone= TripAlarmReceiver.ringtone;
                     ringtone.stop();
-                    Toast.makeText(getApplicationContext(),"Alarm Snoozed",Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(),"Alarm Snoozed",Toast.LENGTH_LONG).show();
 
                 }
                 finish();

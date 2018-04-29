@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dialogHelp"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
                 android:gravity="center"
                 android:text="@string/help_game_dialog_title"
                 android:textColor="@color/golden_brown"
-                android:textSize="22sp" />
+                android:textSize="@dimen/text_size_22sp" />
         </LinearLayout>
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
@@ -36,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:text="This text will get replaced automatically in the NewHomeActivity."
                 android:textColor="@color/golden_brown"
-                android:textSize="17sp" />
+                android:textSize="@dimen/text_size_17sp"
+                tools:ignore="HardcodedText" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +46,7 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/help_game_dialog_heading"
                 android:textColor="@color/golden_brown"
-                android:textSize="17sp"
+                android:textSize="@dimen/text_size_17sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/helpGameDialogHowToPlay"
@@ -52,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:text="This text will get replaced automatically in the NewHomeActivity."
                 android:textColor="@color/golden_brown"
-                android:textSize="17sp" />
+                android:textSize="@dimen/text_size_17sp"
+                tools:ignore="HardcodedText" />
             <CheckBox
                 android:id="@+id/helpGameDialogShowNextTime"
                 android:layout_width="match_parent"

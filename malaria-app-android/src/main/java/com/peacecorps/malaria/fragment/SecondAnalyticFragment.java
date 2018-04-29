@@ -1,6 +1,7 @@
 
 package com.peacecorps.malaria.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -204,6 +205,7 @@ public class SecondAnalyticFragment extends Fragment {
 
     }
     /*Fetching the Details and Settings from Shared Preferences*/
+    @SuppressLint("CommitPrefEdits")
     public void getSharedPreferences() {
 
         mSharedPreferenceStore.mPrefsStore = getActivity()

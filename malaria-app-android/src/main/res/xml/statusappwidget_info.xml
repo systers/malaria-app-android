@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:minWidth="50dp"
     android:minHeight="50dp"
     android:updatePeriodMillis="1000"
     android:previewImage="@drawable/drug_normal"
     android:initialLayout="@layout/statusappwidget"
     android:resizeMode="horizontal|vertical"
-    android:widgetCategory="home_screen">
+    android:widgetCategory="home_screen"
+    tools:targetApi="jelly_bean_mr1">
 </appwidget-provider>

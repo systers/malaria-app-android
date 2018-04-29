@@ -6,7 +6,7 @@
     android:background="@drawable/dialog_background"
     tools:context=".activities.TripIndicatorFragmentActivity">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -22,9 +22,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Packing Items"
+                    android:text="@string/label_packing_items"
                     android:textColor="@color/golden_brown"
-                    android:textSize="22dp"
+                    android:textSize="@dimen/text_size_22sp"
                     android:gravity="center"
                     android:padding="10dp"
                     android:layout_marginTop="10dp"
@@ -53,8 +53,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Select Pill"
-                    android:textSize="20dp"
+                    android:text="@string/label_select_pill"
+                    android:textSize="@dimen/text_size_20sp"
                     android:textStyle="bold"
                     android:textColor="@color/golden_brown"
                     android:clickable="true"
@@ -68,7 +68,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="@dimen/text_size_15sp"
                     android:textStyle="bold"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
@@ -100,8 +100,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="Cash"
-                    android:textSize="20dp"
+                    android:text="@string/label_cash"
+                    android:textSize="@dimen/text_size_20sp"
                     android:textStyle="bold"
                     android:textColor="@color/golden_brown"
                     android:id="@+id/cash_amnt"
@@ -111,7 +111,7 @@
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:hint="$"
+                    android:hint="@string/hint_dollar"
                     android:textColorHint="@color/lightgray"
                     android:id="@+id/cash_et"
                     android:layout_marginEnd="20dp"
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxWidth="110dp"
-                    android:hint="Add Items"
+                    android:hint="@string/hint_add_items"
                     android:id="@+id/packing_et"
                     android:layout_marginLeft="15dp"
                     android:textColor="@color/golden_brown"
@@ -196,6 +196,6 @@
 
 
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </RelativeLayout>

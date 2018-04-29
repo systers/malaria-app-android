@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="3"
@@ -22,7 +23,7 @@
                 android:layout_weight="0.4"
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
-                android:text="Exit"
+                android:text="@string/label_exit_game"
                 android:onClick="exitGame"/>
 
             <TextView
@@ -34,7 +35,8 @@
                 android:layout_weight="1.2"
                 android:text="6"
                 android:gravity="center_horizontal"
-                android:textColor="@color/golden_brown"/>
+                android:textColor="@color/golden_brown"
+                tools:ignore="HardcodedText" />
 
 
             <Button
@@ -44,7 +46,7 @@
                 android:layout_weight="0.4"
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
-                android:text="Next"
+                android:text="@string/label_next"
                 android:onClick="nextClick"/>
         </LinearLayout>
 
@@ -61,7 +63,7 @@
                 android:layout_marginBottom="20dp"
                 android:id="@+id/question"
                 android:textSize="20sp"
-                android:text="Question Here"
+                android:text="@string/label_question_place"
                 android:background="@drawable/achievement_button"
                 android:textColor="@color/golden_brown"
                 android:gravity="center"/>

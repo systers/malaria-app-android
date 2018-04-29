@@ -102,7 +102,7 @@ public class UserProfile extends Activity{
         editor.putString("user_name",userNameEt.getText().toString());
         editor.putString("user_email", userEmailEt.getText().toString());
         editor.putInt("user_age", Integer.parseInt(userAgeEt.getText().toString()));
-        editor.commit();
+        editor.apply();
     }
 
     //Implement the save button

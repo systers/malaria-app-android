@@ -28,8 +28,8 @@
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:text="User Profile"
-            android:textSize="24sp"
+            android:text="@string/user_profile"
+            android:textSize="@dimen/text_size_25sp"
             android:textStyle="bold"
             android:textColor="@color/user_medicine_first_text_color"
             />
@@ -60,7 +60,7 @@
                           android:layout_height="wrap_content"
                           android:layout_width="match_parent"
                           style="@style/UserProfileCommonTextAppearance"
-                          android:text="  Name"
+                          android:text="@string/label_name"
                           android:textColor="@color/golden_brown"
                           />
 
@@ -69,7 +69,8 @@
                           android:layout_height="wrap_content"
                           android:id="@+id/user_name"
                           android:gravity="center_vertical"
-                          android:hint="Enter Your Name"/>
+                          android:hint="@string/hint_name"
+                          android:inputType="text"/>
                   </LinearLayout>
 
                   <LinearLayout
@@ -82,7 +83,7 @@
                           android:layout_height="wrap_content"
                           android:layout_width="match_parent"
                           style="@style/UserProfileCommonTextAppearance"
-                          android:text="  Email"
+                          android:text="@string/label_email"
                           android:textColor="@color/golden_brown"
                           />
 
@@ -92,7 +93,7 @@
                           android:id="@+id/user_email"
                           android:inputType="textWebEmailAddress"
                           android:gravity="center_vertical"
-                          android:hint="Enter Your Email Address"/>
+                          android:hint="@string/hint_email_address"/>
                   </LinearLayout>
 
                   <LinearLayout
@@ -105,7 +106,7 @@
                           android:layout_height="wrap_content"
                           android:layout_width="match_parent"
                           style="@style/UserProfileCommonTextAppearance"
-                          android:text="  Age"
+                          android:text="@string/label_age"
                           android:textColor="@color/golden_brown"
                           />
 
@@ -115,7 +116,7 @@
                           android:id="@+id/user_age"
                           android:inputType="number"
                           android:gravity="center_vertical"
-                          android:hint="Age in years"/>
+                          android:hint="@string/hint_age"/>
                   </LinearLayout>
                   <LinearLayout
                       android:layout_width="match_parent"
@@ -128,7 +129,7 @@
                           android:layout_height="wrap_content"
                           android:layout_width="match_parent"
                           style="@style/UserProfileCommonTextAppearance"
-                          android:text="  Medication Type"
+                          android:text="@string/label_medication_type"
                           android:textColor="@color/golden_brown"
                           />
 
@@ -137,8 +138,8 @@
                           android:layout_height="wrap_content"
                           android:id="@+id/user_medicine_type"
                           android:gravity="center_vertical"
-                          android:editable="false"
-                          android:hint="Enter the medicine you take "/>
+                          android:inputType="none"
+                          android:hint="@string/hint_medicine"/>
                   </LinearLayout>
               </LinearLayout>
               <Button
@@ -147,7 +148,7 @@
                   android:layout_gravity="center"
                   android:layout_marginTop="15dp"
                   android:layout_marginBottom="10dp"
-                  android:text="SAVE"
+                  android:text="@string/save"
                   android:textColor="@color/white"
                   android:paddingLeft="40dp"
                   android:paddingRight="40dp"

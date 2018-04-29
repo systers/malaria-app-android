@@ -124,7 +124,7 @@ public class HomeScreenFragment extends Fragment {
                 int value = SharedPreferenceStore.mPrefsStore.getInt(
                         "com.peacecorps.malaria.AcceptedCount", 0) + 1;
                 SharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AcceptedCount",
-                        value).commit();
+                        value).apply();
                 if (mSharedPreferenceStore.mPrefsStore.getBoolean(
                         "com.peacecorps.malaria.isWeekly", false)) {
 
@@ -133,7 +133,7 @@ public class HomeScreenFragment extends Fragment {
                     databaseSQLiteHelper.getUserMedicationSelection(getActivity(), "weekly", Calendar.getInstance().getTime(), "yes", computeAdherenceRate());
 
                     int currentDose = databaseSQLiteHelper.getDosesInaRowWeekly();
-                    mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.weeklyDose", currentDose).commit();
+                    mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.weeklyDose", currentDose).apply();
 
                 } else {
                     decideDrugTakenUIBoolean(false, true);
@@ -142,7 +142,7 @@ public class HomeScreenFragment extends Fragment {
                     databaseSQLiteHelper.getUserMedicationSelection(getActivity(), "daily", Calendar.getInstance().getTime(), "yes", computeAdherenceRate());
 
                     int currentDose = databaseSQLiteHelper.getDosesInaRowDaily();
-                    mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.dailyDose", currentDose).commit();
+                    mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.dailyDose", currentDose).apply();
                 }
                 //get user's score
                 int score=sharedPreferences.getInt("userScore", 0);
@@ -153,7 +153,7 @@ public class HomeScreenFragment extends Fragment {
                 editor.putInt("userScore",score+1);
                 //decrease medicine store by one if medicine is taken
                 editor.putInt("medicineStore",medicineStore-1);
-                editor.commit();
+                editor.apply();
                 Log.d("check","score updated");
             }
         });
@@ -241,19 +241,19 @@ public class HomeScreenFragment extends Fragment {
     public void saveUsersettings(Boolean state, Boolean isWeekly) {
         if (isWeekly) {
             mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.weeklyDate",
-                    new Date().getTime()).commit();
+                    new Date().getTime()).apply();
             mSharedPreferenceStore.mEditor.putBoolean(
                     "com.peacecorps.malaria.isWeeklyDrugTaken", state).commit();
         } else {
             mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.dateDrugTaken",
-                    new Date().getTime()).commit();
+                    new Date().getTime()).apply();
             mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isDrugTaken",
-                    state).commit();
+                    state).apply();
         }
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.drugRejectedCount",
-                drugRejectedCount).commit();
+                drugRejectedCount).apply();
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.drugAcceptedCount",
-                mDrugAcceptedCount).commit();
+                mDrugAcceptedCount).apply();
 
     }
 
@@ -269,7 +269,7 @@ public class HomeScreenFragment extends Fragment {
     }
 
     public void missedWeekUI() {
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.weeklyDose", 0).commit();
+        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.weeklyDose", 0).apply();
         mCurrentDateLabel.setTextColor(Color.RED);
         mCurrentDayOfweekLabel.setTextColor(Color.RED);
     }
@@ -432,7 +432,7 @@ public class HomeScreenFragment extends Fragment {
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmHour", hour)
                 .commit();
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmMinute", minute)
-                .commit();
+                .apply();
     }
 
 
@@ -510,8 +510,8 @@ public class HomeScreenFragment extends Fragment {
                 }*/
                 DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
                 sqLite.resetDatabase();
-                mSharedPreferenceStore.mEditor.clear().commit();
-                SharedPreferenceStore.mEditor.clear().commit();
+                mSharedPreferenceStore.mEditor.clear().apply();
+                SharedPreferenceStore.mEditor.clear().apply();
                 startActivity(new Intent(getActivity(),
                         UserMedicineSettingsFragmentActivity.class));
                 getActivity().finish();

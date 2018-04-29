@@ -159,7 +159,7 @@ public class NewHomeActivity extends Activity{
                     else if (gameID == getResources().getInteger(R.integer.MythFactGame))
                         editor.putBoolean(getString(R.string.shared_prefs_myth_fact_game), false);
                 }
-                editor.commit();
+                editor.apply();
                 if (gameID == getResources().getInteger(R.integer.RapidFireGame))
                     startActivity(new Intent(NewHomeActivity.this, RapidFireGame.class));
                 else if (gameID == getResources().getInteger(R.integer.MythFactGame))

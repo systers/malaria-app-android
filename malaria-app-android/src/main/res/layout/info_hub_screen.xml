@@ -52,7 +52,7 @@
                         android:text="@string/info_hub_title_label"
                         android:id="@+id/ih"
                         android:textColor="@color/golden_brown"
-                        android:textSize="25sp"
+                        android:textSize="@dimen/text_size_25sp"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="10dp"

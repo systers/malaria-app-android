@@ -12,9 +12,9 @@
 
     <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Percentage Side Effects"
+        android:text="@string/label_percentage_side_effects"
         android:textColor="@color/golden_brown"
-        android:textSize="25sp"
+        android:textSize="@dimen/text_size_25sp"
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/pse"
@@ -38,7 +38,7 @@
                 android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:id="@+id/percentSideEffectsLabel"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_20sp"
                 />
 
             <ImageView

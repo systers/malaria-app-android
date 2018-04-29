@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp">
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="January"
+        android:text="@string/label_jan"
         android:id="@+id/firstMonthProgressLabel"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"/>
+        android:textSize="@dimen/text_size_18sp"/>
 
     <ProgressBar android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +24,6 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
-        android:onClick="sendMonth"
         android:layout_toLeftOf="@+id/firstMonthProgressPercent"
         android:layout_alignTop="@id/firstMonthProgressLabel"
         android:layout_alignBottom="@id/firstMonthProgressLabel"
@@ -36,18 +36,19 @@
         android:id="@+id/firstMonthProgressPercent"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         android:gravity="end"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        tools:ignore="HardcodedText" />
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="February"
+        android:text="@string/label_feb"
         android:layout_weight="1"
         android:id="@+id/secondMonthProgressLabel"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         android:layout_below="@id/firstMonthProgressLabel" />
 
     <ProgressBar android:layout_width="wrap_content"
@@ -61,7 +62,6 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
-        android:onClick="sendMonth"
         android:layout_below="@id/firstMonthProgressBar"
         android:layout_toRightOf="@id/secondMonthProgressLabel"
         android:layout_alignTop="@id/secondMonthProgressLabel"
@@ -75,18 +75,19 @@
         android:id="@+id/secondMonthProgressPercent"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         android:gravity="end"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/firstMonthProgressLabel" />
+        android:layout_below="@id/firstMonthProgressLabel"
+        tools:ignore="HardcodedText" />
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="March"
+        android:text="@string/label_mar"
         android:id="@+id/thirdMonthProgressLabel"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         android:layout_below="@id/secondMonthProgressLabel" />
 
     <ProgressBar android:layout_width="wrap_content"
@@ -98,7 +99,6 @@
         android:background="@drawable/progress_bg"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
-        android:onClick="sendMonth"
         android:layout_below="@id/secondMonthProgressBar"
         android:layout_alignTop="@id/thirdMonthProgressLabel"
         android:layout_alignBottom="@id/thirdMonthProgressLabel"
@@ -113,18 +113,19 @@
         android:id="@+id/thirdMonthProgressPercent"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         android:gravity="end"
         android:layout_below="@id/secondMonthProgressPercent"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        tools:ignore="HardcodedText" />
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="April"
+        android:text="@string/label_apr"
         android:id="@+id/fourthMonthProgressLabel"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         android:layout_below="@id/thirdMonthProgressLabel" />
 
     <ProgressBar android:layout_width="wrap_content"
@@ -134,7 +135,6 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:id="@+id/fourthMonthProgressBar"
         android:background="@drawable/progress_bg"
-        android:onClick="sendMonth"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
         android:layout_below="@id/thirdMonthProgressBar"
@@ -151,8 +151,9 @@
         android:id="@+id/fourthMonthProgressPercent"
         android:textStyle="bold"
         android:textColor="@color/golden_brown"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18sp"
         android:gravity="end"
         android:layout_below="@id/thirdMonthProgressPercent"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>
