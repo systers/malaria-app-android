@@ -5,17 +5,17 @@
         <TableRow>
                 <ImageView
                     android:id="@+id/imgDrug"
-                    android:layout_width="40dp"
-                    android:layout_height="50dp"
+                    android:layout_width="@dimen/user_medicine_button_padding"
+                    android:layout_height="@dimen/user_medicine_button_padding"
                     android:contentDescription="@string/description_drugs" />
 
                 <TextView
                     android:id="@+id/drugItem"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/user_medicine_button_padding"
                     android:textColor="@color/golden_brown"
-                    android:textSize="15dp"
-                    android:padding="10dp"/>
+                    android:textSize="@dimen/info_layout_margin_left_right"
+                    android:padding="@dimen/layout_margin"/>
 
         </TableRow>
 </TableLayout>

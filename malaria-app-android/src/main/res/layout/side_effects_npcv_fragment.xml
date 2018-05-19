@@ -6,7 +6,7 @@
     android:background="@color/back_ground"
     android:layout_gravity="center_horizontal"
     android:layout_width="match_parent"
-    android:padding="10dp"
+    android:padding="@dimen/layout_margin"
     android:layout_height="match_parent">
 
 
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Non PCVs Reported Side Effects"
         android:textColor="@color/golden_brown"
-        android:textSize="25sp"
+        android:textSize="@dimen/textSize_medium2"
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/sen"
@@ -41,7 +41,7 @@
                 android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:id="@+id/sideEffectsNPCVLabel"
-                android:textSize="20sp"
+                android:textSize="@dimen/textSize_small"
                 />
         </LinearLayout>
     </ScrollView>

@@ -3,33 +3,36 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back_ground"
-    android:padding="7sp"
     android:weightSum="3.0">
-    <ScrollView
+
+    <ScrollViewinside the text box
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </ScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
         android:layout_weight="0.6"
-        android:clickable="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp">
+        android:clickable="true">
+
         <Button
-            android:layout_width="32dp"
-            android:layout_height="32dp"
             android:id="@+id/shareButton"
-            android:background="@drawable/share_icon"/>
+            android:layout_width="@dimen/button_badge_layout"
+            android:layout_height="@dimen/button_badge_layout"
+            android:background="@drawable/share_icon" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:paddingRight="@dimen/button_badge_layout"
             android:text="Achievement Room"
             android:textColor="@color/golden_brown"
-            android:textSize="22dp"
-            android:paddingRight="32dp"/>
+            android:textSize="@dimen/textSize" />
 
     </LinearLayout>
     <LinearLayout
@@ -37,7 +40,7 @@
         android:layout_height="0dp"
         android:id="@+id/cat1_layout"
         android:layout_weight="0.7"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/layout_margin"
         android:gravity="center"
         android:background="@drawable/achievement_button"
         android:clickable="true">>
@@ -45,16 +48,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cat1_tv"
-            android:text="              Rookie \nTaken your first medicine"
+            android:text="Rookie \nTaken your first medicine"
+            android:textAlignment="center"
             android:textStyle="bold"
-            android:textSize="15sp" />
+            android:textSize="@dimen/textSize_small" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/cat2_layout"
         android:layout_weight="0.7"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/layout_margin"
         android:gravity="center"
         android:background="@drawable/achievement_button"
         android:clickable="true">
@@ -62,25 +66,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cat2_tv"
-            android:text="               Mr Know-It-All \nAnswered first question correctly"
+            android:text="Mr Know-It-All \nAnswered first question correctly"
+            android:textAlignment="center"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/textSize_small"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/cat3_layout"
         android:layout_weight="0.7"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/layout_margin"
         android:gravity="center"
         android:background="@drawable/achievement_button">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cat3_tv"
-            android:text="            Explorer \nPlanned your first trip"
+            android:text="Explorer \nPlanned your first trip"
+            android:textAlignment="center"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/textSize_small"/>
     </LinearLayout>
 
 

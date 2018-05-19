@@ -18,4 +18,75 @@
     <dimen name="first_analytic_textSize">18sp</dimen>
     <dimen name="first_analytic_value_textSize">17sp</dimen>
 
+    <!-- Activity_main -->
+    <dimen name="view_layout_height">0.5dp</dimen>
+    <dimen name="view_layout_width">200dp</dimen>
+    <dimen name="LinearLayout_margin_top">10dp</dimen>
+    <dimen name="LinearLayout_padding_bottom">5dp</dimen>
+    <dimen name="home_layout">30dp</dimen>
+    <dimen name="layout_margin_right_left">15dp</dimen>
+    <dimen name="bus_width">40dp</dimen>
+    <dimen name="layout_margin_top_bottom">5dp</dimen>
+    <dimen name="arrow_layout">26dp</dimen>
+    <dimen name="user_layout">36dp</dimen>
+
+    <!-- Add Medicine -->
+    <dimen name="textSize">22dp</dimen>
+    <dimen name="layout_margin">10dp</dimen>
+    <dimen name="layout_width">60dp</dimen>
+    <dimen name="layout_margin_small">5dp</dimen>
+    <dimen name="button_margin">20dp</dimen>
+    <dimen name="textSize_medium">20dp</dimen>
+    <dimen name="textSize_medium2">25sp</dimen>
+    <dimen name="textSize_fragment">25dp</dimen>
+
+    <dimen name="widget_layout_margin">2dp</dimen>
+    <dimen name="widget_padding">5dp</dimen>
+    <dimen name="widget_button_layout">50dp</dimen>
+
+    <dimen name="button_badge_layout">32dp</dimen>
+    <dimen name="textSize_small">15sp</dimen>
+    <dimen name="textSize_small2">20sp</dimen>
+    <dimen name="layout_small">20sp</dimen>
+    <dimen name="fragment_margin_left">10sp</dimen>
+
+    <dimen name="badge_margin">15dp</dimen>
+    <dimen name="badge_layout">120dp</dimen>
+    <dimen name="badge_text_margin">20dp</dimen>
+    <dimen name="badge_layout_height">55dp</dimen>
+
+    <dimen name="image_layout">60dp</dimen>
+    <dimen name="effectiveness_layout_height">220dp</dimen>
+
+    <dimen name="fragment_layout_height">60sp</dimen>
+    <dimen name="fragment_image_height_width">143dp</dimen>
+
+    <dimen name="user_medicine_padding_top_left">15dp</dimen>
+    <dimen name="user_medicine_textSize">38sp</dimen>
+    <dimen name="user_medicine_layout_margin">20dp</dimen>
+    <dimen name="user_medicine_layout_padding_right">8dp</dimen>
+    <dimen name="user_medicine_layout_padding_top">5dp</dimen>
+    <dimen name="user_medicine_layout_padding_bottom">10dp</dimen>
+    <dimen name="user_medicine_layout_padding_left">72dp</dimen>
+    <dimen name="user_medicine_button_margin_top">15dp</dimen>
+    <dimen name="user_medicine_button_padding">40dp</dimen>
+
+    <dimen name="info_layout_button">24dp</dimen>
+    <dimen name="info_textSize">25sp</dimen>
+    <dimen name="info_layout_margin_left_right">15dp</dimen>
+    <dimen name="info_layout_margin_top">10dp</dimen>
+    <dimen name="info_padding">5dp</dimen>
+    <dimen name="info_layout_height">110dp</dimen>
+
+    <dimen name="medicine_store_layout">28dp</dimen>
+    <dimen name="medicine_store_button_layout">24dp</dimen>
+    <dimen name="medicine_store_textSize">50sp</dimen>
+    <dimen name="medicine_store_textSize_small">20sp</dimen>
+
+    <dimen name="rapid_layout_height">45dp</dimen>
+    <dimen name="trip_margin">4dp</dimen>
+    <dimen name="trip_text">20sp</dimen>
+    <dimen name="trip_padding_left">6dp</dimen>
+    <dimen name="trip_layout_width">150dp</dimen>
+
 </resources>

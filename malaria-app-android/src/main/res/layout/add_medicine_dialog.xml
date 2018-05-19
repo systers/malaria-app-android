@@ -25,12 +25,12 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/golden_brown"
-                android:text="Add Medicine to Store"
-                android:textSize="22dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:text="@string/add_medicine"
+                android:textSize="@dimen/textSize"
+                android:layout_marginTop="@dimen/layout_margin"
+                android:layout_marginLeft="@dimen/layout_margin"
+                android:layout_marginRight="@dimen/layout_margin"
+                android:layout_marginBottom="@dimen/layout_margin"
                 >
             </TextView>
 
@@ -42,19 +42,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/layout_margin"
             android:layout_weight="0.96">
 
             <EditText
                 android:id="@+id/add_medicine_quantity"
-                android:layout_width="60dp"
+                android:layout_width="@dimen/layout_width"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/layout_margin_small"
                 android:inputType="number"
-                android:hint="Eg 7"
+                android:hint="Eg.7"
                 android:textColor="@color/golden_brown"
                 android:textColorHint="@color/lightgray02"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 />
@@ -64,7 +64,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/golden_brown"
-                android:text="Enter the doses of medicines you want to add in store."
+                android:text="@string/enter_dose"
                 android:layout_toRightOf="@+id/image"
                 android:layout_margin="20dp" />
 
@@ -78,8 +78,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginBottom="@dimen/layout_margin_small"
+            android:layout_marginTop="@dimen/layout_margin_right_left">
 
             <Button
                 android:id="@+id/add_medicine_dialog"
@@ -91,11 +91,11 @@
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:layout_columnSpan="8"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/button_margin"
                 android:layout_alignTop="@+id/dialogButtonCancel"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="@dimen/button_margin"/>
 
             <Button
                 android:id="@+id/cancel_medicine_dialog"
@@ -105,8 +105,8 @@
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
                 android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/button_margin"
+                android:layout_marginRight="@dimen/button_margin"
                 android:layout_gravity="center_horizontal"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"

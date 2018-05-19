@@ -4,7 +4,7 @@
               android:layout_height="match_parent"
               android:background="@color/back_ground"
               android:orientation="vertical"
-              android:padding="2dp" >
+              android:padding="@dimen/widget_layout_margin" >
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,42 +16,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:padding="2dp">
+                android:padding="@dimen/widget_layout_margin">
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="24dp"
+                    android:layout_height="@dimen/first_analytic_setting_button_height"
                     android:id="@+id/warningView"
                     android:layout_weight="1"
-                    android:layout_margin="5dp"
+                    android:layout_margin="@dimen/layout_margin_small"
                     android:visibility="invisible">
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="@dimen/first_analytic_setting_button_height"
+                        android:layout_height="@dimen/first_analytic_setting_button_height"
                         android:background="@drawable/warning"
                         android:contentDescription="@string/description_warning"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="24dp"
+                        android:layout_height="@dimen/first_analytic_setting_button_height"
                         android:textColor="@color/red"
-                        android:paddingBottom="3dp"
+                        android:paddingBottom="@dimen/first_analytic_row_textview_paddingeft"
                         android:gravity="bottom"
                         android:textSize="10sp"
                         android:text="You may be running out of medicines soon! "/>
                 </LinearLayout>
                 <Button
                     android:id="@+id/fragment_home_screen_set_tone_button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_margin="5dp"
+                    android:layout_width="@dimen/first_analytic_setting_button_height"
+                    android:layout_height="@dimen/first_analytic_setting_button_height"
+                    android:layout_margin="@dimen/layout_margin_small"
                     android:adjustViewBounds="true"
                     android:background="@drawable/ic_action_volume_on"
                     android:scaleType="fitCenter" />
 
                 <Button
                     android:id="@+id/fragment_home_screen_settings_button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_margin="5dp"
+                    android:layout_width="@dimen/first_analytic_setting_button_height"
+                    android:layout_height="@dimen/first_analytic_setting_button_height"
+                    android:layout_margin="@dimen/layout_margin_small"
                     android:adjustViewBounds="true"
                     android:background="@drawable/settings_normal"
                     android:scaleType="fitCenter" />
@@ -70,14 +70,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="@dimen/home_layout"
                 android:scaleType="fitCenter"
-                android:textSize="20sp"
+                android:textSize="@dimen/textSize_small2"
                 android:textStyle="bold" />
 
             <ImageView
-                android:layout_width="143dp"
-                android:layout_height="143dp"
+                android:layout_width="@dimen/fragment_image_height_width"
+                android:layout_height="@dimen/fragment_image_height_width"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:background="@drawable/drug_normal"
@@ -89,21 +89,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="@dimen/home_layout">
 
                 <Button
                     android:id="@+id/fragment_home_screen__reject_medication_button"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="@dimen/first_analytic_row_imageview_width"
+                    android:layout_height="@dimen/first_analytic_row_imageview_width"
+                    android:layout_marginRight="@dimen/button_margin"
                     android:adjustViewBounds="true"
                     android:background="@drawable/reject_medi_normal" />
 
                 <Button
                     android:id="@+id/fragment_home_screen_accept_medication_button"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_width="@dimen/first_analytic_row_imageview_width"
+                    android:layout_height="@dimen/first_analytic_row_imageview_width"
+                    android:layout_marginLeft="@dimen/button_margin"
                     android:adjustViewBounds="true"
                     android:background="@drawable/accept_medi_normal"
                     android:scaleType="fitCenter" />

@@ -28,11 +28,11 @@
                 android:gravity="center"
                 android:textColor="@color/golden_brown"
                 android:text="Reset Data"
-                android:textSize="22dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/textSize"
+                android:layout_marginTop="@dimen/layout_margin"
+                android:layout_marginLeft="@dimen/layout_margin"
+                android:layout_marginRight="@dimen/layout_margin"
+                android:layout_marginBottom="@dimen/layout_margin"
                 >
             </TextView>
 
@@ -47,11 +47,11 @@
 
             <ImageView
                 android:id="@+id/imageReset"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="@dimen/layout_width"
+                android:layout_height="@dimen/layout_width"
+                android:layout_marginRight="@dimen/layout_margin_small"
                 android:background="@drawable/drug_normal"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/layout_margin"
                 android:contentDescription="@string/description_reset_data"/>
 
             <TextView
@@ -61,7 +61,7 @@
                 android:textColor="@color/golden_brown"
                 android:text="Do you want to reset app settings? It will delete all data."
                 android:layout_toRightOf="@+id/image"
-                android:layout_margin="20dp" />
+                android:layout_margin="@dimen/badge_text_margin" />
 
         </LinearLayout>
 
@@ -104,8 +104,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginBottom="@dimen/layout_margin_small"
+            android:layout_marginTop="@dimen/layout_margin_right_left">
 
             <Button
                 android:id="@+id/dialogButtonOKReset"
@@ -117,11 +117,11 @@
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:layout_columnSpan="8"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/badge_text_margin"
                 android:layout_alignTop="@+id/dialogButtonCancel"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="@dimen/badge_text_margin"/>
 
             <Button
                 android:id="@+id/dialogButtonCancelReset"
@@ -131,8 +131,8 @@
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
                 android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/badge_text_margin"
+                android:layout_marginRight="@dimen/badge_text_margin"
                 android:layout_gravity="center_horizontal"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"

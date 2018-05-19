@@ -18,13 +18,13 @@
         <TextView
             android:id="@+id/dayDB"
             android:layout_width="fill_parent"
-            android:layout_height="60sp"
+            android:layout_height="@dimen/fragment_layout_height"
             android:layout_weight="0.6"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/golden_brown"
             android:textStyle="bold"
-            android:textSize="25dp">
+            android:textSize="@dimen/textSize">
         </TextView>
 
     </LinearLayout>
@@ -35,13 +35,13 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/first_analytic_row_imageview_width"
+            android:layout_height="@dimen/first_analytic_row_imageview_height"
             android:adjustViewBounds="true"
             android:background="@drawable/drug_normal"
             android:scaleType="fitCenter"
-            android:padding="5dp"
-            android:layout_margin="10dp"
+            android:padding="@dimen/layout_margin_small"
+            android:layout_margin="@dimen/layout_margin"
             android:contentDescription="@string/description_drug_name"/>
 
         <TextView
@@ -50,9 +50,9 @@
             android:layout_gravity="center_vertical"
 
             android:text="Drug:"
-            android:layout_margin="10dp"
-            android:padding="5dp"
-            android:textSize="19sp"
+            android:layout_margin="@dimen/layout_margin"
+            android:padding="@dimen/layout_margin_small"
+            android:textSize="@dimen/textSize_small"
             android:textStyle="bold"
             android:textColor="@color/golden_brown"/>
 
@@ -61,12 +61,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp"
-            android:layout_margin="15dp"
+            android:paddingLeft="@dimen/layout_margin"
+            android:paddingRight="@dimen/layout_margin"
+            android:paddingTop="@dimen/layout_margin_small"
+            android:layout_margin="@dimen/layout_margin_right_left"
             android:text="..."
-            android:textSize="17sp"
+            android:textSize="@dimen/textSize_small"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:background="@drawable/info_hub_button"
@@ -83,38 +83,32 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/first_analytic_row_imageview_width"
+            android:layout_height="@dimen/first_analytic_row_imageview_height"
             android:adjustViewBounds="true"
             android:background="@drawable/doses_missing_image_normal"
             android:scaleType="fitCenter"
-            android:padding="5dp"
-            android:layout_margin="10dp"
+            android:padding="@dimen/layout_margin_small"
+            android:layout_margin="@dimen/layout_margin"
             android:contentDescription="@string/description_drug_taken"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="@dimen/badge_margin"
+            android:paddingRight="@dimen/layout_margin"
             android:text="Taken:"
-            android:textSize="19sp"
+            android:textSize="@dimen/textSize_small"
             android:textColor="@color/golden_brown"
             android:textStyle="bold"
             />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"/> <!-- TODO: THIS IMAGEVIEW SEEMS USELESS -->
-
-
-        <ImageView
-            android:layout_width="57dp"
-            android:layout_height="57dp"
+            android:layout_width="@dimen/image_layout"
+            android:layout_height="@dimen/image_layout"
             android:background="@drawable/accept_medi_grayscale"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/badge_margin"
             android:id="@+id/medi_indicator"
             android:contentDescription="@string/description_accept"/>
 
@@ -131,13 +125,13 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:layout_width="57dp"
-            android:layout_height="57dp"
+            android:layout_width="@dimen/image_layout"
+            android:layout_height="@dimen/image_layout"
             android:src="@drawable/edit_pure_white"
             android:background="@drawable/roundedbutton"
             android:layout_gravity="right"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginBottom="@dimen/layout_margin"
+            android:layout_marginRight="@dimen/layout_margin"
             android:id="@+id/btnChangeData"
             android:contentDescription="@string/description_change_data"/>
 

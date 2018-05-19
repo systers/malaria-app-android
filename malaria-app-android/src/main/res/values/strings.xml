@@ -5,6 +5,8 @@
     <string name="app_homescreen_name">PC Malaria Home</string>
     <string name="user_medicine_settings_activity_pc_logo">Peace Corps Logo</string>
     <string name="user_medicine_settings_activity_setup_label">Set Up</string>
+    <string name="add_medicine">Add Medicine to Store</string>
+    <string name="enter_dose">Enter the doses of medicines you want to add in store.</string>
     <string name="user_medicine_settings_activity_drug_take_label">I Take</string>
     <string name="user_medicine_settings_activity_time_pick_label">Remind me at:</string>
     <string name="user_medicine_settings_activity_time_pick_button">Pick Time</string>

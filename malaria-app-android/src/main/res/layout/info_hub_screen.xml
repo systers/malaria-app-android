@@ -28,10 +28,10 @@
 
                 <Button
                     android:id="@+id/info_hub_settings_button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/info_layout_button"
+                    android:layout_height="@dimen/info_layout_button"
                     android:layout_gravity="end"
-                    android:layout_margin="5dp"
+                    android:layout_margin="@dimen/layout_margin_small"
                     android:adjustViewBounds="true"
 
                     android:background="@drawable/settings_normal"
@@ -52,10 +52,10 @@
                         android:text="@string/info_hub_title_label"
                         android:id="@+id/ih"
                         android:textColor="@color/golden_brown"
-                        android:textSize="25sp"
+                        android:textSize="@dimen/info_textSize"
                         android:textStyle="bold"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="@dimen/layout_margin"
+                        android:layout_marginLeft="@dimen/layout_margin"
 
                         />
 
@@ -65,7 +65,7 @@
 
 
             <LinearLayout android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="@dimen/info_layout_height"
                 android:id="@+id/firstButtonSet"
                 android:orientation="horizontal"
 
@@ -76,11 +76,11 @@
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="@dimen/info_padding"
                     android:id="@+id/btnPeaceCorpsPolicy"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginLeft="@dimen/info_layout_margin_left_right"
+                    android:layout_marginRight="@dimen/info_layout_margin_left_right"
+                    android:layout_marginTop="@dimen/info_layout_margin_top" />
 
                 <Button android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -88,12 +88,11 @@
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="@dimen/info_padding"
                     android:id="@+id/btnPercentSideEffects"
-
-                    android:layout_marginRight="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginLeft="@dimen/info_layout_margin_left_right"
+                    android:layout_marginRight="@dimen/info_layout_margin_left_right"
+                    android:layout_marginTop="@dimen/info_layout_margin_top" />
 
 
 
@@ -111,11 +110,11 @@
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="@dimen/info_padding"
                     android:id="@+id/btnSideEffectsPCV"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginLeft="@dimen/info_layout_margin_left_right"
+                    android:layout_marginRight="@dimen/info_layout_margin_left_right"
+                    android:layout_marginTop="@dimen/info_layout_margin_top" />
 
                 <Button android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -123,12 +122,11 @@
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="@dimen/info_padding"
                     android:id="@+id/btnSideEffectsNPCV"
-
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginLeft="@dimen/info_layout_margin_left_right"
+                    android:layout_marginRight="@dimen/info_layout_margin_left_right"
+                    android:layout_marginTop="@dimen/info_layout_margin_top" />
 
 
 
@@ -147,11 +145,11 @@
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="@dimen/info_padding"
                     android:id="@+id/btnVolunteerAdherence"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginLeft="@dimen/info_layout_margin_left_right"
+                    android:layout_marginRight="@dimen/info_layout_margin_left_right"
+                    android:layout_marginTop="@dimen/info_layout_margin_top"/>
 
                 <Button android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -159,12 +157,11 @@
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
                     android:layout_weight="1"
-                    android:padding="5dp"
+                    android:padding="@dimen/info_padding"
                     android:id="@+id/btnEffectiveness"
-
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginLeft="@dimen/info_layout_margin_left_right"
+                    android:layout_marginRight="@dimen/info_layout_margin_left_right"
+                    android:layout_marginTop="@dimen/info_layout_margin_top" />
 
             </LinearLayout>
 
@@ -173,86 +170,67 @@
 
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <View
-            android:layout_height="0.5dp"
-            android:layout_width="200dp"
-            android:background="#000000"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/LinearLayout_margin_top"
+        android:paddingBottom="@dimen/LinearLayout_padding_bottom"
+
+
+
+        >
+
+        <Button
+            android:id="@+id/homeButton"
+
+            android:background="@drawable/home_icon_normal"
+            android:layout_width="@dimen/home_layout"
+            android:layout_height="@dimen/home_layout"
+            android:adjustViewBounds="true"
+            android:layout_marginRight="@dimen/layout_margin_right_left"
+            android:scaleType="fitCenter"
 
             />
 
-        <LinearLayout
+        <Button
+            android:background="@drawable/bus_icon_inactive_normal"
+            android:layout_width="@dimen/bus_width"
+            android:layout_height="@dimen/home_layout"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="@dimen/layout_margin_top_bottom"
+            android:layout_marginRight="@dimen/layout_margin_top_bottom"
+            android:scaleType="fitCenter"
+            android:id="@+id/tripButton"
 
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="5dp"
+            />
 
-            >
-
-            <Button
-                android:id="@+id/homeButton"
-
-                android:background="@drawable/home_icon_normal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:adjustViewBounds="true"
-                android:layout_marginRight="15dp"
-                android:scaleType="fitCenter"
-
-                />
-
-            <Button
-                android:background="@drawable/bus_icon_inactive_normal"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:adjustViewBounds="true"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:scaleType="fitCenter"
-                android:id="@+id/tripButton"
-
-                />
-
-            <Button
-                android:background="@drawable/info_hub_inactive_normal"
-                android:id="@+id/infoButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:adjustViewBounds="true"
-                android:layout_marginLeft="15dp"
-                android:scaleType="fitCenter"
-                />
-            <Button
-                android:background="@drawable/cal_right_arrow_brown"
-                android:id="@+id/tempButton"
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:adjustViewBounds="true"
-                android:layout_marginLeft="15dp"
-                android:scaleType="fitCenter"
-                />
-            <Button
-                android:background="@drawable/user"
-                android:id="@+id/userProfile"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:adjustViewBounds="true"
-                android:layout_marginLeft="10dp"
-                android:scaleType="fitCenter"
-                />
-        </LinearLayout>
-
-
+        <Button
+            android:id="@+id/infoButton"
+            android:layout_width="@dimen/bus_width"
+            android:layout_height="@dimen/home_layout"
+            android:layout_marginLeft="@dimen/layout_margin_right_left"
+            android:adjustViewBounds="true"
+            android:background="@drawable/info_hub_inactive_normal"
+            android:scaleType="fitCenter" />
+        <Button
+            android:background="@drawable/cal_right_arrow_brown"
+            android:id="@+id/tempButton"
+            android:layout_width="@dimen/arrow_layout"
+            android:layout_height="@dimen/arrow_layout"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="@dimen/layout_margin_right_left"
+            android:scaleType="fitCenter"
+            />
+        <Button
+            android:background="@drawable/user"
+            android:id="@+id/userProfile"
+            android:layout_width="@dimen/user_layout"
+            android:layout_height="@dimen/user_layout"
+            android:adjustViewBounds="true"
+            android:layout_marginLeft="@dimen/layout_margin_right_left"
+            android:scaleType="fitCenter"
+            />
     </LinearLayout>
-
-
-
 </LinearLayout>
