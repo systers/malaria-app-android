@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/layout_margin_small"
                 android:orientation="horizontal" >
                 <TextView
                     android:id="@+id/score"
@@ -33,12 +33,12 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/layout_margin"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Score :"
                     android:textColor="@color/golden_brown"
-                    android:textSize="22.0sp"
+                    android:textSize="@dimen/textSize_medium2"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/timers"
@@ -46,12 +46,12 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/layout_margin"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="49"
                     android:textColor="@color/golden_brown"
-                    android:textSize="22.0sp"
+                    android:textSize="@dimen/textSize_medium2"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
@@ -73,11 +73,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/layout_margin_small"
                     android:gravity="center"
                     android:text="15*2*1-1"
                     android:textColor="@color/golden_brown"
-                    android:textSize="18.0sp"
+                    android:textSize="@dimen/textSize_medium2"
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
@@ -85,46 +85,46 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.20"
                 android:orientation="vertical"
-                android:padding="5dp"
+                android:padding="@dimen/layout_margin_small"
                 android:gravity="center_horizontal"
                 android:weightSum="1" >
                 <Button
                     android:id="@+id/button1"
-                    android:layout_width="200dp"
-                    android:layout_height="45dp"
+                    android:layout_width="@dimen/view_layout_width"
+                    android:layout_height="@dimen/rapid_layout_height"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/layout_margin_small"
                     android:background="@drawable/info_hub_button"
                     android:gravity="center"
                     android:text="30"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp"
+                    android:textSize="@dimen/textSize_small"
                     android:enabled="true"
                     android:clickable="true"/>
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="200dp"
-                    android:layout_height="45dp"
+                    android:layout_width="@dimen/view_layout_width"
+                    android:layout_height="@dimen/rapid_layout_height"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/layout_margin_small"
                     android:background="@drawable/info_hub_button"
                     android:gravity="center"
                     android:text="29"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp"
+                    android:textSize="@dimen/textSize_small"
                     android:enabled="true"
                     android:clickable="true"/>
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="200dp"
-                    android:layout_height="45dp"
+                    android:layout_width="@dimen/view_layout_width"
+                    android:layout_height="@dimen/rapid_layout_height"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/layout_margin_small"
                     android:background="@drawable/info_hub_button"
                     android:gravity="center"
                     android:text="32"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp"
+                    android:textSize="@dimen/textSize_small"
                     android:enabled="true"
                     android:clickable="true"/>
             </LinearLayout>
@@ -132,15 +132,15 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/rapid_layout_height"
             android:text="Exit Game"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/info_hub_button"
             android:textColor="@color/white"
-            android:layout_margin="10dp"
-            android:paddingRight="4dp"
-            android:paddingLeft="4dp"
-            android:textSize="14.0sp"
+            android:layout_margin="@dimen/layout_margin"
+            android:paddingRight="@dimen/info_padding"
+            android:paddingLeft="@dimen/info_padding"
+            android:textSize="@dimen/textSize_small"
             android:onClick="exitGame"/>
     </LinearLayout>
 </LinearLayout>

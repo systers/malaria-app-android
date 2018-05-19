@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView
     android:id="@+id/popuplistitem"
-    android:background="@color/light_green"
-    android:textColor="@color/cream"
+    android:background="@color/lightest_brown"
+    android:textColor="@color/black"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:textSize="15dp"
-    android:padding="15dp"
+    android:textSize="@dimen/textSize_medium"
+    android:padding="@dimen/button_margin"
     xmlns:android="http://schemas.android.com/apk/res/android" />

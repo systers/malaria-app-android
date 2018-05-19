@@ -5,6 +5,6 @@
     android:textColor="@color/golden_brown"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:textSize="15dp"
-    android:padding="5dp"
+    android:textSize="@dimen/textSize_medium"
+    android:padding="@dimen/layout_margin_small"
     xmlns:android="http://schemas.android.com/apk/res/android" />

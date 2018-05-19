@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="2dp"
+    android:layout_margin="@dimen/widget_layout_margin"
     android:background="@color/back_ground">
 
     <TextView
@@ -13,13 +13,13 @@
         android:id="@+id/textView_info"
         android:layout_weight="1"
         android:textColor="@color/black"
-        android:paddingLeft="5dp"
+        android:paddingLeft="@dimen/widget_padding"
         android:layout_gravity="center_vertical" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/widget_button_layout"
+        android:layout_height="@dimen/widget_button_layout"
         android:background="@drawable/ic_edit_action"
         android:id="@+id/button_edit"
         android:layout_gravity="center_vertical" />

@@ -4,7 +4,7 @@
     android:background="@color/back_ground"
     android:layout_gravity="center_horizontal"
     android:layout_width="match_parent"
-    android:padding="10dp"
+    android:padding="@dimen/layout_margin"
     android:layout_height="match_parent">
 
 
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Percentage Side Effects"
         android:textColor="@color/golden_brown"
-        android:textSize="25sp"
+        android:textSize="@dimen/textSize_medium2"
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/pse"
@@ -33,17 +33,17 @@
 
 
             <TextView android:layout_width="match_parent"
-                android:padding="5dp"
+                android:padding="@dimen/layout_margin_small"
                 android:text="@string/dump_test"
                 android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:id="@+id/percentSideEffectsLabel"
-                android:textSize="20sp"
+                android:textSize="@dimen/textSize_small2"
                 />
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="@dimen/effectiveness_layout_height"
                 android:id="@+id/percent_side_effect_image"
                 android:layout_gravity="center_horizontal"
                 android:background="@color/back_ground"/>

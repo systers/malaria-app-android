@@ -6,7 +6,7 @@
               android:background="@color/back_ground"
               android:layout_gravity="center_horizontal"
               android:layout_width="match_parent"
-              android:padding="10dp"
+              android:padding="@dimen/layout_margin"
               android:layout_height="match_parent">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Peace Corps Policy"
             android:textColor="@color/golden_brown"
-            android:textSize="25sp"
+            android:textSize="@dimen/textSize_medium2"
             android:gravity="center"
             android:layout_weight="0.94"
             android:textStyle="bold"
@@ -27,7 +27,7 @@
             />
         <Button
             android:layout_width="0dp"
-            android:layout_height="24dp"
+            android:layout_height="@dimen/medicine_store_button_layout"
             android:id="@+id/ttsButton"
             android:layout_weight="0.06"
             android:background="@drawable/ic_action_volume_on" />
@@ -50,7 +50,7 @@
               android:padding="5dp"
               android:text="@string/dump_test"
               android:textColor="@color/black"
-              android:textSize="20sp"
+              android:textSize="@dimen/textSize_small"
               android:layout_height="wrap_content"
               android:id="@+id/peaceCorpsPolicyLabel"
             />

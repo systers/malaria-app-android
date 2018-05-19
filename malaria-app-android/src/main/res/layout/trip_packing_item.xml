@@ -2,7 +2,7 @@
 <CheckedTextView
     android:id="@+id/packingListItem"
     android:layout_width="fill_parent"
-    android:textSize="20sp"
+    android:textSize="@dimen/textSize_small"
     android:padding="2dp"
     android:layout_height="?android:attr/listPreferredItemHeightSmall"
     android:textAppearance="?android:attr/textAppearanceListItemSmall"
@@ -10,6 +10,6 @@
     android:gravity="center_vertical"
     android:layout_alignParentEnd="true"
     android:layout_alignParentRight="true"
-    android:layout_marginLeft="20dp"
-    android:background="@color/light_green"
+    android:layout_marginLeft="@dimen/button_margin"
+    android:background="@color/lightest_brown"
     xmlns:android="http://schemas.android.com/apk/res/android" />
