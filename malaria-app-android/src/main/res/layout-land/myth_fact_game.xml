@@ -4,12 +4,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="3"
-    android:background="@drawable/background"
+    android:background="@color/back_ground"
     android:padding="10dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1.6"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,7 +17,7 @@
             android:gravity="center_vertical">
             <Button
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/myth_game_exit_button_height"
                 android:id="@+id/exitBtn"
                 android:layout_gravity="right"
                 android:layout_weight="0.4"
@@ -41,7 +41,7 @@
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/myth_game_next_button_height"
                 android:id="@+id/nextBtn"
                 android:layout_weight="0.4"
                 android:background="@drawable/info_hub_button"

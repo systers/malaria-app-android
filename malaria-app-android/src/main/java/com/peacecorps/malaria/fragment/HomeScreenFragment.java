@@ -48,7 +48,7 @@ public class HomeScreenFragment extends Fragment {
     private Calendar mCalendar;
     private String[] mPossibledays = {"Sunday", "Monday", "Tuesday",
             "Wednesday", "Thursday", "Friday", "Saturday"};
-    private static View rootView;
+    private View rootView;
     private static String TAGHSF = "HomeScreenFragment";
     private SharedPreferences sharedPreferences;
 

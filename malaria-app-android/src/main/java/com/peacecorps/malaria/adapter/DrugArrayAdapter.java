@@ -6,10 +6,14 @@ package com.peacecorps.malaria.adapter;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -65,12 +69,16 @@ public class DrugArrayAdapter extends ArrayAdapter<String>{
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder dialogAlert  = new AlertDialog.Builder(context);
-                dialogAlert.setMessage(drugDescriptions[position]);
-                dialogAlert.setTitle(dname[position]);
-                dialogAlert.setPositiveButton("OK", null);
-                dialogAlert.setCancelable(true);
-                dialogAlert.create().show();
+                SpannableString spannableString = new SpannableString(drugDescriptions[position]);
+                Linkify.addLinks(spannableString, Linkify.ALL);
+                AlertDialog alertDialog = new AlertDialog.Builder(getContext())
+                        .setPositiveButton("OK", null)
+                        .setMessage(spannableString)
+                        .setTitle(dname[position])
+                        .create();
+                alertDialog.show();
+                // Make the textview clickable. Must be called after show()
+                ((TextView)alertDialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
             }
         });
     }

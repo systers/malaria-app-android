@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/background"
+    android:background="@color/back_ground"
     android:orientation="vertical"
-    android:padding="2dp" >
-
+    android:padding="@dimen/first_analytic_layout_padding" >
+    >
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

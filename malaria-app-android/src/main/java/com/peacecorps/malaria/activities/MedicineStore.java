@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.text.Html;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +34,7 @@ public class MedicineStore extends Activity {
     private SharedPreferences.Editor editor;
     private int medicineStore;
     private String drugName;
+    private boolean isLimitExceede;
     static SharedPreferenceStore mSharedPreferenceStore;
 
     @Override
@@ -90,6 +93,29 @@ public class MedicineStore extends Activity {
                 final EditText medicineQuantityEt=(EditText)orderMedicineDialog.findViewById(R.id.order_quantity);
                 ((EditText)orderMedicineDialog.findViewById(R.id.order_quantity)).requestFocus();
                 //implement the email button
+
+                medicineQuantityEt.setOnKeyListener(new View.OnKeyListener() {
+
+                    @Override
+                    public boolean onKey(View v, int keyCode, KeyEvent event) {
+                        try {
+                            if (!medicineQuantityEt.getText().toString().equals("") &&
+                                    Integer.parseInt(medicineQuantityEt.getText().toString().trim()) > 100) {
+                                medicineQuantityEt.setError(getResources().getString(R.string.limit_exceeded));
+                                isLimitExceede = true;
+                            }
+                            else {
+                                isLimitExceede = false;
+                            }
+                        }
+                        catch (NumberFormatException exception){
+                            medicineQuantityEt.setError(getResources().getString(R.string.limit_exceeded));
+                        }
+
+                        return false;
+                    }
+                });
+
                 email.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -99,6 +125,9 @@ public class MedicineStore extends Activity {
                         else if(medicineQuantityEt.getText().toString().matches("[0]+")){
                             medicineQuantityEt.setError("Quantity Required");
                         }
+                        else if(isLimitExceede){
+                            medicineQuantityEt.setError(getResources().getString(R.string.limit_exceeded));
+                        }
                         else{
                             //send and email
                             String msgBody="My malaria pills will last for the coming  "+"<b>"+medicineStore+"</b>"+" days only.<br> Send the following immediately: <br>" +
@@ -106,7 +135,7 @@ public class MedicineStore extends Activity {
                                     "Quantity:          " ;
                             Intent emailIntent = new Intent(Intent.ACTION_SEND);
                             emailIntent.setData(Uri.parse("mailto:"));
-                            emailIntent.setType("text/plain");
+                            emailIntent.setType("message/rfc822");
                             emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"yatnavermaa@gmail.com", "yatna.verma.ece13@itbhu.ac.in"});
                             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "URGENT: Reqiured Malaria Medicines");
                             emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(msgBody+"<b>"+Integer.parseInt(medicineQuantityEt.getText().toString())+"</b>"));
@@ -125,6 +154,9 @@ public class MedicineStore extends Activity {
                         }
                         else if(medicineQuantityEt.getText().toString().matches("[0]+")){
                             medicineQuantityEt.setError("Quantity Required");
+                        }
+                        else if(isLimitExceede){
+                            medicineQuantityEt.setError(getResources().getString(R.string.limit_exceeded));
                         }
                         else{
                             String msgBody="My malaria pills will last for the coming "+medicineStore+" days only.\n Send the following immediately: \n" +
@@ -160,7 +192,10 @@ public class MedicineStore extends Activity {
                     @Override
                     public void onClick(View view) {
                         if(medicineQuantityEt.getText().toString().trim().equals("")){
-                            medicineQuantityEt.setError("Quantity Required");
+                            medicineQuantityEt.setError(getString(R.string.quantity_required));
+                        }
+                        else if (medicineQuantityEt.getText().toString().length() > 3 || Integer.valueOf(medicineQuantityEt.getText().toString()) > 365) {
+                            medicineQuantityEt.setError(getString(R.string.value_lessthan_366));
                         }
                         else{
                             medicineStore=preferences.getInt("medicineStore",0);
@@ -217,12 +252,38 @@ public class MedicineStore extends Activity {
                 if(prevAlertTime!=-1){
                     time.setText(prevAlertTime+"");
                 }
+
+                time.setOnKeyListener(new View.OnKeyListener() {
+
+                    @Override
+                    public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                        try {
+                            if (!time.getText().toString().equals("") &&
+                                    Integer.parseInt(time.getText().toString().trim()) > 100) {
+                                time.setError(getResources().getString(R.string.limit_exceeded));
+                                isLimitExceede = true;
+                            }
+                            else {
+                                isLimitExceede = false;
+                            }
+                        }
+                        catch (NumberFormatException exception) {
+                            time.setError(getResources().getString(R.string.limit_exceeded));
+                        }
+
+                        return false;
+                    }
+                });
                 set.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         if(time.getText().toString().trim().equals("")){
                             //If nothing is entered display error
                             time.setError("Entry Required");
+                        }
+                        else if(isLimitExceede){
+                            time.setError(getResources().getString(R.string.limit_exceeded));
                         }
                         else{
                             editor=preferences.edit();

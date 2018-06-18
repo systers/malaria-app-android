@@ -9,6 +9,9 @@
     <string name="user_medicine_settings_activity_time_pick_label">Remind me at:</string>
     <string name="user_medicine_settings_activity_time_pick_button">Pick Time</string>
     <string name="user_medicine_settings_activity_if_forget_label">If I forget</string>
+    <string name="age_limit_exceeded">Age limit exceeded.</string>
+    <string name="value_lessthan_366">Enter a value less than 366</string>
+    <string name="quantity_required">Quantity Required</string>
     <string name="user_medicine_settings_activity_done_button">DONE</string>
     <string name="second_analytic_screen_title">SECOND ANALYTIC SCREEN</string>
     <string name="first_analytic_screen_doses_missing_text">Doses in a Row</string>
@@ -126,7 +129,49 @@
     <string name="hint_dollar">$</string>
     <string name="hint_ex">Eg 7</string>
     <string name="hint_specify_path">Specify file path</string>
-
+    <string name="departuredate_currentdate">"Departure date cannot be less than current date"</string>
+    <string name="arrivaldate_departuredate">"Arrival date cannot be before the Departure date"</string>
+    <string name="limit_exceeded">Limit Exceeded</string>
+    <string name="mal_description">
+        -Interferes with growth of parasites in red blood cells\n
+        -Take the medicine everyday at the same time with food\n
+        -Start using 1-2 days before entering the area\n
+        -Continue using through out the stay,and at least 7 days after leave\n
+        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
+        -Consult your doctor if you have liver or kidney disease, or malaria complications\n
+        -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
+        -Visit <a href="http://www.drugs.com/malarone.html">http://www.drugs.com/malarone.html</a> for more information
+    </string>
+    <string name="doxy_description">
+        -Tetracycline antibiotic that helps to fight bacteria in the body\n
+        -Take the medicine everyday at the same time with food\n
+        -Start using 1-2 days before entering the area\n
+        -Continue using through out the stay,and at least 28 days after leave\n
+        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
+        -Consult your doctor if you have liver or kidney disease, or are taking supplements and other medicines\n
+        -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
+        -Visit <a href="http://www.drugs.com/doxycycline.html">http://www.drugs.com/doxycycline.html</a> for more information
+    </string>
+    <string name="mef_description">
+        -Antimalarial agent that kills sensitive malaria parasites\n
+        -Take the medicine once a week after your main meal (NOT ON AN EMPTY STOMACH)\n
+        -Start using 1 week before entering the area\n
+        -Continue using through out the stay,and at least 4 weeks after leave\n
+        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
+        -Consult your doctor if you have allergies, mental illnesses, seizures, or are taking similar medicines\n
+        -Some side effects of drug: stomach pain, headache, muscle ache, tiredness, vomiting\n
+        -Visit <a href="http://www.drugs.com/cdi/mefloquine.html">http://www.drugs.com/cdi/mefloquine.html</a> for more information
+    </string>
+    <string name="trip_pref_destination">destination</string>
+    <string name="trip_pref_dep_month">departure_month</string>
+    <string name="trip_pref_dep_date">departure_date</string>
+    <string name="trip_pref_dep_year">departure_year</string>
+    <string name="trip_pref_arr_month">arrival_month</string>
+    <string name="trip_pref_arr_date">arrival_date</string>
+    <string name="trip_pref_arr_year">arrival_year</string>
+    <string name="trip_pref_packed_items">packed_items</string>
+    <string name="trip_pref_reminder_time">reminderTime</string>
+    <string name="trip_pref">trip-details</string>
 
     <!--Notification string-->
     <string name="drug_reminder_notification_title">Malaria Prevention</string>
@@ -182,8 +227,6 @@
     <string name="description_badge_newbie">Newbie badge</string>
     <string name="description_badge_hat">Hat badge</string>
     <string name="description_"></string>
-
-
     <string-array name="user_medicine_settings_activity_drug_array">
         <item>Malarone (Daily)</item>
         <item>Doxycycline (Daily)</item>
@@ -256,38 +299,6 @@
         -> If it is a fact, drag it to the chest. If it is a myth, drag it to the trash bin.\n
         -> For every correct answer, a point is awarded.\n
         -> Click \"Next\" to go to next question, and \"Exit\" to exit the game.\n
-    </string>
-    <string name="departuredate_currentdate">"Departure date cannot be less than current date"</string>
-    <string name="arrivaldate_departuredate">"Arrival date cannot be before the Departure date"</string>
-    <string name="mal_description">
-        -Interferes with growth of parasites in red blood cells\n
-        -Take the medicine everyday at the same time with food\n
-        -Start using 1-2 days before entering the area\n
-        -Continue using through out the stay,and at least 7 days after leave\n
-        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
-        -Consult your doctor if you have liver or kidney disease, or malaria complications\n
-        -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
-        -Visit http://www.drugs.com/malarone.html for more information\n
-    </string>
-    <string name="doxy_description">
-        -Tetracycline antibiotic that helps to fight bacteria in the body\n
-        -Take the medicine everyday at the same time with food\n
-        -Start using 1-2 days before entering the area\n
-        -Continue using through out the stay,and at least 28 days after leave\n
-        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
-        -Consult your doctor if you have liver or kidney disease, or are taking supplements and other medicines\n
-        -Some side effects of drug: stomach pain, headache, diarrhea, fever, weakness\n
-        -Visit http://www.drugs.com/doxycycline.html for more information\n
-    </string>
-    <string name="mef_description">
-        -Antimalarial agent that kills sensitive malaria parasites\n
-        -Take the medicine once a week after your main meal (NOT ON AN EMPTY STOMACH)\n
-        -Start using 1 week before entering the area\n
-        -Continue using through out the stay,and at least 4 weeks after leave\n
-        -Take missed doses as soon as possible, but skip them if it is almost time for next dose\n
-        -Consult your doctor if you have allergies, mental illnesses, seizures, or are taking similar medicines\n
-        -Some side effects of drug: stomach pain, headache, muscle ache, tiredness, vomiting\n
-        -Visit http://www.drugs.com/cdi/mefloquine.html for more information\n
     </string>
     <string name="enter_medicin_doze">Enter the doses of medicines you want to add in store.</string>
 
