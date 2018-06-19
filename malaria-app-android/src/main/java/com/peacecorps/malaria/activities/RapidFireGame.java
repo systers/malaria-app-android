@@ -252,7 +252,7 @@ public class RapidFireGame extends Activity{
         int score=sharedPreferences.getInt("gameScore",0);
         score=score+gameScore;
         editor.putInt("gameScore", score);
-        editor.commit();
+        editor.apply();
 
     }
     //Implementing the timer

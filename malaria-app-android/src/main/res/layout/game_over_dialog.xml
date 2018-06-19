@@ -23,8 +23,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/golden_brown"
-                android:text="Game Over"
-                android:textSize="22dp"
+                android:text="@string/game_over"
+                android:textSize="@dimen/text_size_22sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Wait until new questions are added to the game."
+                android:text="@string/wait_for_new_game"
                 android:textSize="20sp"
                 android:textColor="@color/golden_brown"/>
         </LinearLayout>
@@ -66,7 +66,7 @@
                 android:id="@+id/gameOverDialogButtonOK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OK"
+                android:text="@string/label_ok"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="5dp"

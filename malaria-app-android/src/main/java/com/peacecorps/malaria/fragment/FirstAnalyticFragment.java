@@ -1,5 +1,6 @@
 package com.peacecorps.malaria.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -97,6 +98,7 @@ public class FirstAnalyticFragment extends Fragment {
         });
     }
 
+    @SuppressLint("CommitPrefEdits")
     public void getSharedPreferences() {
 
         mSharedPreferenceStore.mPrefsStore = getActivity()
@@ -190,7 +192,6 @@ public class FirstAnalyticFragment extends Fragment {
         DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(getActivity());
         String  lastTaken= sqLite.getLastTaken();
       checkMediLastTakenTime.setText(lastTaken);
-        Log.d("LastTaken-------------------------: ",lastTaken);
 
     }
 

@@ -42,8 +42,6 @@ public class AlarmHandlerClass extends BroadcastReceiver {
         /**Initializing the Shared Preferences for Storing Details**/
         mSharedPreferenceStore.mPrefsStore = context.getSharedPreferences(
                 "com.peacecorps.malaria.storeTimePicked", Context.MODE_PRIVATE);
-        mSharedPreferenceStore.mEditor = mSharedPreferenceStore.mPrefsStore
-                .edit();
     }
 
     public void setAlarm(Context context) {
@@ -61,7 +59,7 @@ public class AlarmHandlerClass extends BroadcastReceiver {
             Intent alarmIntent = new Intent(
                     "com.peacecorps.malaria.START_ALARM");
             PendingIntent pendingAlarm = PendingIntent.getBroadcast(context, 0,
-                    alarmIntent, Intent.FLAG_ACTIVITY_NEW_TASK);
+                    alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             if (mSharedPreferenceStore.mPrefsStore.getBoolean(
                     "com.peacecorps.malaria.isWeekly", false)) {
                 /**Weekly Alarm**/

@@ -23,14 +23,14 @@
                 android:layout_weight="0.4"
                 android:background="@drawable/info_hub_button"
                 android:textColor="@color/white"
-                android:text="Exit"
+                android:text="@string/label_exist_name"
                 android:onClick="exitGame"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/userCoins"
-                android:textSize="24sp"
+                android:textSize="@dimen/text_size_25sp"
                 android:textStyle="bold"
                 android:layout_weight="1.2"
                 android:text="6"
@@ -45,7 +45,7 @@
                     android:layout_weight="0.4"
                     android:background="@drawable/info_hub_button"
                     android:textColor="@color/white"
-                    android:text="Next"
+                    android:text="@string/label_next"
                     android:onClick="nextClick"/>
 
 
@@ -63,8 +63,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
                 android:id="@+id/question"
-                android:textSize="20sp"
-                android:text="Question Here"
+                android:textSize="@dimen/text_size_20sp"
+                android:text="@string/label_question_place"
                 android:background="@drawable/achievement_button"
                 android:textColor="@color/golden_brown"
                 android:gravity="center"/>
@@ -88,7 +88,7 @@
             android:layout_weight="0.8"
             android:layout_marginTop="5dp"
             android:textStyle="bold"
-            android:textSize="19sp"
+            android:textSize="@dimen/text_size_19sp"
             android:background="@drawable/chest" />
         <TextView
             android:layout_width="0dp"
@@ -96,7 +96,7 @@
             android:gravity="center"
             android:id="@+id/trash"
             android:textStyle="bold"
-            android:textSize="19sp"
+            android:textSize="@dimen/text_size_19sp"
             android:layout_weight="1"
             android:background="@drawable/trash"/>
     </LinearLayout>

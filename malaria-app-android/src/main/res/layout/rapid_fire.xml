@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relatively"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,9 +37,9 @@
                     android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Score :"
+                    android:text="@string/label_score"
                     android:textColor="@color/golden_brown"
-                    android:textSize="22.0sp"
+                    android:textSize="@dimen/text_size_22sp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/timers"
@@ -51,8 +52,9 @@
                     android:gravity="center"
                     android:text="49"
                     android:textColor="@color/golden_brown"
-                    android:textSize="22.0sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/text_size_22sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -75,9 +77,9 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:text="15*2*1-1"
+                    android:text="@string/random_multiply"
                     android:textColor="@color/golden_brown"
-                    android:textSize="18.0sp"
+                    android:textSize="@dimen/text_size_18sp"
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
@@ -98,9 +100,10 @@
                     android:gravity="center"
                     android:text="30"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp"
+                    android:textSize="@dimen/text_size_17sp"
                     android:enabled="true"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    tools:ignore="HardcodedText" />
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="200dp"
@@ -111,9 +114,10 @@
                     android:gravity="center"
                     android:text="29"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp"
+                    android:textSize="@dimen/text_size_17sp"
                     android:enabled="true"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    tools:ignore="HardcodedText" />
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="200dp"
@@ -124,23 +128,24 @@
                     android:gravity="center"
                     android:text="32"
                     android:textColor="@color/white"
-                    android:textSize="16.0sp"
+                    android:textSize="@dimen/text_size_17sp"
                     android:enabled="true"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:text="Exit Game"
+            android:text="@string/label_exist_name"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/info_hub_button"
             android:textColor="@color/white"
             android:layout_margin="10dp"
             android:paddingRight="4dp"
             android:paddingLeft="4dp"
-            android:textSize="14.0sp"
+            android:textSize="@dimen/text_size_15sp"
             android:onClick="exitGame"/>
     </LinearLayout>
 </LinearLayout>

@@ -17,9 +17,9 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Peace Corps Policy"
+            android:text="@string/peace_corps_policy"
             android:textColor="@color/golden_brown"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size_25sp"
             android:gravity="center"
             android:layout_weight="0.94"
             android:textStyle="bold"
@@ -50,7 +50,7 @@
               android:padding="5dp"
               android:text="@string/dump_test"
               android:textColor="@color/black"
-              android:textSize="20sp"
+              android:textSize="@dimen/text_size_20sp"
               android:layout_height="wrap_content"
               android:id="@+id/peaceCorpsPolicyLabel"
             />

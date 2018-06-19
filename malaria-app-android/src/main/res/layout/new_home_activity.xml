@@ -19,7 +19,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/badgeScreen"
-        android:text="Badge Room"
+        android:text="@string/badge_room"
         android:background="@drawable/info_hub_button"
         android:textColor="@color/white"
         android:layout_margin="5dp"/>
@@ -30,7 +30,7 @@
         android:id="@+id/rapidFire"
         android:background="@drawable/info_hub_button"
         android:textColor="@color/white"
-        android:text="Rapid Fire"
+        android:text="@string/rapid_fire"
         android:layout_margin="5dp"/>
     <Button
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:background="@drawable/info_hub_button"
         android:textColor="@color/white"
         android:layout_margin="5dp"
-        android:text="Myth Vs Fact"/>
+        android:text="@string/myth_vs_fact"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -49,7 +49,7 @@
         android:background="@drawable/info_hub_button"
         android:textColor="@color/white"
         android:layout_margin="5dp"
-        android:text="Medicine Store"/>
+        android:text="@string/medicine_store"/>
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,7 +73,6 @@
             android:layout_marginTop="10dp"
             android:paddingBottom="0dp"
             >
-
             <Button
                 android:id="@+id/homeButton"
 
@@ -85,7 +84,6 @@
                 android:scaleType="fitCenter"
 
                 />
-
             <Button
                 android:background="@drawable/bus_icon_inactive_normal"
                 android:layout_width="40dp"
@@ -97,7 +95,6 @@
                 android:id="@+id/tripButton"
 
                 />
-
             <Button
                 android:background="@drawable/info_hub_inactive_normal"
                 android:id="@+id/infoButton"

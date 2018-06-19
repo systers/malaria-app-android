@@ -10,13 +10,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.interfaces.GetUserCallback;
-import com.peacecorps.malaria.model.AppUserModel;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
-import com.peacecorps.malaria.utils.ServerRequests;
 import com.peacecorps.malaria.utils.UtilityMethods;
 
 /**
@@ -135,7 +130,7 @@ public class UserProfile extends Activity{
         editor.putString("user_name",userNameEt.getText().toString());
         editor.putString("user_email", userEmailEt.getText().toString());
         editor.putInt("user_age", Integer.parseInt(userAgeEt.getText().toString()));
-        editor.commit();
+        editor.apply();
     }
 
     //Implement the save button
@@ -159,32 +154,34 @@ public class UserProfile extends Activity{
                 }
                 else{
                     //create object to send
-                    AppUserModel user = new AppUserModel();
-                    //get medicine type from shared preferences
-                    user = user.getAppUser(name,email, Integer.parseInt(age),userMedicineType);
-                    postUserDetails(user);
+                   // AppUserModel user = new AppUserModel();
+                    // user = user.getAppUser(name,email, Integer.parseInt(age),userMedicineType);
+                   // postUserDetails(user);
+                    setNewDetails();
                 }
 
             }
         };
     }
+
+    // TODO: remove comments & fix the error after community discussion, ;)
     //create the server request
-    private void postUserDetails(AppUserModel user){
-        ServerRequests serverRequest = new ServerRequests(this);
-        serverRequest.storeUserDataInBackground(user, new GetUserCallback() {
-            @Override
-            public void done(String status) {
-                if(status.equals("200")){
-                    setNewDetails();
-                    Toast.makeText(UserProfile.this, "User Details submitted", Toast.LENGTH_SHORT).show();
-                    UserProfile.this.finish();
-                }
-                else{
-                    Toast.makeText(UserProfile.this, "Failed! Please try again after some time.", Toast.LENGTH_SHORT).show();
-                }
-
-
-            }
-        });
-    }
+//    private void postUserDetails(AppUserModel user){
+//        ServerRequests serverRequest = new ServerRequests(this);
+//        serverRequest.storeUserDataInBackground(user, new GetUserCallback() {
+//            @Override
+//            public void done(String status) {
+//                if(status.equals("200")){
+//                    setNewDetails();
+//                    Toast.makeText(UserProfile.this, "User Details submitted", Toast.LENGTH_SHORT).show();
+//                    UserProfile.this.finish();
+//                }
+//                else{
+//                    Toast.makeText(UserProfile.this, "Failed! Please try again after some time.", Toast.LENGTH_SHORT).show();
+//                }
+//
+//
+//            }
+//        });
+//    }
 }

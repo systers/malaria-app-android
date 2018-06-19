@@ -10,7 +10,7 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,8 +35,8 @@
                         android:textColor="@color/red"
                         android:paddingBottom="3dp"
                         android:gravity="bottom"
-                        android:textSize="10sp"
-                        android:text="You may be running out of medicines soon! "/>
+                        android:textSize="@dimen/text_size_10sp"
+                        android:text="@string/med_stock_empty_msg"/>
                 </LinearLayout>
                 <Button
                     android:id="@+id/fragment_home_screen_set_tone_button"
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textSize="40sp"
+                android:textSize="@dimen/text_size_40sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_gravity="end"
                 android:layout_marginRight="30dp"
                 android:scaleType="fitCenter"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_20sp"
                 android:textStyle="bold" />
 
             <ImageView

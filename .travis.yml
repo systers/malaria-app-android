@@ -1,0 +1,17 @@
+sudo: required
+language: android
+jdk: oraclejdk8
+android:
+ components:
+    - platform-tools
+    - tools
+    - build-tools-26.0.2
+    - android-26
+    - extra-android-m2repository
+before_script:
+ - chmod +x gradlew
+ - chmod +x generate-apk.sh
+script:
+ - ./gradlew assembleDebug --stacktrace # Change 'assembleDebug' to 'build' when lint issues are fixed. Update generate-apk.sh accordingly
+after_success:
+ - ./generate-apk.sh

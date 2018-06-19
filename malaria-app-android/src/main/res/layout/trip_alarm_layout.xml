@@ -16,9 +16,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trip Checklist Reminder"
+            android:text="@string/label_trip_checklist_reminder"
             android:textColor="@color/golden_brown"
-            android:textSize="22dp"
+            android:textSize="@dimen/text_size_22sp"
             android:gravity="center"
             android:background="@color/lightest_brown"
             android:padding="10dp"
@@ -29,8 +29,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tripRemindingItems"
             android:textColor="@color/golden_brown"
-            android:textSize="20sp"
-            android:text="hi"
+            android:textSize="@dimen/text_size_20sp"
             />
 
     </LinearLayout>
@@ -48,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/info_hub_button"
-            android:text="Clear"
+            android:text="@string/label_button_clear"
             android:id="@+id/reminderOK"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
@@ -60,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/info_hub_button"
-            android:text="Snooze"
+            android:text="@string/label_button_snooze"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:id="@+id/reminderCancel"

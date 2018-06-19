@@ -215,19 +215,19 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         int year = mCalendar.get(Calendar.YEAR);
 
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmHour", mHour)
-                .commit();
+                .apply();
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.AlarmMinute", mMinute)
-                .commit();
+                .apply();
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.SetupMonth", month)
-                .commit();
+                .apply();
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.SetupYear", year)
-                .commit();
+                .apply();
         mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.dayTakingDrug", checkDay);
         mSharedPreferenceStore.mEditor.putString("com.peacecorps.malaria.drugPicked",
                 mDrugPicked);
         mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isDrugTaken", false)
-                .commit();
-        mSharedPreferenceStore.mEditor.commit();
+                .apply();
+        mSharedPreferenceStore.mEditor.apply();
 
         mSharedPreferenceStore.mEditor.putBoolean(
                 "com.peacecorps.malaria.hasUserSetPreference", true).commit();
@@ -307,11 +307,11 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         mDrugPicked = parent.getItemAtPosition(position).toString();
 
         parent.setSelection(parent.getSelectedItemPosition());
-        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.drug", position).commit();
+        mSharedPreferenceStore.mEditor.putInt("com.peacecorps.malaria.drug", position).apply();
         if (position == 2) {
             mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isWeekly", true);
             mSharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria.weeklyDate",
-                    new Date().getTime()).commit();
+                    new Date().getTime()).apply();
         } else {
             mSharedPreferenceStore.mEditor.putBoolean("com.peacecorps.malaria.isWeekly", false);
         }

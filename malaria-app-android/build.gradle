@@ -2,15 +2,20 @@ apply plugin: 'com.android.application'
 apply from: '../config/quality/quality.gradle'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 22
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 
     buildTypes {
         release {
@@ -31,9 +36,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:22+' // v4
-    compile 'com.viewpagerindicator:library:2.4.1@aar'
-    compile files('libs/volleylib.jar')
-    compile files('libs/GraphView-3.1.2.jar')
-    testCompile 'junit:junit:4.12'
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion" // v4
+    implementation "com.viewpagerindicator:library:$rootProject.ext.viewPagerIndicatorVersion"
+    implementation files('libs/volleylib.jar')
+    implementation files('libs/GraphView-3.1.2.jar')
+    testImplementation 'junit:junit:4.12'
 }
