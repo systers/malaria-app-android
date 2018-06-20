@@ -6,6 +6,8 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,6 +33,7 @@ import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.model.SharedPreferenceStore;
 import com.peacecorps.malaria.reciever.TripAlarmReceiver;
+import com.peacecorps.malaria.widget.TripAppWidgetProvider;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -59,7 +62,8 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
     static SharedPreferenceStore mSharedPreferenceStore;
     private Dialog dialog = null;
     private ImageView loc_history;
-    public static TextView packingSelect,departureMonth,arrivalMonth;
+    public static TextView packingSelect;
+    public TextView departureMonth, arrivalMonth;
     public static final String DRUG_TAG="com.peacecorps.malaria.activites.TripIndicatorFragmentActivity.DRUG_TAG";
     long num_drugs=0;
     private String arrival_formattedate, departure_formattedate;
@@ -77,6 +81,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
     private TextView pmtLabel;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+    public Calendar departureDate;
 
     public static TripIndicatorFragmentActivity instance(){
         return inst;
@@ -104,6 +109,24 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
         tripTime = (TextView)findViewById(R.id.trip_time);
         ((TextView)findViewById(R.id.trip_time)).requestFocus();
+
+        //Getting details of the saved trip.
+        SharedPreferences prefs = getSharedPreferences(getString(R.string.trip_pref), MODE_PRIVATE);
+        locationSpinner.setText(prefs.getString(getString(R.string.trip_pref_destination), ""));
+        ((TextView)findViewById(R.id.trip_month_departure)).setText(prefs.getString(getString(R.string.trip_pref_dep_month), ""));
+        ((TextView)findViewById(R.id.trip_date_departure)).setText(prefs.getString(getString(R.string.trip_pref_dep_date), ""));
+        ((TextView)findViewById(R.id.trip_year_departure)).setText(prefs.getString(getString(R.string.trip_pref_dep_year), ""));
+        ((TextView)findViewById(R.id.trip_month)).setText(prefs.getString(getString(R.string.trip_pref_arr_month), ""));
+        ((TextView)findViewById(R.id.trip_date)).setText(prefs.getString(getString(R.string.trip_pref_arr_date), ""));
+        ((TextView)findViewById(R.id.trip_year)).setText(prefs.getString(getString(R.string.trip_pref_arr_year), ""));
+        packingSelect.setText(prefs.getString(getString(R.string.trip_pref_packed_items), ""));
+        tripTime.setText(prefs.getString(getString(R.string.trip_pref_reminder_time), ""));
+
+        //Setting departure and arrival date formats if trip details are present.
+        if (!(prefs.getString("reminderTime", "").equals(""))) {
+            departure_formattedate = prefs.getString("departure_date", "") + "/" + prefs.getString("departure_month", "") + "/"+ prefs.getString("departure_year", "");
+            arrival_formattedate = prefs.getString("arrival_date", "") + "/" + prefs.getString("arrival_month", "") + "/" + prefs.getString("arrival_year", "");
+        }
 
         //implementing the new Home button
         newHome =(Button)findViewById(R.id.tempButton);
@@ -311,6 +334,18 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                    Log.d(TAGTIFA,"Dep Time:"+deptime);
                    Log.d(TAGTIFA, "Today: " + today);
                    if(deptime>today) {
+                       //Saving the trip details.
+                       SharedPreferences.Editor editTripDetails = getSharedPreferences(getString(R.string.trip_pref), MODE_MULTI_PROCESS).edit();
+                       editTripDetails.putString(getString(R.string.trip_pref_destination), mLocationPicked);
+                       editTripDetails.putString(getString(R.string.trip_pref_dep_month), ((TextView) findViewById(R.id.trip_month_departure)).getText().toString());
+                       editTripDetails.putString(getString(R.string.trip_pref_dep_date), ((TextView) findViewById(R.id.trip_date_departure)).getText().toString());
+                       editTripDetails.putString(getString(R.string.trip_pref_dep_year), ((TextView) findViewById(R.id.trip_year_departure)).getText().toString());
+                       editTripDetails.putString(getString(R.string.trip_pref_arr_month), ((TextView) findViewById(R.id.trip_month)).getText().toString());
+                       editTripDetails.putString(getString(R.string.trip_pref_arr_date), ((TextView) findViewById(R.id.trip_date)).getText().toString());
+                       editTripDetails.putString(getString(R.string.trip_pref_arr_year), ((TextView) findViewById(R.id.trip_year)).getText().toString());
+                       editTripDetails.putString(getString(R.string.trip_pref_packed_items), ((TextView) findViewById(R.id.tripSelectBox)).getText().toString());
+                       editTripDetails.putString(getString(R.string.trip_pref_reminder_time), tripTime.getText().toString());
+                       editTripDetails.apply();
                        interval = getTimeInterval(deptime, today);
                        /**
                         * Setting Up Alarm for a Week Before
@@ -364,6 +399,11 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                            startActivity(new Intent(getApplication().getApplicationContext(), MainActivity.class));
                            finish();
                        }
+
+                       //update the widgets
+                       int widgetIds[] = AppWidgetManager.getInstance(getApplication()).getAppWidgetIds(new ComponentName(getApplication(), TripAppWidgetProvider.class));
+                       TripAppWidgetProvider tripWidgets = new TripAppWidgetProvider();
+                       tripWidgets.onUpdate(getApplicationContext(), AppWidgetManager.getInstance(getApplicationContext()),widgetIds);
                    }
                    else
                    {
@@ -509,7 +549,7 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
                 SharedPreferenceStore.mEditor.clear().commit();
                 startActivity(new Intent(getApplication().getApplicationContext(),
                         UserMedicineSettingsFragmentActivity.class));
-
+                dialog.dismiss();
             }
         });
 
@@ -596,13 +636,16 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             // Use the current date as the default date in the picker
-            final Calendar c = Calendar.getInstance();
+            final Calendar c = departureDate;
+            c.add(Calendar.DATE, 1);
             int year = c.get(Calendar.YEAR);
             int month = c.get(Calendar.MONTH);
             int day = c.get(Calendar.DAY_OF_MONTH);
 
             // Create a new instance of DatePickerDialog and return it
-            return new DatePickerDialog(getActivity(), R.style.MyDatePicker , this, year, month, day);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), R.style.MyDatePicker , this, year, month, day);
+            datePickerDialog.getDatePicker().setMinDate(c.getTimeInMillis());
+            return datePickerDialog;
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -633,6 +676,10 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
     }
 
     public void showDatePickerDialogArrival(View v) {
+        if(!depar){
+            Toast.makeText(getApplicationContext(), "Set departure date first.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         DialogFragment newFragment = new DatePickerFragmentArrival();
         newFragment.show(getFragmentManager(), "Arrival Data");
     }
@@ -644,16 +691,21 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             // Use the current date as the default date in the picker
             final Calendar c = Calendar.getInstance();
-             dep_year = c.get(Calendar.YEAR);
-             dep_month = c.get(Calendar.MONTH);
-             dep_day = c.get(Calendar.DAY_OF_MONTH);
+            c.add(Calendar.DATE, 1);
+            dep_year = c.get(Calendar.YEAR);
+            dep_month = c.get(Calendar.MONTH);
+            dep_day = c.get(Calendar.DAY_OF_MONTH);
 
             // Create a new instance of DatePickerDialog and return it
-            return new DatePickerDialog(getActivity(),R.style.MyDatePicker ,this, dep_year, dep_month, dep_day);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), R.style.MyDatePicker , this, dep_year, dep_month, dep_day);
+            datePickerDialog.getDatePicker().setMinDate(c.getTimeInMillis());
+            return datePickerDialog;
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
             setTextFields(day,month+1,year);
+            departureDate = Calendar.getInstance();
+            departureDate.set(year, month, day);
 
             depar=true;
 

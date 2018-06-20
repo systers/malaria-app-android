@@ -38,9 +38,9 @@ import java.util.Date;
 public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         implements AdapterView.OnItemSelectedListener {
 
-    private static Button mDoneButton;
+    private Button mDoneButton;
 
-    private static TextView timePickButton;
+    private TextView timePickButton;
     private TextView mSetupLabel;
     private TextView mDrugTakeLabel;
     private TextView mTimePickLabel;
@@ -53,10 +53,10 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     private final static Calendar mCalendar = Calendar.getInstance();
     private String TAGUMSFA = "UserMedicineSettingsFragmentActivity";
     static SharedPreferenceStore mSharedPreferenceStore;
-    private static View v;
-    private static TimePicker tp;
+    private View v;
+    private TimePicker tp;
 
-    public static Context mFragmentContext;
+    public  Context mFragmentContext;
 
     /*User Medicine Settings Fragment Activity is for the Setup Screen of the Malaria App*/
     @Override
@@ -186,55 +186,16 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         });
     }
 
-    /*Class to manage the Time Picker Widget*/
-
-    public static class TimePickerFragment extends DialogFragment implements
-            TimePickerDialog.OnTimeSetListener {
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-
-            int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
-            int minute = mCalendar.get(Calendar.MINUTE);
-            int month = mCalendar.get(Calendar.MONTH);
-            Log.d("Month", Integer.toString(month));
-
-            TimePickerDialog view = new TimePickerDialog(getActivity(), R.style.MyTimePicker, this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
-
-            LayoutInflater inflater = getActivity().getLayoutInflater();
-            v = inflater.inflate(R.layout.time_picker_style_setting, null);
-
-            view.setView(v);
-            tp = (TimePicker) v.findViewById(R.id.tpUser);
-
-            return view;
-        }
-
-        public void onTimeSet(TimePicker view, int hourOfDay, int minutes) {
-
-            boolean isDoneButtonChecked = true;
-
-            mHour = hourOfDay;
-            mMinute = minutes;
-
-            mHour = tp.getCurrentHour();
-            mMinute = tp.getCurrentMinute();
-
-            //updateTime(hourOfDay, minutes);
-            updateTime(mHour, mMinute);
-            checkIfTimeSet(isDoneButtonChecked);
-
-        }
-
-    }
-
     /*Method to enable the done Button
      *Done button is enabled if the user have setup a time
      */
 
-    public static void checkIfTimeSet(boolean isDoneButtonChecked) {
+    public void checkIfTimeSet(boolean isDoneButtonChecked) {
         mDoneButton.setEnabled(isDoneButtonChecked);
+        if (isDoneButtonChecked){
+            mDoneButton.setText(mFragmentContext.getString(R.string.user_medicine_settings_activity_done_button));
+            mDoneButton.setBackgroundColor(mFragmentContext.getResources().getColor(R.color.golden_brown));
+        }
     }
 
     /*Method for saving all the settings of the User\
@@ -247,7 +208,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
       After setting related parameters it calls the Alarm Service to make notifications!
      */
 
-    public static void saveUserTimeAndMedicationPrefs() {
+    public void saveUserTimeAndMedicationPrefs() {
 
         int checkDay = mCalendar.get(Calendar.DAY_OF_WEEK);
         int month = mCalendar.get(Calendar.MONTH);
@@ -283,7 +244,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     // converts 24hr format to 12hr format with AM/PM values
     /*Method is used for setting the selected time in the text field of Spinner.
      */
-    private static void updateTime(int hours, int mins) {
+    private void updateTime(int hours, int mins) {
         String timeSet;
         if (hours > 12) {
             hours -= 12;
@@ -380,7 +341,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         editor.putString("user_name", "");
         editor.putString("user_email", "");
         editor.putInt("user_age", 0);
-        editor.commit();
+        editor.apply();
         Log.d("check", "user score and medicineStore initialized");
     }
 
@@ -388,4 +349,46 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
+    /*Class to manage the Time Picker Widget*/
+    UserMedicineSettingsFragmentActivity UMSFA;
+
+    public class TimePickerFragment extends DialogFragment implements
+            TimePickerDialog.OnTimeSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+            int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
+            int minute = mCalendar.get(Calendar.MINUTE);
+            int month= mCalendar.get(Calendar.MONTH);
+            Log.d("Month",Integer.toString(month));
+
+            TimePickerDialog view = new TimePickerDialog(getActivity(), R.style.MyTimePicker ,this, hour, minute,
+                    DateFormat.is24HourFormat(getActivity()));
+
+            LayoutInflater inflater = getActivity().getLayoutInflater();
+            v=inflater.inflate(R.layout.time_picker_style_setting, null);
+
+            view.setView(v);
+            tp=(TimePicker)v.findViewById(R.id.tpUser);
+
+            return view;
+        }
+
+        public void onTimeSet(TimePicker view, int hourOfDay, int minutes) {
+            boolean isDoneButtonChecked = true;
+            mHour = hourOfDay;
+            mMinute = minutes;
+
+            mHour = tp.getCurrentHour();
+            mMinute = tp.getCurrentMinute();
+
+            //updateTime(hourOfDay, minutes);
+            updateTime(mHour, mMinute);
+            checkIfTimeSet(isDoneButtonChecked);
+
+        }
+    }
+
 }
+
