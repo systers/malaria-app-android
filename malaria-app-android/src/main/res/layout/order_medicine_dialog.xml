@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogReset"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/dialog_background"
-    android:id="@+id/dialogReset">
+    android:background="@drawable/dialog_background">
 
 
     <LinearLayout
@@ -17,22 +17,17 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/lightest_brown">
+            android:background="@color/lightest_brown"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
-                android:textColor="@color/golden_brown"
                 android:text="Place Order"
-                android:textSize="22dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                >
-            </TextView>
+                android:textColor="@color/golden_brown"
+                android:textSize="@dimen/text_size_25sp"/>
 
         </LinearLayout>
 
@@ -40,75 +35,66 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_margin="@dimen/margin_10dp"
+            android:layout_weight="0.96"
             android:gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:layout_weight="0.96">
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/order_quantity"
-                android:layout_width="60dp"
+                android:layout_width="@dimen/width_60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:inputType="number"
-                android:hint="Eg 7"
-                android:layout_margin="10dp"
-                android:textColor="@color/golden_brown"
-                android:textColorHint="@color/lightgray02"
+                android:layout_margin="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_5dp"
                 android:focusable="true"
-                android:focusableInTouchMode="true"/>
+                android:focusableInTouchMode="true"
+                android:hint="Eg 7"
+                android:inputType="number"
+                android:textColor="@color/golden_brown"
+                android:textColorHint="@color/lightgray02" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/golden_brown"
-                android:text="Enter the number of medicines you want to order."
+                android:layout_margin="@dimen/margin_20dp"
                 android:layout_toRightOf="@+id/image"
-                android:layout_margin="20dp" />
+                android:text="Enter the number of medicines you want to order."
+                android:textColor="@color/golden_brown" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_15dp"
             android:gravity="center|bottom"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/order_by_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Email"
-                android:background="@drawable/info_hub_button"
-                android:textColor="@color/white"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
                 android:layout_columnSpan="8"
-                android:layout_marginLeft="20dp"
-                android:layout_alignTop="@+id/dialogButtonCancel"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginRight="20dp"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:layout_weight="1"
+                android:background="@drawable/info_hub_button"
+                android:text="Email"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/order_by_msg"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Message"
-                android:background="@drawable/info_hub_button"
-                android:textColor="@color/white"
-                android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:layout_weight="1"
+                android:background="@drawable/info_hub_button"
+                android:text="Message"
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </LinearLayout>

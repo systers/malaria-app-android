@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_medicine_settings_activity_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@drawable/background"
     android:orientation="vertical"
-    android:id="@+id/user_medicine_settings_activity_container"
     tools:context=".ui.user_profile.UserProfileFragment">
 
     <TextView
@@ -14,135 +13,132 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_10dp"
         android:text="@string/label_user_profile"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:textColor="@color/user_medicine_first_text_color"
-        />
+        android:textSize="@dimen/text_size_25sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_20dp"
             android:background="@drawable/custom_line_border"
             android:orientation="vertical"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="30dp">
+            android:paddingBottom="@dimen/padding_10dp"
+            android:paddingLeft="@dimen/padding_30dp"
+            android:paddingStart="@dimen/padding_30dp"
+            android:paddingTop="@dimen/padding_10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:paddingTop="5dp">
 
                 <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
                     style="@style/UserProfileCommonTextAppearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/label_user_name"
-                    android:textColor="@color/golden_brown"
-                    />
+                    android:textColor="@color/golden_brown" />
 
                 <EditText
+                    android:id="@+id/edit_text_user_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/edit_text_user_name"
                     android:gravity="center_vertical"
                     android:hint="@string/hint_user_name"
-                    android:inputType="text"/>
+                    android:inputType="text" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_5dp">
 
                 <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
                     style="@style/UserProfileCommonTextAppearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/label_user_email"
-                    android:textColor="@color/golden_brown"
-                    />
+                    android:textColor="@color/golden_brown" />
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:id="@+id/edit_text_user_email"
-                    android:inputType="textWebEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:hint="@string/hint_email_address"/>
+                    android:hint="@string/hint_email_address"
+                    android:inputType="textWebEmailAddress" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_5dp">
 
                 <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
                     style="@style/UserProfileCommonTextAppearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/label_user_age"
-                    android:textColor="@color/golden_brown"
-                    />
+                    android:textColor="@color/golden_brown" />
 
                 <EditText
+                    android:id="@+id/edit_text_user_age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/edit_text_user_age"
-                    android:inputType="number"
                     android:gravity="center_vertical"
-                    android:hint="@string/hint_user_age"/>
+                    android:hint="@string/hint_user_age"
+                    android:inputType="number" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical" >
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/padding_5dp">
 
                 <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
                     style="@style/UserProfileCommonTextAppearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/label_medication_type"
-                    android:textColor="@color/golden_brown"
-                    />
+                    android:textColor="@color/golden_brown" />
 
                 <EditText
+                    android:id="@+id/edit_text_user_medicine_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/edit_text_user_medicine_type"
                     android:gravity="center_vertical"
-                    android:inputType="none"
-                    android:hint="@string/hint_user_medicine_type"/>
+                    android:hint="@string/hint_user_medicine_type"
+                    android:inputType="none" />
             </LinearLayout>
         </LinearLayout>
+
         <Button
             android:id="@+id/save_button"
             style="@style/UserProfileCommonTextAppearance"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/label_save"
-            android:textColor="@color/white"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:layout_marginTop="@dimen/margin_15dp"
             android:background="@color/golden_brown"
-            />
+            android:paddingLeft="@dimen/padding_40dp"
+            android:paddingRight="@dimen/padding_40dp"
+            android:text="@string/label_save"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 

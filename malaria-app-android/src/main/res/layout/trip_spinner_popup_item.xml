@@ -5,6 +5,6 @@
     android:textColor="@color/cream"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:textSize="15dp"
-    android:padding="15dp"
+    android:textSize="@dimen/text_size_15sp"
+    android:padding="@dimen/padding_15dp"
     xmlns:android="http://schemas.android.com/apk/res/android" />

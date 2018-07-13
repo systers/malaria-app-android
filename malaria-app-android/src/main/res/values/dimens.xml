@@ -4,4 +4,68 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!-- padding -->
+    <dimen name="padding_2dp">2dp</dimen>
+    <dimen name="padding_3dp">3dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
+    <dimen name="padding_30dp">30dp</dimen>
+    <dimen name="padding_40dp">40dp</dimen>
+    <dimen name="padding_70dp">70dp</dimen>
+    <dimen name="padding_115dp">115dp</dimen>
+
+    <!-- text size -->
+    <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_25sp">25sp</dimen>
+    <dimen name="text_size_30sp">30sp</dimen>
+    <dimen name="text_size_40sp">40sp</dimen>
+    <dimen name="text_size_50sp">50sp</dimen>
+
+    <!-- height -->
+    <!--<item name="height_point2dp" format="float" type="dimen">0.2dp</item>-->
+    <!--<item name="height_point5dp" format="float" type="dimen">0.5dp</item>-->
+    <dimen name="height_1dp">1dp</dimen>
+    <dimen name="height_25dp">25dp</dimen>
+    <dimen name="height_30dp">30dp</dimen>
+    <dimen name="height_40dp">40dp</dimen>
+    <dimen name="height_50dp">50dp</dimen>
+    <dimen name="height_60dp">60dp</dimen>
+    <dimen name="height_110dp">110dp</dimen>
+    <dimen name="height_220dp">220dp</dimen>
+
+    <!-- width -->
+    <dimen name="width_20dp">20dp</dimen>
+    <dimen name="width_30dp">30dp</dimen>
+    <dimen name="width_40dp">40dp</dimen>
+    <dimen name="width_60dp">60dp</dimen>
+    <dimen name="width_70dp">70dp</dimen>
+    <dimen name="width_110dp">110dp</dimen>
+    <dimen name="width_120dp">120dp</dimen>
+    <dimen name="height_140dp">140dp</dimen>
+    <dimen name="width_150dp">150dp</dimen>
+    <dimen name="width_200dp">200dp</dimen>
+
+    <!-- size i.e for both height and width -->
+    <dimen name="size_10dp">10dp</dimen>
+    <dimen name="size_20dp">20dp</dimen>
+    <dimen name="size_24dp">24dp</dimen>
+    <dimen name="size_30dp">30dp</dimen>
+    <dimen name="size_40dp">40dp</dimen>
+    <dimen name="size_50dp">50dp</dimen>
+    <dimen name="size_60dp">60dp</dimen>
+    <dimen name="size_70dp">70dp</dimen>
+    <dimen name="size_120dp">120dp</dimen>
+    <dimen name="size_140dp">140dp</dimen>
+
+    <!-- margin -->
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_30dp">30dp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
+
 </resources>

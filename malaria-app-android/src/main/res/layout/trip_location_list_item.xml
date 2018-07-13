@@ -2,27 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-     >
+    android:orientation="horizontal">
 
- <TextView
- android:id="@+id/locationListItemNumber"
- android:background="@color/cream"
- android:textColor="@color/golden_brown"
- android:layout_width="fill_parent"
- android:layout_height="wrap_content"
- android:textSize="15dp"
- android:padding="5dp"
- xmlns:android="http://schemas.android.com/apk/res/android" />
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/locationListItemNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cream"
+        android:padding="@dimen/padding_5dp"
+        android:textColor="@color/golden_brown"
+        android:textSize="@dimen/text_size_15sp" />
 
-<TextView
-android:id="@+id/locationListItem"
-android:background="@color/cream"
-android:textColor="@color/golden_brown"
-android:layout_width="fill_parent"
-android:layout_height="wrap_content"
-android:textSize="15dp"
-android:padding="5dp"
-xmlns:android="http://schemas.android.com/apk/res/android" />
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/locationListItem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cream"
+        android:padding="@dimen/padding_5dp"
+        android:textColor="@color/golden_brown"
+        android:textSize="@dimen/text_size_15sp" />
 
-    </RelativeLayout>
+</RelativeLayout>

@@ -5,8 +5,8 @@
     android:gravity="center">
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/size_60dp"
+        android:layout_height="@dimen/size_60dp"
         android:id="@+id/medicationstatusdisplay"
         android:clickable="true"
         android:contentDescription="@string/description_med_status" />

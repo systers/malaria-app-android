@@ -4,80 +4,87 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/dialog_background">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@color/lightest_brown"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
                 android:text="@string/help_game_dialog_title"
                 android:textColor="@color/golden_brown"
-                android:textSize="22sp" />
+                android:textSize="@dimen/text_size_25sp" />
         </LinearLayout>
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/margin_20dp"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/helpGameDialogInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="This text will get replaced automatically in the NewHomeActivity."
                 android:textColor="@color/golden_brown"
-                android:textSize="17sp" />
+                android:textSize="@dimen/text_size_15sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
                 android:text="@string/help_game_dialog_heading"
                 android:textColor="@color/golden_brown"
-                android:textSize="17sp"
+                android:textSize="@dimen/text_size_15sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/helpGameDialogHowToPlay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="This text will get replaced automatically in the NewHomeActivity."
                 android:textColor="@color/golden_brown"
-                android:textSize="17sp" />
+                android:textSize="@dimen/text_size_15sp" />
+
             <CheckBox
                 android:id="@+id/helpGameDialogShowNextTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/margin_15dp"
                 android:checked="true"
                 android:text="@string/help_game_dialog_showNextTime"
                 android:textColor="@color/golden_brown" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="@dimen/margin_5dp"
             android:layout_weight="0.29"
             android:gravity="center|bottom"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/helpGameDialogButtonStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/margin_5dp"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:layout_marginTop="@dimen/margin_5dp"
                 android:background="@drawable/info_hub_button"
                 android:text="@string/help_game_dialog_buttonStart"
                 android:textColor="@color/white" />

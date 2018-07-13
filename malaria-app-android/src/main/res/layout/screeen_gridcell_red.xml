@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/calendar_button_selector"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/calendar_day_gridcell"
@@ -12,15 +12,13 @@
         android:layout_gravity="center"
         android:background="@color/lightest_red"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/black" >
-    </Button>
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/num_events_per_day"
         style="@style/calendar_event_style"
-        android:layout_width="10dip"
-        android:layout_height="10dip"
-        android:layout_gravity="right" >
-    </TextView>
+        android:layout_width="@dimen/size_10dp"
+        android:layout_height="@dimen/size_10dp"
+        android:layout_gravity="right"/>
 
 </RelativeLayout>
