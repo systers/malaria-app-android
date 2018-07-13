@@ -1,86 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:orientation="vertical"
     android:padding="@dimen/padding_5dp"
     android:weightSum="3.0">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </ScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.6"
-        android:clickable="true"
+        android:layout_marginLeft="@dimen/margin_10dp"
         android:layout_marginTop="@dimen/margin_10dp"
-        android:layout_marginLeft="@dimen/margin_10dp">
+        android:layout_weight="0.6"
+        android:clickable="true">
+
         <Button
+            android:id="@+id/shareButton"
             android:layout_width="@dimen/size_30dp"
             android:layout_height="@dimen/size_30dp"
-            android:id="@+id/shareButton"
-            android:background="@drawable/share_icon"/>
+            android:background="@drawable/share_icon" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:paddingRight="@dimen/padding_30dp"
             android:text="Achievement Room"
             android:textColor="@color/textColorPrimary"
-            android:textSize="@dimen/text_size_25sp"
-            android:paddingRight="@dimen/padding_30dp"/>
+            android:textSize="@dimen/text_size_25sp" />
 
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:id="@+id/cat1_layout"
-        android:layout_weight="0.7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_10dp"
-        android:gravity="center"
+        android:layout_weight="0.7"
         android:background="@drawable/achievement_button"
-        android:clickable="true">>
+        android:clickable="true"
+        android:gravity="center">>
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/cat1_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="              Rookie \nTaken your first medicine"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size_15sp" />
+            android:textSize="@dimen/text_size_15sp"
+            android:textStyle="bold" />
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:id="@+id/cat2_layout"
-        android:layout_weight="0.7"
-        android:layout_margin="@dimen/margin_10dp"
-        android:gravity="center"
-        android:background="@drawable/achievement_button"
-        android:clickable="true">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cat2_tv"
-            android:text="               Mr Know-It-All \nAnswered first question correctly"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size_15sp"/>
-    </LinearLayout>
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/cat3_layout"
-        android:layout_weight="0.7"
         android:layout_margin="@dimen/margin_10dp"
-        android:gravity="center"
-        android:background="@drawable/achievement_button">
+        android:layout_weight="0.7"
+        android:background="@drawable/achievement_button"
+        android:clickable="true"
+        android:gravity="center">
+
         <TextView
+            android:id="@+id/cat2_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="               Mr Know-It-All \nAnswered first question correctly"
+            android:textSize="@dimen/text_size_15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cat3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_10dp"
+        android:layout_weight="0.7"
+        android:background="@drawable/achievement_button"
+        android:gravity="center">
+
+        <TextView
             android:id="@+id/cat3_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="            Explorer \nPlanned your first trip"
-            android:textStyle="bold"
-            android:textSize="@dimen/text_size_15sp"/>
+            android:textSize="@dimen/text_size_15sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 

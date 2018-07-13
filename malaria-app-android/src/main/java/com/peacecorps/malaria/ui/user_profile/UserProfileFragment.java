@@ -38,11 +38,6 @@ public class UserProfileFragment extends BaseFragment implements UserProfileCont
 
     private UserProfilePresenter<UserProfileFragment> presenter;
 
-    // returns a new instance of the Fragment
-    public static UserProfileFragment newInstance() {
-        return new UserProfileFragment();
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

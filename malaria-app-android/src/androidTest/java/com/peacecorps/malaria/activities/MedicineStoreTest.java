@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.code.activities.MedicineStore;
 
 /**
  * Created by yatna on 17/8/16.
@@ -29,11 +28,11 @@ public class MedicineStoreTest extends ActivityInstrumentationTestCase2 {
         super.setUp();
         setActivityInitialTouchMode(false);
         mActivity= (MedicineStore)getActivity();
-        medicineName=(TextView)mActivity.findViewById(R.id.medicine_name);
-        daysLeft=(TextView)mActivity.findViewById(R.id.days_left);
-        addMedicine=(Button)mActivity.findViewById(R.id.add_medicine);
-        orderMedicine=(Button)mActivity.findViewById(R.id.order_medicine);
-        settings=(Button)mActivity.findViewById(R.id.dialog_setting);
+        medicineName=(TextView)mActivity.findViewById(R.id.tv_medicine_name);
+        daysLeft=(TextView)mActivity.findViewById(R.id.tv_days_left);
+        addMedicine=(Button)mActivity.findViewById(R.id.btn_add_medicine);
+        orderMedicine=(Button)mActivity.findViewById(R.id.btn_order_medicine);
+        settings=(Button)mActivity.findViewById(R.id.btn_dialog_setting);
 
     }
     public void testMedicineNameTvExists() {

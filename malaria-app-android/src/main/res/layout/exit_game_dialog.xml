@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lightest_brown"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <TextView
@@ -23,8 +23,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
-                android:text="Exit Game"
-                android:textColor="@color/textColorPrimary"                android:textSize="@dimen/text_size_25sp"/>
+                android:text="@string/label_exit_game"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_20sp" />
+
 
         </LinearLayout>
 
@@ -39,8 +41,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Are you sure you want to exit the Game? Your current game points will be converted and added to your main score."
-                android:textColor="@color/textColorPrimary"                android:textSize="@dimen/text_size_20sp" />
+                android:text="@string/description_sure_exit_game"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_15sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -58,9 +61,11 @@
                 android:layout_marginLeft="@dimen/margin_5dp"
                 android:layout_marginRight="@dimen/margin_10dp"
                 android:layout_marginTop="@dimen/margin_5dp"
-                android:background="@drawable/info_hub_button"
-                android:text="OK"
-                android:textColor="@color/white" />
+                android:background="@drawable/button_background"
+                android:text="@string/label_ok"
+                android:textColor="@color/textColorPrimary"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:layout_marginEnd="@dimen/margin_10dp" />
 
             <Button
                 android:id="@+id/exitGameDialogButtonCancel"
@@ -69,9 +74,11 @@
                 android:layout_marginLeft="@dimen/margin_5dp"
                 android:layout_marginRight="@dimen/margin_10dp"
                 android:layout_marginTop="@dimen/margin_5dp"
-                android:background="@drawable/info_hub_button"
-                android:text="Cancel"
-                android:textColor="@color/white" />
+                android:background="@drawable/button_background"
+                android:text="@string/label_cancel"
+                android:textColor="@color/textColorPrimary"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:layout_marginEnd="@dimen/margin_10dp" />
 
         </LinearLayout>
 

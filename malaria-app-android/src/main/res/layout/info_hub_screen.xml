@@ -5,259 +5,167 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/scrollSegment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/upperLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-
-                <Button
-                    android:id="@+id/info_hub_settings_button"
-                    android:layout_width="@dimen/size_24dp"
-                    android:layout_height="@dimen/size_24dp"
-                    android:layout_gravity="end"
-                    android:layout_margin="@dimen/margin_5dp"
-                    android:adjustViewBounds="true"
-
-                    android:background="@drawable/settings_normal"
-                    android:scaleType="fitCenter" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/peace_corps_logo_normal"
-                        android:contentDescription="@string/description_peace_corps_logo" />
-
-                    <TextView
-                        android:id="@+id/ih"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin_10dp"
-                        android:layout_marginTop="@dimen/margin_10dp"
-                        android:text="@string/info_hub_title_label"
-                        android:textColor="@color/textColorPrimary"
-                        android:textSize="@dimen/text_size_25sp"
-                        android:textStyle="bold"
-
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/firstButtonSet"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_110dp"
-                android:orientation="horizontal"
-
-                >
-
-                <Button
-                    android:id="@+id/btnPeaceCorpsPolicy"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_15dp"
-                    android:layout_marginRight="@dimen/margin_15dp"
-                    android:layout_marginTop="@dimen/margin_10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/info_hub_button"
-                    android:padding="@dimen/padding_5dp"
-                    android:text="@string/peace_corps_policy"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/btnPercentSideEffects"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_15dp"
-                    android:layout_marginRight="@dimen/margin_15dp"
-                    android:layout_marginTop="@dimen/margin_10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/info_hub_button"
-
-                    android:padding="5dp"
-                    android:text="@string/percentage_of_side_effects"
-                    android:textColor="@color/white" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/secondButtonSet"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_110dp"
-                android:layout_below="@+id/firstButtonSet"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnSideEffectsPCV"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_15dp"
-                    android:layout_marginRight="@dimen/margin_15dp"
-                    android:layout_marginTop="@dimen/margin_10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/info_hub_button"
-                    android:padding="@dimen/padding_10dp"
-                    android:text="@string/side_effects_reported_by_PCVs"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/btnSideEffectsNPCV"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_15dp"
-                    android:layout_marginRight="@dimen/margin_15dp"
-                    android:layout_marginTop="@dimen/margin_10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/info_hub_button"
-                    android:padding="@dimen/padding_5dp"
-                    android:text="@string/non_PCV_reported_side_effects"
-                    android:textColor="@color/white" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/thirdButtonSet"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_110dp"
-                android:layout_below="@+id/secondButtonSet"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnVolunteerAdherence"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_15dp"
-                    android:layout_marginRight="@dimen/margin_15dp"
-                    android:layout_marginTop="@dimen/margin_10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/info_hub_button"
-                    android:padding="@dimen/padding_5dp"
-                    android:text="@string/volunteer_adherence_rates"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/btnEffectiveness"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/margin_15dp"
-                    android:layout_marginRight="@dimen/margin_15dp"
-                    android:layout_marginTop="@dimen/margin_10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/info_hub_button"
-                    android:padding="@dimen/padding_5dp"
-                    android:text="@string/effectiveness_against_malaria"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View
-            android:layout_width="200dp"
-            android:layout_height="0.5dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="#000000"
+        <LinearLayout
+            android:id="@+id/upperLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            />
+
+            <Button
+                android:id="@+id/btn_info_hub_reset"
+                android:layout_width="@dimen/size_24dp"
+                android:layout_height="@dimen/size_24dp"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/margin_5dp"
+                android:adjustViewBounds="true"
+
+                android:background="@drawable/btn_reset"
+                android:scaleType="fitCenter" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/peace_corps_logo_normal"
+                    android:contentDescription="@string/description_peace_corps_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:text="@string/info_hub_title_label"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="@dimen/text_size_25sp"
+                    android:textStyle="bold"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
 
         <LinearLayout
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:id="@+id/firstButtonSet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_110dp"
             android:orientation="horizontal"
-            android:paddingBottom="5dp"
 
             >
 
             <Button
-                android:id="@+id/homeButton"
-
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="15dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/home_icon_normal"
-                android:scaleType="fitCenter"
-
-                />
-
-            <Button
-                android:id="@+id/tripButton"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/bus_icon_inactive_normal"
-                android:scaleType="fitCenter"
-
-                />
+                android:id="@+id/btn_peace_corps_policy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_15dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:padding="@dimen/padding_5dp"
+                android:text="@string/peace_corps_policy"
+                android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/infoButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="15dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/info_hub_inactive_normal"
-                android:scaleType="fitCenter" />
+                android:id="@+id/btn_percent_side_effects"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_15dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
 
-            <Button
-                android:id="@+id/tempButton"
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:layout_marginLeft="15dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/cal_right_arrow_brown"
-                android:scaleType="fitCenter" />
+                android:padding="5dp"
+                android:text="@string/percentage_of_side_effects"
+                android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/userProfile"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginLeft="10dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/user"
-                android:scaleType="fitCenter" />
+
         </LinearLayout>
 
 
+        <LinearLayout
+            android:id="@+id/secondButtonSet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_110dp"
+            android:layout_below="@+id/firstButtonSet"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_side_effects_pcv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_15dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:padding="@dimen/padding_10dp"
+                android:text="@string/side_effects_reported_by_PCVs"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_side_effects_non_pcv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_15dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:padding="@dimen/padding_5dp"
+                android:text="@string/non_PCV_reported_side_effects"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/thirdButtonSet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_110dp"
+            android:layout_below="@+id/secondButtonSet"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_volunteer_adherence"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_15dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:padding="@dimen/padding_5dp"
+                android:text="@string/volunteer_adherence_rates"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_effectiveness"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_15dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background"
+                android:padding="@dimen/padding_5dp"
+                android:text="@string/effectiveness_against_malaria"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
     </LinearLayout>
-
-
 </LinearLayout>

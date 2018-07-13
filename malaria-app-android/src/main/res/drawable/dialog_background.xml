@@ -12,8 +12,8 @@
 
     <!-- view border color and width -->
     <stroke
-        android:width="3dp"
-        android:color="@color/lightest_red" >
+        android:width="2dp"
+        android:color="@color/colorPrimaryDark" >
     </stroke>
 
     <!-- If you want to add some padding -->

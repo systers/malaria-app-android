@@ -72,7 +72,7 @@
                     android:layout_marginEnd="@dimen/margin_20dp"
                     android:layout_marginLeft="@dimen/margin_50dp"
                     android:layout_marginRight="@dimen/margin_5dp"
-                    android:background="@drawable/info_hub_button"
+                    android:background="@drawable/button_background"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_15sp"
                     android:textStyle="bold" />
@@ -116,7 +116,7 @@
                     android:layout_marginEnd="@dimen/margin_20dp"
                     android:layout_marginRight="@dimen/margin_5dp"
                     android:layout_marginTop="@dimen/margin_10dp"
-                    android:background="@drawable/info_hub_button"
+                    android:background="@drawable/button_background"
                     android:hint="$"
                     android:inputType="number"
                     android:padding="@dimen/padding_5dp"

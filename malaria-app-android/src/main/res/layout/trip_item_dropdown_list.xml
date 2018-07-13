@@ -27,7 +27,8 @@
                 android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
                 android:text="Select Drugs"
-                android:textColor="@color/textColorPrimary"                android:textSize="@dimen/text_size_25sp"/>
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_25sp" />
 
         </LinearLayout>
 
@@ -42,9 +43,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/cream"
-                android:textColor="@color/textColorPrimary"
+
                 android:dividerHeight="@dimen/height_1dp"
-                android:headerDividersEnabled="true"/>
+                android:headerDividersEnabled="true"
+                android:textColor="@color/textColorPrimary" />
 
         </LinearLayout>
 

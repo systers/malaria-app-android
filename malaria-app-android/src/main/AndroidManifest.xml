@@ -86,10 +86,6 @@
         <activity android:name=".code.fragment.ThirdAnalyticFragment"/>
         <activity android:name=".code.activities.DayFragmentActivity"/>
         <activity android:name=".code.activities.BadgeRoom"/>
-        <activity android:name=".code.activities.MythFactGame"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".code.activities.RapidFireGame"/>
-        <activity android:name=".code.activities.MedicineStore"/>
         <activity android:name=".code.activities.NewHomeActivity"/>
         <activity android:name=".code.activities.TripIndicatorFragmentActivity"
                   android:launchMode="singleTask"

@@ -109,7 +109,7 @@
                 android:layout_marginTop="@dimen/margin_5dp"
                 android:layout_marginRight="@dimen/margin_10dp"
                 android:layout_marginLeft="@dimen/margin_10dp"
-                android:background="@drawable/info_hub_button"
+                android:background="@drawable/button_background"
                 android:textColor="@color/white"
                 />
 
@@ -121,7 +121,7 @@
                 android:layout_marginTop="@dimen/margin_5dp"
                 android:layout_marginRight="@dimen/margin_5dp"
                 android:layout_marginLeft="@dimen/margin_10dp"
-                android:background="@drawable/info_hub_button"
+                android:background="@drawable/button_background"
                 android:textColor="@color/white"
 
                 />

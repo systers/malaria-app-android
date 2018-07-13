@@ -26,6 +26,7 @@ public class AppPreferencesHelper implements PreferencesHelper{
     private static final String PREF_KEY_USER_AGE = "USER_AGE";
     private static final String PREF_KEY_IS_FIRST_RUN = "IS_FIRST_RUN";
     private static final String PREF_KEY_IS_DRUG_TAKEN = "com_peacecorps_malaria_is_drug_taken";
+    private static final String PREF_KEY_ALERT_TIME = "NUMBER_ALERT_TIME";
 
     private final SharedPreferences mPrefs;
 
@@ -102,7 +103,6 @@ public class AppPreferencesHelper implements PreferencesHelper{
         mPrefs.edit().putBoolean(PREF_KEY_IS_WEEKLY, value).apply();
     }
 
-    //Todo Update default value later
     @Override
     public int checkDosesDaily() {
         return mPrefs.getInt(PREF_KEY_DOSES_DAILY, 0);
@@ -242,5 +242,15 @@ public class AppPreferencesHelper implements PreferencesHelper{
     @Override
     public void setDrugTaken(boolean value) {
         mPrefs.edit().putBoolean(PREF_KEY_IS_DRUG_TAKEN, value).apply();
+    }
+
+    @Override
+    public int getAlertNumberDaysOrWeeks() {
+        return mPrefs.getInt(PREF_KEY_ALERT_TIME, -1);
+    }
+
+    @Override
+    public void setAlertNumberDaysOrWeeks(int value) {
+        mPrefs.edit().putInt(PREF_KEY_ALERT_TIME, value).apply();
     }
 }

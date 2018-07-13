@@ -21,7 +21,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/margin_10dp"
             android:contentDescription="@string/description_prev_month"
-            android:src="@drawable/calendar_left_arrow_selector"/>
+            android:src="@drawable/calendar_left_arrow_selector" />
 
         <TextView
             android:id="@+id/currentMonth"
@@ -32,7 +32,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColorPrimary"
             android:textSize="@dimen/text_size_25sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/nextMonth"
@@ -41,7 +41,7 @@
             android:layout_gravity="center"
             android:layout_marginRight="@dimen/margin_10dp"
             android:contentDescription="@string/description_next_month"
-            android:src="@drawable/calendar_right_arrow_selector"/>
+            android:src="@drawable/calendar_right_arrow_selector" />
 
     </LinearLayout>
 
@@ -64,6 +64,6 @@
         android:id="@+id/calendar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:numColumns="7"/>
+        android:numColumns="7" />
 
 </LinearLayout>

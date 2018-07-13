@@ -68,4 +68,5 @@
     <dimen name="margin_30dp">30dp</dimen>
     <dimen name="margin_50dp">50dp</dimen>
     <dimen name="width_300dp">300dp</dimen>
+    <dimen name="margin_112dp">112dp</dimen>
 </resources>

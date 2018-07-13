@@ -23,6 +23,5 @@ public abstract class BaseActivity extends  AppCompatActivity implements MvpView
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //Todo detach views
     }
 }

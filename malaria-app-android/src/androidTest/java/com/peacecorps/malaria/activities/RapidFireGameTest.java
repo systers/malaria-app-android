@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.code.activities.RapidFireGame;
 
 /**
  * Created by yatna on 17/8/16.
@@ -29,11 +28,11 @@ public class RapidFireGameTest extends ActivityInstrumentationTestCase2 {
         super.setUp();
         setActivityInitialTouchMode(false);
         mActivity=(RapidFireGame)getActivity();
-        opt1 = (Button)mActivity.findViewById(R.id.button1);
-        opt2 = (Button)mActivity.findViewById(R.id.button2);
-        opt3 = (Button)mActivity.findViewById(R.id.button3);
-        questionTv= (TextView)mActivity.findViewById(R.id.txtQuestion);
-        scoreTv=(TextView)mActivity.findViewById(R.id.score);
+        opt1 = (Button)mActivity.findViewById(R.id.btn_rapid_option_one);
+        opt2 = (Button)mActivity.findViewById(R.id.btn_rapid_option_two);
+        opt3 = (Button)mActivity.findViewById(R.id.btn_rapid_option_three);
+        questionTv= (TextView)mActivity.findViewById(R.id.tv_rapid_question);
+        scoreTv=(TextView)mActivity.findViewById(R.id.tv_score);
     }
     public void testOpt1ButtonExists() {
         View mainActivityDecorView = mActivity.getWindow().getDecorView();

@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.code.activities.MythFactGame;
 
 /**
  * Created by yatna on 18/8/16.
@@ -26,8 +25,8 @@ public class MythFactGameTest extends ActivityInstrumentationTestCase2 {
         super.setUp();
         setActivityInitialTouchMode(false);
         mActivity=(MythFactGame)getActivity();
-        tvUserCoins=(TextView)mActivity.findViewById(R.id.userCoins);
-        tvQuestion=(TextView)mActivity.findViewById(R.id.question);
+        tvUserCoins=(TextView)mActivity.findViewById(R.id.tv_total_score);
+        tvQuestion=(TextView)mActivity.findViewById(R.id.tv_question);
         trash=(TextView)mActivity.findViewById(R.id.trash);
         chest=(TextView)mActivity.findViewById(R.id.chest);
     }

@@ -337,4 +337,14 @@ public class AppDataManager implements DataManager {
     public void setDrugTaken(boolean value) {
         preferencesHelper.setDrugTaken(value);
     }
+
+    @Override
+    public int getAlertNumberDaysOrWeeks() {
+        return preferencesHelper.getAlertNumberDaysOrWeeks();
+    }
+
+    @Override
+    public void setAlertNumberDaysOrWeeks(int value) {
+        preferencesHelper.setAlertNumberDaysOrWeeks(value);
+    }
 }

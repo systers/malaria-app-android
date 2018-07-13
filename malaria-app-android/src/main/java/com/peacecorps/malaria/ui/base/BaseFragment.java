@@ -22,20 +22,11 @@ public abstract class BaseFragment extends Fragment implements MvpView {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //Todo attach and init views
     }
 
     @Override
     public boolean isNetworkConnected() {
         return false;
-    }
-
-
-    public interface Callback {
-
-        void onFragmentAttached();
-
-        void onFragmentDetached(String tag);
     }
 
     /**

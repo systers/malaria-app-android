@@ -17,18 +17,18 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:id="@+id/exitBtn"
+                android:id="@+id/btn_exit"
                 android:layout_gravity="right"
                 android:layout_weight="0.4"
-                android:background="@drawable/info_hub_button"
+                android:background="@drawable/button_background"
                 android:textColor="@color/white"
                 android:text="Exit"
-                android:onClick="exitGame"/>
+                />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/userCoins"
+                android:id="@+id/tv_total_score"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_weight="1.2"
@@ -40,9 +40,9 @@
             <Button
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:id="@+id/nextBtn"
+                android:id="@+id/btn_next"
                 android:layout_weight="0.4"
-                android:background="@drawable/info_hub_button"
+                android:background="@drawable/button_background"
                 android:textColor="@color/white"
                 android:text="Next"
                 android:onClick="nextClick"/>
@@ -59,7 +59,7 @@
                 android:padding="10dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
-                android:id="@+id/question"
+                android:id="@+id/tv_question"
                 android:textSize="20sp"
                 android:text="Question Here"
                 android:background="@drawable/achievement_button"

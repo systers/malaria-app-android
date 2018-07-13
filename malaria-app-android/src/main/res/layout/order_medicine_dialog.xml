@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lightest_brown"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <TextView
@@ -25,40 +25,42 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
-                android:text="Place Order"
-                android:textColor="@color/textColorPrimary"                android:textSize="@dimen/text_size_25sp"/>
+                android:text="@string/label_place_order"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_25sp" />
 
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_margin="@dimen/margin_10dp"
             android:layout_weight="0.96"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/order_quantity"
+                android:id="@+id/btn_order_quantity"
                 android:layout_width="@dimen/width_60dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_10dp"
                 android:layout_marginRight="@dimen/margin_5dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:hint="Eg 7"
+                android:hint="@string/hint_eg_7"
                 android:inputType="number"
+
                 android:textColor="@color/textColorPrimary"
-            android:textColorHint="@color/lightgray02" />
+                android:textColorHint="@color/lightgray02"
+                android:layout_marginEnd="@dimen/margin_5dp" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_20dp"
-                android:layout_toRightOf="@+id/image"
-                android:text="Enter the number of medicines you want to order."
-                android:textColor="@color/textColorPrimary"/>
+                android:text="@string/description_order_no_medicine"
+                android:textColor="@color/textColorPrimary" />
 
         </LinearLayout>
 
@@ -71,29 +73,28 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/order_by_email"
+                android:id="@+id/btn_order_by_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_columnSpan="8"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="@dimen/margin_20dp"
                 android:layout_marginRight="@dimen/margin_20dp"
                 android:layout_weight="1"
-                android:background="@drawable/info_hub_button"
-                android:text="Email"
-                android:textColor="@color/white" />
+                android:background="@drawable/button_background"
+                android:text="@string/label_email"
+                android:textColor="@color/colorPrimaryDark" />
 
             <Button
-                android:id="@+id/order_by_msg"
+                android:id="@+id/btn_order_by_msg"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="@dimen/margin_20dp"
                 android:layout_marginRight="@dimen/margin_20dp"
                 android:layout_weight="1"
-                android:background="@drawable/info_hub_button"
-                android:text="Message"
-                android:textColor="@color/white" />
+                android:background="@drawable/button_background"
+                android:text="@string/label_message"
+                android:textColor="@color/colorPrimaryDark" />
 
         </LinearLayout>
     </LinearLayout>

@@ -1,15 +1,16 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background"
-    android:layout_gravity="center"
-
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/background">
 
     <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.BottomNavigationView
@@ -17,11 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:foregroundGravity="center"
         android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/colorPrimary"
         android:foreground="?attr/selectableItemBackground"
+        android:foregroundGravity="center"
+        app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@color/bnv_tab_item_foreground"
         app:itemTextColor="@color/bnv_tab_item_foreground"
         app:menu="@menu/bottom_nav_menu" />
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

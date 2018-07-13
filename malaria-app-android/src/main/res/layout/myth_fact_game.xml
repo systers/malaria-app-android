@@ -20,37 +20,33 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/exitBtn"
+                android:id="@+id/btn_exit"
+                style="@style/style_btn_background"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_40dp"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:layout_weight="0.4"
-                android:background="@drawable/info_hub_button"
-                android:onClick="exitGame"
-                android:text="Exit"
-                android:textColor="@color/white" />
+                android:text="@string/label_exit" />
 
             <TextView
-                android:id="@+id/userCoins"
+                android:id="@+id/tv_total_score"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.2"
                 android:gravity="center_horizontal"
-                android:text="6"
-                android:textColor="@color/textColorPrimary"
+                android:text="@string/label_myth_fact_total_score"
+                android:textColor="@color/text_color_primary"
                 android:textSize="@dimen/text_size_25sp"
                 android:textStyle="bold" />
 
 
             <Button
-                android:id="@+id/nextBtn"
+                android:id="@+id/btn_next"
+                style="@style/style_btn_background"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_40dp"
                 android:layout_weight="0.4"
-                android:background="@drawable/info_hub_button"
-                android:onClick="nextClick"
-                android:text="Next"
-                android:textColor="@color/white" />
+                android:text="@string/label_next" />
 
 
         </LinearLayout>
@@ -62,17 +58,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/question"
+                android:id="@+id/tv_question"
                 android:layout_width="@dimen/width_200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="@dimen/margin_20dp"
-                android:background="@drawable/achievement_button"
+                android:background="@drawable/button_background"
                 android:gravity="center"
                 android:padding="@dimen/padding_10dp"
-                android:text="Question Here"
+                android:text="@string/label_question"
                 android:textColor="@color/textColorPrimary"
-                android:textSize="@dimen/text_size_20sp" />
+                android:textSize="@dimen/text_size_15sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

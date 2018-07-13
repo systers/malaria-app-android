@@ -26,7 +26,9 @@
                 android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
                 android:text="SET REMINDER TONE"
-                android:textColor="@color/textColorPrimary"                android:textSize="@dimen/text_size_20sp"/>
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_20sp"/>
+
 
         </LinearLayout>
 
@@ -46,7 +48,8 @@
                 android:layout_marginTop="@dimen/margin_15dp"
                 android:layout_weight="10"
                 android:hint="Specify file path"
-                android:textColor="@color/textColorPrimary"                android:textColorHint="@color/gray"
+                android:textColor="@color/textColorPrimary"
+                android:textColorHint="@color/gray"
                 android:textSize="@dimen/text_size_15sp" />
 
             <Button
@@ -79,7 +82,7 @@
                 android:layout_marginLeft="@dimen/margin_20dp"
                 android:layout_marginRight="@dimen/margin_20dp"
                 android:layout_weight="1"
-                android:background="@drawable/info_hub_button"
+                android:background="@drawable/button_background"
                 android:text="YES"
                 android:textColor="@color/white" />
 
@@ -91,7 +94,7 @@
                 android:layout_marginLeft="@dimen/margin_20dp"
                 android:layout_marginRight="@dimen/margin_20dp"
                 android:layout_weight="1"
-                android:background="@drawable/info_hub_button"
+                android:background="@drawable/button_background"
                 android:text="NO"
                 android:textColor="@color/white" />
 

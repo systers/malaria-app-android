@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lightest_brown"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <TextView
@@ -23,8 +23,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_10dp"
                 android:gravity="center"
-                android:text="Game Over"
-                android:textColor="@color/textColorPrimary"                android:textSize="@dimen/text_size_25sp"/>
+                android:text="@string/label_game_over"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_20sp" />
+
 
         </LinearLayout>
 
@@ -39,13 +41,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Wait until new questions are added to the game."
-                android:textColor="@color/textColorPrimary"                android:textSize="@dimen/text_size_20sp" />
+                android:text="@string/description_wait_for_new_ques"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/text_size_15sp" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginBottom="@dimen/margin_5dp"
             android:layout_weight="0.29"
             android:gravity="center|bottom"
@@ -55,12 +59,14 @@
                 android:id="@+id/gameOverDialogButtonOK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_10dp"
                 android:layout_marginLeft="@dimen/margin_5dp"
                 android:layout_marginRight="@dimen/margin_10dp"
+                android:layout_marginStart="@dimen/margin_5dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/info_hub_button"
-                android:text="OK"
-                android:textColor="@color/white" />
+                android:background="@drawable/button_background"
+                android:text="@string/label_ok"
+                android:textColor="@color/textColorPrimary" />
 
         </LinearLayout>
 

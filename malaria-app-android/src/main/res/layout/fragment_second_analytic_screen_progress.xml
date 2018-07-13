@@ -1,158 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_10dp">
 
-    <TextView android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/firstMonthProgressLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="January"
-        android:id="@+id/firstMonthProgressLabel"
-        android:textStyle="bold"
         android:textColor="@color/textColorPrimary"
-        android:textSize="@dimen/text_size_20sp"/>
+        android:textSize="@dimen/text_size_20sp"
+        android:textStyle="bold" />
 
-    <ProgressBar android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:progress="100"
-        android:progressDrawable="@drawable/saf_progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <ProgressBar
         android:id="@+id/firstMonthProgressBar"
-        android:background="@drawable/progress_bg"
-        android:layout_marginRight="@dimen/margin_5dp"
-        android:layout_marginTop="@dimen/margin_2dp"
-        android:layout_marginBottom="@dimen/margin_2dp"
-        android:onClick="sendMonth"
-        android:layout_toLeftOf="@+id/firstMonthProgressPercent"
-        android:layout_alignTop="@id/firstMonthProgressLabel"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@id/firstMonthProgressLabel"
         android:layout_alignLeft="@+id/secondMonthProgressBar"
-        android:layout_alignStart="@+id/secondMonthProgressBar" />
+        android:layout_alignStart="@+id/secondMonthProgressBar"
+        android:layout_alignTop="@id/firstMonthProgressLabel"
+        android:layout_marginBottom="@dimen/margin_2dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/margin_2dp"
+        android:layout_toLeftOf="@+id/firstMonthProgressPercent"
+        android:background="@drawable/progress_bg"
+        android:onClick="sendMonth"
+        android:progress="100"
+        android:progressDrawable="@drawable/saf_progress_bar" />
 
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="100%"
+    <TextView
         android:id="@+id/firstMonthProgressPercent"
-        android:textStyle="bold"
-        android:textColor="@color/textColorPrimary"
-        android:textSize="@dimen/text_size_20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:gravity="end"
-        android:layout_alignParentRight="true"/>
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="February"
-        android:layout_weight="1"
-        android:id="@+id/secondMonthProgressLabel"
-        android:textStyle="bold"
+        android:text="100%"
         android:textColor="@color/textColorPrimary"
         android:textSize="@dimen/text_size_20sp"
-        android:layout_below="@id/firstMonthProgressLabel" />
+        android:textStyle="bold" />
 
-    <ProgressBar android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/secondMonthProgressLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:progress="60"
-        android:progressDrawable="@drawable/saf_progress_bar"
+        android:layout_below="@id/firstMonthProgressLabel"
+        android:layout_weight="1"
+        android:text="February"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/text_size_20sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
         android:id="@+id/secondMonthProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:background="@drawable/progress_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/secondMonthProgressLabel"
+        android:layout_alignTop="@id/secondMonthProgressLabel"
+        android:layout_below="@id/firstMonthProgressBar"
+        android:layout_marginBottom="@dimen/margin_2dp"
         android:layout_marginLeft="@dimen/margin_5dp"
         android:layout_marginRight="@dimen/margin_5dp"
         android:layout_marginTop="@dimen/margin_2dp"
-        android:layout_marginBottom="@dimen/margin_2dp"
-        android:onClick="sendMonth"
-        android:layout_below="@id/firstMonthProgressBar"
+        android:layout_toLeftOf="@+id/firstMonthProgressPercent"
         android:layout_toRightOf="@id/secondMonthProgressLabel"
-        android:layout_alignTop="@id/secondMonthProgressLabel"
-        android:layout_alignBottom="@id/secondMonthProgressLabel"
         android:layout_toStartOf="@+id/firstMonthProgressPercent"
-        android:layout_toLeftOf="@+id/firstMonthProgressPercent" />
+        android:background="@drawable/progress_bg"
+        android:onClick="sendMonth"
+        android:progress="60"
+        android:progressDrawable="@drawable/saf_progress_bar" />
 
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="60%"
+    <TextView
         android:id="@+id/secondMonthProgressPercent"
-        android:textStyle="bold"
-        android:textColor="@color/textColorPrimary"
-        android:textSize="@dimen/text_size_20sp"
-        android:gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/firstMonthProgressLabel" />
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="March"
-        android:id="@+id/thirdMonthProgressLabel"
-        android:textStyle="bold"
+        android:layout_below="@id/firstMonthProgressLabel"
+        android:gravity="end"
+        android:text="60%"
         android:textColor="@color/textColorPrimary"
         android:textSize="@dimen/text_size_20sp"
-        android:layout_below="@id/secondMonthProgressLabel" />
+        android:textStyle="bold" />
 
-    <ProgressBar android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/thirdMonthProgressLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:progressDrawable="@drawable/saf_progress_bar"
-        android:progress="80"
+        android:layout_below="@id/secondMonthProgressLabel"
+        android:text="March"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/text_size_20sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
         android:id="@+id/thirdMonthProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:background="@drawable/progress_bg"
-        android:layout_marginTop="@dimen/margin_2dp"
-        android:layout_marginBottom="@dimen/margin_2dp"
-        android:onClick="sendMonth"
-        android:layout_below="@id/secondMonthProgressBar"
-        android:layout_alignTop="@id/thirdMonthProgressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@id/thirdMonthProgressLabel"
+        android:layout_alignEnd="@+id/firstMonthProgressBar"
         android:layout_alignLeft="@+id/secondMonthProgressBar"
-        android:layout_alignStart="@+id/secondMonthProgressBar"
         android:layout_alignRight="@+id/firstMonthProgressBar"
-        android:layout_alignEnd="@+id/firstMonthProgressBar" />
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="80%"
-        android:id="@+id/thirdMonthProgressPercent"
-        android:textStyle="bold"
-        android:textColor="@color/textColorPrimary"
-        android:textSize="@dimen/text_size_20sp"
-        android:gravity="end"
-        android:layout_below="@id/secondMonthProgressPercent"
-        android:layout_alignParentRight="true" />
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="April"
-        android:id="@+id/fourthMonthProgressLabel"
-        android:textStyle="bold"
-        android:textColor="@color/textColorPrimary"
-        android:textSize="@dimen/text_size_20sp"
-        android:layout_below="@id/thirdMonthProgressLabel" />
-
-    <ProgressBar android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:progress="80"
-        android:progressDrawable="@drawable/saf_progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:id="@+id/fourthMonthProgressBar"
+        android:layout_alignStart="@+id/secondMonthProgressBar"
+        android:layout_alignTop="@id/thirdMonthProgressLabel"
+        android:layout_below="@id/secondMonthProgressBar"
+        android:layout_marginBottom="@dimen/margin_2dp"
+        android:layout_marginTop="@dimen/margin_2dp"
         android:background="@drawable/progress_bg"
         android:onClick="sendMonth"
-        android:layout_marginTop="@dimen/margin_2dp"
-        android:layout_marginBottom="@dimen/margin_2dp"
-        android:layout_below="@id/thirdMonthProgressBar"
-        android:layout_alignTop="@id/fourthMonthProgressLabel"
-        android:layout_alignBottom="@id/fourthMonthProgressLabel"
-        android:layout_alignLeft="@+id/thirdMonthProgressBar"
-        android:layout_alignStart="@+id/thirdMonthProgressBar"
-        android:layout_alignRight="@+id/firstMonthProgressBar"
-        android:layout_alignEnd="@+id/firstMonthProgressBar" />
+        android:progress="80"
+        android:progressDrawable="@drawable/saf_progress_bar" />
 
-    <TextView android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/thirdMonthProgressPercent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/secondMonthProgressPercent"
+        android:gravity="end"
         android:text="80%"
-        android:id="@+id/fourthMonthProgressPercent"
-        android:textStyle="bold"
         android:textColor="@color/textColorPrimary"
         android:textSize="@dimen/text_size_20sp"
-        android:gravity="end"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fourthMonthProgressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/thirdMonthProgressLabel"
+        android:text="April"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/text_size_20sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/fourthMonthProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fourthMonthProgressLabel"
+        android:layout_alignEnd="@+id/firstMonthProgressBar"
+        android:layout_alignLeft="@+id/thirdMonthProgressBar"
+        android:layout_alignRight="@+id/firstMonthProgressBar"
+        android:layout_alignStart="@+id/thirdMonthProgressBar"
+        android:layout_alignTop="@id/fourthMonthProgressLabel"
+        android:layout_below="@id/thirdMonthProgressBar"
+        android:layout_marginBottom="@dimen/margin_2dp"
+        android:layout_marginTop="@dimen/margin_2dp"
+        android:background="@drawable/progress_bg"
+        android:onClick="sendMonth"
+        android:progress="80"
+        android:progressDrawable="@drawable/saf_progress_bar" />
+
+    <TextView
+        android:id="@+id/fourthMonthProgressPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/thirdMonthProgressPercent"
-        android:layout_alignParentRight="true" />
+        android:gravity="end"
+        android:text="80%"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="@dimen/text_size_20sp"
+        android:textStyle="bold" />
 </RelativeLayout>

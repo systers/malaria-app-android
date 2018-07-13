@@ -1,103 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/dialog_background">
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp"
+            android:gravity="center"
+            android:text="@string/label_settings"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_25sp" />
+
+    </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_10dp"
+        android:layout_weight="0.96"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/lightest_brown"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_10dp"
-                android:gravity="center"
-                android:text="Settings"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="@dimen/text_size_25sp"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/time"
+            android:layout_width="@dimen/width_60dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_10dp"
-            android:layout_weight="0.96"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_marginEnd="@dimen/margin_30dp"
+            android:layout_marginRight="@dimen/margin_30dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/hint_eg_7"
+            android:inputType="number"
+            android:textColor="@color/textColorPrimary"
+            android:textColorHint="@color/lightgray02" />
 
-            <EditText
-                android:id="@+id/time"
-                android:layout_width="@dimen/width_60dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_10dp"
-                android:layout_marginRight="@dimen/margin_30dp"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:hint="Eg 7"
-                android:inputType="number"
-                android:textColor="@color/textColorPrimary"
-                android:textColorHint="@color/lightgray02" />
-
-            <TextView
-                android:id="@+id/warning_textview"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_20dp"
-                android:layout_toRightOf="@+id/image"
-                android:text="This is sample text. This is sample text"
-                android:textColor="@color/textColorPrimary"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/warning_textview"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_5dp"
-            android:layout_marginTop="@dimen/margin_15dp"
-            android:gravity="center|bottom"
-            android:orientation="horizontal">
+            android:layout_margin="@dimen/margin_20dp"
+            android:text="@string/label_sample_text"
+            android:textColor="@color/textColorPrimary" />
 
-            <Button
-                android:id="@+id/set"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnSpan="8"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/margin_20dp"
-                android:layout_marginRight="@dimen/margin_20dp"
-                android:layout_weight="1"
-                android:background="@drawable/info_hub_button"
-                android:text="Set"
-                android:textColor="@color/white" />
-
-            <Button
-                android:id="@+id/cancel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/margin_20dp"
-                android:layout_marginRight="@dimen/margin_20dp"
-                android:layout_weight="1"
-                android:background="@drawable/info_hub_button"
-                android:text="Cancel"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_5dp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:text="@string/label_set"
+            android:textColor="@color/textColorPrimary" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
+            android:text="@string/label_cancel"
+            android:textColor="@color/textColorPrimary" />
+
+    </LinearLayout>
+
+</LinearLayout>

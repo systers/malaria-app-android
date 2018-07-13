@@ -28,10 +28,10 @@ public class NewHomeActivityTest extends ActivityInstrumentationTestCase2 {
         super.setUp();
         setActivityInitialTouchMode(false);
         mActivity = (NewHomeActivity) getActivity();
-        mBadgeButton= (Button)mActivity.findViewById(R.id.badgeScreen);
-        mQuizButton=(Button)mActivity.findViewById(R.id.rapidFire);
-        mMythButton=(Button)mActivity.findViewById(R.id.mythFact);
-        mOrderButton=(Button)mActivity.findViewById(R.id.medicineStore);
+        mBadgeButton= (Button)mActivity.findViewById(R.id.btn_badge_screen);
+        mQuizButton=(Button)mActivity.findViewById(R.id.btn_rapid_fire);
+        mMythButton=(Button)mActivity.findViewById(R.id.btn_myth_vs_fact);
+        mOrderButton=(Button)mActivity.findViewById(R.id.btn_medicine_store);
 
     }
     public void testBadgeRoomButtonsExists() {

@@ -43,5 +43,7 @@ public interface PreferencesHelper {
     void setFirstRun(boolean val);
     boolean isDrugTaken();
     void setDrugTaken(boolean value);
+    int getAlertNumberDaysOrWeeks();
+    void setAlertNumberDaysOrWeeks(int value);
 
 }

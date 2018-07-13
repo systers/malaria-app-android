@@ -202,7 +202,7 @@ public class FirstAnalyticFragment extends Fragment {
         dialog.setTitle("Reset Data");
 
         //final RadioGroup btnRadGroup = (RadioGroup) dialog.findViewById(R.id.radioGroupReset);
-        Button btnOK = (Button) dialog.findViewById(R.id.dialogButtonOKReset);
+        Button btnOK = (Button) dialog.findViewById(R.id.btn_dialog_reset_okay);
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -241,7 +241,7 @@ public class FirstAnalyticFragment extends Fragment {
 
         });
 
-        Button btnCancel = (Button) dialog.findViewById(R.id.dialogButtonCancelReset);
+        Button btnCancel = (Button) dialog.findViewById(R.id.btn_dialog_reset_cancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,7 +23,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/textColorPrimary"
             android:textSize="@dimen/text_size_25sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -60,7 +60,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_margin="@dimen/margin_15dp"
-            android:background="@drawable/info_hub_button"
+            android:background="@drawable/button_background"
             android:paddingLeft="@dimen/padding_10dp"
             android:paddingRight="@dimen/padding_10dp"
             android:paddingTop="@dimen/padding_5dp"

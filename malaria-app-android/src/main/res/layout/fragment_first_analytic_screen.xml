@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:background="@drawable/background"
     android:orientation="vertical"
-    android:padding="@dimen/padding_2dp" >
+    android:padding="@dimen/padding_2dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/info_hub_button"
+                    android:background="@drawable/button_background"
                     android:text="15/07"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_20sp"
@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/info_hub_button"
+                    android:background="@drawable/button_background"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_20sp" />
 
@@ -134,7 +134,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/info_hub_button"
+                    android:background="@drawable/button_background"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_20sp" />
 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_badge_screen"
+        android:layout_width="@dimen/size_120dp"
+        android:layout_height="@dimen/size_120dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_marginEnd="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/margin_50dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:layout_marginStart="@dimen/margin_50dp"
+        android:layout_marginTop="@dimen/margin_112dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/label_badge_room"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btn_rapid_fire"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_rapid_fire"
+        android:layout_width="@dimen/size_120dp"
+        android:layout_height="@dimen/size_120dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_marginEnd="@dimen/margin_50dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginRight="@dimen/margin_50dp"
+        android:layout_marginStart="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_112dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/label_rapid_fire"
+        android:textColor="@color/textColorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_myth_vs_fact"
+        android:layout_width="@dimen/size_120dp"
+        android:layout_height="@dimen/size_120dp"
+        android:layout_marginBottom="@dimen/margin_112dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="@dimen/margin_50dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/label_myth_vs_fact"
+        android:textColor="@color/textColorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_medicine_store"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_badge_screen"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_medicine_store"
+        android:layout_width="@dimen/size_120dp"
+        android:layout_height="@dimen/size_120dp"
+        android:layout_marginBottom="@dimen/margin_112dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/label_medicine_store"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_rapid_fire"
+        app:layout_constraintVertical_bias="0.0" />
+
+</android.support.constraint.ConstraintLayout>
