@@ -28,6 +28,7 @@ public class ServerRequests {
     ProgressDialog progressDialog;
     public static final int CONNECTION_TIMEOUT = 1000 * 15;
     public static final String SERVER_ADDRESS = "http://pc-web-dev.systers.org/api/malaria_users/";
+    private static final String LOG_TAG = ServerRequests.class.getSimpleName();
 
     //define a progress dialog on start
     public ServerRequests(Context context) {
@@ -69,7 +70,7 @@ public class ServerRequests {
                 status=response.getStatusLine().getStatusCode()+"";
                 Log.d("MyResponseCode ", "-> "+status);
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e(LOG_TAG, e.toString());
             }
 
             return status;

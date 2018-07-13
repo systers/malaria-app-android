@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity {
     Button mTripButton;
     Button tempButton;
     Button userProfile;
-    String TAGMA="MainActivity";
+    final String  TAGMA="MainActivity";
 
 
     @Override
@@ -139,10 +139,12 @@ public class MainActivity extends FragmentActivity {
                         double adherenceRate;
                         Log.d(TAGMA,""+ interval);
                         Log.d(TAGMA,""+ takenCount);
-                        if(interval!=0)
-                            adherenceRate = ((double)takenCount / (double)interval) * 100;
-                        else
+                        if(interval!=0) {
+                            adherenceRate = ((double) takenCount / (double) interval) * 100;
+                        }
+                        else {
                             adherenceRate = 100;
+                        }
                         String ar=String.format("%.1f ",adherenceRate);
                         FirstAnalyticFragment.adherence.setText("" + ar + "%");
                     }
@@ -181,18 +183,21 @@ public class MainActivity extends FragmentActivity {
                 cal.add(Calendar.MONTH, 1);
                 Date start=cal.getTime();
                 int weekDay=cal.get(Calendar.DAY_OF_WEEK);
-                if(SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly",false))
-                    interval=sqLite.getIntervalWeekly(start,tdy,weekDay);
-                else
-                    interval=sqLite.getIntervalDaily(start,tdy);
+                if(SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly",false)) {
+                    interval = sqLite.getIntervalWeekly(start, tdy, weekDay);
+                }
+                else {
+                    interval = sqLite.getIntervalDaily(start, tdy);
+                }
                 SharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria."
                         + time, takenDate).apply();
                 /*long oneDay = 1000 * 60 * 60 * 24;
                 interval = (today - takenDate) / oneDay;*/
                 return interval;
             }
-            else
+            else {
                 return 1;
+            }
         }
         else {
             takenDate=SharedPreferenceStore.mPrefsStore.getLong("com.peacecorps.malaria."

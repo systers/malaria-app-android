@@ -31,7 +31,7 @@ public class FirstAnalyticFragment extends Fragment {
     public static TextView doses = null;
     public static TextView adherence = null;
     private Button mSettingsButton;
-    private String TAGFAF = "FirstAnalyticFragment";
+    private final String TAGFAF = "FirstAnalyticFragment";
     private Dialog dialog = null;
     private TextView mlt,dinr,atm;
 
@@ -124,17 +124,20 @@ public class FirstAnalyticFragment extends Fragment {
                 Date start=cal.getTime();
                 int weekDay=cal.get(Calendar.DAY_OF_WEEK);
                 //calaculating no. of weekdays for weekly drug
-                if(SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly",false))
-                    interval=sqLite.getIntervalWeekly(start,tdy,weekDay);
-                else
-                    interval=sqLite.getIntervalDaily(start,tdy);
+                if(SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly",false)) {
+                    interval = sqLite.getIntervalWeekly(start, tdy, weekDay);
+                }
+                else {
+                    interval = sqLite.getIntervalDaily(start, tdy);
+                }
                 //^for daily drug only the no. of days
                 SharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria."
                         + time, takenDate).apply();
                 return interval;
             }
-            else
+            else {
                 return 1;
+            }
         }
         else {
             takenDate=SharedPreferenceStore.mPrefsStore.getLong("com.peacecorps.malaria."
@@ -153,10 +156,12 @@ public class FirstAnalyticFragment extends Fragment {
         long takenCount = sqLite.getCountTaken();
         double adherenceRate;
         Log.d(TAGFAF,"taken Count:"+takenCount);
-        if(interval!=1)
-            adherenceRate = ((double)takenCount / (double)interval) * 100;
-        else
+        if(interval!=1) {
+            adherenceRate = ((double) takenCount / (double) interval) * 100;
+        }
+        else {
             adherenceRate = 100;
+        }
 
         String ar = String.format("%.2f %%", adherenceRate);
         Log.d(TAGFAF,"Adherence Rate:"+ar);

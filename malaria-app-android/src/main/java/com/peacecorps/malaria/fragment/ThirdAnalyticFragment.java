@@ -293,11 +293,13 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
             Log.d(tag, "No. Trailing space to Add: " + trailingSpaces);
             Log.d(tag, "No. of Days in Previous Month: " + daysInPrevMonth);
 
-            if (cal.isLeapYear(cal.get(Calendar.YEAR)))
-                if (mm == 2)
+            if (cal.isLeapYear(cal.get(Calendar.YEAR))) {
+                if (mm == 2) {
                     ++daysInMonth;
-                else if (mm == 3)
+                } else if (mm == 3) {
                     ++daysInPrevMonth;
+                }
+            }
 
             // Trailing Month days
             for (int i = 0; i < trailingSpaces; i++) {
@@ -307,12 +309,11 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
                                 + " => "
                                 + getMonthAsString(prevMonth)
                                 + " "
-                                + String.valueOf((daysInPrevMonth
+                                + (daysInPrevMonth
                                 - trailingSpaces + DAY_OFFSET)
-                                + i));
-                list.add(String
-                        .valueOf((daysInPrevMonth - trailingSpaces + DAY_OFFSET)
-                                + i)
+                                + i);
+                list.add((daysInPrevMonth - trailingSpaces + DAY_OFFSET)
+                                + i
                         + "-GREY"
                         + "-"
                         + getMonthAsString(prevMonth)
@@ -322,13 +323,13 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
 
             // Current Month Days
             for (int i = 1; i <= daysInMonth; i++) {
-                Log.d(currentMonthName, String.valueOf(i) + " "
+                Log.d(currentMonthName, i + " "
                         + getMonthAsString(currentMonth) + " " + yy);
                 if (i == getCurrentDayOfMonth()) {
-                    list.add(String.valueOf(i) + "-BLUE" + "-"
+                    list.add(i + "-BLUE" + "-"
                             + getMonthAsString(currentMonth) + "-" + yy);
                 } else {
-                    list.add(String.valueOf(i) + "-WHITE" + "-"
+                    list.add(i + "-WHITE" + "-"
                             + getMonthAsString(currentMonth) + "-" + yy);
                 }
             }
@@ -336,7 +337,7 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
             // Leading Month days
             for (int i = 0; i < list.size() % 7; i++) {
                 Log.d(tag, "NEXT MONTH:= " + getMonthAsString(nextMonth));
-                list.add(String.valueOf(i + 1) + "-GREY" + "-"
+                list.add((i + 1) + "-GREY" + "-"
                         + getMonthAsString(nextMonth) + "-" + nextYear);
             }
         }
@@ -392,13 +393,13 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
             String theday = day_color[0];
             String themonth = day_color[2];
             String theyear = day_color[3];
-            if ((!eventsPerMonthMap.isEmpty()) && (eventsPerMonthMap != null)) {
-                if (eventsPerMonthMap.containsKey(theday)) {
+            if ((!eventsPerMonthMap.isEmpty()) && (eventsPerMonthMap != null) && (eventsPerMonthMap.containsKey(theday))) {
+
                     num_events_per_day = (TextView) row
                             .findViewById(R.id.num_events_per_day);
                     Integer numEvents = (Integer) eventsPerMonthMap.get(theday);
                     num_events_per_day.setText(numEvents.toString());
-                }
+
             }
 
             // Set the Day GridCell
@@ -456,7 +457,7 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
                 Log.d(tag, "Parsed Date: " + parsedDate.toString());
 
             } catch (ParseException e) {
-                e.printStackTrace();
+               Log.e(tag, e.toString());
             }
 
             String selectedDate= parsedDate.toString();
@@ -491,7 +492,7 @@ public class ThirdAnalyticFragment extends Activity implements OnClickListener {
             try {
                 date   = sdf.parse(month);
             } catch (Exception e) {
-                e.printStackTrace();
+               Log.e(tag, e.toString());
             }
 
             Calendar cal = Calendar.getInstance();

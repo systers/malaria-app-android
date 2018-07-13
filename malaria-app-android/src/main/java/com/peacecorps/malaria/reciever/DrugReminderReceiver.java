@@ -25,7 +25,7 @@ public class DrugReminderReceiver extends BroadcastReceiver {
     private NotificationManager alarmNotificationManager;
     private static int mDrugRejectedCount;
     private int flag;
-    String TAG = getClass().getName();
+    final String TAG = getClass().getName();
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -114,8 +114,9 @@ public class DrugReminderReceiver extends BroadcastReceiver {
             flag = 1;
         } else if (sqLite.getStatus(d, m, y).equalsIgnoreCase("no") == true) {
             flag = 2;
-        } else
+        } else {
             flag = 0;
+        }
 
     }
 
@@ -228,16 +229,19 @@ public class DrugReminderReceiver extends BroadcastReceiver {
                 cal.add(Calendar.MONTH, 1);
                 Date start = cal.getTime();
                 int weekDay = cal.get(Calendar.DAY_OF_WEEK);
-                if (SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly", false))
+                if (SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly", false)) {
                     interval = sqLite.getIntervalWeekly(start, tdy, weekDay);
-                else
+                }
+                else {
                     interval = sqLite.getIntervalDaily(start, tdy);
+                }
                 SharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria."
                         + time, takenDate).apply();
 
                 return interval;
-            } else
+            } else {
                 return 1;
+            }
         } else {
             takenDate = SharedPreferenceStore.mPrefsStore.getLong("com.peacecorps.malaria."
                     + time, takenDate);

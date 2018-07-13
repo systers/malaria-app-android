@@ -33,12 +33,12 @@ public class VolunteerAdherenceFragmentActivity extends FragmentActivity {
 
     private TextView mVolunteerAdherenceLabel,vaf;
 
-    private static String TAGVA = VolunteerAdherenceFragmentActivity.class.getSimpleName();
+    private static final String TAGVA = VolunteerAdherenceFragmentActivity.class.getSimpleName();
 
     private ProgressDialog progressDialog;
 
     //json object response url
-    private String urlJsonObj = "http://pc-web-dev.systers.org/api/posts/5/?format=json";
+    private final String urlJsonObj = "http://pc-web-dev.systers.org/api/posts/5/?format=json";
 
     // temporary string to show the parsed response
     private String jsonResponse;
@@ -101,11 +101,11 @@ public class VolunteerAdherenceFragmentActivity extends FragmentActivity {
                         outputStream.write(content.getBytes());
                         outputStream.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Log.e(TAGVA, e.toString());
                     }
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e(TAGVA, e.toString());
                     Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 hidepDialog();
@@ -126,12 +126,12 @@ public class VolunteerAdherenceFragmentActivity extends FragmentActivity {
                     StringBuffer buffer = new StringBuffer();
                     while ((line = input.readLine()) != null) {
                         buffer.append(line);
-			buffer.append("\n");
+			            buffer.append('\n');
                     }
                     mVolunteerAdherenceLabel.setText(buffer.toString());
                     Log.d(TAGVA, buffer.toString());
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.e(TAGVA, e.toString());
                 }
                 //hide progress dialog
                 hidepDialog();

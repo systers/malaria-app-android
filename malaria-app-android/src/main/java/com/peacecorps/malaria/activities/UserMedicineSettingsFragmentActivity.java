@@ -24,7 +24,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.adapter.DrugArrayAdapter;
@@ -51,7 +50,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     private static int mHour;
     private static int mMinute;
     private final static Calendar mCalendar = Calendar.getInstance();
-    private String TAGUMSFA = "UserMedicineSettingsFragmentActivity";
+    private final String TAGUMSFA = "UserMedicineSettingsFragmentActivity";
     static SharedPreferenceStore mSharedPreferenceStore;
     private View v;
     private TimePicker tp;
@@ -252,16 +251,20 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
         } else if (hours == 0) {
             hours += 12;
             timeSet = "AM";
-        } else if (hours == 12)
+        } else if (hours == 12) {
             timeSet = "PM";
-        else
+        }
+        else {
             timeSet = "AM";
+        }
 
         String minutes;
-        if (mins < 10)
+        if (mins < 10) {
             minutes = "0" + mins;
-        else
+        }
+        else {
             minutes = String.valueOf(mins);
+        }
 
         // Append the time to a stringBuilder
         String theTime = String.valueOf(hours) + ':' + minutes + " " + timeSet;
@@ -350,7 +353,7 @@ public class UserMedicineSettingsFragmentActivity extends FragmentActivity
     }
 
     /*Class to manage the Time Picker Widget*/
-    UserMedicineSettingsFragmentActivity UMSFA;
+    //UserMedicineSettingsFragmentActivity UMSFA;
 
     public class TimePickerFragment extends DialogFragment implements
             TimePickerDialog.OnTimeSetListener {

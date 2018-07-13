@@ -2,6 +2,7 @@ package com.peacecorps.malaria.test;
 
 import android.test.AndroidTestCase;
 import android.test.RenamingDelegatingContext;
+import android.util.Log;
 
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.fragment.FirstAnalyticFragment;
@@ -18,6 +19,7 @@ public class MalariaDatabaseTest extends AndroidTestCase {
 
     private DatabaseSQLiteHelper db;
     private FirstAnalyticFragment faf;
+    private static final String LOG_TAG = MalariaDatabaseTest.class.getSimpleName();
 
     public void setUp()
     {
@@ -44,9 +46,8 @@ public class MalariaDatabaseTest extends AndroidTestCase {
         try{
             d=sdf.parse(date_header);
         }
-        catch (ParseException e)
-        {
-            e.printStackTrace();
+        catch (ParseException e) {
+            Log.e(LOG_TAG, e.toString());
         }
 
         Calendar c=Calendar.getInstance();
@@ -391,9 +392,8 @@ public class MalariaDatabaseTest extends AndroidTestCase {
         try{
             d=sdf.parse(date_header);
         }
-        catch (ParseException e)
-        {
-            e.printStackTrace();
+        catch (ParseException e) {
+            Log.e(LOG_TAG, e.toString());
         }
 
         Calendar c=Calendar.getInstance();

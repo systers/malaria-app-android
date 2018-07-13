@@ -189,8 +189,9 @@ public class TripIndicatorPackingActivity extends Activity {
 
                 mSharedPreferenceStore.mEditor.putInt("Array Size", outputStrArr.length);
 
-                for(int i=0;i<outputStrArr.length;i++)
+                for(int i=0;i<outputStrArr.length;i++) {
                     mSharedPreferenceStore.mEditor.putString(outputStrArr + "_" + i, outputStrArr[i]).commit();
+                }
 
                 /** Create a bundle object**/
                 Bundle b = new Bundle();

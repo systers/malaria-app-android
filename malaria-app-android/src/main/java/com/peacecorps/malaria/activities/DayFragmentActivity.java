@@ -35,7 +35,7 @@ import java.util.Date;
 public class DayFragmentActivity extends FragmentActivity {
 
 
-    private static String TAGD = DayFragmentActivity.class.getSimpleName();
+    private static final String TAGD = DayFragmentActivity.class.getSimpleName();
     private final String[] months = { "January", "February", "March",
             "April", "May", "June", "July", "August", "September",
             "October", "November", "December" };
@@ -85,7 +85,7 @@ public class DayFragmentActivity extends FragmentActivity {
         try {
            comp_date   = dateFormatter.parse(selected_date);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAGD, e.toString());
         }
         Calendar cal = Calendar.getInstance();
         cal.setTime(comp_date);
@@ -95,7 +95,7 @@ public class DayFragmentActivity extends FragmentActivity {
         year=cal.get(Calendar.YEAR);
         curr_time=cal.getTimeInMillis();
 
-        date_header=String.valueOf(day)+" "+mon+" "+String.valueOf(year);
+        date_header= day +" "+mon+" "+ year;
         Log.d(TAGD, date_header);
         dayDB.setText(date_header);
 
@@ -235,8 +235,9 @@ public class DayFragmentActivity extends FragmentActivity {
                                     editor.putInt("medicineStore",medicineStore+1);
                                     editor.commit();
                                 }
-                            } else
+                            } else {
                                 dialog.dismiss();
+                            }
 
                             //update the widgets
                             int widgetIds[] = AppWidgetManager.getInstance(getApplication()).getAppWidgetIds(new ComponentName(getApplication(), MedicineStatusWidgetProvider.class));
@@ -282,7 +283,7 @@ public class DayFragmentActivity extends FragmentActivity {
             try {
                 cd   = dateF.parse(selected_date);
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e(TAGD, e.toString());
             }
             cal.setTime(cd);
 
@@ -376,8 +377,9 @@ public class DayFragmentActivity extends FragmentActivity {
             Log.d(TAGD, "Interval :" + interval);
             Log.d(TAGD, time + ":" + takenDate);
         }
-        else
-             interval=1;
+        else {
+            interval = 1;
+        }
 
         return interval;
     }

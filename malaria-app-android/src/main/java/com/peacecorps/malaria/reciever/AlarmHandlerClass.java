@@ -54,7 +54,7 @@ public class AlarmHandlerClass extends BroadcastReceiver {
         int minute = mSharedPreferenceStore.mPrefsStore.getInt(
                 "com.peacecorps.malaria.AlarmMinute", -1);
         if ((hour != -1) && (minute != -1)) {
-            AlarmTime(context, hour, minute);
+            alarmTime(context, hour, minute);
             /**Setting Alarm**/
             mAlarmManager = (AlarmManager) context
                     .getSystemService(Context.ALARM_SERVICE);
@@ -77,7 +77,7 @@ public class AlarmHandlerClass extends BroadcastReceiver {
         }
     }
 
-    public void AlarmTime(Context context, int hour, int minute) {
+    public void alarmTime(Context context, int hour, int minute) {
         /**Setting The Alarm Time **/
         Date date = new Date();
         mAlarmScheduleTime = Calendar.getInstance();

@@ -15,7 +15,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.ImageRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.peacecorps.malaria.utils.AuthJSONObjectRequest;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.utils.VolleyApplication;
@@ -38,7 +37,7 @@ public class EffectivenessFragmentActivity extends FragmentActivity{
     private TextView mEffectivenessLabel,mETitle;
     private ImageView effectivenessImage ;
 
-    private static String TAGE = EffectivenessFragmentActivity.class.getSimpleName();
+    private static final String TAGE = EffectivenessFragmentActivity.class.getSimpleName();
 
     private ProgressDialog progressDialog;
 
@@ -119,11 +118,11 @@ public class EffectivenessFragmentActivity extends FragmentActivity{
                         outputStream.write(content.getBytes());
                         outputStream.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Log.e(TAGE, e.toString());
                     }
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e(TAGE, e.toString());
                     Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 hidepDialog();
@@ -144,12 +143,12 @@ public class EffectivenessFragmentActivity extends FragmentActivity{
                     StringBuffer buffer = new StringBuffer();
                     while ((line = input.readLine()) != null) {
                         buffer.append(line);
-                        buffer.append("\n");
+                        buffer.append('\n');
                     }
                     mEffectivenessLabel.setText(buffer.toString());
                     Log.d(TAGE, buffer.toString());
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.e(TAGE, e.toString());
                 }
                 //hide progress dialog
                 hidepDialog();

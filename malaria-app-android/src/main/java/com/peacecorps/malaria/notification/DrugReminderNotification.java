@@ -87,7 +87,8 @@ public class DrugReminderNotification {
             return false;
         } else if (sqLite.getStatus(d, m, y).equalsIgnoreCase("no") == true) {
             return true;
-        } else
+        } else {
             return true;
+        }
     }
 }

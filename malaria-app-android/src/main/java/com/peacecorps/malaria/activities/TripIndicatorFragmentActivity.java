@@ -67,12 +67,12 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
     public static final String DRUG_TAG="com.peacecorps.malaria.activites.TripIndicatorFragmentActivity.DRUG_TAG";
     long num_drugs=0;
     private String arrival_formattedate, departure_formattedate;
-    private String TAGTIFA="Trip Indicator Activity";
+    private final String TAGTIFA="Trip Indicator Activity";
     AlarmManager alarmManager;
     private PendingIntent pendingIntent;
     private int dep_year,dep_month,dep_day;
     private static TripIndicatorFragmentActivity inst;
-    private int ALARM_HOUR=22, ALARM_MINUTE=0, ALARM_SECONDS=0;
+    private final int ALARM_HOUR=22, ALARM_MINUTE=0, ALARM_SECONDS=0;
     private TextView tripTime;
     private DatabaseSQLiteHelper sqLite, location_sqLite;
     private String loc="";
@@ -742,10 +742,12 @@ public class TripIndicatorFragmentActivity extends FragmentActivity {
     {
         long interval;
         long oneDay= 24*60*60*1000;
-        if(t1>=t2)
-            interval=(t1-t2)/oneDay;
-        else
-            interval=(t2-t1)/oneDay;
+        if(t1>=t2) {
+            interval = (t1 - t2) / oneDay;
+        }
+        else {
+            interval = (t2 - t1) / oneDay;
+        }
 
         return  interval+1;
     }

@@ -38,7 +38,7 @@ public class PercentSideEffectsFragmentActivity extends FragmentActivity {
     private TextView mPercentSideEffectsLabel,pse;
     private ImageView sideEffectImage;
 
-    private static String TAGPSE = PercentSideEffectsFragmentActivity.class.getSimpleName();
+    private static final String TAGPSE = PercentSideEffectsFragmentActivity.class.getSimpleName();
 
     private ProgressDialog progressDialog;
 
@@ -122,11 +122,11 @@ public class PercentSideEffectsFragmentActivity extends FragmentActivity {
                         outputStream.write(content.getBytes());
                         outputStream.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Log.e(TAGPSE, e.toString());
                     }
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e(TAGPSE, e.toString());
                     Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 hidepDialog();
@@ -147,12 +147,12 @@ public class PercentSideEffectsFragmentActivity extends FragmentActivity {
                     StringBuffer buffer = new StringBuffer();
                     while ((line = input.readLine()) != null) {
                         buffer.append(line);
-			buffer.append("\n");
+			buffer.append('\n');
                     }
                     mPercentSideEffectsLabel.setText(buffer.toString());
                     Log.d(TAGPSE, buffer.toString());
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.e(TAGPSE, e.toString());
                 }
                 //hide progress dialog
                 hidepDialog();

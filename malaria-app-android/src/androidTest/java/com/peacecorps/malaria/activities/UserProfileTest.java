@@ -8,8 +8,6 @@ import android.widget.EditText;
 
 import com.peacecorps.malaria.R;
 
-import junit.framework.TestCase;
-
 /**
  * Created by yatna on 17/8/16.
  */

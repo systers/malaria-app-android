@@ -69,12 +69,10 @@ public class RemainderToneActivity extends Activity implements View.OnClickListe
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            if (requestCode == 1) {
+        if (resultCode == RESULT_OK && requestCode == 1) {
                 audioFileUri = data.getData();
                 MP3Path = audioFileUri.getPath();
                 path.setText(MP3Path);
-            }
         }
     }
     public boolean isAudioFile() {
