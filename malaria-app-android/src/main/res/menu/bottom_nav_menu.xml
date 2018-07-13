@@ -5,27 +5,27 @@
     <item
         android:id="@+id/bnv_home"
         android:icon="@drawable/home_icon_normal"
-        android:title="@string/nav_home_button"
+        android:title="@string/label_home"
         app:showAsAction="always|withText"
         tools:ignore="AlwaysShowAction" />
     <item
         android:id="@+id/bnv_trip_button"
         android:icon="@drawable/bus_icon_inactive_normal"
-        android:title="@string/nav_trip_button"
+        android:title="@string/label_trip"
         app:showAsAction="always|withText" />
     <item
         android:id="@+id/bnv_info_button"
         android:icon="@drawable/info_hub_inactive_normal"
-        android:title="@string/nav_infohub_button"
+        android:title="@string/label_info_hub"
         app:showAsAction="always|withText" />
     <item
         android:id="@+id/bnv_play_button"
         android:icon="@drawable/cal_right_arrow_off"
-        android:title="@string/nav_game_button"
+        android:title="@string/label_game"
         app:showAsAction="always|withText" />
     <item
         android:id="@+id/bnv_user_profile"
         android:icon="@drawable/user"
-        android:title="@string/nav_profile_button"
+        android:title="@string/label_profile"
         app:showAsAction="always|withText" />
 </menu>

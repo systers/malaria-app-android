@@ -123,8 +123,8 @@ public class MedicineSettingsActivity extends BaseActivity
      */
     private void createDrugSelectionSpinner() {
 
-        DrugArrayAdapter adapter = new DrugArrayAdapter(this, getResources().getStringArray(R.array.drug_array),
-                Constants.imageID, getResources().getStringArray(R.array.medicine_description));
+        DrugArrayAdapter adapter = new DrugArrayAdapter(this, getResources().getStringArray(R.array.array_drugs),
+                Constants.imageID, getResources().getStringArray(R.array.array_medicine_description));
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mDrugSelectSpinner.setAdapter(adapter);
@@ -188,8 +188,6 @@ public class MedicineSettingsActivity extends BaseActivity
             View v = getActivity().getLayoutInflater().inflate(R.layout.time_picker_style_setting, null);
 
             view.setView(v);
-            TimePicker tp = v.findViewById(R.id.tpUser);
-
             return view;
         }
 

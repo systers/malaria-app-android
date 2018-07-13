@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.code.activities.UserProfile;
 
 /**
  * Created by yatna on 17/8/16.

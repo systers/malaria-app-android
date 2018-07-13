@@ -15,17 +15,21 @@ import android.widget.Toast;
 import com.peacecorps.malaria.code.fragment.HomeScreenFragment;
 import com.peacecorps.malaria.data.AppDataManager;
 import com.peacecorps.malaria.ui.base.BaseActivity;
+import com.peacecorps.malaria.ui.user_profile.UserProfileFragment;
+import com.peacecorps.malaria.utils.BottomNavigationViewHelper;
 import com.peacecorps.malaria.utils.InjectionClass;
 
-public class MainActivity extends BaseActivity implements HomeContract.IHomeView {
+public class MainActivity extends BaseActivity implements HomeContract.IHomeView, UserProfileFragment.OnUserFragmentListener {
 
     private HomePresenter<MainActivity> presenter;
+    private BottomNavigationView bottomNavigationView;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
     }
 
     @Override
@@ -47,7 +51,8 @@ public class MainActivity extends BaseActivity implements HomeContract.IHomeView
     }
 
     private void setBottomNavigation() {
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         bottomNavigationView.setSelectedItemId(R.id.home_screen_fragment);
         bottomNavigationView.getMenu().findItem(R.id.bnv_home).setChecked(true);
@@ -75,8 +80,12 @@ public class MainActivity extends BaseActivity implements HomeContract.IHomeView
                         break;
 
                     case R.id.bnv_user_profile:
-                        Toast.makeText(MainActivity.this, "user button", Toast.LENGTH_SHORT).show();
+                        fragment = new UserProfileFragment();
+                        loadFragment(fragment);
                         break;
+                    default:
+                        fragment = new HomeScreenFragment();
+                        loadFragment(fragment);
                 }
                 return true;
             }
@@ -89,6 +98,12 @@ public class MainActivity extends BaseActivity implements HomeContract.IHomeView
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void startHomeFragment() {
+        bottomNavigationView.setSelectedItemId(R.id.home_screen_fragment);
+        loadFragment(new HomeScreenFragment());
     }
 
     //    /*Calculating Interval between two time*/

@@ -67,13 +67,13 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 finish();
             }
         });
-        userProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplication().getApplicationContext(),UserProfile.class));
-                finish();
-            }
-        });
+//        userProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplication().getApplicationContext(),UserProfile.class));
+//                finish();
+//            }
+//        });
 
         /**Setting fonts**/
         Typeface cf = Typeface.createFromAsset(getAssets(),"fonts/garreg.ttf");

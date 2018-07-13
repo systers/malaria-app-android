@@ -110,7 +110,7 @@ public class SecondAnalyticFragment extends Fragment {
 
     //finding month from its integer
     public String getMonth(int date) {
-        String month[] = getResources().getStringArray(R.array.month);
+        String month[] = getResources().getStringArray(R.array.array_month);
         if (date == -1) {
             date = 11;
             myear = Calendar.getInstance().get(Calendar.YEAR) - 1;

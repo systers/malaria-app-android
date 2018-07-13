@@ -58,8 +58,6 @@
         -> For every correct answer, a point is awarded.\n
         -> Click \"Next\" to go to next question, and \"Exit\" to exit the game.\n
     </string>
-    <string name="shared_prefs_myth_fact_game">showHelpMythFactGame</string>
-    <string name="shared_prefs_rapid_fire_game">showHelpRapidFireGame</string>
     <string name="departuredate_currentdate">"Departure date cannot be less than current date"</string>
     <string name="arrivaldate_departuredate">"Arrival date cannot be before the Departure date"</string>
 
@@ -74,6 +72,7 @@
     <string name="notification_action_code_taken">2</string>
     <string name="notification_action_code_snooze">1</string>
 
+    <!--Todo delete them once everything is completed -->
     <!--shared preferences-->
     <string name="shared_preferences_alarm_hour">com.peacecorps.malaria.AlarmHour</string>
     <string name="shared_preferences_alarm_minute">com.peacecorps.malaria.AlarmMinute</string>
@@ -84,6 +83,8 @@
     <string name="shared_preferences_drug_rejected_count">com.peacecorps.malaria.drugRejectedCount</string>
     <string name="shared_preferences_drug_accepted_count">com.peacecorps.malaria.drugAcceptedCount</string>
     <string name="shared_preferences_store_time_picked">com.peacecorps.malaria.storeTimePicked</string>
+    <string name="shared_prefs_myth_fact_game">showHelpMythFactGame</string>
+    <string name="shared_prefs_rapid_fire_game">showHelpRapidFireGame</string>
 
     <!-- ContentDescription strings -->
     <string name="description_drugs">Drugs</string>
@@ -117,78 +118,32 @@
     <string name="description_badge_hat">Hat badge</string>
     <string name="description_"></string>
 
-    <string-array name="user_medicine_settings_activity_drug_array">
-        <item>Malarone (Daily)</item>
-        <item>Doxycycline (Daily)</item>
-        <item>Mefloquine (Weekly)</item>
-    </string-array>
-
-    <string-array name="month">
-        <item>January</item>
-        <item>February</item>
-        <item>March</item>
-        <item>April</item>
-        <item>May</item>
-        <item>June</item>
-        <item>July</item>
-        <item>August</item>
-        <item>September</item>
-        <item>October</item>
-        <item>November</item>
-        <item>December</item>
-    </string-array>
-
-
-    <string-array name="drug_array">
-        <item>Malarone</item>
-        <item>Doxycycline</item>
-        <item>Mefloquine</item>
-    </string-array>
-
-    <string-array name="location_array">
-        <item>Benin</item>
-        <item>Botswana</item>
-        <item>Burkina Faso</item>
-        <item>Cameroon</item>
-        <item>Ethiopia</item>
-        <item>Ghana</item>
-        <item>Guinea</item>
-        <item>Kenya</item>
-        <item>Liberia</item>
-        <item>Madagascar</item>
-        <item>Malawi</item>
-        <item>Mozambique</item>
-        <item>Namibia</item>
-        <item>Rwanda</item>
-        <item>Sierra Leone</item>
-        <item>Senegal</item>
-        <item>South Africa</item>
-        <item>Swaziland</item>
-        <item>Tanzania</item>
-        <item>The Gambia</item>
-        <item>Togo</item>
-        <item>Uganda</item>
-        <item>Zambia</item>
-    </string-array>
-
-
-    <string-array name="item_array">
-        <item>Medication</item>
-        <item>Ointment</item>
-        <item>Mosquito Net</item>
-    </string-array>
-
     <string name="med_option_one">Malarone</string>
     <string name="med_option_two">Doxycycline</string>
     <string name="med_option_three">Mefloquine</string>
-    <string name="nav_home_button">Home</string>
-    <string name="nav_trip_button">Trip</string>
-    <string name="nav_infohub_button">InfoHub</string>
-    <string name="nav_game_button">Game</string>
-    <string name="nav_profile_button">Profile</string>
 
+    <!-- labels -->
+    <string name="label_medication_type">Medication Type</string>
+    <string name="label_user_age">Age</string>
+    <string name="label_user_email">Email</string>
+    <string name="label_user_name">Name</string>
+    <string name="label_user_profile">User Profile</string>
+    <string name="label_save">SAVE</string>
 
-    <string-array name="medicine_description">
+    <string name="label_home">Home</string>
+    <string name="label_trip">Trip</string>
+    <string name="label_info_hub">InfoHub</string>
+    <string name="label_game">Game</string>
+    <string name="label_profile">Profile</string>
+
+    <!-- hint text -->
+    <string name="hint_user_medicine_type">Enter the medicine you take</string>
+    <string name="hint_user_age">Age in years</string>
+    <string name="hint_email_address">Enter Your Email Address</string>
+    <string name="hint_user_name">Enter Your Name</string>
+
+    <!-- arrays -->
+    <string-array name="array_medicine_description">
         <item>
             -Interferes with growth of parasites in red blood cells\n
             -Take the medicine everyday at the same time with food\n
@@ -219,6 +174,65 @@
             -Some side effects of drug: stomach pain, headache, muscle ache, tiredness, vomiting\n
             -Visit http://www.drugs.com/cdi/mefloquine.html for more information\n
         </item>
+    </string-array>
+
+    <string-array name="user_medicine_settings_activity_drug_array">
+        <item>Malarone (Daily)</item>
+        <item>Doxycycline (Daily)</item>
+        <item>Mefloquine (Weekly)</item>
+    </string-array>
+
+    <string-array name="array_month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string-array name="array_drugs">
+        <item>Malarone</item>
+        <item>Doxycycline</item>
+        <item>Mefloquine</item>
+    </string-array>
+
+    <string-array name="array_location">
+        <item>Benin</item>
+        <item>Botswana</item>
+        <item>Burkina Faso</item>
+        <item>Cameroon</item>
+        <item>Ethiopia</item>
+        <item>Ghana</item>
+        <item>Guinea</item>
+        <item>Kenya</item>
+        <item>Liberia</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Mozambique</item>
+        <item>Namibia</item>
+        <item>Rwanda</item>
+        <item>Sierra Leone</item>
+        <item>Senegal</item>
+        <item>South Africa</item>
+        <item>Swaziland</item>
+        <item>Tanzania</item>
+        <item>The Gambia</item>
+        <item>Togo</item>
+        <item>Uganda</item>
+        <item>Zambia</item>
+    </string-array>
+
+    <string-array name="item_array">
+        <item>Medication</item>
+        <item>Ointment</item>
+        <item>Mosquito Net</item>
     </string-array>
 
 </resources>

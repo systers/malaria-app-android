@@ -10,15 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-public abstract class BaseFragment<P extends MvpPresenter> extends Fragment implements MvpView {
-    P presenter;
+public abstract class BaseFragment extends Fragment implements MvpView {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(getContentResource(), container, false);
-        return view;
+        return inflater.inflate(getContentResource(), container, false);
     }
 
     @Override
@@ -32,9 +30,6 @@ public abstract class BaseFragment<P extends MvpPresenter> extends Fragment impl
         return false;
     }
 
-    public P getPresenter() {
-        return presenter;
-    }
 
     public interface Callback {
 
@@ -51,7 +46,7 @@ public abstract class BaseFragment<P extends MvpPresenter> extends Fragment impl
     @LayoutRes
     protected abstract int getContentResource();
 
-    protected abstract void init(View view, @Nullable Bundle savedInstanceState);
+    protected abstract void init();
 
     void displayToastMessage(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
