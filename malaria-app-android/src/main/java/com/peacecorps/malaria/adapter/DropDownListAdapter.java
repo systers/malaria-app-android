@@ -91,10 +91,12 @@ public class DropDownListAdapter extends BaseAdapter {
             }
         });
 
-        if(TripIndicatorFragmentActivity.checkSelected[position])
+        if(TripIndicatorFragmentActivity.checkSelected[position]) {
             holder.chkbox.setChecked(true);
-        else
+        }
+        else {
             holder.chkbox.setChecked(false);
+        }
         return convertView;
     }
 

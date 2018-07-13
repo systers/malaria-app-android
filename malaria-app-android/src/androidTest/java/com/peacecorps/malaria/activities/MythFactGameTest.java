@@ -7,8 +7,6 @@ import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
 
-import junit.framework.TestCase;
-
 /**
  * Created by yatna on 18/8/16.
  */

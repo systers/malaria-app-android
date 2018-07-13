@@ -81,11 +81,10 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
             Log.d(TAGDSH,"INSIDE GET DATA PERCENTAGE:"+cursor.getDouble(2));
 
         }
-        if (isDataFound) {
-            if (!(date.get(date.size() - 1) == Calendar.getInstance().get(Calendar.DATE))) {
-                percentage.add(0.0);
-                date.add(Calendar.getInstance().get(Calendar.DATE));
-            }
+        if (isDataFound && !(date.get(date.size() - 1) == Calendar.getInstance().get(Calendar.DATE))) {
+            percentage.add(0.0);
+            date.add(Calendar.getInstance().get(Calendar.DATE));
+
         }
         sqLiteDatabase.close();
         Log.d(TAGDSH, "" + count);
@@ -227,14 +226,18 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqDB = this.getWritableDatabase();
         ContentValues cv = new ContentValues(2);
         String Choice="",ts="";
-        if(SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly",false))
-            Choice="weekly";
-        else
-            Choice="daily";
-        if(date>=10)
-            ts=""+year+"-"+month+"-"+date;
-        else
-            ts=""+year+"-"+month+"-0"+date;
+        if(SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly",false)) {
+            Choice = "weekly";
+        }
+        else {
+            Choice = "daily";
+        }
+        if(date>=10) {
+            ts = "" + year + "-" + month + "-" + date;
+        }
+        else {
+            ts = "" + year + "-" + month + "-0" + date;
+        }
 
         String []columns={"Status"};
         String []selArgs= {""+date,""+month,""+year};
@@ -275,10 +278,12 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
                 {
                    lim=p-ft;
                    for (int i=1;i<lim;i++)
-                   {   if((date+i)>=10)
-                       ts=""+year+"-"+month+"-"+(date+i);
-                       else
-                       ts=""+year+"-"+month+"-0"+(date+i);
+                   {   if((date+i)>=10) {
+                          ts = "" + year + "-" + month + "-" + (date + i);
+                       }
+                       else {
+                          ts = "" + year + "-" + month + "-0" + (date + i);
+                       }
                        cv.put("Drug", SharedPreferenceStore.mPrefsStore.getInt("com.peacecorps.malaria.drug", 0));
                        cv.put("Choice", Choice);
                        cv.put("Month", "" + month);
@@ -314,10 +319,12 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
             idx = cursor.getColumnIndex("Status");
             status=cursor.getString(idx);
             if(status!=null) {
-                if (status.equalsIgnoreCase("yes"))
+                if (status.equalsIgnoreCase("yes")) {
                     return 0;
-                else if (status.equalsIgnoreCase("no"))
+                }
+                else if (status.equalsIgnoreCase("no")) {
                     return 1;
+                }
             }
 
         }
@@ -342,7 +349,7 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
             try {
                 comp_date   = sdf.parse(selected_date);
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e(TAGDSH, e.toString());
             }
             Log.d(TAGDSH,"First Time: "+selected_date);
             Calendar cal = Calendar.getInstance();
@@ -366,6 +373,7 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
         while(cursor.moveToNext())
         {
             return cursor.getString(0);
+
         }
 
         return "miss";
@@ -394,13 +402,11 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
                     return 0;
                 }
 
-                if(cursor.getString(0)!=null){
-                    if (cursor.getString(0).compareTo("yes") == 0){
+                if(cursor.getString(0)!=null && (cursor.getString(0).compareTo("yes") == 0)){
                         prevDate = cursor.getInt(2);
                         prevDateMonth = cursor.getInt(3);
                         if (Math.abs(currDate - prevDate) <= 1)
                             dosesInaRow++;
-                    }
                 }
 
                 /**Since Previous and Current Date our Updated,
@@ -414,16 +420,20 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
                     int parameter = Math.abs(currDate - prevDate);
                     if ((cursor.getString(0)) != null) {
                         if (currDateMonth == prevDateMonth) {
-                            if (cursor.getString(0).compareTo("yes") == 0 && parameter == 1)
+                            if (cursor.getString(0).compareTo("yes") == 0 && parameter == 1) {
                                 dosesInaRow++;
-                            else
+                            }
+                            else {
                                 break;
+                            }
                         } else {
                             parameter = Math.abs(currDate - prevDate) % (getNumberofDaysinMonth(currDateMonth, currDateYear) - 1);
-                            if (cursor.getString(0).compareTo("yes") == 0 && parameter <= 1)
+                            if (cursor.getString(0).compareTo("yes") == 0 && parameter <= 1) {
                                 dosesInaRow++;
-                            else
+                            }
+                            else {
                                 break;
+                            }
 
                         }
                     }
@@ -445,8 +455,9 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
         {
             return daysOfMonthLeap[month];
         }
-        else
+        else {
             return daysOfMonth[month];
+        }
     }
 
     /**Check whether it is a leap layer**/
@@ -494,10 +505,12 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
                     numDays = getDayofWeek(pdo);
                     pPara = 7 - numDays + 7;
                     aPara = getNumberOfDays(pdo, ado);
-                    if (aPara <= pPara)
+                    if (aPara <= pPara) {
                         dosesInaRow++;
-                    else
+                    }
+                    else {
                         break;
+                    }
                     ats = pts;
                     ado = pdo;
                 }
@@ -519,7 +532,7 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
         }
         catch (ParseException e)
         {
-            e.printStackTrace();
+            Log.e(TAGDSH, e.toString());
         }
 
         return dobj;
@@ -608,10 +621,12 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
         }
         cv.put("Times", a);
 
-        if(flag==1)
+        if(flag==1) {
             sqDB.update(locationTable, cv, "Location= ?", selArgs);
-        else
+        }
+        else {
             sqDB.insert(locationTable, "location", cv);
+        }
 
 
     }
@@ -799,12 +814,9 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
         endCal.setTime(e);
         int medDays = 0,flag=0;
         //If working dates are same,then checking what is the day on that date.
-        if (startCal.getTimeInMillis() == endCal.getTimeInMillis()) {
-            if (startCal.get(Calendar.DAY_OF_WEEK) == weekday)
-            {
-                ++medDays;
-                return medDays;
-            }
+        if (startCal.getTimeInMillis() == endCal.getTimeInMillis() && (startCal.get(Calendar.DAY_OF_WEEK) == weekday)) {
+            ++medDays;
+            return medDays;
         }
         /*If start date is coming after end date, Then shuffling Dates and storing dates
         by incrementing upto end date in do-while part.*/
@@ -885,10 +897,10 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
 
                     if (cursor.getString(0).equalsIgnoreCase("yes") == true) {
 
-                        if(currt>=strt && currt<=endt)
+                        if(currt>=strt && currt<=endt) {
                             count++;
-                        else if(strt==endt)
-                        {
+                        }
+                        else if(strt==endt) {
                             count++;
                         }
                     }

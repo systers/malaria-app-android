@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
 import android.text.Html;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +30,7 @@ public class MedicineStore extends Activity {
     private Button settings;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
-    private int medicineStore;
+    private int mediStore;
     private String drugName;
     private boolean isLimitExceede;
     static SharedPreferenceStore mSharedPreferenceStore;
@@ -56,25 +55,25 @@ public class MedicineStore extends Activity {
         displayMedicineStore();
     }
     private void displayMedicineStore(){
-        medicineStore=preferences.getInt("medicineStore",0);
+        mediStore=preferences.getInt("medicineStore",0);
         //if drug is weekly
         if(drugName.compareTo("Mefloquine")==0){
-            if(medicineStore>=0){
-                daysLeft.setText(medicineStore+" Weeks");
+            if(mediStore>=0){
+                daysLeft.setText(mediStore+" Weeks");
             }
             else{
-                medicineStore=medicineStore*-1;
-                daysLeft.setText(medicineStore+" Weeks Due");
+                mediStore=mediStore*-1;
+                daysLeft.setText(mediStore+" Weeks Due");
             }
         }
         //if drug is daily
         else{
-            if(medicineStore>=0){
-                daysLeft.setText(medicineStore+" Days");
+            if(mediStore>=0){
+                daysLeft.setText(mediStore+" Days");
             }
             else{
-                medicineStore=medicineStore*-1;
-                daysLeft.setText(medicineStore+" Days Due");
+                mediStore=mediStore*-1;
+                daysLeft.setText(mediStore+" Days Due");
             }
         }
     }
@@ -129,7 +128,7 @@ public class MedicineStore extends Activity {
                         }
                         else{
                             //send and email
-                            String msgBody="My malaria pills will last for the coming  "+"<b>"+medicineStore+"</b>"+" days only.<br> Send the following immediately: <br>" +
+                            String msgBody="My malaria pills will last for the coming  "+"<b>"+mediStore+"</b>"+" days only.<br> Send the following immediately: <br>" +
                                     "Medicine Name:     " +"<b>"+drugName+"</b>"+"<br>"+
                                     "Quantity:          " ;
                             Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -157,7 +156,7 @@ public class MedicineStore extends Activity {
                             medicineQuantityEt.setError(getResources().getString(R.string.limit_exceeded));
                         }
                         else{
-                            String msgBody="My malaria pills will last for the coming "+medicineStore+" days only.\n Send the following immediately: \n" +
+                            String msgBody="My malaria pills will last for the coming "+mediStore+" days only.\n Send the following immediately: \n" +
                                     "Medicine Name:     " +drugName+"\n"+
                                     "Quantity:          " ;
                             SmsManager smsManager = SmsManager.getDefault();
@@ -196,12 +195,12 @@ public class MedicineStore extends Activity {
                             medicineQuantityEt.setError(getString(R.string.value_lessthan_366));
                         }
                         else{
-                            medicineStore=preferences.getInt("medicineStore",0);
+                            mediStore=preferences.getInt("medicineStore",0);
                             editor=preferences.edit();
                             //get medicines already in store
                             int quantity = Integer.parseInt(medicineQuantityEt.getText().toString());
                             //add the new medicines to previous ones
-                            editor.putInt("medicineStore", medicineStore + quantity);
+                            editor.putInt("medicineStore", mediStore + quantity);
                             editor.commit();
                             displayMedicineStore();
                             addMedicineDialog.dismiss();

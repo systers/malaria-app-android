@@ -3,21 +3,17 @@ package com.peacecorps.malaria.adapter;
 /**
  * Created by Ankita on 8/13/2015.
  */
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.peacecorps.malaria.R;

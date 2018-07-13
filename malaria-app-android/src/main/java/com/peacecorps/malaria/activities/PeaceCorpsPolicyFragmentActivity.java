@@ -44,7 +44,7 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
     private Button ttsButton;
     private TextToSpeech tts;
 
-    private static String TAGPCP = PeaceCorpsPolicyFragmentActivity.class.getSimpleName();
+    private static final String TAGPCP = PeaceCorpsPolicyFragmentActivity.class.getSimpleName();
 
     private ProgressDialog progressDialog;
 
@@ -159,11 +159,11 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
                         outputStream.write(content.getBytes());
                         outputStream.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Log.e(TAGPCP, e.toString());
                     }
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e(TAGPCP, e.toString());
                     Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
                 hidepDialog();
@@ -188,7 +188,7 @@ public class PeaceCorpsPolicyFragmentActivity extends FragmentActivity {
                     mPeaceCorpsPolicyLabel.setText(buffer.toString());
                     Log.d(TAGPCP, buffer.toString());
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.e(TAGPCP, e.toString());
                 }
 
                 //hide progress dialog

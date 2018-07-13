@@ -46,7 +46,7 @@ public class SecondAnalyticFragment extends Fragment {
     private static final String userMedicationChoiceTable = "userSettings";
     private final int[] daysOfMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30,
             31, 30, 31};
-    private String TAGSAF = "SecondAnalyticFragment";
+    private final String TAGSAF = "SecondAnalyticFragment";
 
     GraphViewSeries drugGraphSeries;
     private GraphViewData[] graphViewData;
@@ -232,10 +232,12 @@ public class SecondAnalyticFragment extends Fragment {
         firstMonthProgressLabel.setTypeface(cf);
         int progress = sqLH.getData(mdate, myear, choice);
         float progressp = 0;
-        if (choice.equalsIgnoreCase("daily"))
+        if (choice.equalsIgnoreCase("daily")) {
             progressp = (float) progress / getNumberOfDaysInMonth(mdate) * 100;
-        else
+        }
+        else {
             progressp = progress * 25;
+        }
 
         if(progressp>=50)
         {
@@ -244,20 +246,24 @@ public class SecondAnalyticFragment extends Fragment {
 
         }
         firstMonthProgressBar.setProgress((int) progressp);
-        if((date-3)>=SetupMonth || myear!=SetupYear || (int)progressp!=0)
+        if((date-3)>=SetupMonth || myear!=SetupYear || (int)progressp!=0) {
             firstMonthProgressPercent.setText("" + (int) progressp + "%");
-        else
+        }
+        else {
             firstMonthProgressPercent.setText("N.A");
+        }
 
         firstMonthProgressPercent.setTypeface(cf);
 
         secondMonthProgressLabel.setText(getMonth(date - 2));
         secondMonthProgressLabel.setTypeface(cf);
         progress = sqLH.getData(mdate, myear, choice);
-        if (choice.equalsIgnoreCase("daily"))
+        if (choice.equalsIgnoreCase("daily")) {
             progressp = (float) progress / getNumberOfDaysInMonth(mdate) * 100;
-        else
+        }
+        else {
             progressp = progress * 25;
+        }
 
         if(progressp>=50)
         {
@@ -266,40 +272,48 @@ public class SecondAnalyticFragment extends Fragment {
 
         }
         secondMonthProgressBar.setProgress((int) progressp);
-        if((date-2)>=SetupMonth || myear!=SetupYear || (int)progressp!=0)
+        if((date-2)>=SetupMonth || myear!=SetupYear || (int)progressp!=0) {
             secondMonthProgressPercent.setText("" + (int) progressp + "%");
-        else
+        }
+        else {
             secondMonthProgressPercent.setText("N.A");
+        }
 
         secondMonthProgressPercent.setTypeface(cf);
 
         thirdMonthProgressLabel.setText(getMonth(date - 1));
         thirdMonthProgressLabel.setTypeface(cf);
         progress = sqLH.getData(mdate, myear, choice);
-        if (choice.equalsIgnoreCase("daily"))
+        if (choice.equalsIgnoreCase("daily")) {
             progressp = (float) progress / getNumberOfDaysInMonth(mdate) * 100;
-        else
+        }
+        else {
             progressp = progress * 25;
+        }
 
         if(progressp>=50) {
             thirdMonthProgressBar.setBackground(getResources().getDrawable(R.drawable.progress_bg_green));
             thirdMonthProgressBar.setProgressDrawable(getResources().getDrawable(R.drawable.saf_progress_bar_green));
         }
             thirdMonthProgressBar.setProgress((int) progressp);
-        if((date-1)>=SetupMonth || myear!=SetupYear || (int)progressp!=0)
+        if((date-1)>=SetupMonth || myear!=SetupYear || (int)progressp!=0) {
             thirdMonthProgressPercent.setText("" + (int) progressp + "%");
-        else
+        }
+        else {
             thirdMonthProgressPercent.setText("N.A");
+        }
         thirdMonthProgressPercent.setTypeface(cf);
 
         fourthMonthProgressLabel.setText(getMonth(date));
         fourthMonthProgressLabel.setTypeface(cf);
         progress = sqLH.getData(mdate, myear, choice);
         Log.d(TAGSAF, "Query Return: " + progress);
-        if (choice.equalsIgnoreCase("daily"))
+        if (choice.equalsIgnoreCase("daily")) {
             progressp = (float) progress / getNumberOfDaysInMonth(mdate) * 100;
-        else
+        }
+        else {
             progressp = progress * 25;
+        }
         Log.d(TAGSAF, "" + getNumberOfDaysInMonth(mdate));
         Log.d(TAGSAF, "" + progress);
         Log.d(TAGSAF, "" + progressp);

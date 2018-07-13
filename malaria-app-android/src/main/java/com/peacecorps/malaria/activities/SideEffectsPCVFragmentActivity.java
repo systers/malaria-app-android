@@ -33,7 +33,7 @@ public class SideEffectsPCVFragmentActivity extends FragmentActivity {
     //views
     private TextView mSideEffectsPCVLabel,sep;
 
-    private static String TAGSEP = SideEffectsPCVFragmentActivity.class.getSimpleName();
+    private static final String TAGSEP = SideEffectsPCVFragmentActivity.class.getSimpleName();
 
     private ProgressDialog progressDialog;
 
@@ -101,11 +101,11 @@ public class SideEffectsPCVFragmentActivity extends FragmentActivity {
                         outputStream.write(content.getBytes());
                         outputStream.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        Log.e(TAGSEP, e.toString());
                     }
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e(TAGSEP, e.toString());
                     Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 hidepDialog();
@@ -126,12 +126,12 @@ public class SideEffectsPCVFragmentActivity extends FragmentActivity {
                     StringBuffer buffer = new StringBuffer();
                     while ((line = input.readLine()) != null) {
                         buffer.append(line);
-			buffer.append("\n");
+			            buffer.append('\n');
                     }
                     mSideEffectsPCVLabel.setText(buffer.toString());
                     Log.d(TAGSEP, buffer.toString());
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.e(TAGSEP, e.toString());
                 }
                 //hide progress dialog
                 hidepDialog();

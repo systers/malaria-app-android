@@ -49,7 +49,7 @@ public class HomeScreenFragment extends Fragment {
     private String[] mPossibledays = {"Sunday", "Monday", "Tuesday",
             "Wednesday", "Thursday", "Friday", "Saturday"};
     private View rootView;
-    private static String TAGHSF = "HomeScreenFragment";
+    private static final String TAGHSF = "HomeScreenFragment";
     private SharedPreferences sharedPreferences;
 
     int checkDay = -1;
@@ -353,8 +353,9 @@ public class HomeScreenFragment extends Fragment {
                 interval = (today - takenDate) / oneDay;*/
                 return interval;
             }
-            else
+            else {
                 return 1;
+            }
         }
         else {
             takenDate=SharedPreferenceStore.mPrefsStore.getLong("com.peacecorps.malaria."
@@ -400,10 +401,8 @@ public class HomeScreenFragment extends Fragment {
     }
 
     public void decideDrugTakenUIBoolean(Boolean isWeekly, Boolean isTaken) {
-        if (isWeekly) {
-            if (checkDrugTakenTimeInterval("weeklyDate") > 1) {
-                changeWeeklyAlarmTime();
-            }
+        if (isWeekly && (checkDrugTakenTimeInterval("weeklyDate") > 1)) {
+            changeWeeklyAlarmTime();
         }
         saveUsersettings(isTaken, isWeekly);
         if (isTaken) {
