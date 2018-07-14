@@ -5,19 +5,19 @@
     <TableRow>
         <Button
             android:id="@+id/infoDrug"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="@dimen/size_20dp"
+            android:layout_height="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/margin_10dp"
             android:background="@drawable/info_hub_normal"
             android:focusable="false"/>
 
         <TextView
             android:id="@+id/nameDrug"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/height_40dp"
             android:textColor="@color/golden_brown"
-            android:textSize="15dp"
-            android:padding="10dp"/>
+            android:textSize="@dimen/text_size_15sp"
+            android:padding="@dimen/padding_10dp"/>
 
     </TableRow>
 </TableLayout>

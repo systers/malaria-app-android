@@ -16,10 +16,10 @@
             android:layout_height="wrap_content"
             android:text="Previous Locations"
             android:textColor="@color/golden_brown"
-            android:textSize="22dp"
+            android:textSize="@dimen/text_size_25sp"
             android:gravity="center"
             android:background="@color/lightest_brown"
-            android:padding="10dp"
+            android:padding="@dimen/padding_10dp"
             />
         <ListView
             android:id="@android:id/list"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:headerDividersEnabled="true"
             android:divider="#ff988455"
-            android:dividerHeight="1dp"
+            android:dividerHeight="@dimen/height_1dp"
             />
 
 

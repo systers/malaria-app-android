@@ -14,10 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_10dp"
         android:text="@string/label_user_profile"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_25sp"
         android:textStyle="bold"
         android:textColor="@color/user_medicine_first_text_color"
         />
@@ -30,14 +30,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:layout_marginRight="@dimen/margin_20dp"
             android:background="@drawable/custom_line_border"
             android:orientation="vertical"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingStart="30dp">
+            android:paddingLeft="@dimen/padding_30dp"
+            android:paddingTop="@dimen/padding_10dp"
+            android:paddingBottom="@dimen/padding_10dp"
+            android:paddingStart="@dimen/padding_30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +65,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
+                android:paddingTop="@dimen/padding_5dp"
                 android:orientation="vertical" >
 
                 <TextView
@@ -88,7 +88,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
+                android:paddingTop="@dimen/padding_5dp"
                 android:orientation="vertical" >
 
                 <TextView
@@ -110,8 +110,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:layout_marginBottom="10dp"
+                android:paddingTop="@dimen/padding_5dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
                 android:orientation="vertical" >
 
                 <TextView
@@ -135,12 +135,12 @@
             android:id="@+id/save_button"
             style="@style/UserProfileCommonTextAppearance"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:layout_marginBottom="@dimen/margin_10dp"
             android:text="@string/label_save"
             android:textColor="@color/white"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:paddingLeft="@dimen/padding_40dp"
+            android:paddingRight="@dimen/padding_40dp"
             android:background="@color/golden_brown"
             />
     </LinearLayout>
