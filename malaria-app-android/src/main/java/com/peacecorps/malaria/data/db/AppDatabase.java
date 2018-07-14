@@ -8,7 +8,7 @@ import android.content.Context;
 import com.peacecorps.malaria.data.db.dao.*;
 import com.peacecorps.malaria.data.db.entities.*;
 
-@Database(entities = {AppSetting.class, Location.class, Packing.class, UserMedicine.class}, version = 1, exportSchema = false)
+@Database(entities = {AppSetting.class, Location.class, Packing.class, UserMedicine.class, AlarmTime.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase{
     private static AppDatabase INSTANCE;
     private static final Object sLock = new Object();
@@ -17,6 +17,7 @@ public abstract class AppDatabase extends RoomDatabase{
     public abstract LocationDao locationDao();
     public abstract PackingDao packingDao();
     public abstract UserMedicineDao userMedicineDao();
+    public abstract AlarmDao alarmDao();
 
     public static AppDatabase getAppDatabase(Context context) {
         synchronized (sLock) {

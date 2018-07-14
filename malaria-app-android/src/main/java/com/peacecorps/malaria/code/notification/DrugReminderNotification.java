@@ -9,7 +9,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.code.activities.MainActivity;
+import com.peacecorps.malaria.ui.home_screen.MainActivity;
 import com.peacecorps.malaria.code.reciever.DrugReminderReceiver;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 

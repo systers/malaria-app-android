@@ -1,5 +1,6 @@
 package com.peacecorps.malaria.data.db;
 
+import com.peacecorps.malaria.data.db.entities.AlarmTime;
 import com.peacecorps.malaria.data.db.entities.Location;
 import com.peacecorps.malaria.data.db.entities.Packing;
 
@@ -25,6 +26,10 @@ public interface DbHelper {
 
     interface LoadListPackingCallback {
         void onDataLoaded(List<Packing> packingList);
+    }
+
+    interface LoadAlarmDataCallback {
+        void onDataLoaded(AlarmTime time);
     }
 
     void getCountForProgressBar( int month, int year, String status, String choice, LoadIntegerCallback callback);
@@ -66,4 +71,8 @@ public interface DbHelper {
     void getMedicineCountTaken(LoadIntegerCallback callback);
 
     void getCountTakenBetween(Date s,Date e, LoadIntegerCallback callback);
+
+    void getAlarmData(LoadAlarmDataCallback callback);
+
+    void insertAlarmData(AlarmTime time);
 }

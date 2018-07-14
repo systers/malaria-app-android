@@ -25,23 +25,27 @@ public class AppDbHelper implements DbHelper {
     private LocationDao locationDao;
     private PackingDao packingDao;
     private UserMedicineDao userMedicineDao;
+    private AlarmDao alarmDao;
     private AppExecutors appExecutors;
 
     // prevent direct instantiation
-    private AppDbHelper(@NonNull AppExecutors appExecutors, @NonNull AppSettingDao appSettingDao, @NonNull LocationDao locationDao, @NonNull PackingDao packingDao, @NonNull UserMedicineDao userMedicineDao) {
+    private AppDbHelper(@NonNull AppExecutors appExecutors, @NonNull AppSettingDao appSettingDao, @NonNull LocationDao locationDao,
+                        @NonNull PackingDao packingDao, @NonNull UserMedicineDao userMedicineDao, @NonNull AlarmDao alarmDao) {
         this.appExecutors = appExecutors;
         this.locationDao = locationDao;
         this.packingDao = packingDao;
         this.userMedicineDao = userMedicineDao;
         this.appSettingDao = appSettingDao;
+        this.alarmDao = alarmDao;
     }
 
     // returns a singleton instance
-    public static AppDbHelper getInstance (@NonNull AppExecutors appExecutors, @NonNull AppSettingDao appSettingDao, @NonNull LocationDao locationDao, @NonNull PackingDao packingDao, @NonNull UserMedicineDao userMedicineDao) {
+    public static AppDbHelper getInstance (@NonNull AppExecutors appExecutors, @NonNull AppSettingDao appSettingDao, @NonNull LocationDao locationDao,
+                                           @NonNull PackingDao packingDao, @NonNull UserMedicineDao userMedicineDao, @NonNull AlarmDao alarmDao) {
         if(INSTANCE == null) {
             synchronized ( (AppDbHelper.class)) {
                 if( INSTANCE == null) {
-                    INSTANCE = new AppDbHelper(appExecutors, appSettingDao, locationDao, packingDao, userMedicineDao);
+                    INSTANCE = new AppDbHelper(appExecutors, appSettingDao, locationDao, packingDao, userMedicineDao, alarmDao);
                 }
             }
         }
@@ -536,6 +540,35 @@ public class AppDbHelper implements DbHelper {
                         callback.onDataLoaded(finalCount);
                     }
                 });
+            }
+        };
+        appExecutors.diskIO().execute(runnable);
+
+    }
+
+    @Override
+    public void getAlarmData(final LoadAlarmDataCallback callback) {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                final AlarmTime time = alarmDao.getAlarmData();
+                appExecutors.mainThread().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        callback.onDataLoaded(time);
+                    }
+                });
+            }
+        };
+        appExecutors.diskIO().execute(runnable);
+    }
+
+    @Override
+    public void insertAlarmData(final AlarmTime time) {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                alarmDao.insertAlarmData(time);
             }
         };
         appExecutors.diskIO().execute(runnable);

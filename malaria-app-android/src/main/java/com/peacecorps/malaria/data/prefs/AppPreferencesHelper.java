@@ -24,6 +24,8 @@ public class AppPreferencesHelper implements PreferencesHelper{
     private static final String PREF_KEY_USER_NAME = "USER_NAME";
     private static final String PREF_KEY_USER_EMAIL = "USER_EMAIL";
     private static final String PREF_KEY_USER_AGE = "USER_AGE";
+    private static final String PREF_KEY_IS_FIRST_RUN = "IS_FIRST_RUN";
+    private static final String PREF_KEY_IS_DRUG_TAKEN = "com_peacecorps_malaria_is_drug_taken";
 
     private final SharedPreferences mPrefs;
 
@@ -62,7 +64,7 @@ public class AppPreferencesHelper implements PreferencesHelper{
 
     @Override
     public String getDrugPicked() {
-        return mPrefs.getString(PREF_KEY_DRUG_PICKED,null);
+        return mPrefs.getString(PREF_KEY_DRUG_PICKED,"");
     }
 
     @Override
@@ -220,5 +222,25 @@ public class AppPreferencesHelper implements PreferencesHelper{
     @Override
     public void setUserAge(int age) {
         mPrefs.edit().putInt(PREF_KEY_USER_AGE, age).apply();
+    }
+
+    @Override
+    public boolean isFirstRun() {
+        return mPrefs.getBoolean(PREF_KEY_IS_FIRST_RUN, true);
+    }
+
+    @Override
+    public void setFirstRun(boolean val) {
+        mPrefs.edit().putBoolean(PREF_KEY_IS_FIRST_RUN, val).apply();
+    }
+
+    @Override
+    public boolean isDrugTaken() {
+        return mPrefs.getBoolean(PREF_KEY_IS_DRUG_TAKEN, false);
+    }
+
+    @Override
+    public void setDrugTaken(boolean value) {
+        mPrefs.edit().putBoolean(PREF_KEY_IS_DRUG_TAKEN, value).apply();
     }
 }

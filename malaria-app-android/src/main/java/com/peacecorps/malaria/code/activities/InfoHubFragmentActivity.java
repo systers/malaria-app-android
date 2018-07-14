@@ -12,7 +12,8 @@ import android.widget.TextView;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.code.model.SharedPreferenceStore;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
-import com.peacecorps.malaria.ui.user_medicine_setting.UserMedicineSettingsFragmentActivity;
+import com.peacecorps.malaria.ui.home_screen.MainActivity;
+import com.peacecorps.malaria.ui.user_medicine_setting.MedicineSettingsActivity;
 
 /**
  * Created by Chimdi on 7/18/14.
@@ -66,13 +67,13 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 finish();
             }
         });
-        userProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplication().getApplicationContext(),UserProfile.class));
-                finish();
-            }
-        });
+//        userProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplication().getApplicationContext(),UserProfile.class));
+//                finish();
+//            }
+//        });
 
         /**Setting fonts**/
         Typeface cf = Typeface.createFromAsset(getAssets(),"fonts/garreg.ttf");
@@ -191,7 +192,7 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                     sqLite.resetDatabase();
                     mSharedPreferenceStore.mEditor.clear().commit();
                     startActivity(new Intent(getApplication().getApplicationContext(),
-                            UserMedicineSettingsFragmentActivity.class));
+                            MedicineSettingsActivity.class));
 
                 } else {
                     dialog.dismiss();
@@ -200,7 +201,7 @@ public class InfoHubFragmentActivity extends FragmentActivity {
                 sqLite.resetDatabase();
                 mSharedPreferenceStore.mEditor.clear().commit();
                 startActivity(new Intent(getApplication().getApplicationContext(),
-                        UserMedicineSettingsFragmentActivity.class));
+                        MedicineSettingsActivity.class));
             }
         });
 

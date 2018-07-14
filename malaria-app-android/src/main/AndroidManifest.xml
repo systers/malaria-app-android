@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.peacecorps.malaria"
-    android:installLocation="internalOnly"
-    android:versionCode="1"
-    android:versionName="1.0" >
-
-    <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="19" />
+    android:installLocation="internalOnly">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -22,8 +16,9 @@
         android:allowBackup="true"
         android:icon="@drawable/appicon_themed"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.AppCompat.Light"
         android:name=".utils.VolleyApplication">
+        <!--Todo changed theme from AppTheme to Theme.Appcompat.Light, check error issues, not able to resolve-->
         <service android:name=".services.AlarmService" >
         </service>
 
@@ -55,7 +50,7 @@
         </receiver>
 
         <activity
-            android:name=".ui.user_medicine_setting.UserMedicineSettingsFragmentActivity"
+            android:name=".ui.user_medicine_setting.MedicineSettingsActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,7 +59,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".code.activities.MainActivity"
+            android:name=".ui.home_screen.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
@@ -96,8 +91,6 @@
         <activity android:name=".code.activities.RapidFireGame"/>
         <activity android:name=".code.activities.MedicineStore"/>
         <activity android:name=".code.activities.NewHomeActivity"/>
-        <activity android:name=".code.activities.UserProfile"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity android:name=".code.activities.TripIndicatorFragmentActivity"
                   android:launchMode="singleTask"
                   />

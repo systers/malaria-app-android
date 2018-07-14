@@ -1,6 +1,7 @@
 package com.peacecorps.malaria.data;
 
 import com.peacecorps.malaria.data.db.DbHelper;
+import com.peacecorps.malaria.data.db.entities.AlarmTime;
 import com.peacecorps.malaria.data.prefs.PreferencesHelper;
 
 import java.util.Date;
@@ -115,6 +116,16 @@ public class AppDataManager implements DataManager {
     @Override
     public void getCountTakenBetween(Date s, Date e, LoadIntegerCallback callback) {
         dbHelper.getCountTakenBetween(s,e,callback);
+    }
+
+    @Override
+    public void getAlarmData(LoadAlarmDataCallback callback) {
+        dbHelper.getAlarmData(callback);
+    }
+
+    @Override
+    public void insertAlarmData(AlarmTime time) {
+        dbHelper.insertAlarmData(time);
     }
 
     @Override
@@ -305,5 +316,25 @@ public class AppDataManager implements DataManager {
     @Override
     public void setUserAge(int age) {
         preferencesHelper.setUserAge(age);
+    }
+
+    @Override
+    public boolean isFirstRun() {
+        return preferencesHelper.isFirstRun();
+    }
+
+    @Override
+    public void setFirstRun(boolean val) {
+        preferencesHelper.setFirstRun(val);
+    }
+
+    @Override
+    public boolean isDrugTaken() {
+        return preferencesHelper.isDrugTaken();
+    }
+
+    @Override
+    public void setDrugTaken(boolean value) {
+        preferencesHelper.setDrugTaken(value);
     }
 }

@@ -39,4 +39,9 @@ public interface PreferencesHelper {
     void setUserName(String name);
     void setUserEmail(String email);
     void setUserAge(int age);
+    boolean isFirstRun();
+    void setFirstRun(boolean val);
+    boolean isDrugTaken();
+    void setDrugTaken(boolean value);
+
 }

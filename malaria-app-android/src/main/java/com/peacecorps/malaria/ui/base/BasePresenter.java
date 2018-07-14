@@ -1,16 +1,26 @@
 package com.peacecorps.malaria.ui.base;
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
 import android.content.Context;
 
-public abstract class BasePresenter <V extends MvpView> implements MvpPresenter<V>  {
+import com.peacecorps.malaria.data.AppDataManager;
+
+/**
+ * Base class that implements the Presenter interface and provides a base implementation for
+ * onAttach() and onDetach(). It also handles keeping a reference to the mvpView that
+ * can be accessed from the children classes by calling getMvpView().
+ */
+
+
+public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
     private Context context;
     private V mvpView;
+    private AppDataManager manager;
 
-    public BasePresenter(Context context) {
+    public BasePresenter(AppDataManager manager, Context context) {
         this.context = context;
+        this.manager = manager;
     }
+
 
     @Override
     public void attachView(V view) {
@@ -22,13 +32,36 @@ public abstract class BasePresenter <V extends MvpView> implements MvpPresenter<
         mvpView = null;
     }
 
-    @Override
+    /*
+     * method to check if the view is attached or not
+     *
+     * @return true if attached
+     */
+    boolean isViewAttached() {
+        return mvpView != null;
+    }
+
     public V getView() {
         return mvpView;
     }
 
-    @Override
-    public boolean isViewAttached() {
-        return mvpView != null;
+    public AppDataManager getDataManager() {
+        return manager;
     }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void checkViewAttached() {
+        if (!isViewAttached()) throw new MvpViewNotAttachedException();
+    }
+
+    public static class MvpViewNotAttachedException extends RuntimeException {
+        public MvpViewNotAttachedException() {
+            super("Please call Presenter.onAttach(MvpView) before" +
+                    " requesting data to the Presenter");
+        }
+    }
+
 }

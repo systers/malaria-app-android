@@ -21,7 +21,7 @@ import android.widget.TextView;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.code.activities.RemainderToneActivity;
 import com.peacecorps.malaria.code.model.SharedPreferenceStore;
-import com.peacecorps.malaria.ui.user_medicine_setting.UserMedicineSettingsFragmentActivity;
+import com.peacecorps.malaria.ui.user_medicine_setting.MedicineSettingsActivity;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.services.AlarmService;
 import com.peacecorps.malaria.utils.CalendarFunction;
@@ -504,7 +504,7 @@ public class HomeScreenFragment extends Fragment {
                     mSharedPreferenceStore.mEditor.clear().commit();
                     SharedPreferenceStore.mEditor.clear().commit();
                     startActivity(new Intent(getActivity(),
-                            UserMedicineSettingsFragmentActivity.class));
+                            MedicineSettingsActivity.class));
                     getActivity().finish();
                 }
                 else
@@ -516,7 +516,7 @@ public class HomeScreenFragment extends Fragment {
                 mSharedPreferenceStore.mEditor.clear().commit();
                 SharedPreferenceStore.mEditor.clear().commit();
                 startActivity(new Intent(getActivity(),
-                        UserMedicineSettingsFragmentActivity.class));
+                        MedicineSettingsActivity.class));
                 getActivity().finish();
 
             }

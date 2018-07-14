@@ -13,7 +13,7 @@ public class InjectionClass {
     private static AppDbHelper provideSqliteHelper(Context context) {
         AppDatabase database = AppDatabase.getAppDatabase(context);
         return AppDbHelper.getInstance(new AppExecutors(), database.appSettingDao(), database.locationDao(), database.packingDao(),
-                database.userMedicineDao());
+                database.userMedicineDao(), database.alarmDao());
     }
 
     public static AppDataManager provideDataManager(Context context) {
