@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.ui.play.badge_screen;
+package com.peacecorps.malaria.ui.user_profile.badge_screen;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -6,8 +6,8 @@ import android.graphics.drawable.Drawable;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.data.AppDataManager;
 import com.peacecorps.malaria.ui.base.BasePresenter;
-import com.peacecorps.malaria.ui.play.badge_screen.BadgeScreenContract.BadgeMvpPresenter;
-import com.peacecorps.malaria.ui.play.badge_screen.BadgeScreenContract.BadgeMvpView;
+import com.peacecorps.malaria.ui.user_profile.badge_screen.BadgeScreenContract.BadgeMvpPresenter;
+import com.peacecorps.malaria.ui.user_profile.badge_screen.BadgeScreenContract.BadgeMvpView;
 
 /**
  * Created by Anamika Tripathi on 24/7/18.

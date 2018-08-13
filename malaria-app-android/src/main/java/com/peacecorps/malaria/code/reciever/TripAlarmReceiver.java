@@ -15,7 +15,7 @@ import android.os.PowerManager;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 
-import com.peacecorps.malaria.services.TripAlarmService;
+import com.peacecorps.malaria.code.reciever.services.TripAlarmService;
 
 /**
  * On receiving the calarm call from Alarm Service,

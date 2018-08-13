@@ -24,7 +24,7 @@ public class RapidFirePresenter<V extends RapidFireMvpView> extends BasePresente
     // preparing question, answer in beginning of test.
     @Override
     public void prepareQuestionList(int num) {
-        questionList=new ArrayList<QuestionModel>();
+        questionList= new ArrayList<>();
         //adding questions
         questionList.add(new QuestionModel("Melfoquine should be taken ", "Daily", "Weekly", "Monthly", 2));
         questionList.add(new QuestionModel("Malaria is caused by ", "Virus", "Bacteria", "Protozoa",3));
@@ -60,5 +60,14 @@ public class RapidFirePresenter<V extends RapidFireMvpView> extends BasePresente
     public void updateGameScore(int currPoints) {
         int oldPoints = getDataManager().getGameScore();
         getDataManager().setGameScore(oldPoints + currPoints);
+    }
+
+    @Override
+    public void checkFirstTime() {
+        if(!getDataManager().checkRapidFireTarget()) {
+            getView().playTapTargetViewer();
+        } else {
+            prepareQuestionList(0);
+        }
     }
 }

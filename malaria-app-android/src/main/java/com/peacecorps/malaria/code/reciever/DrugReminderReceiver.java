@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import com.peacecorps.malaria.code.model.SharedPreferenceStore;
-import com.peacecorps.malaria.services.AlarmService;
+import com.peacecorps.malaria.notifications.service.AlarmService;
 import com.peacecorps.malaria.utils.CalendarFunction;
 
 import java.util.Calendar;
@@ -23,14 +23,13 @@ import java.util.Date;
 public class DrugReminderReceiver extends BroadcastReceiver {
     static SharedPreferenceStore mSharedPreferenceStore;
     private static int mDrugAcceptedCount;
-    private NotificationManager alarmNotificationManager;
     private static int mDrugRejectedCount;
     private int flag;
     String TAG = getClass().getName();
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        alarmNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager alarmNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         switch (intent.getAction()) {
             case "0":
                 //not taken
@@ -68,14 +67,18 @@ public class DrugReminderReceiver extends BroadcastReceiver {
                 saveUsersettings(context,true, false);
                 /**Marked as Not Taken. No reminders now,it ll be for next time now.**/
                 DatabaseSQLiteHelper databaseSQLiteHelper = new DatabaseSQLiteHelper(context);
-                databaseSQLiteHelper.getUserMedicationSelection(context, "weekly", Calendar.getInstance().getTime(), "no", computeAdherenceRate(context));
+                databaseSQLiteHelper.getUserMedicationSelection(context, "weekly",
+                        Calendar.getInstance().getTime(),
+                        "no", computeAdherenceRate(context));
                 changeWeeklyAlarmTime(context);
 
             } else {
                 if (checkDrugTakenTimeInterval("dateDrugTaken",context) > 0) {
                     saveUsersettings(context,false, false);
                     DatabaseSQLiteHelper databaseSQLiteHelper = new DatabaseSQLiteHelper(context);
-                    databaseSQLiteHelper.getUserMedicationSelection(context, "daily", Calendar.getInstance().getTime(), "no", computeAdherenceRate(context));
+                    databaseSQLiteHelper.getUserMedicationSelection(context, "daily",
+                            Calendar.getInstance().getTime(),
+                            "no", computeAdherenceRate(context));
 
                 }
             }
@@ -110,6 +113,7 @@ public class DrugReminderReceiver extends BroadcastReceiver {
         int d = c.get(Calendar.DATE);
         int m = c.get(Calendar.MONTH);
         int y = c.get(Calendar.YEAR);
+
         DatabaseSQLiteHelper sqLite = new DatabaseSQLiteHelper(context);
         if (sqLite.getStatus(d, m, y).equalsIgnoreCase("yes") == true) {
             flag = 1;
@@ -190,7 +194,8 @@ public class DrugReminderReceiver extends BroadcastReceiver {
                 /**Updates the date when weekly drug was taken and set the alarm for nex weekly Date**/
                 saveUsersettings(context,true, true);
                 DatabaseSQLiteHelper databaseSQLiteHelper = new DatabaseSQLiteHelper(context);
-                databaseSQLiteHelper.getUserMedicationSelection(context, "weekly", Calendar.getInstance().getTime(), "yes", computeAdherenceRate(context));
+                databaseSQLiteHelper.getUserMedicationSelection(context, "weekly", Calendar.getInstance().getTime(),
+                        "yes", computeAdherenceRate(context));
                 changeWeeklyAlarmTime(context);
 
             } else {
@@ -198,7 +203,8 @@ public class DrugReminderReceiver extends BroadcastReceiver {
                 if (checkDrugTakenTimeInterval("dateDrugTaken", context) > 0) {
                     saveUsersettings(context,true, false);
                     DatabaseSQLiteHelper databaseSQLiteHelper = new DatabaseSQLiteHelper(context);
-                    databaseSQLiteHelper.getUserMedicationSelection(context, "daily", Calendar.getInstance().getTime(), "yes", computeAdherenceRate(context));
+                    databaseSQLiteHelper.getUserMedicationSelection(context, "daily", Calendar.getInstance().getTime(),
+                            "yes", computeAdherenceRate(context));
 
                 }
             }

@@ -59,8 +59,8 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public void getStatus(int date, int month, int year, LoadStringCallback callback) {
-        dbHelper.getStatus(date, month, year, callback);
+    public void getDailyStatus(int date, int month, int year, LoadStringCallback callback) {
+        dbHelper.getDailyStatus(date, month, year, callback);
     }
 
     @Override
@@ -284,26 +284,6 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public boolean getMythFactGame() {
-        return preferencesHelper.getMythFactGame();
-    }
-
-    @Override
-    public void setMythFactGame(boolean val) {
-        preferencesHelper.setMythFactGame(val);
-    }
-
-    @Override
-    public boolean getRapidFireGame() {
-        return preferencesHelper.getRapidFireGame();
-    }
-
-    @Override
-    public void setRapidFireGame(boolean val) {
-        preferencesHelper.setRapidFireGame(val);
-    }
-
-    @Override
     public String getToneUri() {
         return preferencesHelper.getToneUri();
     }
@@ -451,5 +431,25 @@ public class AppDataManager implements DataManager {
     @Override
     public void setDrugRejectedCount(int value) {
         preferencesHelper.setDrugRejectedCount(value);
+    }
+
+    @Override
+    public boolean checkRapidFireTarget() {
+        return preferencesHelper.checkRapidFireTarget();
+    }
+
+    @Override
+    public void setRapidFireTarget(boolean value) {
+        preferencesHelper.setRapidFireTarget(value);
+    }
+
+    @Override
+    public boolean checkMythFactTarget() {
+        return preferencesHelper.checkMythFactTarget();
+    }
+
+    @Override
+    public void setMythFactTarget(boolean value) {
+        preferencesHelper.setMythFactTarget(value);
     }
 }

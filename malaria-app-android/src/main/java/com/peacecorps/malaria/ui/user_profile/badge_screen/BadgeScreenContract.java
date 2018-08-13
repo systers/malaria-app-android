@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.ui.play.badge_screen;
+package com.peacecorps.malaria.ui.user_profile.badge_screen;
 
 import android.graphics.drawable.Drawable;
 

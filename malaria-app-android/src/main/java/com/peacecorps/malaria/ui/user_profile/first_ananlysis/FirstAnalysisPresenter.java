@@ -8,8 +8,8 @@ import com.peacecorps.malaria.ui.base.BasePresenter;
 import com.peacecorps.malaria.ui.user_profile.first_ananlysis.FirstAnalysisContract.FirstAnalysisMvpPresenter;
 import com.peacecorps.malaria.ui.user_profile.first_ananlysis.FirstAnalysisContract.FirstAnalysisMvpView;
 import com.peacecorps.malaria.utils.CalendarFunction;
-import com.peacecorps.malaria.utils.ToastLogSnackBarUtil;
 
+import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -95,7 +95,6 @@ public class FirstAnalysisPresenter<V extends FirstAnalysisMvpView> extends Base
                 } else {
                     interval = 1;
                 }
-
                 getDataManager().getMedicineCountTaken(new DbHelper.LoadIntegerCallback() {
                     @Override
                     public void onDataLoaded(int count) {
@@ -105,8 +104,7 @@ public class FirstAnalysisPresenter<V extends FirstAnalysisMvpView> extends Base
                         } else {
                             adherence = 100;
                         }
-                        ToastLogSnackBarUtil.showDebugLog("FirstAnaPresenter/getAdherenceData: " + interval + " " + adherence);
-                        String adherenceText = String.valueOf(adherence);
+                        String adherenceText = String.valueOf((new DecimalFormat("#.##").format(adherence)));
                         getView().setAdherenceRate(adherenceText);
                     }
                 });

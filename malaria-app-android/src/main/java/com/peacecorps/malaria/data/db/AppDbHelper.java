@@ -91,10 +91,17 @@ public class AppDbHelper implements DbHelper {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         String ts;
-        if ((cal.get(Calendar.DATE)) >= 10) {
-            ts = "" + cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DATE);
+        int month = cal.get(Calendar.MONTH) + 1 ;
+        String monthStr;
+        if ((cal.get(Calendar.MONTH)) < 10) {
+            monthStr = "0" + month;
         } else {
-            ts = "" + cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-0" + cal.get(Calendar.DATE);
+            monthStr = "" + month;
+        }
+        if ((cal.get(Calendar.DATE)) >= 10) {
+            ts = "" + cal.get(Calendar.YEAR) + "/" + monthStr + "/" + cal.get(Calendar.DATE);
+        } else {
+            ts = "" + cal.get(Calendar.YEAR) + "/" + monthStr + "/0" + cal.get(Calendar.DATE);
         }
         final UserMedicine userMedicine = new UserMedicine(drug, choice, cal.get(Calendar.MONTH), cal.get(Calendar.YEAR), cal.get(Calendar.DATE), status, percentage, ts);
         Runnable medicineRunnable = new Runnable() {
@@ -279,11 +286,11 @@ public class AppDbHelper implements DbHelper {
      * Usages in Day Fragment Activity for getting the previous status of day before updating it as not taken.
      **/
     @Override
-    public void getStatus(final int date, final int month, final int year, final LoadStringCallback callback) {
+    public void getDailyStatus(final int date, final int month, final int year, final LoadStringCallback callback) {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                final String status = userMedicineDao.getStatus(date, month, year);
+                final String status = userMedicineDao.getDailyStatus(date, month, year);
                 appExecutors.mainThread().execute(new Runnable() {
                     @Override
                     public void run() {

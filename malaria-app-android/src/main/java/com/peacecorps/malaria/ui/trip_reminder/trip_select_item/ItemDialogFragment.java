@@ -120,7 +120,7 @@ public class ItemDialogFragment extends DialogFragment implements ItemDialogMvpV
         presenter = new ItemDialogPresenter<>(InjectionClass.provideDataManager(context), context);
         presenter.attachView(this);
 
-        if(presenter.isViewAttached()) {
+        if (presenter.isViewAttached()) {
             init(view);
         } else {
             ToastLogSnackBarUtil.showErrorLog("ItemDialogFragment: View not attached");

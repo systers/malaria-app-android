@@ -14,8 +14,6 @@ public class AppPreferencesHelper implements PreferencesHelper{
     private static final String PREF_KEY_DRUG_REJECTED_COUNT = "com.peacecorps.malaria.isRejected";
     private static final String PREF_KEY_MEDICINE_STORE = "MEDICINE_STORE";
     private static final String PREF_KEY_MEDICINE_LAST_TAKEN_TIME = "check_medicine_last_taken_time";
-    private static final String PREF_KEY_MYTH_FACT_GAME = "myth_fact_game";
-    private static final String PREF_KEY_RAPID_FIRE_GAME= "rapid_fire_game";
     private static final String PREF_KEY_TONE_URI = "TONE_URI";
     private static final String PREF_KEY_TRIP_DATE = "com_peacecorps_malaria_trip_date";
     private static final String PREF_KEY_TRIP_LOCATION = "TRIP_LOCATION";
@@ -35,6 +33,8 @@ public class AppPreferencesHelper implements PreferencesHelper{
     private static final String PREF_KEY_IS_DAILY_DRUG_TAKEN = "com.peacecorps.malaria.isDailyDrugTaken";
     private static final String PREF_KEY_DAILY_DRUG_DATE = "com_peacecorps_malaria_date_drug_taken";
     private static final String PREF_KEY_IS_DRUG_TAKEN = "com_peacecorps_malaria_is_drug_taken";
+    private static final String PREF_KEY_RAPID_FIRE_TARGET = "rapid_fire_game";
+    private static final String PREF_KEY_MYTH_FACT_TARGET = "myth_fact_game";
 
 
 
@@ -164,29 +164,8 @@ public class AppPreferencesHelper implements PreferencesHelper{
     }
 
     @Override
-    public boolean getMythFactGame() {
-        return mPrefs.getBoolean(PREF_KEY_MYTH_FACT_GAME, true);
-    }
-
-    @Override
-    public void setMythFactGame(boolean val) {
-        mPrefs.edit().putBoolean(PREF_KEY_MYTH_FACT_GAME, val).apply();
-    }
-
-    @Override
-    public boolean getRapidFireGame() {
-        return mPrefs.getBoolean(PREF_KEY_RAPID_FIRE_GAME, true);
-    }
-
-    @Override
-    public void setRapidFireGame(boolean val) {
-        mPrefs.edit().putBoolean(PREF_KEY_RAPID_FIRE_GAME, val).apply();
-    }
-
-    //Todo check default value once again
-    @Override
     public String getToneUri() {
-        return mPrefs.getString(PREF_KEY_TONE_URI, null);
+        return mPrefs.getString(PREF_KEY_TONE_URI, "");
     }
 
     @Override
@@ -332,5 +311,25 @@ public class AppPreferencesHelper implements PreferencesHelper{
     @Override
     public void setDrugRejectedCount(int value) {
         mPrefs.edit().putInt(PREF_KEY_DRUG_REJECTED_COUNT, value).apply();
+    }
+
+    @Override
+    public boolean checkRapidFireTarget() {
+        return mPrefs.getBoolean(PREF_KEY_RAPID_FIRE_TARGET, false);
+    }
+
+    @Override
+    public void setRapidFireTarget(boolean value) {
+        mPrefs.edit().putBoolean(PREF_KEY_RAPID_FIRE_TARGET, value).apply();
+    }
+
+    @Override
+    public boolean checkMythFactTarget() {
+        return mPrefs.getBoolean(PREF_KEY_MYTH_FACT_TARGET, false);
+    }
+
+    @Override
+    public void setMythFactTarget(boolean value) {
+        mPrefs.edit().putBoolean(PREF_KEY_MYTH_FACT_TARGET, value).apply();
     }
 }

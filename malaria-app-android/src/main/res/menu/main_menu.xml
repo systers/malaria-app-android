@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btn_menu_store"
+        android:icon="@drawable/action_medicine_store"
+        android:title="@string/label_medicine_store"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/btn_menu_reset"
         android:icon="@drawable/btn_reset"
         android:title="@string/reset"
         android:orderInCategory="2"
         app:showAsAction="ifRoom" />
+
+
 </menu>

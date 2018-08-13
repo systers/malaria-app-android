@@ -20,7 +20,7 @@ import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.ui.base.BaseFragment;
 import com.peacecorps.malaria.ui.user_profile.first_ananlysis.FirstAnalysisFragment;
 import com.peacecorps.malaria.ui.user_profile.second_analysis.SecondAnalysisFragment;
-import com.peacecorps.malaria.ui.play.badge_screen.BadgeScreenFragment;
+import com.peacecorps.malaria.ui.user_profile.badge_screen.BadgeScreenFragment;
 import com.peacecorps.malaria.ui.user_profile.edit_profile.EditProfileActivity;
 
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class ProfileFragment extends BaseFragment {
         ViewPager viewPager = view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         // Set Tabs inside Toolbar
-        TabLayout tabs = (TabLayout) view.findViewById(R.id.result_tabs);
+        TabLayout tabs = view.findViewById(R.id.result_tabs);
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
         tabs.setupWithViewPager(viewPager);
         return view;

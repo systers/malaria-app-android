@@ -58,6 +58,22 @@
         -> For every correct answer, a point is awarded.\n
         -> Click \"Next\" to go to next question, and \"Exit\" to exit the game.\n
     </string>
+    <string name="help_rapid_fire_question_title">Every question is given with 3 options</string>
+    <string name="help_rapid_fire_question_description">Read the question carefully, and quickly select one of the 3 options.</string>
+    <string name="help_rapid_fire_score_title">For every correct option, a point is awarded</string>
+    <string name="help_rapid_fire_timer_title">Timer shows seconds left for each question</string>
+    <string name="help_rapid_fire_timer_description">The questions have to be answered under 5 seconds.</string>
+    <string name="help_rapid_fire_exit_title">Exit the game by clicking here</string>
+
+    <string name="help_myth_fact_question_title">Read the statement carefully</string>
+    <string name="help_myth_fact_chest_title">If it is a fact, drag it to the chest</string>
+    <string name="help_myth_fact_bin_title">If it is a myth, drag it to the trash bin</string>
+    <string name="help_myth_fact_question_description">Decide whether it is a myth or a fact.</string>
+    <string name="help_myth_fact_score_title">For every correct option, a point is awarded</string>
+    <string name="help_myth_fact_exit_title">Exit the game by clicking here</string>
+    <string name="help_myth_fact_next_title">Click \"Next\" to go to next question</string>
+    <string name="help_myth_fact_next_description">For every question, it is disabled. You can not skip a question.</string>
+
     <string name="departuredate_currentdate">"Departure date cannot be less than current date"</string>
     <string name="arrivaldate_departuredate">"Arrival date cannot be before the Departure date"</string>
 
@@ -157,7 +173,7 @@
     <string name="hint_user_age">Age in years</string>
     <string name="hint_email_address">Enter Your Email Address</string>
     <string name="hint_user_name">Enter Your Name</string>
-    <string name="reset">reset</string>
+    <string name="reset">Reset</string>
     <string name="hint_eg_7">Eg 7</string>
 
 
@@ -211,7 +227,7 @@
     <string name="label_drug">Drug:</string>
     <string name="label_triple_dots">...</string>
     <string name="label_taken">Taken:</string>
-    <string name="label_dd_mm">15/07</string>
+    <string name="label_dd_mm">11/08</string>
     <string name="hint_trip_arrival_date">Arrival Date (DD/MM/YYYY)</string>
     <string name="hint_trip_select_items">Select Items</string>
     <string name="hint_trip_reminder">Reminder (Hour/Minutes)</string>
@@ -222,7 +238,7 @@
     <string name="description_help_game">This text will get replaced automatically in the NewHomeActivity.</string>
     <string name="label_store_no_of_days">7 Days</string>
     <string name="heading_peace_corps_policy">Peace Corps Policy</string>
-    <string name="description_rapid_fire_question">Question Here</string>
+    <string name="description_rapid_fire_question">Melfoquine should be taken</string>
     <string name="description_rapid_fire_answer">Option here</string>
     <string name="heading_set_reminder_tone">SET REMINDER TONE</string>
     <string name="hint_specify_file_path">Specify file path</string>

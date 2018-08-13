@@ -2,9 +2,11 @@ package com.peacecorps.malaria.ui.home_screen;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 
 import com.peacecorps.malaria.data.AppDataManager;
 import com.peacecorps.malaria.data.db.DbHelper;
+import com.peacecorps.malaria.notifications.service.AlarmService;
 import com.peacecorps.malaria.ui.base.BasePresenter;
 import com.peacecorps.malaria.ui.home_screen.HomeContract.HomeMvpView;
 import com.peacecorps.malaria.utils.CalendarFunction;
@@ -34,7 +36,6 @@ public class HomePresenter<V extends HomeMvpView> extends BasePresenter<V> imple
         String dayOfTheWeek = sdf.format(d);
         String date = new SimpleDateFormat("dd/MM/yyyy",
                 Locale.getDefault()).format(d);
-        ToastLogSnackBarUtil.showDebugLog(dayOfTheWeek + " " + date);
         getView().setCurrentDayAndDate(date, dayOfTheWeek);
     }
 
@@ -194,7 +195,6 @@ public class HomePresenter<V extends HomeMvpView> extends BasePresenter<V> imple
                 if (value != 0) {
                     ToastLogSnackBarUtil.showDebugLog("First Run Time at FAF->" + value);
                     Calendar cal = Calendar.getInstance();
-                    //Todo this line might not be required as Datamanger is already setting in mili and return in value
                     cal.setTimeInMillis(value);
                     cal.add(Calendar.MONTH, 1);
 
@@ -239,7 +239,7 @@ public class HomePresenter<V extends HomeMvpView> extends BasePresenter<V> imple
 
     /**
      * @param interval : interval between drug taken time
-     *  desc : calculates adherence rate & calls updateUserMedicineSelection
+     *                 desc : calculates adherence rate & calls updateUserMedicineSelection
      */
     private void computeAdherenceRate(final long interval, final boolean isAcceptButton) {
         getDataManager().getMedicineCountTaken(new DbHelper.LoadIntegerCallback() {
@@ -291,7 +291,6 @@ public class HomePresenter<V extends HomeMvpView> extends BasePresenter<V> imple
         getDataManager().setMedicineLastTakenTime(lastMedicationCheckedTime);
     }
 
-
     /**
      * @param isTaken  : determines if it is taken or not/depends on accept or reject button
      * @param isWeekly : determines if drug is weekly or daily
@@ -312,11 +311,13 @@ public class HomePresenter<V extends HomeMvpView> extends BasePresenter<V> imple
         getDataManager().setDrugAcceptedCount(count + 1);
     }
 
-
     private void changeWeeklyAlarmTime() {
         int hour = Calendar.getInstance().get(Calendar.HOUR);
         int minute = Calendar.getInstance().get(Calendar.MINUTE) - 1;
 
+        if (getContext() != null) {
+            getContext().startService(new Intent(getContext(), AlarmService.class));
+        }
         getView().startAlarmServiceClass();
         getDataManager().updateAlarmTime(hour, minute);
     }

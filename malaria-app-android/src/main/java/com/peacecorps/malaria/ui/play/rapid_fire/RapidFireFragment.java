@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.ui.base.BaseFragment;
 import com.peacecorps.malaria.ui.play.rapid_fire.RapidFireContract.RapidFireMvpView;
@@ -48,6 +50,8 @@ public class RapidFireFragment extends BaseFragment implements RapidFireMvpView 
     // timer textView
     @BindView(R.id.tv_timers)
     TextView timerView;
+    @BindView(R.id.btn_rapid_fire_exit)
+    Button exitButton;
 
     private RapidFirePresenter<RapidFireFragment> presenter;
     private Context context;
@@ -83,16 +87,10 @@ public class RapidFireFragment extends BaseFragment implements RapidFireMvpView 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         init();
-        if (savedInstanceState != null) {
-            // saved values from orientation changes
-            restoreFromInstanceState(savedInstanceState);
-        } else {
-            init();
-        }
         setGameScore();
         //displays the time left for the next question
         updateTimer(millisLeft / 1000);
-        presenter.prepareQuestionList(quesNo);
+        //presenter.prepareQuestionList(quesNo);
     }
 
     // option one for game listener
@@ -187,23 +185,11 @@ public class RapidFireFragment extends BaseFragment implements RapidFireMvpView 
         AlertDialog dialog = builder.create();
         // display dialog
         dialog.show();
-
-        //Todo check do keep works or not
-        //  doKeepDialog(alertDialog);
     }
 
     // sets score value by appending to the string
     private void setGameScore() {
         totalScore.setText(getString(R.string.label_rapid_fire_total_score, gameScore));
-    }
-
-    // in case the game is coming from saved instance, below parameters are changed to saved values
-    private void restoreFromInstanceState(Bundle savedInstanceState) {
-        if (savedInstanceState != null) {
-            millisLeft = savedInstanceState.getLong(COUNTER_MILLIS_LEFT);
-            gameScore = savedInstanceState.getInt(GAME_SCORE);
-            quesNo = savedInstanceState.getInt(QUES_NO);
-        }
     }
 
     @Override
@@ -212,6 +198,8 @@ public class RapidFireFragment extends BaseFragment implements RapidFireMvpView 
         quesNo = 0;
         gameScore = 0;
         millisLeft = 6000;
+
+        presenter.checkFirstTime();
 
     }
 
@@ -304,21 +292,8 @@ public class RapidFireFragment extends BaseFragment implements RapidFireMvpView 
         AlertDialog dialog = builder.create();
         // display dialog
         dialog.show();
-//        doKeepDialog(alertDialog);
     }
 
-// --Commented out App crashes here:
-//    // attaches the dialog with WindowManager to avoid cancelling on orientation change
-//    private static void doKeepDialog(Dialog dialog) {
-//        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-//        if (dialog.getWindow() != null) {
-//            lp.copyFrom(dialog.getWindow().getAttributes());
-//            lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
-//            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-//            dialog.getWindow().setAttributes(lp);
-//        }
-//    }
-// --Commented out App crashes here
 
     // saving value in case of orientation changes
     @Override
@@ -380,4 +355,74 @@ public class RapidFireFragment extends BaseFragment implements RapidFireMvpView 
             }
         }
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        counter.cancel();
+    }
+
+    @Override
+    public void playTapTargetViewer() {
+        new TapTargetSequence(getActivity())
+                .continueOnCancel(true)
+                .targets(
+                        TapTarget.forView(tvQuestion, getString(R.string.help_rapid_fire_question_title),
+                                getString(R.string.help_rapid_fire_question_description))
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .targetRadius(60)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(totalScore, getString(R.string.help_rapid_fire_score_title),
+                                "")
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(timerView, getString(R.string.help_rapid_fire_timer_title),
+                                getString(R.string.help_rapid_fire_timer_description))
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(exitButton, getString(R.string.help_rapid_fire_exit_title),
+                                "")
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3)
+
+                )
+                .listener(new TapTargetSequence.Listener() {
+                    @Override
+                    public void onSequenceFinish() {
+                        presenter.getDataManager().setRapidFireTarget(true);
+                        presenter.prepareQuestionList(quesNo);
+                    }
+
+                    @Override
+                    public void onSequenceStep(TapTarget lastTarget, boolean targetClicked) {
+                        // no need currently, compulsory overridden method
+                    }
+
+                    @Override
+                    public void onSequenceCanceled(TapTarget lastTarget) {
+                        // no need currently, compulsory overridden method
+                    }
+                }).start();
+    }
+
+
 }

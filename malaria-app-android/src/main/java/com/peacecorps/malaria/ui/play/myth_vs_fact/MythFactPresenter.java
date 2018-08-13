@@ -21,4 +21,11 @@ public class MythFactPresenter<V extends MythFactMvpView> extends BasePresenter<
         int oldPoints = getDataManager().getGameScore();
         getDataManager().setGameScore(oldPoints + currPoints);
     }
+
+    @Override
+    public void checkFirstTime() {
+        if(!getDataManager().checkMythFactTarget()) {
+            getView().playTapTargetViewer();
+        }
+    }
 }

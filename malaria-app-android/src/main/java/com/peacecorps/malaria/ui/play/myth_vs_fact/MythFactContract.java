@@ -8,10 +8,11 @@ import com.peacecorps.malaria.ui.base.MvpView;
  */
 public interface MythFactContract {
     interface MythFactMvpView extends MvpView {
-
+        void playTapTargetViewer();
     }
 
     interface MythFactMvpPresenter <V extends MythFactMvpView> extends MvpPresenter<V> {
         void updateGameScore(int currPoints);
+        void checkFirstTime();
     }
 }

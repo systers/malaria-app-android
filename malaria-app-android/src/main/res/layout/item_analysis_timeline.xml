@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.vipulasri.timelineview.TimelineView
+        android:id="@+id/time_marker"
+        android:layout_width="@dimen/width_40dp"
+        android:layout_height="match_parent"
+        app:markerSize="20dp"
+        app:marker="@drawable/timeline_marker"
+        app:lineSize="2dp"
+        app:linePadding="5dp"
+        app:line="@color/colorPrimary"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_timeline"
+        android:layout_width="280dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        android:layout_height="@dimen/margin_80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_gravity="center_vertical"
+        app:cardElevation="1dp"
+        android:foreground="?android:selectableItemBackground"
+        android:clickable="true"
+        app:contentPadding="8dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50dp"
+            android:paddingTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/width_150dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_10dp"
+                android:textSize="@dimen/size_24dp"
+                android:layout_gravity="left"
+                android:id="@+id/text_timeline_title"
+                android:textStyle="bold"
+                android:textColor="@color/textColorPrimary"
+                android:text="first title" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_20dp"
+                android:paddingTop="@dimen/padding_10dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/textColorPrimary"
+                android:gravity="end"
+                android:id="@+id/text_timeline_description"
+                android:text="first subtitle" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

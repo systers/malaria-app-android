@@ -10,7 +10,9 @@ import com.peacecorps.malaria.ui.base.BasePresenter;
 import com.peacecorps.malaria.ui.user_profile.second_analysis.SecondAnalysisContract.SecondAnalysisMvpPresenter;
 import com.peacecorps.malaria.ui.user_profile.second_analysis.SecondAnalysisContract.SecondAnalysisMvpView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Anamika Tripathi on 7/8/18.
@@ -20,9 +22,14 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
     private int mYear;
     private final int[] daysOfMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30,
             31, 30, 31};
+    private String[] monthList;
+
+    private List<AnalysisModel> dataList;
 
     SecondAnalysisPresenter(AppDataManager manager, Context context) {
         super(manager, context);
+        dataList = new ArrayList<>();
+        monthList = getContext().getResources().getStringArray(R.array.array_month);
     }
 
     @Override
@@ -33,7 +40,6 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
             public void onDataLoaded(AlarmTime time) {
                 final int setUpMonth = time.getMonth();
                 final int setUpYear = time.getYear();
-
                 getAnalysisData(setUpMonth, setUpYear);
             }
         });
@@ -49,13 +55,12 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
         } else {
             choice = "daily";
         }
-        firstMonthData(setUpMonth, setUpYear, date, choice, isWeekly);
-
-        secondMonthData(setUpMonth, setUpYear, date, choice, isWeekly);
-
-        thirdMonthData(setUpMonth, setUpYear, date, choice, isWeekly);
 
         fourthMonthData(setUpMonth, setUpYear, date, choice, isWeekly);
+        thirdMonthData(setUpMonth, setUpYear, date, choice, isWeekly);
+        secondMonthData(setUpMonth, setUpYear, date, choice, isWeekly);
+        firstMonthData(setUpMonth, setUpYear, date, choice, isWeekly);
+
     }
 
     private void fourthMonthData(final int setUpMonth, final int setUpYear, final int date, String choice, final boolean isWeekly) {
@@ -71,16 +76,16 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
                 }
                 String fourthPer;
                 if ((date - 1) >= setUpMonth || mYear != setUpYear || progressPercentage != 0) {
-                    fourthPer = "" + (int) progressPercentage;
+                    fourthPer = "" + (int) progressPercentage + "%";
                 } else {
                     fourthPer = "N.A";
                 }
-                getView().addToList(fourthMonth, fourthPer);
+                dataList.add(new AnalysisModel(fourthMonth, fourthPer));
             }
         });
     }
 
-    private void thirdMonthData(final int setUpMonth, final int setUpYear, final int date, String choice, final boolean isWeekly) {
+    private void thirdMonthData(final int setUpMonth, final int setUpYear, final int date, final String choice, final boolean isWeekly) {
         final String thirdMonth = getMonth(date - 1);
         getDataManager().getCountForProgressBar(mDate, mYear, "yes", choice, new DbHelper.LoadIntegerCallback() {
             @Override
@@ -97,12 +102,12 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
                 } else {
                     thirdPer = "N.A";
                 }
-                getView().addToList(thirdMonth, thirdPer);
+                dataList.add(new AnalysisModel(thirdMonth, thirdPer));
             }
         });
     }
 
-    private void secondMonthData(final int setUpMonth, final int setUpYear, final int date, String choice, final boolean isWeekly) {
+    private void secondMonthData(final int setUpMonth, final int setUpYear, final int date, final String choice, final boolean isWeekly) {
         final String secondMonth = getMonth(date - 2);
         getDataManager().getCountForProgressBar(mDate, mYear, "yes", choice, new DbHelper.LoadIntegerCallback() {
             @Override
@@ -119,13 +124,14 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
                 } else {
                     secondPer = "N.A";
                 }
-                getView().addToList(secondMonth, secondPer);
+                dataList.add(new AnalysisModel(secondMonth, secondPer));
             }
         });
     }
 
-    private void firstMonthData(final int setUpMonth, final int setUpYear, final int date, String choice, final boolean isWeekly) {
+    private void firstMonthData(final int setUpMonth, final int setUpYear, final int date, final String choice, final boolean isWeekly) {
         final String firstMonth = getMonth(date - 3);
+
         getDataManager().getCountForProgressBar(mDate, mYear, "yes", choice,
                 new DbHelper.LoadIntegerCallback() {
                     @Override
@@ -142,15 +148,16 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
                         } else {
                             firstPer = "N.A";
                         }
-                        getView().addToList(firstMonth, firstPer);
+                        dataList.add(new AnalysisModel(firstMonth, firstPer));
+                        getView().startRecyclerView();
+
                     }
                 });
     }
 
     //finding month from its integer
     private String getMonth(int date) {
-        int d = 0;
-        String month[] = getContext().getResources().getStringArray(R.array.array_month);
+        int d;
         if (date == -1) {
             d = 11;
             mYear = Calendar.getInstance().get(Calendar.YEAR) - 1;
@@ -161,14 +168,23 @@ public class SecondAnalysisPresenter<V extends SecondAnalysisMvpView> extends Ba
             d = 9;
             mYear = Calendar.getInstance().get(Calendar.YEAR) - 1;
         } else {
+            d = date;
             mYear = Calendar.getInstance().get(Calendar.YEAR);
             mDate = date;
         }
-        return month[d];
+        return monthList[d];
     }
 
     /*Finding No. of Days in Month*/
     private int getNumberOfDaysInMonth(int month) {
         return daysOfMonth[month];
+    }
+
+    public List<AnalysisModel> getDataList() {
+        return dataList;
+    }
+
+    public void setDataList(List<AnalysisModel> dataList) {
+        this.dataList = dataList;
     }
 }

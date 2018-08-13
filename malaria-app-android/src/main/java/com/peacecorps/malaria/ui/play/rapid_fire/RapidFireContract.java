@@ -12,6 +12,7 @@ public interface RapidFireContract {
         void prepareQuestionAndOptions();
         void enableOptions(boolean val);
         void updateTimer(long miliLeft);
+        void playTapTargetViewer();
     }
 
     interface RapidFireMvpPresenter<V extends RapidFireMvpView> extends MvpPresenter<V> {
@@ -19,5 +20,6 @@ public interface RapidFireContract {
         int questionListSize();
         QuestionModel getQuestionModel(int i);
         void updateGameScore(int currPoints);
+        void checkFirstTime();
     }
 }

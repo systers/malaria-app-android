@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.code.notification;
+package com.peacecorps.malaria.code.reciever.notification;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -16,7 +16,7 @@ import com.peacecorps.malaria.db.DatabaseSQLiteHelper;
 import java.util.Calendar;
 
 public class DrugReminderNotification {
-    Context context;
+    private Context context;
 
     public DrugReminderNotification(Context context) {
         this.context = context;
@@ -35,7 +35,8 @@ public class DrugReminderNotification {
         /*Action Not Taken*/
         Intent intentNotTaken = new Intent(context, DrugReminderReceiver.class);
         intentNotTaken.setAction(context.getString(R.string.notification_action_code_not_taken));
-        PendingIntent pendingIntentNotTaken = PendingIntent.getBroadcast(context, 0, intentNotTaken, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntentNotTaken = PendingIntent.getBroadcast(context, 0, intentNotTaken,
+                PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Action actionNotTaken;
         actionNotTaken = new NotificationCompat.Action(R.drawable.ic_cancel_black_18dp, context.getString(R.string.drug_reminder_notification_action_not_taken)
                 , pendingIntentNotTaken);
@@ -64,7 +65,8 @@ public class DrugReminderNotification {
               /*Action Snooze*/
             Intent intentSnooze = new Intent(context, DrugReminderReceiver.class);
             intentSnooze.setAction(context.getString(R.string.notification_action_code_snooze));
-            PendingIntent pendingIntentSnooze = PendingIntent.getBroadcast(context, 0, intentSnooze, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntentSnooze = PendingIntent.getBroadcast(context, 0, intentSnooze,
+                    PendingIntent.FLAG_UPDATE_CURRENT);
             NotificationCompat.Action actionSnooze;
             actionSnooze = new NotificationCompat.Action(R.drawable.ic_snooze_black_18dp, context.getString(R.string.drug_reminder_notification_action_snooze)
                     , pendingIntentSnooze);

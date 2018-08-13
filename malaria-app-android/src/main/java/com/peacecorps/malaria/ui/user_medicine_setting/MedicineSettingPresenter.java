@@ -1,10 +1,12 @@
 package com.peacecorps.malaria.ui.user_medicine_setting;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.data.AppDataManager;
 import com.peacecorps.malaria.data.db.entities.AlarmTime;
+import com.peacecorps.malaria.notifications.service.AlarmService;
 import com.peacecorps.malaria.ui.base.BasePresenter;
 import com.peacecorps.malaria.utils.ToastLogSnackBarUtil;
 
@@ -51,7 +53,7 @@ public class MedicineSettingPresenter<V extends SettingMvpView> extends BasePres
         int checkDay = calendar.get(Calendar.DAY_OF_WEEK);
         int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
-
+        ToastLogSnackBarUtil.showDebugLog("day "+ checkDay + "month " + month + "year " + year + " " + hour + " " + minute );
         // inserted the alarm timing and days
         getDataManager().insertAlarmData(new AlarmTime(hour, minute, month, year, checkDay));
 
@@ -78,9 +80,8 @@ public class MedicineSettingPresenter<V extends SettingMvpView> extends BasePres
         }
         getDataManager().setDrugTaken(false);
         getDataManager().setUserPreferences(true);
-        //Todo IMP start a alarm service
-//        mFragmentContext.startService(new Intent(mFragmentContext,
-//                AlarmService.class));
+        // starting alarm service for reminding user for medicine
+        getContext().startService(new Intent(getContext(), AlarmService.class));
     }
 
     /**
@@ -116,6 +117,6 @@ public class MedicineSettingPresenter<V extends SettingMvpView> extends BasePres
         String theTime = getContext().getResources().getString(R.string.time_picker, hour, minutes, timeSet);
 
         getView().setSelectedTime(theTime);
-        getView().enableDoneButton();
+        getView().enableDoneButton(hr, mins);
     }
 }

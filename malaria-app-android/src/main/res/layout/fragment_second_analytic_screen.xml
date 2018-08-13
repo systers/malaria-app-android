@@ -4,14 +4,12 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:padding="@dimen/padding_2dp" >
+    android:padding="@dimen/padding_2dp">
 
-    <include layout="@layout/fragment_second_analytic_screen_progress" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_timeline"
+        android:paddingTop="@dimen/padding_30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="@dimen/margin_30dp"
-        android:background="@drawable/graph_bg"
-        android:id="@+id/graphView" />
 </LinearLayout>

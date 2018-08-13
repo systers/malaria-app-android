@@ -20,13 +20,8 @@ import com.peacecorps.malaria.ui.base.BaseActivity;
 import com.peacecorps.malaria.ui.home_screen.HomeScreenFragment;
 import com.peacecorps.malaria.ui.main.MainContract.IHomeView;
 import com.peacecorps.malaria.ui.info_hub.InfoHubFragment;
+import com.peacecorps.malaria.ui.medicine_store.MedicineStoreActivity;
 import com.peacecorps.malaria.ui.play.PlayFragment;
-import com.peacecorps.malaria.ui.play.PlayFragment.OnPlayFragmentListener;
-import com.peacecorps.malaria.ui.play.badge_screen.BadgeScreenFragment;
-import com.peacecorps.malaria.ui.play.medicine_store.MedicineStoreFragment;
-import com.peacecorps.malaria.ui.play.myth_vs_fact.MythFactFragment;
-import com.peacecorps.malaria.ui.play.rapid_fire.RapidFireFragment;
-import com.peacecorps.malaria.ui.play.rapid_fire.RapidFireFragment.OnRapidFragmentListener;
 import com.peacecorps.malaria.ui.trip_reminder.PlanTripFragment;
 import com.peacecorps.malaria.ui.trip_reminder.PlanTripFragment.OnPlanFragmentListener;
 import com.peacecorps.malaria.ui.trip_reminder.trip_select_item.ItemDialogFragment;
@@ -35,14 +30,10 @@ import com.peacecorps.malaria.ui.user_medicine_setting.MedicineSettingsActivity;
 import com.peacecorps.malaria.ui.user_profile.ProfileFragment;
 import com.peacecorps.malaria.utils.BottomNavigationViewHelper;
 import com.peacecorps.malaria.utils.InjectionClass;
-import com.peacecorps.malaria.utils.ToastLogSnackBarUtil;
-
-import static com.peacecorps.malaria.ui.play.myth_vs_fact.MythFactFragment.OnMythFragmentListener;
 
 public class MainActivity extends BaseActivity implements IHomeView,
-        OnPlayFragmentListener, OnMythFragmentListener, OnRapidFragmentListener, OnPlanFragmentListener, OnSaveDialogListener {
+         OnPlanFragmentListener, OnSaveDialogListener {
 
-    private MainPresenter<MainActivity> presenter;
     private Toolbar toolbar;
 
     @Override
@@ -61,7 +52,7 @@ public class MainActivity extends BaseActivity implements IHomeView,
     public void init() {
         // setting up presenter and attaching views
         AppDataManager dataManager = InjectionClass.provideDataManager(this);
-        presenter = new MainPresenter<>(dataManager, this);
+        MainPresenter<MainActivity> presenter = new MainPresenter<>(dataManager, this);
         presenter.attachView(this);
 
         toolbar = findViewById(R.id.toolbar);
@@ -84,8 +75,6 @@ public class MainActivity extends BaseActivity implements IHomeView,
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // make presenter null
-        presenter = null;
     }
 
     private void setBottomNavigation() {
@@ -182,6 +171,9 @@ public class MainActivity extends BaseActivity implements IHomeView,
             });
             dialog.show();
             return true;
+        } else if(item.getItemId() == R.id.btn_menu_store) {
+            startActivity(new Intent(MainActivity.this, MedicineStoreActivity.class));
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -191,35 +183,6 @@ public class MainActivity extends BaseActivity implements IHomeView,
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
-    }
-
-    /**
-     * @param id : Checks id received (button IDs in playFragment, loads respective fragment)
-     */
-    @Override
-    public void replacePlayFragment(int id) {
-        switch (id) {
-            case R.id.btn_badge_screen:
-                loadFragment(new BadgeScreenFragment());
-                break;
-            case R.id.btn_myth_vs_fact:
-                loadFragment(new MythFactFragment());
-                break;
-            case R.id.btn_medicine_store:
-                loadFragment(new MedicineStoreFragment());
-                break;
-            case R.id.btn_rapid_fire:
-                loadFragment(new RapidFireFragment());
-                break;
-            default:
-                ToastLogSnackBarUtil.showToast(this, "Wrong button ");
-        }
-    }
-
-    // starts playFragment from another child fragment
-    @Override
-    public void goBackToPlayFragment() {
-        loadFragment(new PlayFragment());
     }
 
     // replaces trip fragment with select item fragment

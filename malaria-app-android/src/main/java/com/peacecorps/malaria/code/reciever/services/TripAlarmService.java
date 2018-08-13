@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.services;
+package com.peacecorps.malaria.code.reciever.services;
 
 /**
  * Created by Ankita on 8/8/2015.
@@ -14,9 +14,10 @@ import android.util.Log;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.code.activities.TripAlarmActivity;
+import com.peacecorps.malaria.data.AppDataManager;
+import com.peacecorps.malaria.utils.InjectionClass;
 
 public class TripAlarmService extends IntentService {
-    private NotificationManager alarmNotificationManager;
 
     public TripAlarmService() {
         super("TripAlarmService");
@@ -24,14 +25,16 @@ public class TripAlarmService extends IntentService {
 
     @Override
     public void onHandleIntent(Intent intent) {
+        AppDataManager dataManager = InjectionClass.provideDataManager(this);
         SharedPreferences preferences = getSharedPreferences("WidgetReminder", Context.MODE_PRIVATE);
-        sendNotification("Get Ready to Pack your Bags!" + "\n" + preferences.getString("view_upcoming_reminder",""), intent);
+        sendNotification("Get Ready to Pack your Bags!" + "\n"
+                + dataManager.getReminderMessageForTrip(), intent);
 
     }
 
     private void sendNotification(String msg,Intent intent) {
         Log.d("AlarmService", "Preparing to send notification...: " + msg);
-        alarmNotificationManager = (NotificationManager) this
+        NotificationManager alarmNotificationManager = (NotificationManager) this
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
         Intent activIntent = new Intent(this,TripAlarmActivity.class);

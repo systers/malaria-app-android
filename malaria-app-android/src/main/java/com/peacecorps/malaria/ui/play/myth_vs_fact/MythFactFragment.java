@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.ui.base.BaseFragment;
 import com.peacecorps.malaria.ui.play.myth_vs_fact.MythFactContract.MythFactMvpView;
@@ -42,6 +44,8 @@ public class MythFactFragment extends BaseFragment implements MythFactMvpView {
     TextView tvQuestion;
     @BindView(R.id.btn_next)
     Button nextButton;
+    @BindView(R.id.btn_exit)
+    Button exitButton;
     @BindView(R.id.chest)
     TextView chest;
     @BindView(R.id.trash)
@@ -57,6 +61,7 @@ public class MythFactFragment extends BaseFragment implements MythFactMvpView {
         context = getContext();
         ButterKnife.bind(this, view);
         presenter = new MythFactPresenter<>(InjectionClass.provideDataManager(context), context);
+        presenter.attachView(this);
         return view;
     }
 
@@ -79,6 +84,7 @@ public class MythFactFragment extends BaseFragment implements MythFactMvpView {
 
     @Override
     protected void init() {
+        presenter.checkFirstTime();
         //setup questions
         questions = Arrays.asList(getResources().getStringArray(R.array.array_myth_vs_fact_questions));
         //setup answers
@@ -265,4 +271,84 @@ public class MythFactFragment extends BaseFragment implements MythFactMvpView {
         super.onDetach();
         listener = null;
     }
+
+
+    @Override
+    public void playTapTargetViewer() {
+        new TapTargetSequence(getActivity())
+                .continueOnCancel(true)
+                .targets(
+                        TapTarget.forView(tvQuestion, getString(R.string.help_myth_fact_question_title),
+                                getString(R.string.help_myth_fact_question_description))
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .targetRadius(60)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(chest, getString(R.string.help_myth_fact_chest_title),
+                                "")
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(trash, getString(R.string.help_myth_fact_bin_title),
+                                "")
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(tvUserPoints, getString(R.string.help_myth_fact_score_title),
+                                "")
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(nextButton, getString(R.string.help_myth_fact_next_title),
+                                getString(R.string.help_myth_fact_next_description))
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3),
+                        TapTarget.forView(exitButton, getString(R.string.help_myth_fact_exit_title),
+                                "")
+                                .drawShadow(true)
+                                .tintTarget(true)
+                                .titleTextColor(R.color.textColorPrimary)
+                                .descriptionTextColor(R.color.white)
+                                .targetRadius(60)
+                                .targetCircleColor(R.color.colorAccent)
+                                .outerCircleAlpha(0.90f).id(3)
+                )
+                .listener(new TapTargetSequence.Listener() {
+                    @Override
+                    public void onSequenceFinish() {
+                        presenter.getDataManager().setMythFactTarget(true);
+                    }
+
+                    @Override
+                    public void onSequenceStep(TapTarget lastTarget, boolean targetClicked) {
+                        // no need currently, compulsory overridden method
+                    }
+
+                    @Override
+                    public void onSequenceCanceled(TapTarget lastTarget) {
+                        // no need currently, compulsory overridden method
+                    }
+                }).start();
+    }
+
 }

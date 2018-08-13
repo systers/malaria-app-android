@@ -55,7 +55,7 @@ public interface DbHelper {
 
     void getFirstTimeByTimeStamp(LoadLongCallback callback);
 
-    void getStatus(int date,int month,int year, LoadStringCallback callback);
+    void getDailyStatus(int date,int month,int year, LoadStringCallback callback);
 
     void getDosesInaRowWeekly(LoadIntegerCallback callback);
 

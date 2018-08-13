@@ -354,7 +354,6 @@ public class DayFragmentActivity extends FragmentActivity {
             calt.add(Calendar.MONTH, 2);
             Date start = calt.getTime();
             Date end = cal.getTime();
-            //Todo idk what key it is, check later
             SharedPreferenceStore.mEditor.putLong("com.peacecorps.malaria."
                     + time, takenDate).apply();
             if (SharedPreferenceStore.mPrefsStore.getBoolean("com.peacecorps.malaria.isWeekly", false)) {

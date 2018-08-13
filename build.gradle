@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        mavenCentral()
         jcenter()
         google()
     }
@@ -12,8 +11,8 @@ buildscript {
 allprojects {
     repositories {
         maven { url "http://dl.bintray.com/populov/maven" }
-        mavenCentral()
         google()
+        jcenter()
     }
 }
 

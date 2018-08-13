@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.ui.play.badge_screen;
+package com.peacecorps.malaria.ui.user_profile.badge_screen;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -21,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.peacecorps.malaria.ui.play.badge_screen.BadgeScreenContract.*;
+import static com.peacecorps.malaria.ui.user_profile.badge_screen.BadgeScreenContract.*;
 
 /**
  * Created by Anamika Tripathi on 24/7/18.

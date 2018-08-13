@@ -33,7 +33,7 @@ public interface UserMedicineDao {
     String getFirstTimeTimeStamp();
 
     @Query("SELECT status FROM usermedicine WHERE date= :date and month= :month and year= :year")
-    String getStatus(int date,int month,int year);
+    String getDailyStatus(int date,int month,int year);
 
     @Query("SELECT * FROM UserMedicine ORDER BY timeStamp DESC")
     List<UserMedicine> getDosesInaRow();

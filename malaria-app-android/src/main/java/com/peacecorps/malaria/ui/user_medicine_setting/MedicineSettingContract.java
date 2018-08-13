@@ -7,7 +7,7 @@ public interface MedicineSettingContract {
     interface SettingMvpView extends MvpView {
         void startMainActivity();
         void setSelectedTime(String theTime);
-        void enableDoneButton();
+        void enableDoneButton(int h, int min);
     }
 
     interface Presenter<V extends SettingMvpView> extends MvpPresenter<V> {

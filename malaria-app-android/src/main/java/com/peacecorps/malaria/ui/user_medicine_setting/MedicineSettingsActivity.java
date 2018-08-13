@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.ui.main.MainActivity;
-import com.peacecorps.malaria.code.adapter.DrugArrayAdapter;
 import com.peacecorps.malaria.ui.base.BaseActivity;
 import com.peacecorps.malaria.utils.Constants;
 import com.peacecorps.malaria.utils.InjectionClass;
@@ -170,8 +169,10 @@ public class MedicineSettingsActivity extends BaseActivity
      *Done button is enabled if the user have setup a time
      */
     @Override
-    public void enableDoneButton() {
+    public void enableDoneButton(int hr, int min) {
         mDoneButton.setEnabled(true);
+        mHour = hr;
+        mMinute = min;
     }
 
     /*Overrided Method called by the create Drug Selection Spinner to check which drug was chosen */

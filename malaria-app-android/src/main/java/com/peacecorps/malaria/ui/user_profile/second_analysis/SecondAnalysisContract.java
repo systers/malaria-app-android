@@ -8,7 +8,7 @@ import com.peacecorps.malaria.ui.base.MvpView;
  */
 public interface SecondAnalysisContract {
     interface SecondAnalysisMvpView extends MvpView {
-        void addToList(String month, String percentage);
+        void startRecyclerView();
     }
 
     interface SecondAnalysisMvpPresenter<V extends SecondAnalysisMvpView> extends MvpPresenter<V> {

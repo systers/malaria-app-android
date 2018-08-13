@@ -25,10 +25,6 @@ public interface PreferencesHelper {
     void setMedicineStoreValue(int value);
     String getMedicineLastTakenTime();
     void setMedicineLastTakenTime(String time);
-    boolean getMythFactGame();
-    void setMythFactGame(boolean val);
-    boolean getRapidFireGame();
-    void setRapidFireGame(boolean val);
     String getToneUri();
     void setToneUri(String uri);
     String getTripDate();
@@ -59,5 +55,8 @@ public interface PreferencesHelper {
     boolean isDailyDrugTaken();
     int getDrugRejectedCount();
     void setDrugRejectedCount(int value);
-
+    boolean checkRapidFireTarget();
+    void setRapidFireTarget(boolean value);
+    boolean checkMythFactTarget();
+    void setMythFactTarget(boolean value);
 }

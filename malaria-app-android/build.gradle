@@ -31,7 +31,8 @@ android {
 }
 
 dependencies {
-    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion" // v4
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    // v4
     implementation "com.viewpagerindicator:library:$rootProject.ext.viewPagerIndicatorVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
@@ -40,6 +41,8 @@ dependencies {
     implementation files('libs/GraphView-3.1.2.jar')
     implementation 'com.android.support:support-v4:26.1.0'
     testImplementation 'junit:junit:4.12'
+    compile 'com.github.vipulasri:timelineview:1.0.6'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
     //Room
     implementation "android.arch.persistence.room:runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"

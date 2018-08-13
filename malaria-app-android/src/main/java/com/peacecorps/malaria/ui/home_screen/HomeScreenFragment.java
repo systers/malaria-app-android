@@ -15,8 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
-import com.peacecorps.malaria.code.activities.RemainderToneActivity;
-import com.peacecorps.malaria.services.AlarmService;
+import com.peacecorps.malaria.notifications.service.AlarmService;
 import com.peacecorps.malaria.ui.base.BaseFragment;
 import com.peacecorps.malaria.utils.InjectionClass;
 
@@ -42,6 +41,8 @@ public class HomeScreenFragment extends BaseFragment implements HomeContract.Hom
     TextView mCurrentDayOfweekLabel;
     @BindView(R.id.warningView)
     TextView warningView;
+    @BindView(R.id.warningButton)
+    Button warningButton;
 
     @Nullable
     @Override
@@ -90,6 +91,8 @@ public class HomeScreenFragment extends BaseFragment implements HomeContract.Hom
     @Override
     public void setWarningText() {
         warningView.setVisibility(View.VISIBLE);
+        warningButton.setVisibility(View.VISIBLE);
+
     }
 
     @Override
@@ -152,7 +155,7 @@ public class HomeScreenFragment extends BaseFragment implements HomeContract.Hom
 
     @OnClick(R.id.fragment_home_screen_set_tone_button)
     public void reminderButtonListener() {
-        Intent myIntent = new Intent(getActivity(), RemainderToneActivity.class);
+        Intent myIntent = new Intent(getActivity(), ReminderToneActivity.class);
         startActivity(myIntent);
     }
 
@@ -176,4 +179,9 @@ public class HomeScreenFragment extends BaseFragment implements HomeContract.Hom
 
         presenter.checkDrugIntervalFirstRunTime(false);
     }
+
+//    @OnClick(R.id.fragment_home_screen_settings_button)
+//    public void settingListener() {
+//        DrugNotificationUtils.startNotificationCheckSnooze(context);
+//    }
 }

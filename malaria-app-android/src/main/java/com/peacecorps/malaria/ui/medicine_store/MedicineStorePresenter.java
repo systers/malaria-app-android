@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.ui.play.medicine_store;
+package com.peacecorps.malaria.ui.medicine_store;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -6,8 +6,8 @@ import android.text.TextUtils;
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.data.AppDataManager;
 import com.peacecorps.malaria.ui.base.BasePresenter;
-import com.peacecorps.malaria.ui.play.medicine_store.MedicineStoreContract.MedicineMvpPresenter;
-import com.peacecorps.malaria.ui.play.medicine_store.MedicineStoreContract.MedicineMvpView;
+import com.peacecorps.malaria.ui.medicine_store.MedicineStoreContract.MedicineMvpPresenter;
+import com.peacecorps.malaria.ui.medicine_store.MedicineStoreContract.MedicineMvpView;
 
 /**
  * Created by Anamika Tripathi on 18/7/18.

@@ -13,7 +13,6 @@ public class AnalysisModel {
     }
 
     public String getMonth() {
-
         return month;
     }
 

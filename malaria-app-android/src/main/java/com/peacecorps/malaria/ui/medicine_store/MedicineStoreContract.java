@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.ui.play.medicine_store;
+package com.peacecorps.malaria.ui.medicine_store;
 
 import com.peacecorps.malaria.ui.base.MvpPresenter;
 import com.peacecorps.malaria.ui.base.MvpView;

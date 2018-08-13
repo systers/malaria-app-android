@@ -1,4 +1,4 @@
-package com.peacecorps.malaria.ui.play.medicine_store;
+package com.peacecorps.malaria.ui.medicine_store;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.ui.base.BaseFragment;
-import com.peacecorps.malaria.ui.play.medicine_store.MedicineStoreContract.MedicineMvpView;
+import com.peacecorps.malaria.ui.medicine_store.MedicineStoreContract.MedicineMvpView;
 import com.peacecorps.malaria.utils.InjectionClass;
 
 import butterknife.BindView;
@@ -72,7 +72,7 @@ public class MedicineStoreFragment extends BaseFragment implements MedicineMvpVi
     }
 
     @OnClick(R.id.btn_add_medicine)
-    public void addMedicineListener(View view) {
+    public void addMedicineListener() {
         final Dialog addMedicineDialog = new Dialog(context, android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
         addMedicineDialog.setContentView(R.layout.add_medicine_dialog);
 
@@ -103,7 +103,7 @@ public class MedicineStoreFragment extends BaseFragment implements MedicineMvpVi
     }
 
     @OnClick(R.id.btn_order_medicine)
-    public void orderMedicineListener(View view) {
+    public void orderMedicineListener() {
         final Dialog orderMedicineDialog = new Dialog(context, android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
         orderMedicineDialog.setContentView(R.layout.order_medicine_dialog);
 
@@ -160,7 +160,7 @@ public class MedicineStoreFragment extends BaseFragment implements MedicineMvpVi
 
     // setting button listener in medicine store fragment
     @OnClick(R.id.btn_dialog_setting)
-    public void settingDialogListener(View view) {
+    public void settingDialogListener() {
 
         final Dialog settingsDialog = new Dialog(context, android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
         settingsDialog.setContentView(R.layout.reminder_screen_setting_dialog);

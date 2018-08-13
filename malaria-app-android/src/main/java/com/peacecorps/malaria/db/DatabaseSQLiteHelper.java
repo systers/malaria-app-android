@@ -10,9 +10,7 @@ import android.util.Log;
 
 import com.peacecorps.malaria.code.model.SharedPreferenceStore;
 import com.peacecorps.malaria.utils.CalendarFunction;
-import com.peacecorps.malaria.utils.*;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -379,7 +377,8 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqDB = getWritableDatabase();
         String []column = {"Status"};
         String []selArgs = {""+date,""+month,""+year};
-        Cursor cursor= sqDB.query(userMedicationChoiceTable,column,"Date =? AND Month =? AND Year =?",selArgs,null,null,null,null);
+        Cursor cursor= sqDB.query(userMedicationChoiceTable,column,"Date =? AND Month =? AND Year =?",
+                selArgs,null,null,null,null);
 
         while(cursor.moveToNext())
         {
@@ -393,7 +392,6 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
     /**From the Last Time Pill was Taken it Calculates the maximum days in a row medication was taken
      * Need at Home Screen, First Analytic Scrren, Second Analytic Scrren, Day Fragment Screen
      * Main Activity for updating the dosesInArow as it changes according to the status we enter.**/
-    //Todo make it later
     public int getDosesInaRowDaily()
     {
         SQLiteDatabase sqDB = getWritableDatabase();
@@ -708,7 +706,8 @@ public class DatabaseSQLiteHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase sqDB = getWritableDatabase();
         String []column={"Status","Timestamp","Date","Month","Year","Choice"};
-        Cursor cursor= sqDB.query(userMedicationChoiceTable,column,null,null,null,null,"Timestamp ASC");
+        Cursor cursor= sqDB.query(userMedicationChoiceTable,column,null,null,null,
+                null,"Timestamp ASC");
         int count=0;
         if(cursor!=null)
         {
