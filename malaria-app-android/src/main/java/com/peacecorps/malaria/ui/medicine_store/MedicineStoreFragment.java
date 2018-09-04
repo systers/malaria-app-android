@@ -1,12 +1,16 @@
 package com.peacecorps.malaria.ui.medicine_store;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.telephony.SmsManager;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -14,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.peacecorps.malaria.R;
 import com.peacecorps.malaria.ui.base.BaseFragment;
@@ -35,6 +40,8 @@ public class MedicineStoreFragment extends BaseFragment implements MedicineMvpVi
     TextView daysLeft;
     private Context context;
     private MedicineStorePresenter<MedicineStoreFragment> presenter;
+    private int PERMISSIONS_REQUEST_SEND_SMS = 7;
+    private boolean smsPermissionGranted = false;
 
     @Nullable
     @Override
@@ -138,18 +145,44 @@ public class MedicineStoreFragment extends BaseFragment implements MedicineMvpVi
             }
         });
         //implement the message button
-        //Todo ask for SEND Message permission
+
         orderMedicineDialog.findViewById(R.id.btn_order_by_msg).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (presenter.checkMedicineNumberValidity(quantity.getText().toString().trim())) {
+                if (!presenter.checkMedicineNumberValidity(quantity.getText().toString().trim())) {
                     quantity.setError("Quantity Required");
+                    quantity.requestFocus();
                 } else {
-                    SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage("123", null,
-                            presenter.getMessageBodyForOrder() +
-                                    Integer.parseInt(quantity.getText().toString()), null, null);
-                    orderMedicineDialog.dismiss();
+                    //Entered Order quantity is greater than 0
+                    if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.SEND_SMS)
+                            != PackageManager.PERMISSION_GRANTED) {
+                        // Permission is not granted
+                        // Ask for permission
+                            ActivityCompat.requestPermissions(getActivity(),
+                                    new String[]{Manifest.permission.SEND_SMS},
+                                    PERMISSIONS_REQUEST_SEND_SMS);
+
+                    }
+                    else{
+                        smsPermissionGranted = true;
+                    }
+
+                    if(smsPermissionGranted) {
+                        SmsManager smsManager = SmsManager.getDefault();
+                        //Sms cannot parse html tags so remove them and use appropriate alternative
+                        String message = (presenter.getMessageBodyForOrder() +Integer.parseInt(quantity.getText().toString())).toString();
+                        String patternRegex = "<[/]*b>";                  // To match <b> and </b>
+                        message = message.replaceAll("<br>","\n");
+                        message = message.replaceAll(patternRegex," ");
+                        String phoneNo = "121";
+                        smsManager.sendTextMessage(phoneNo, null,message, null, null);
+                        Toast.makeText(getActivity(), "Message sent", Toast.LENGTH_LONG).show();
+                        orderMedicineDialog.dismiss();
+                    }
+                    else{
+                        //Show Toast message
+                        Toast.makeText(getActivity(), "Cannot use this feature without Send SMS permission", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
@@ -210,4 +243,14 @@ public class MedicineStoreFragment extends BaseFragment implements MedicineMvpVi
         settingsDialog.show();
 
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == PERMISSIONS_REQUEST_SEND_SMS && grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED ) {
+            smsPermissionGranted = true;
+        }
+    }
+
 }
