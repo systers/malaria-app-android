@@ -35,20 +35,22 @@ dependencies {
     // v4
     implementation "com.viewpagerindicator:library:$rootProject.ext.viewPagerIndicatorVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
-    implementation files('libs/volleylib.jar')
-    implementation files('libs/GraphView-3.1.2.jar')
     implementation 'com.android.support:support-v4:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    compile 'com.github.vipulasri:timelineview:1.0.6'
-    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
+    // 3rd party libraries
+    implementation "com.github.vipulasri:timelineview:$rootProject.ext.time_liner"
+    implementation "com.getkeepsafe.taptargetview:taptargetview:$rootProject.ext.tap_target_viewer"
     //Room
     implementation "android.arch.persistence.room:runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
     //Butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butter_knife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butter_knife"
+    //test
+    testImplementation 'junit:junit:4.12'
+    // volley
+    implementation files('libs/volleylib.jar')
 }
